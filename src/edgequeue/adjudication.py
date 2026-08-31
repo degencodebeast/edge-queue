@@ -134,6 +134,17 @@ def append_resolution_adjudication(
             and record.get("prior_record_digest") == resolution.get("prior_record_digest")
             and "conflict_adjudication_digests" not in record
         ]
+        branch_digests = {
+            digest_contract("adjudication", branch) for branch in branches
+        }
+        if any(
+            record.get("case_id") == resolution.get("case_id")
+            and record.get("prior_record_digest") == resolution.get("prior_record_digest")
+            and set(record.get("conflict_adjudication_digests", [])) == branch_digests
+            for record in history
+            if "conflict_adjudication_digests" in record
+        ):
+            raise AdjudicationError("Adjudication Conflict is already resolved")
         try:
             validate_resolution_adjudication(
                 resolution, branches, reviewer_manifest, branch_manifests

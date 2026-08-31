@@ -72,6 +72,14 @@ def test_rejects_verified_evidence_from_another_case() -> None:
         render_review_packet(receipt, assessments, ranker_cases)
 
 
+def test_rejects_verified_evidence_with_an_unknown_event() -> None:
+    receipt, assessments, ranker_cases = _ticket_16_review_inputs()
+    assessments[0]["evidence_references"][0]["event_id"] = "MISSING-EVENT"
+
+    with pytest.raises(ValueError, match="Verified evidence"):
+        render_review_packet(receipt, assessments, ranker_cases)
+
+
 def test_compares_only_review_queue_cases_to_the_selection_boundary() -> None:
     receipt, assessments, ranker_cases = _ticket_16_review_inputs()
     third_case = {**ranker_cases[1], "case_id": "EQ-F02-DEV-01"}

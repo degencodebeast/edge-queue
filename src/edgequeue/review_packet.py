@@ -75,14 +75,17 @@ def _records_by_case(
 def _case_section(
     case_id: str, assessment: Mapping[str, Any], ranker_case: Mapping[str, Any]
 ) -> str:
-    for reference in assessment.get("evidence_references", []):
-        if isinstance(reference, Mapping) and reference.get("status") == "verified" and reference.get("case_id") != case_id:
-            raise ReviewPacketError("Verified evidence must belong to its selected case")
     events = {
         str(event.get("event_id")): event
         for event in ranker_case.get("trajectory_events", [])
         if isinstance(event, Mapping)
     }
+    for reference in assessment.get("evidence_references", []):
+        if not isinstance(reference, Mapping) or reference.get("status") != "verified":
+            continue
+        event = events.get(str(reference.get("event_id")))
+        if reference.get("case_id") != case_id or event is None or event.get("case_id") != case_id:
+            raise ReviewPacketError("Verified evidence must reference a same-case trajectory event")
     clauses = {str(clause.get("clause_id")): str(clause.get("text")) for clause in ranker_case.get("rubric_clauses", []) if isinstance(clause, Mapping)}
     clause_rows = "".join(
         f"<li><code>{_text(clause_id)}</code>: {_text(clauses.get(str(clause_id), 'Clause text is unavailable.'))}</li>"

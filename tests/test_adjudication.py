@@ -139,6 +139,16 @@ def test_blocks_competing_branches_until_an_authorized_resolver_records_resoluti
     }
     append_resolution_adjudication(history_path, resolution, manifest, [manifest, manifest])
 
+    competing_resolution = {
+        **resolution,
+        "adjudication_id": "resolution-2",
+        "resulting_verdict": "PASS",
+    }
+    with pytest.raises(AdjudicationError, match="already resolved"):
+        append_resolution_adjudication(
+            history_path, competing_resolution, manifest, [manifest, manifest]
+        )
+
     assert canonical_verdict(prior_verdict="PASS", prior_record_digest=_context()["prior_record_digest"], case_id="EQ-F01-DEV-01", history=read_adjudication_history(history_path), reviewer_manifests=[manifest]) == "FAIL"
 
 
