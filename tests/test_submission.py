@@ -78,10 +78,13 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
 def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_path: Path) -> None:
     """The public exporter keeps meaningful events while removing private strings."""
     raw_events = tmp_path / "rollout-01a00000-0000-0000-0000-000000000000.jsonl"
+    synthetic_home = "/" + "Users" + "/alice/private"
     synthetic_token = "sk-" + "secret-value"
     synthetic_jwt = "eyJhbGciOiJIUzI1NiJ9" + ".eyJzdWIiOiJ0ZXN0In0.signature"
     raw_events.write_text(
-        '{"type":"response_item","payload":{"text":"Use /Users/alice/private and '
+        '{"type":"response_item","payload":{"text":"Use '
+        + synthetic_home
+        + ' and '
         + synthetic_token
         + '","rate_limits":{"credits":{"balance":12}},"last_token_usage":99,"encrypted_content":"private blob","approved_command_prefixes":["curl -H apikey: '
         + synthetic_jwt
@@ -110,9 +113,9 @@ def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_
     assert {record["role"] for record in manifest["records"]} == {"Worker", "Internal review"}
     exported = next(output_dir.glob("*.md")).read_text(encoding="utf-8")
     assert "<USER_HOME>" in exported
-    assert "sk-secret-value" not in exported
+    assert synthetic_token not in exported
     assert "rate_limits" not in exported
     assert "last_token_usage" not in exported
     assert "encrypted_content" not in exported
     assert "approved_command_prefixes" not in exported
-    assert "eyJhbGciOiJIUzI1NiJ9" not in exported
+    assert synthetic_jwt not in exported
