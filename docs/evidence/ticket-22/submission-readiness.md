@@ -17,21 +17,25 @@
 
 ## Draft archive measurement
 
-The Controller must run the approved draft snapshot twice outside Git:
+The Controller ran the approved draft snapshot twice outside Git.
+
+- Draft snapshot SHA A3: `d642353f4223c3966ef9266eeb3326156e77639f`.
+- Draft archive run 1: `edgequeue-d642353f4223-source.zip`, `2,215,215` bytes.
+- Draft archive run 2: `edgequeue-d642353f4223-source.zip`, `2,215,215` bytes.
+- Draft archive SHA-256, both runs: `2e68ab04f3dbba88e9f64d90c3a34010f12c7c4a88202b0c06bb4bfb5ef75813`.
+- Sidecar: `edgequeue-d642353f4223-source.zip.sha256`; its content matches the archive checksum.
+- Source tree: `cc6a59579cdbf022662ef33c1563d33fdab9173e`.
+- Archive entries: `1,252`, including `RELEASE_MANIFEST.json`; `1,251` are tracked package files.
+- Controller release set: `.scratch/edgequeue/release/ticket-22-draft-d642353/`.
+- Controller checks passed: determinism, exclusions, required proof inclusion, home-path and credential scans, no-Git extraction, offline judge, and submission validation.
+
+The archive command was:
 
 ```sh
-uv run python scripts/build_release.py --sha <draft-package-snapshot-sha> --output-dir /tmp/edgequeue-ticket-22-draft-1
-uv run python scripts/build_release.py --sha <draft-package-snapshot-sha> --output-dir /tmp/edgequeue-ticket-22-draft-2
+uv run python scripts/build_release.py --sha d642353f4223c3966ef9266eeb3326156e77639f --output-dir /tmp/edgequeue-ticket-22-draft-a3-1
 ```
 
-- Draft archive filename 1: pending Controller measurement.
-- Draft archive size 1: pending Controller measurement.
-- Draft SHA-256 1: pending Controller measurement.
-- Draft archive filename 2: pending Controller measurement.
-- Draft archive size 2: pending Controller measurement.
-- Draft SHA-256 2: pending Controller measurement.
-
-The release manifest stores the source SHA and per-file digests. The external sidecar stores the archive checksum, avoiding a self-checksum cycle.
+The release manifest stores the source SHA, source tree, and per-file digests. The external sidecar stores the archive checksum, avoiding a self-checksum cycle.
 
 ## Legacy-record archive exclusion
 
@@ -41,4 +45,4 @@ The archive retains the current proof replacements: `docs/evidence/ticket-20/dev
 
 ## Remaining blocker
 
-The user must upload the recording and add its Video URL to `docs/submission/submission.md` before final submission.
+The user must upload the recording and add its external Video URL to `docs/submission/submission.md` before final submission.
