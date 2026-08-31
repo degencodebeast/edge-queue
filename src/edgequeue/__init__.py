@@ -15,6 +15,7 @@ from edgequeue.contracts import (
     validate_calibration_authority,
     validate_claims_manifest,
     validate_contract,
+    validate_corpus_manifest_authority,
     validate_proof_bundle,
     validate_resolution_adjudication,
 )
@@ -34,6 +35,7 @@ __all__ = [
     "validate_calibration_authority",
     "validate_claims_manifest",
     "validate_contract",
+    "validate_corpus_manifest_authority",
     "validate_proof_bundle",
     "validate_resolution_adjudication",
 ]

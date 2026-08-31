@@ -17,6 +17,7 @@ from edgequeue.contracts import (
     validate_allocation_receipt,
     validate_calibration_authority,
     validate_contract,
+    validate_corpus_manifest_authority,
 )
 from edgequeue.corpus import build_development_cases
 
@@ -71,6 +72,152 @@ def test_validates_standalone_trajectory_event_with_case_binding() -> None:
     }
 
     assert validate_contract("trajectory_event", payload) == payload
+
+
+@pytest.mark.parametrize(
+    "event_type",
+    (
+        "task_instruction",
+        "reasoning_summary",
+        "tool_call",
+        "tool_result",
+        "checkpoint",
+        "approval",
+        "final_result",
+    ),
+)
+def test_trajectory_event_accepts_every_normalized_event_kind(event_type: str) -> None:
+    payload = {
+        "schema_version": "1.0",
+        "case_id": "EQ-F01-DEV-01",
+        "event_id": "E1",
+        "event_type": event_type,
+        "content": "Normalized trajectory evidence.",
+    }
+
+    assert validate_contract("trajectory_event", payload) == payload
+
+
+def test_evaluator_manifest_requires_complete_frozen_configurations() -> None:
+    payload = {
+        "schema_version": "1.0",
+        "manifest_id": "evaluators-v1",
+        "primary_evaluator_id": "primary-v1",
+        "shadow_evaluator_ids": ["shadow-a-v1", "shadow-b-v1"],
+        "evaluators": [
+            {
+                "config_id": "primary-v1",
+                "role": "primary",
+                "provider": "offline",
+                "model": "frozen-primary",
+                "prompt_version": "1.0",
+                "prompt_digest": "a" * 64,
+                "model_parameters": [{"name": "temperature", "value": 0}],
+                "tool_permissions": ["read_repository"],
+            },
+            {
+                "config_id": "shadow-a-v1",
+                "role": "shadow",
+                "provider": "offline",
+                "model": "frozen-shadow-a",
+                "prompt_version": "1.0",
+                "prompt_digest": "b" * 64,
+                "model_parameters": [{"name": "temperature", "value": 0}],
+                "tool_permissions": ["read_repository"],
+            },
+            {
+                "config_id": "shadow-b-v1",
+                "role": "shadow",
+                "provider": "offline",
+                "model": "frozen-shadow-b",
+                "prompt_version": "1.0",
+                "prompt_digest": "c" * 64,
+                "model_parameters": [{"name": "temperature", "value": 0}],
+                "tool_permissions": ["read_repository"],
+            },
+        ],
+        "rubric_version": "1.0",
+        "rubric_digest": "d" * 64,
+        "output_schema_version": "1.0",
+        "output_schema_digest": "e" * 64,
+        "retry_policy": {"max_attempts": 2, "retryable_outcomes": ["timeout", "malformed", "schema_failure"]},
+        "smoke_result_digest": "f" * 64,
+        "created_at": "2026-08-31T00:00:00Z",
+    }
+    payload["content_digest"] = content_digest(payload)
+
+    assert validate_contract("evaluator_manifest", payload) == payload
+
+    payload["primary_evaluator_id"] = "missing-primary-v1"
+    with pytest.raises(ContractValidationError, match="primary evaluator"):
+        validate_contract("evaluator_manifest", payload)
+    payload["primary_evaluator_id"] = "primary-v1"
+
+    payload["evaluators"] = []
+    with pytest.raises(ContractValidationError, match="too few"):
+        validate_contract("evaluator_manifest", payload)
+
+
+def test_authoring_ledger_requires_closed_candidate_attempt_records() -> None:
+    payload = {
+        "schema_version": "1.0",
+        "ledger_id": "ledger-v1",
+        "entries": [
+            {
+                "allocation_row_id": "EQ-F01-DEV-01",
+                "candidate_id": "candidate-1",
+                "candidate_number": 1,
+                "case_blueprint_version": "F01-v1",
+                "trajectory_digest": "b" * 64,
+                "evaluator_manifest_digest": "c" * 64,
+                "status": "accepted",
+                "evaluator_attempts": [
+                    {
+                        "attempt": 1,
+                        "evaluator_id": "primary-v1",
+                        "outcome": "accepted",
+                        "runtime_seconds": 0.5,
+                    },
+                    {
+                        "attempt": 2,
+                        "evaluator_id": "shadow-a-v1",
+                        "outcome": "accepted",
+                        "runtime_seconds": 0.5,
+                    },
+                    {
+                        "attempt": 3,
+                        "evaluator_id": "shadow-b-v1",
+                        "outcome": "accepted",
+                        "runtime_seconds": 0.5,
+                    },
+                ],
+                "reason": "Matches the frozen current Verdict.",
+                "reviewer_id": "human-1",
+                "recorded_at": "2026-08-31T00:00:00Z",
+                "referenced_digests": ["a" * 64],
+            }
+        ],
+    }
+    payload["content_digest"] = content_digest(payload)
+
+    assert validate_contract("authoring_ledger", payload) == payload
+
+    entry = payload["entries"][0]
+    payload["entries"] = [
+        {**entry, "candidate_id": f"candidate-{number}"}
+        for number in range(1, 5)
+    ]
+    with pytest.raises(ContractValidationError, match="at most three"):
+        validate_contract("authoring_ledger", payload)
+    payload["entries"] = [entry]
+
+    payload["entries"][0]["evaluator_attempts"][-1]["outcome"] = "execution_failure"
+    with pytest.raises(ContractValidationError, match="accepted candidate"):
+        validate_contract("authoring_ledger", payload)
+
+    payload["entries"] = []
+    with pytest.raises(ContractValidationError, match="too few"):
+        validate_contract("authoring_ledger", payload)
 
 
 def test_rejects_unknown_fields_in_nested_authoritative_records() -> None:
@@ -556,8 +703,14 @@ def test_corpus_schemas_freeze_case_ids_splits_and_event_types() -> None:
     case_id_pattern = "^EQ-F(?:0[1-9]|10)-(?:DEV|AH|PCH)-[0-9]{2}$"
     assert trajectory["properties"]["case_id"]["pattern"] == case_id_pattern
     assert trajectory["properties"]["event_type"]["enum"] == [
-        "task",
+        "task_instruction",
+        "reasoning_summary",
+        "tool_call",
         "tool_result",
+        "checkpoint",
+        "approval",
+        "final_result",
+        "task",
         "artifact",
         "evaluator_note",
     ]
@@ -709,13 +862,89 @@ def test_corpus_manifest_requires_both_provenance_bindings() -> None:
         validate_contract("corpus_manifest", payload)
 
 
+def test_split_manifest_rejects_duplicate_or_unordered_case_membership() -> None:
+    payload = {
+        "schema_version": "1.0",
+        "split": "DEV",
+        "case_digests": [
+            {"case_id": "EQ-F01-DEV-02", "ranker_digest": "a" * 64, "scorer_digest": "b" * 64},
+            {"case_id": "EQ-F01-DEV-01", "ranker_digest": "c" * 64, "scorer_digest": "d" * 64},
+        ],
+    }
+    payload["manifest_digest"] = content_digest(payload)
+
+    with pytest.raises(ContractValidationError, match="stable case identifier order"):
+        validate_contract("split_manifest", payload)
+
+
+def test_corpus_manifest_binds_all_splits_and_the_supplied_ledger_digest() -> None:
+    split_manifests = []
+    for split, case_id in (("DEV", "EQ-F01-DEV-01"), ("AH", "EQ-F01-AH-01"), ("PCH", "EQ-F01-PCH-01")):
+        split_manifest = {
+            "schema_version": "1.0",
+            "split": split,
+            "case_digests": [
+                {"case_id": case_id, "ranker_digest": "a" * 64, "scorer_digest": "b" * 64}
+            ],
+        }
+        split_manifest["manifest_digest"] = content_digest(split_manifest)
+        split_manifests.append(split_manifest)
+    corpus_manifest = {
+        "schema_version": "1.0",
+        "corpus_id": "corpus-v1",
+        "split_manifests": [manifest["manifest_digest"] for manifest in split_manifests],
+        "schema_versions": {"corpus": "1.0"},
+        "case_blueprint_versions": ["F01-v1"],
+        "evaluator_manifest_digest": "c" * 64,
+        "authoring_ledger_digest": "d" * 64,
+    }
+    corpus_manifest["root_corpus_digest"] = content_digest(corpus_manifest)
+
+    with pytest.raises(ContractValidationError, match="Authoring Ledger digest"):
+        validate_corpus_manifest_authority(corpus_manifest, split_manifests, "e" * 64)
+
+
 def test_authoring_ledger_binds_its_content_without_a_root_digest_cycle() -> None:
     payload = {
         "schema_version": "1.0",
         "ledger_id": "ledger-v1",
-        "entries": ["accepted candidate candidate-1"],
+        "entries": [
+            {
+                "allocation_row_id": "EQ-F01-DEV-01",
+                "candidate_id": "candidate-1",
+                "candidate_number": 1,
+                "case_blueprint_version": "F01-v1",
+                "trajectory_digest": "b" * 64,
+                "evaluator_manifest_digest": "c" * 64,
+                "status": "accepted",
+                "evaluator_attempts": [
+                    {
+                        "attempt": 1,
+                        "evaluator_id": "primary-v1",
+                        "outcome": "accepted",
+                        "runtime_seconds": 0.5,
+                    },
+                    {
+                        "attempt": 2,
+                        "evaluator_id": "shadow-a-v1",
+                        "outcome": "accepted",
+                        "runtime_seconds": 0.5,
+                    },
+                    {
+                        "attempt": 3,
+                        "evaluator_id": "shadow-b-v1",
+                        "outcome": "accepted",
+                        "runtime_seconds": 0.5,
+                    },
+                ],
+                "reason": "The candidate matches the frozen current Verdict.",
+                "reviewer_id": "reviewer-1",
+                "recorded_at": "2026-08-31T00:00:00Z",
+                "referenced_digests": ["a" * 64],
+            }
+        ],
     }
-    payload["content_digest"] = digest_contract("authoring_ledger", payload)
+    payload["content_digest"] = content_digest(payload)
 
     assert validate_contract("authoring_ledger", payload) == payload
 

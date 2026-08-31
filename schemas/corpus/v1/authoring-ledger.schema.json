@@ -1,7 +1,48 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://edgequeue.local/schemas/corpus/v1/authoring-ledger.schema.json",
-  "title": "Authoring Ledger", "type": "object", "additionalProperties": false,
-  "required": ["schema_version", "ledger_id", "entries"],
-  "properties": {"schema_version": {"const": "1.0"}, "ledger_id": {"type": "string"}, "entries": {"type": "array", "items": {"type": "string"}}, "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  "title": "Authoring Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ledger_id", "entries", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "ledger_id": {"type": "string", "minLength": 1},
+    "entries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/candidate_record"}},
+    "content_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "candidate_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allocation_row_id", "candidate_id", "candidate_number", "case_blueprint_version", "trajectory_digest", "evaluator_manifest_digest", "status", "evaluator_attempts", "reason", "reviewer_id", "recorded_at", "referenced_digests"],
+      "properties": {
+        "allocation_row_id": {"type": "string", "minLength": 1},
+        "candidate_id": {"type": "string", "minLength": 1},
+        "candidate_number": {"type": "integer", "minimum": 1, "maximum": 3},
+        "case_blueprint_version": {"type": "string", "minLength": 1},
+        "trajectory_digest": {"$ref": "#/$defs/digest"},
+        "evaluator_manifest_digest": {"$ref": "#/$defs/digest"},
+        "status": {"enum": ["accepted", "rejected"]},
+        "evaluator_attempts": {"type": "array", "minItems": 3, "maxItems": 6, "items": {"$ref": "#/$defs/evaluator_attempt"}},
+        "reason": {"type": "string", "minLength": 1},
+        "reviewer_id": {"type": "string", "minLength": 1},
+        "recorded_at": {"type": "string", "minLength": 1},
+        "referenced_digests": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/digest"}}
+      }
+    },
+    "evaluator_attempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempt", "evaluator_id", "outcome", "runtime_seconds"],
+      "properties": {
+        "attempt": {"type": "integer", "minimum": 1, "maximum": 6},
+        "evaluator_id": {"type": "string", "minLength": 1},
+        "outcome": {"enum": ["accepted", "timeout", "malformed", "schema_failure", "execution_failure"]},
+        "runtime_seconds": {"type": "number", "minimum": 0},
+        "error": {"type": "string"}
+      }
+    }
+  }
 }

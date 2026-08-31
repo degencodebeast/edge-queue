@@ -10,6 +10,6 @@
   "$defs": {
     "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "verdict": {"enum": ["PASS", "FAIL", "UNDETERMINED"]},
     "rubric_clause": {"type": "object", "additionalProperties": false, "required": ["schema_version", "clause_id", "text"], "properties": {"schema_version": {"const": "1.0"}, "clause_id": {"type": "string"}, "text": {"type": "string"}}},
-    "trajectory_event": {"type": "object", "additionalProperties": false, "required": ["schema_version", "case_id", "event_id", "event_type", "content"], "properties": {"schema_version": {"const": "1.0"}, "case_id": {"type": "string", "pattern": "^EQ-F(?:0[1-9]|10)-(?:DEV|AH|PCH)-[0-9]{2}$"}, "event_id": {"type": "string"}, "event_type": {"enum": ["task", "tool_result", "artifact", "evaluator_note"]}, "content": {"type": "string"}, "occurred_at": {"type": "string"}}}
+    "trajectory_event": {"type": "object", "additionalProperties": false, "required": ["schema_version", "case_id", "event_id", "event_type", "content"], "properties": {"schema_version": {"const": "1.0"}, "case_id": {"type": "string", "pattern": "^EQ-F(?:0[1-9]|10)-(?:DEV|AH|PCH)-[0-9]{2}$"}, "event_id": {"type": "string"}, "event_type": {"enum": ["task_instruction", "reasoning_summary", "tool_call", "tool_result", "checkpoint", "approval", "final_result", "task", "artifact", "evaluator_note"]}, "content": {"type": "string"}, "occurred_at": {"type": "string"}}}
   }
 }

@@ -8,7 +8,7 @@ This file records material changes to EdgeQueue. Each entry names the evidence t
 
 **Why.** Parallel EdgeQueue slices need one authority for fields, versions, serialization, and failure names.
 
-**Evidence.** `docs/evidence/ticket-14/contract-validation.md` records RED-GREEN commands, the independent digest vector, 25 versioned schema files, CLI help checks, and the full `73 passed` suite.
+**Evidence.** `docs/evidence/ticket-14/contract-validation.md` records RED-GREEN commands, the independent digest vector, 25 versioned schema files, packaged-schema wheel verification, CLI help checks, and the full `85 passed` suite.
 
 **Decision.** Later slices must use schema version `1.0` and must not add fields without a schema-version change.
 

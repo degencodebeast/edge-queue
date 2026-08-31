@@ -1,7 +1,59 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://edgequeue.local/schemas/corpus/v1/evaluator-manifest.schema.json",
-  "title": "Evaluator Manifest", "type": "object", "additionalProperties": false,
-  "required": ["schema_version", "manifest_id", "rubric_version", "evaluators", "retry_policy"],
-  "properties": {"schema_version": {"const": "1.0"}, "manifest_id": {"type": "string"}, "rubric_version": {"type": "string"}, "evaluators": {"type": "array", "items": {"type": "string"}}, "retry_policy": {"type": "string"}, "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  "title": "Evaluator Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest_id", "primary_evaluator_id", "shadow_evaluator_ids", "evaluators", "rubric_version", "rubric_digest", "output_schema_version", "output_schema_digest", "retry_policy", "smoke_result_digest", "created_at", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "manifest_id": {"type": "string", "minLength": 1},
+    "primary_evaluator_id": {"type": "string", "minLength": 1},
+    "shadow_evaluator_ids": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "minLength": 1}},
+    "evaluators": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/evaluator"}},
+    "rubric_version": {"type": "string", "minLength": 1},
+    "rubric_digest": {"$ref": "#/$defs/digest"},
+    "output_schema_version": {"type": "string", "minLength": 1},
+    "output_schema_digest": {"$ref": "#/$defs/digest"},
+    "retry_policy": {"$ref": "#/$defs/retry_policy"},
+    "smoke_result_digest": {"$ref": "#/$defs/digest"},
+    "created_at": {"type": "string", "minLength": 1},
+    "content_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["config_id", "role", "provider", "model", "prompt_version", "prompt_digest", "model_parameters", "tool_permissions"],
+      "properties": {
+        "config_id": {"type": "string", "minLength": 1},
+        "role": {"enum": ["primary", "shadow"]},
+        "provider": {"type": "string", "minLength": 1},
+        "model": {"type": "string", "minLength": 1},
+        "prompt_version": {"type": "string", "minLength": 1},
+        "prompt_digest": {"$ref": "#/$defs/digest"},
+        "model_parameters": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/model_parameter"}},
+        "tool_permissions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "model_parameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "value"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "value": {"type": ["string", "number", "boolean", "null"]}
+      }
+    },
+    "retry_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_attempts", "retryable_outcomes"],
+      "properties": {
+        "max_attempts": {"type": "integer", "minimum": 1, "maximum": 2},
+        "retryable_outcomes": {"type": "array", "minItems": 1, "items": {"enum": ["timeout", "malformed", "schema_failure"]}}
+      }
+    }
+  }
 }

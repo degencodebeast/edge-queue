@@ -19,13 +19,21 @@ import math
 from collections.abc import Mapping, Sequence, Set
 from dataclasses import dataclass
 from functools import lru_cache
+from importlib.resources import files
 from pathlib import Path
 from typing import Any, Final
 
 
 SCHEMA_VERSION: Final[str] = "1.0"
 NON_AUTHORITATIVE_TIMESTAMP_FIELDS: Final[frozenset[str]] = frozenset(
-    {"created_at", "updated_at", "occurred_at", "started_at", "completed_at"}
+    {
+        "created_at",
+        "updated_at",
+        "occurred_at",
+        "started_at",
+        "completed_at",
+        "recorded_at",
+    }
 )
 
 
@@ -77,7 +85,18 @@ _CORPUS_CASE_ID: dict[str, Any] = {
 _CORPUS_SPLIT: dict[str, Any] = {"type": "string", "enum": ["DEV", "AH", "PCH"]}
 _EVENT_TYPE: dict[str, Any] = {
     "type": "string",
-    "enum": ["task", "tool_result", "artifact", "evaluator_note"],
+    "enum": [
+        "task_instruction",
+        "reasoning_summary",
+        "tool_call",
+        "tool_result",
+        "checkpoint",
+        "approval",
+        "final_result",
+        "task",
+        "artifact",
+        "evaluator_note",
+    ],
 }
 _VERDICT: dict[str, Any] = {
     "type": "string",
@@ -1048,20 +1067,27 @@ def _file_digest(path: str, contents: Any) -> str:
 
 @lru_cache(maxsize=None)
 def _load_corpus_schema(name: str) -> Mapping[str, Any]:
-    schema_path = (
-        Path(__file__).resolve().parents[2]
-        / "schemas"
-        / "corpus"
-        / "v1"
-        / _CORPUS_SCHEMA_FILES[name]
-    )
+    filename = _CORPUS_SCHEMA_FILES[name]
     try:
-        return json.loads(schema_path.read_text(encoding="utf-8"))
+        schema_resource = files("edgequeue").joinpath(
+            "schemas", "corpus", "v1", filename
+        )
+        return json.loads(schema_resource.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
-        raise ContractValidationError(
-            f"Corpus schema cannot be loaded: {schema_path}",
-            code="schema_unavailable",
-        ) from error
+        schema_path = (
+            Path(__file__).resolve().parents[2]
+            / "schemas"
+            / "corpus"
+            / "v1"
+            / filename
+        )
+        try:
+            return json.loads(schema_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as fallback_error:
+            raise ContractValidationError(
+                f"Corpus schema cannot be loaded: {filename}",
+                code="schema_unavailable",
+            ) from fallback_error
 
 
 # Keep the public contract registry aligned with the checked-in corpus schema.
@@ -1288,6 +1314,13 @@ def validate_contract(
             "Split Manifest case identifier does not match its declared split",
             code="invalid_split",
         )
+    if canonical_name == "split_manifest":
+        case_ids = [entry["case_id"] for entry in payload["case_digests"]]
+        if case_ids != sorted(case_ids) or len(set(case_ids)) != len(case_ids):
+            raise ContractValidationError(
+                "Split Manifest case membership must use stable case identifier order without duplicates",
+                code="invalid_split",
+            )
     if canonical_name == "case_assessment" and payload["status"] == "abstention":
         abstention_reason = payload["abstention_reason"]
         if not isinstance(abstention_reason, str) or not abstention_reason.strip():
@@ -1330,6 +1363,70 @@ def validate_contract(
                 "a retry requires a retryable first failure",
                 code="invalid_attempt",
             )
+    if canonical_name == "evaluator_manifest":
+        evaluator_roles = {
+            evaluator["config_id"]: evaluator["role"]
+            for evaluator in payload["evaluators"]
+        }
+        if len(evaluator_roles) != len(payload["evaluators"]):
+            raise ContractValidationError(
+                "Evaluator Manifest configuration identifiers must be unique",
+                code="invalid_evaluator_manifest",
+            )
+        if evaluator_roles.get(payload["primary_evaluator_id"]) != "primary":
+            raise ContractValidationError(
+                "Evaluator Manifest primary evaluator must bind a primary configuration",
+                code="invalid_evaluator_manifest",
+            )
+        shadow_evaluator_ids = payload["shadow_evaluator_ids"]
+        if (
+            len(set(shadow_evaluator_ids)) != 2
+            or set(shadow_evaluator_ids)
+            != {
+                config_id
+                for config_id, role in evaluator_roles.items()
+                if role == "shadow"
+            }
+        ):
+            raise ContractValidationError(
+                "Evaluator Manifest shadow evaluators must bind both shadow configurations",
+                code="invalid_evaluator_manifest",
+            )
+    if canonical_name == "authoring_ledger":
+        candidate_ids_by_row: dict[str, set[str]] = {}
+        for candidate in payload["entries"]:
+            row_candidate_ids = candidate_ids_by_row.setdefault(
+                candidate["allocation_row_id"], set()
+            )
+            if candidate["candidate_id"] in row_candidate_ids:
+                raise ContractValidationError(
+                    "Authoring Ledger candidate identifiers must be unique within an allocation row",
+                    code="invalid_attempt",
+                )
+            row_candidate_ids.add(candidate["candidate_id"])
+            if len(row_candidate_ids) > 3:
+                raise ContractValidationError(
+                    "An Authoring Ledger allocation row permits at most three candidates",
+                    code="invalid_attempt",
+                )
+            attempts = candidate["evaluator_attempts"]
+            if len({attempt["evaluator_id"] for attempt in attempts}) < 3:
+                raise ContractValidationError(
+                    "Authoring Ledger candidates require all three frozen evaluator attempts",
+                    code="invalid_attempt",
+                )
+            if candidate["status"] == "accepted" and attempts[-1]["outcome"] != "accepted":
+                raise ContractValidationError(
+                    "An accepted candidate requires a final accepted evaluator attempt",
+                    code="invalid_attempt",
+                )
+            if [attempt["attempt"] for attempt in attempts] != list(
+                range(1, len(attempts) + 1)
+            ):
+                raise ContractValidationError(
+                    "Authoring Ledger attempt records must be numbered consecutively",
+                    code="invalid_attempt",
+                )
     self_digest_field = _SELF_DIGEST_FIELDS.get(canonical_name)
     if verify_digest and self_digest_field is not None and self_digest_field in payload:
         expected_digest = content_digest(
@@ -1371,6 +1468,41 @@ def validate_contract(
 def validate_record(name: str, payload: Mapping[str, Any]) -> Mapping[str, Any]:
     """Compatibility alias for :func:`validate_contract`."""
     return validate_contract(name, payload)
+
+
+def validate_corpus_manifest_authority(
+    corpus_manifest: Mapping[str, Any],
+    split_manifests: Sequence[Mapping[str, Any]],
+    authoring_ledger_digest: str,
+) -> Mapping[str, Any]:
+    """Validate root bindings to the three supplied split manifests and Ledger."""
+    validate_contract("corpus_manifest", corpus_manifest)
+    if len(split_manifests) != 3:
+        raise ContractValidationError(
+            "Corpus Manifest requires exactly one DEV, AH, and PCH Split Manifest",
+            code="invalid_split",
+        )
+    expected_splits = ("DEV", "AH", "PCH")
+    expected_digests: list[str] = []
+    for expected_split, split_manifest in zip(expected_splits, split_manifests, strict=True):
+        validate_contract("split_manifest", split_manifest)
+        if split_manifest["split"] != expected_split:
+            raise ContractValidationError(
+                "Corpus Manifest Split Manifests must bind DEV, AH, and PCH in order",
+                code="invalid_split",
+            )
+        expected_digests.append(split_manifest["manifest_digest"])
+    if corpus_manifest["split_manifests"] != expected_digests:
+        raise ContractValidationError(
+            "Corpus Manifest split digests do not match the supplied Split Manifests",
+            code="digest_mismatch",
+        )
+    if corpus_manifest["authoring_ledger_digest"] != authoring_ledger_digest:
+        raise ContractValidationError(
+            "Corpus Manifest Authoring Ledger digest does not match the supplied Ledger",
+            code="digest_mismatch",
+        )
+    return corpus_manifest
 
 
 def validate_case_assessment(
