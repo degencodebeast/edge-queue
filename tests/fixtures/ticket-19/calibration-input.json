@@ -1,0 +1,72 @@
+{
+  "reviewer_manifest": {
+    "schema_version": "1.0",
+    "manifest_id": "ticket-19-reviewers",
+    "version": "1.0",
+    "reviewers": [
+      {
+        "reviewer_id": "human-reviewer",
+        "roles": ["reviewer"],
+        "can_adjudicate": true,
+        "can_resolve_conflicts": false,
+        "can_promote_calibration": false
+      },
+      {
+        "reviewer_id": "human-promoter",
+        "roles": ["calibration_promoter"],
+        "can_adjudicate": false,
+        "can_resolve_conflicts": false,
+        "can_promote_calibration": true
+      }
+    ],
+    "content_digest": "b7e2e38d5f87aee9550ccb9dfa0a599405719bfedf41fb46a2fbe61503bdaf39"
+  },
+  "authorized_adjudication": {
+    "schema_version": "1.0",
+    "adjudication_id": "adj-ticket-19-1",
+    "case_id": "EQ-F01-DEV-01",
+    "action": "correct",
+    "prior_record_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "prior_verdict": "PASS",
+    "resulting_verdict": "FAIL",
+    "rationale": "Verified event E2 contradicts the current Verdict.",
+    "reviewer_id": "human-reviewer",
+    "reviewer_role": "reviewer",
+    "reviewer_manifest_version": "1.0",
+    "reviewer_manifest_digest": "b7e2e38d5f87aee9550ccb9dfa0a599405719bfedf41fb46a2fbe61503bdaf39",
+    "trajectory_schema_version": "1.0",
+    "trajectory_digest": "2222222222222222222222222222222222222222222222222222222222222222",
+    "allocation_receipt_schema_version": "1.0",
+    "allocation_receipt_digest": "3333333333333333333333333333333333333333333333333333333333333333",
+    "evidence_references": [
+      {
+        "case_id": "EQ-F01-DEV-01",
+        "event_id": "E2",
+        "relation": "contradicts_current",
+        "claim": "The verified event proves the correction.",
+        "status": "verified"
+      }
+    ],
+    "corpus_digest": "4444444444444444444444444444444444444444444444444444444444444444",
+    "split_digest": "5555555555555555555555555555555555555555555555555555555555555555",
+    "rubric_version": "1.0",
+    "prompt_version": "1.0",
+    "feature_version": "1.0",
+    "model_config_digest": "6666666666666666666666666666666666666666666666666666666666666666",
+    "evaluation_config_digest": "7777777777777777777777777777777777777777777777777777777777777777",
+    "predecessor_digest": "8888888888888888888888888888888888888888888888888888888888888888"
+  },
+  "predecessor_pack": {
+    "schema_version": "1.0",
+    "pack_id": "pack-v1",
+    "predecessor_digest": null,
+    "rollback_target": null,
+    "calibration_case_digests": [],
+    "guideline_amendments": ["Preserve verified evidence links."],
+    "status": "promoted",
+    "content_digest": "2d26ea6e026e957eb9278b40675453beb4e483bb7e62aec4859517ba89e042b4"
+  },
+  "configuration_digests": [
+    "9999999999999999999999999999999999999999999999999999999999999999"
+  ]
+}
