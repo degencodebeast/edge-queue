@@ -446,7 +446,7 @@ def _corpus_files(corpus_root: Path, frozen: FrozenCorpus) -> tuple[tuple[Path, 
     files.extend(((corpus_root / "authoring" / "ledger.json", frozen.authoring_ledger), (corpus_root / "manifests" / "evaluator.json", frozen.evaluator_manifest)))
     for manifest in frozen.split_manifests:
         files.append((corpus_root / "manifests" / f"{SPLIT_PATHS[manifest['split']]}.json", manifest))
-    files.extend(((corpus_root / "manifests" / "corpus.json", frozen.root_manifest), (corpus_root / "fixtures" / "judge-fixture-v1.json", {"corpus_version": CORPUS_VERSION, "case_ids": ["EQ-F01-AH-01", "EQ-F01-AH-02", "EQ-F01-AH-03", "EQ-F01-AH-04"]}), (corpus_root / "fixtures" / "intentional-leakage.json", {"prompt": "Allocator input", "risk_finding": {"explanation": frozen.cases[0].scorer_case.scorer_sentinel}})))
+    files.extend(((corpus_root / "manifests" / "corpus.json", frozen.root_manifest), (corpus_root / "fixtures" / "judge-fixture-v1.json", {"fixture_id": "judge-fixture-v1", "split": "DEV", "review_budget": 1, "cases": [{"case_id": "EQ-F01-DEV-01", "role": "confident_label_error"}, {"case_id": "EQ-F02-DEV-01", "role": "misleading_hard_control"}, {"case_id": "EQ-F01-DEV-02", "role": "ordinary_control"}, {"case_id": "EQ-F02-DEV-02", "role": "ordinary_control"}]}), (corpus_root / "fixtures" / "intentional-leakage.json", {"prompt": "Allocator input", "risk_finding": {"explanation": frozen.cases[0].scorer_case.scorer_sentinel}})))
     return tuple(files)
 
 

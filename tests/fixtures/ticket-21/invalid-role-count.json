@@ -1,0 +1,1 @@
+{"cases":[{"case_id":"EQ-F01-DEV-01","role":"confident_label_error"},{"case_id":"EQ-F01-DEV-02","role":"ordinary_control"},{"case_id":"EQ-F02-DEV-02","role":"ordinary_control"},{"case_id":"EQ-F03-DEV-02","role":"ordinary_control"}],"fixture_id":"judge-fixture-v1","review_budget":1,"split":"DEV"}
