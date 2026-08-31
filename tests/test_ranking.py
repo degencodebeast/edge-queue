@@ -198,6 +198,7 @@ def test_rejects_risk_finding_with_other_case_evidence() -> None:
 
 def test_retries_one_identical_execution_failure_then_invalidates_second() -> None:
     ranker_case = _ranker_case()
+    frozen_deterministic_score = int(ranker_case["deterministic_score"])
     received_case_ids: list[str] = []
     received_cases: list[dict[str, object]] = []
     received_deterministic_scores: list[int] = []
@@ -213,8 +214,8 @@ def test_retries_one_identical_execution_failure_then_invalidates_second() -> No
 
     assert received_case_ids == ["EQ-F01-DEV-01", "EQ-F01-DEV-01"]
     assert received_cases[0] is not received_cases[1]
-    assert received_deterministic_scores == [72, 72]
-    assert ranker_case["deterministic_score"] == 72
+    assert received_deterministic_scores == [frozen_deterministic_score] * 2
+    assert ranker_case["deterministic_score"] == frozen_deterministic_score
     assert run.valid is False
     assert run.disposition == "invalid"
     assert run.invalid_case_id == "EQ-F01-DEV-01"
@@ -302,6 +303,8 @@ def test_binds_all_assessments_and_explains_the_first_excluded_case() -> None:
         asdict(build_development_cases()[0].ranker_case),
         asdict(build_development_cases()[1].ranker_case),
     ]
+    selected_deterministic_score = int(ranker_cases[0]["deterministic_score"])
+    excluded_deterministic_score = int(ranker_cases[1]["deterministic_score"])
     allocator_config_digest = _test_digest("allocation-decision-config")
     assessments = [
         _risk_finding(case, allocator_config_digest=allocator_config_digest)
@@ -335,13 +338,13 @@ def test_binds_all_assessments_and_explains_the_first_excluded_case() -> None:
     assert decision.explanations[0].selected_ordering_fields == (
         "risk_finding",
         82,
-        72,
+        selected_deterministic_score,
         "EQ-F01-DEV-01",
     )
     assert decision.explanations[0].excluded_ordering_fields == (
         "risk_finding",
         51,
-        42,
+        excluded_deterministic_score,
         "EQ-F01-DEV-02",
     )
     assert decision.explanations[0].first_differing_field == "risk_score"
