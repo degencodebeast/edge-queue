@@ -56,7 +56,7 @@ The allocator-visible scan covers prompts, Risk Findings, Review Queues, Allocat
 | Reference Audit and allocation | `uv run python -m pytest -q tests/test_corpus.py::test_complete_compiler_preserves_the_fixed_reference_audit_and_allocation` failed: `30 != 20` audit samples. | The same command passed after the fixed 20-case audit sample was selected. |
 | Stable digests | The digest-vector test failed after the accepted event record change altered the frozen content. | The focused corpus suite passed after the final split and Root Corpus digest vectors were recorded. |
 | Prompt compatibility blocker | `uv run --group dev python -m pytest -q` failed because the established prompt test required `E3 artifact`. | `uv run --group dev python -m pytest -q tests/test_corpus.py tests/test_prompting.py` passed with `8 passed`. |
-| Complete suite | The first `uv run pytest -q` could not start because the inherited lane pytest launcher referenced another worktree. | `uv sync --offline --group dev --reinstall-package pytest && uv run pytest -q` passed with `103 passed`. |
+| Complete suite | The first `uv run pytest -q` could not start because the inherited lane pytest launcher referenced another worktree. | `uv sync --offline --group dev --reinstall-package pytest && uv run pytest -q` passed with `104 passed in 13.46 seconds`. |
 
 ## Runtime and cost
 
@@ -65,7 +65,7 @@ All commands ran locally. No live model or network call occurred.
 - Model requests: `0`.
 - Model tokens: `0`.
 - Available model cost: `$0`.
-- Full suite runtime: `3.11` seconds.
+- Full suite runtime: `13.46` seconds.
 
 ## Scope and risks
 
