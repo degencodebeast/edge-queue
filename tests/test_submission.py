@@ -8,6 +8,7 @@ import zipfile
 import json
 import os
 import hashlib
+import shutil
 from pathlib import Path
 
 
@@ -107,6 +108,23 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
     assert evaluation_run["git_tree"] == manifest["source_tree"]
     assert evaluation_run["dirty_state"] is False
 
+    manifest_path = extracted / "RELEASE_MANIFEST.json"
+    for field in ("source_sha", "source_tree"):
+        altered_manifest = dict(manifest)
+        altered_manifest[field] = "0" * 40
+        manifest_path.write_text(json.dumps(altered_manifest), encoding="utf-8")
+        identity_result = subprocess.run(
+            [edgequeue_command, "judge", "--output-dir", str(extracted / f"{field}-output")],
+            cwd=extracted,
+            env=environment,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        assert identity_result.returncode == 2
+        assert "Release manifest identity binding mismatch" in identity_result.stderr
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
     judge_source = extracted / "src/edgequeue/judge.py"
     judge_source.write_bytes(judge_source.read_bytes() + b"\n")
     tampered_result = subprocess.run(
@@ -155,6 +173,7 @@ def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_
     """The public exporter keeps meaningful events while removing private strings."""
     raw_events = tmp_path / "rollout-01a00000-0000-0000-0000-000000000000.jsonl"
     synthetic_home = "/" + "Users" + "/alice/private"
+    synthetic_private_path = "/private/var/folders/example/pytest-of-user/value"
     synthetic_token = "sk-" + "secret-value"
     synthetic_jwt = "eyJhbGciOiJIUzI1NiJ9" + ".eyJzdWIiOiJ0ZXN0In0.signature"
     raw_events.write_text(
@@ -162,6 +181,8 @@ def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_
         + synthetic_home
         + ' and '
         + synthetic_token
+        + ' at '
+        + synthetic_private_path
         + '","rate_limits":{"credits":{"balance":12}},"last_token_usage":99,"encrypted_content":"private blob","approved_command_prefixes":["curl -H apikey: '
         + synthetic_jwt
         + '"]}}\n',
@@ -189,9 +210,28 @@ def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_
     assert {record["role"] for record in manifest["records"]} == {"Worker", "Internal review"}
     exported = next(output_dir.glob("*.md")).read_text(encoding="utf-8")
     assert "<USER_HOME>" in exported
+    assert "<PRIVATE_PATH>" in exported
     assert synthetic_token not in exported
+    assert synthetic_private_path not in exported
     assert "rate_limits" not in exported
     assert "last_token_usage" not in exported
     assert "encrypted_content" not in exported
     assert "approved_command_prefixes" not in exported
     assert synthetic_jwt not in exported
+
+
+def test_submission_validator_rejects_private_local_paths(tmp_path: Path) -> None:
+    """The public validator rejects a private local path in a copied package."""
+    copied_project = tmp_path / "package"
+    shutil.copytree(
+        PROJECT_ROOT,
+        copied_project,
+        ignore=shutil.ignore_patterns(".git", ".venv", "__pycache__", ".pytest_cache"),
+    )
+    private_path = copied_project / "docs/trajectories/private-local-path.md"
+    private_path.write_text("/private/var/folders/example/pytest-of-user/value\n", encoding="utf-8")
+
+    result = run_script("verify_submission.py", "--project-root", str(copied_project), cwd=copied_project)
+
+    assert result.returncode == 1
+    assert "private_data: private local path" in result.stdout
