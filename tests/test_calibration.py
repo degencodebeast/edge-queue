@@ -176,6 +176,40 @@ def test_rejects_insufficient_recall_precision_decrease_and_named_regressions() 
     assert integrity_failure.failure_reasons == ("integrity_check_failed",)
 
 
+def test_rejects_a_gate_result_issued_for_a_different_report_of_the_same_candidate() -> None:
+    fixture = _fixture()
+    candidate = _candidate("candidate-ticket-19-report-binding")
+    passing_report = compare_calibration_candidate(
+        candidate, _comparison_inputs(), regressions=_regressions(passed=True)
+    )
+    failing_report = compare_calibration_candidate(
+        candidate, _comparison_inputs(), regressions=_regressions(passed=False)
+    )
+    promotion = {
+        "schema_version": "1.0",
+        "promotion_id": "promotion-ticket-19-report-binding",
+        "candidate_digest": candidate.digest,
+        "predecessor_digest": candidate.as_dict()["predecessor_digest"],
+        "rollback_target": candidate.as_dict()["rollback_target"],
+        "reviewer_id": "human-promoter",
+        "reviewer_role": "calibration_promoter",
+        "reviewer_manifest_version": "1.0",
+        "reviewer_manifest_digest": fixture["reviewer_manifest"]["content_digest"],
+        "decision": "promote",
+        "rationale": "The candidate passed the frozen Calibration CI gates.",
+    }
+
+    with pytest.raises(ValueError, match="exact report"):
+        record_human_decision(
+            CalibrationHistory().append_candidate(candidate),
+            candidate,
+            failing_report,
+            evaluate_calibration_gate(passing_report, _regressions(passed=True)),
+            promotion,
+            fixture["reviewer_manifest"],
+        )
+
+
 def test_requires_a_separate_authorized_human_promotion_or_rejection_record() -> None:
     fixture = _fixture()
     candidate = _candidate("candidate-ticket-19-human-decision")

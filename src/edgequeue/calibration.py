@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from types import MappingProxyType
 from typing import Any, Mapping, Sequence
 
@@ -190,6 +190,11 @@ class CalibrationCIReport:
     trace_passed: bool = True
     reproducibility_passed: bool = True
 
+    @property
+    def digest(self) -> str:
+        """Return the immutable content digest for this Calibration CI report."""
+        return content_digest(asdict(self))
+
 
 @dataclass(frozen=True)
 class BehavioralRegression:
@@ -207,6 +212,7 @@ class CalibrationGateResult:
     accepted: bool
     failure_reasons: tuple[str, ...]
     candidate_digest: str = ""
+    report_digest: str = ""
 
 
 def evaluate_calibration_gate(
@@ -235,7 +241,10 @@ def evaluate_calibration_gate(
         if not regression.passed
     )
     result = CalibrationGateResult(
-        not failure_reasons, tuple(failure_reasons), report.candidate_digest
+        not failure_reasons,
+        tuple(failure_reasons),
+        report.candidate_digest,
+        report.digest,
     )
     if id(report) in _ISSUED_REPORT_IDS and bound_regressions == report.regressions:
         _ISSUED_GATE_RESULT_IDS.add(id(result))
@@ -264,8 +273,9 @@ def record_human_decision(
     if (
         id(gate_result) not in _ISSUED_GATE_RESULT_IDS
         or gate_result.candidate_digest != candidate_digest
+        or gate_result.report_digest != report.digest
     ):
-        raise ValueError("Calibration CI gate result must be issued for the candidate")
+        raise ValueError("Calibration CI gate result must be issued for the candidate and exact report")
     validate_calibration_authority(promotion, reviewer_manifest)
     if promotion["candidate_digest"] != candidate_digest:
         raise ValueError("Calibration Promotion does not bind the candidate")
