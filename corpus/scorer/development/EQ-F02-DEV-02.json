@@ -1,0 +1,1 @@
+{"case_id":"EQ-F02-DEV-02","content_digest":"1f13cadaa5ce21bc5de52d9e40fbf0784ada127f0174ddff3076aa8630532d17","decisive_event_ids":["E2"],"kind":"control","reference_verdict":"FAIL","schema_version":"1.0","scorer_sentinel":"SCORER_ONLY_EQ_F02_DEV_02_V1"}

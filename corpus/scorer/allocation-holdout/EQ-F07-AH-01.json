@@ -1,0 +1,1 @@
+{"case_id":"EQ-F07-AH-01","content_digest":"1bc7c88a5cb31a4d12d1c8af8235a3a2b929d5b2fc51907b0ed95e97b4545db1","decisive_event_ids":["E2"],"kind":"label_error","reference_verdict":"FAIL","schema_version":"1.0","scorer_sentinel":"SCORER_ONLY_EQ_F07_AH_01_V1"}
