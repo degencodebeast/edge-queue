@@ -132,6 +132,15 @@ def test_rejects_mismatched_scorer_cases_without_crashing(tmp_path: Path) -> Non
     assert "case_not_in_split" in _failure_codes(_bundle(tmp_path, artifacts))
 
 
+def test_rejects_a_bundle_without_any_label_errors_without_crashing(tmp_path: Path) -> None:
+    artifacts = _artifacts()
+    ranker_cases = artifacts["ranker-cases.jsonl"]
+    assert isinstance(ranker_cases, list)
+    ranker_cases[0]["current_verdict"] = "FAIL"
+
+    assert "metric_recomputation_mismatch" in _failure_codes(_bundle(tmp_path, artifacts))
+
+
 def test_rejects_a_public_claim_that_differs_from_recomputation(tmp_path: Path) -> None:
     artifacts = _artifacts()
     claims = artifacts["claims-manifest.json"]

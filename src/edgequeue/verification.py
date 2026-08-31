@@ -25,7 +25,7 @@ from edgequeue.proof_bundle import (
     file_digest,
     load_bundle_file,
 )
-from edgequeue.scoring import InvalidReviewQueue, score_review_queue
+from edgequeue.scoring import InvalidReviewQueue, InvalidScorerInput, score_review_queue
 
 
 @dataclass(frozen=True)
@@ -307,7 +307,7 @@ def _verify_semantics(manifest: dict[str, Any], artifacts: dict[str, Any], failu
             reference_verdicts={case_id: str(case["reference_verdict"]) for case_id, case in scorer_by_id.items()},
             review_budget=budget,
         )
-    except (InvalidReviewQueue, KeyError) as error:
+    except (InvalidReviewQueue, InvalidScorerInput, KeyError, ZeroDivisionError) as error:
         _failure(failures, "metric_recomputation_mismatch", "metrics.json", "recomputable metrics", None, f"Metrics cannot be recomputed: {error}")
         return
     expected_metrics = {
