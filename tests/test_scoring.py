@@ -1,6 +1,11 @@
 import pytest
 
-from edgequeue.scoring import InvalidReviewQueue, InvalidScorerInput, score_review_queue
+from edgequeue.scoring import (
+    PRIMARY_RANKING_METRIC,
+    InvalidReviewQueue,
+    InvalidScorerInput,
+    score_review_queue,
+)
 
 
 def test_scores_label_error_recovery_at_fixed_budget() -> None:
@@ -67,3 +72,7 @@ def test_rejects_mismatched_current_and_reference_case_sets() -> None:
             reference_verdicts={"case-b": "FAIL"},
             review_budget=1,
         )
+
+
+def test_declares_recall_at_k_as_the_only_primary_ranking_metric() -> None:
+    assert PRIMARY_RANKING_METRIC == "recall_at_k"

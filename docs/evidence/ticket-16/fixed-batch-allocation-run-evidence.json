@@ -1,0 +1,25 @@
+{
+  "allocation_receipt_digest": "6b697941b8a069475e5e5b20ca0c200ddf0fde046cc9dccca926b083c11d753d",
+  "content_digest": "ebf411f1a30abc5f5b85a1d69163cb4f45acf45ded71b72f88131bd943bb0b5b",
+  "evaluation_run_id": "ticket-16-fixed-batch",
+  "runner_outcomes": [
+    {
+      "attempts": [{"attempt": 1, "outcome": "accepted", "schema_version": "1.0"}],
+      "case_id": "EQ-F01-DEV-01"
+    },
+    {
+      "attempts": [{"attempt": 1, "outcome": "accepted", "schema_version": "1.0"}],
+      "case_id": "EQ-F01-DEV-02"
+    }
+  ],
+  "schema_version": "1.0",
+  "selection_explanations": [
+    {
+      "excluded_case_id": "EQ-F01-DEV-02",
+      "excluded_ordering_fields": ["risk_finding", 51, 42, "EQ-F01-DEV-02"],
+      "first_differing_field": "risk_score",
+      "selected_case_id": "EQ-F01-DEV-01",
+      "selected_ordering_fields": ["risk_finding", 82, 72, "EQ-F01-DEV-01"]
+    }
+  ]
+}
