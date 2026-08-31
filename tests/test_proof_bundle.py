@@ -33,7 +33,7 @@ def _minimal_artifacts() -> dict[str, object]:
             "review_queue": ["EQ-F01-DEV-01"],
         },
         "adjudications.jsonl": [],
-        "metrics.json": {"recall_at_k": 1.0, "precision_at_k": 1.0},
+        "metrics.json": {"recall_at_k": 1.0, "precision_at_k": 1.0, "false_negative_ids": [], "oracle_regret": 0},
         "claims-manifest.json": {
             "claims": [
                 {

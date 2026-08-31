@@ -103,6 +103,35 @@ def test_rejects_a_repaired_digest_metric_tamper(tmp_path: Path) -> None:
     assert "metric_recomputation_mismatch" in _failure_codes(bundle)
 
 
+def test_rejects_a_repaired_digest_oracle_regret_tamper(tmp_path: Path) -> None:
+    bundle = _bundle(tmp_path)
+    metrics_path = bundle / "metrics.json"
+    metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+    metrics["oracle_regret"] = 999
+    metrics_path.write_text(canonical_json(metrics), encoding="utf-8")
+    _repair_manifest(bundle, "metrics.json")
+
+    assert "metric_recomputation_mismatch" in _failure_codes(bundle)
+
+
+def test_rejects_a_noncanonical_manifest_file(tmp_path: Path) -> None:
+    bundle = _bundle(tmp_path)
+    manifest_path = bundle / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
+
+    assert "file_digest_mismatch" in _failure_codes(bundle)
+
+
+def test_rejects_mismatched_scorer_cases_without_crashing(tmp_path: Path) -> None:
+    artifacts = _artifacts()
+    scorer_cases = artifacts["scorer-cases.jsonl"]
+    assert isinstance(scorer_cases, list)
+    scorer_cases[0]["case_id"] = "EQ-F01-DEV-02"
+
+    assert "case_not_in_split" in _failure_codes(_bundle(tmp_path, artifacts))
+
+
 def test_rejects_a_public_claim_that_differs_from_recomputation(tmp_path: Path) -> None:
     artifacts = _artifacts()
     claims = artifacts["claims-manifest.json"]

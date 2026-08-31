@@ -102,6 +102,8 @@ def _read_manifest(bundle_dir: Path, failures: list[VerificationFailure]) -> dic
     if not isinstance(payload, dict):
         _failure(failures, "file_digest_mismatch", MANIFEST_PATH, "JSON object", type(payload).__name__, "Manifest must be a JSON object")
         return None
+    if path.read_bytes() != canonical_file_bytes(MANIFEST_PATH, payload):
+        _failure(failures, "file_digest_mismatch", MANIFEST_PATH, "canonical JSON", None, "Manifest bytes are not canonical")
     return payload
 
 
@@ -263,6 +265,7 @@ def _verify_semantics(manifest: dict[str, Any], artifacts: dict[str, Any], failu
     scorer_by_id = {case["case_id"]: case for case in scorer_cases}
     if set(ranker_by_id) != set(scorer_by_id):
         _failure(failures, "case_not_in_split", "scorer-cases.jsonl", sorted(ranker_by_id), sorted(scorer_by_id), "RankerCases and ScorerCases must name the same split")
+        return
     if set(ranker_by_id) != set(run.get("case_ids", [])):
         _failure(failures, "case_not_in_split", "evaluation-run.json", sorted(ranker_by_id), run.get("case_ids"), "EvaluationRun case identifiers do not bind the declared split")
     split = config.get("split")
@@ -307,11 +310,18 @@ def _verify_semantics(manifest: dict[str, Any], artifacts: dict[str, Any], failu
     except (InvalidReviewQueue, KeyError) as error:
         _failure(failures, "metric_recomputation_mismatch", "metrics.json", "recomputable metrics", None, f"Metrics cannot be recomputed: {error}")
         return
-    expected_metrics = {"recall_at_k": recomputed.recall_at_k, "precision_at_k": recomputed.precision_at_k}
+    expected_metrics = {
+        "recall_at_k": recomputed.recall_at_k,
+        "precision_at_k": recomputed.precision_at_k,
+        "false_negative_ids": list(recomputed.false_negative_ids),
+        "oracle_regret": recomputed.oracle_regret,
+    }
     metrics = artifacts.get("metrics.json")
     if not isinstance(metrics, dict):
         _failure(failures, "metric_recomputation_mismatch", "metrics.json", "derived metric object", None, "Metrics artifact has an invalid JSON shape")
         return
+    if set(metrics) != set(expected_metrics):
+        _failure(failures, "metric_recomputation_mismatch", "metrics.json", sorted(expected_metrics), sorted(metrics), "Metrics artifact must contain exactly the recomputed metrics")
     for metric, expected in expected_metrics.items():
         if metrics.get(metric) != expected:
             _failure(failures, "metric_recomputation_mismatch", "metrics.json", expected, metrics.get(metric), f"{metric} does not match recomputation")
