@@ -166,7 +166,7 @@ def write_export(record: LedgerSource, index: int, output_dir: Path) -> dict[str
         f"- Role: {record.role}",
         f"- Scope: {record.scope}",
         f"- Pane: {record.pane}",
-        f"- Source digest: `{hashlib.sha256(raw_bytes).hexdigest()}`", 
+        f"- Source digest: `{hashlib.sha256(raw_bytes).hexdigest()}`",
         f"- Supporting raw-event excerpt: [`raw/{raw_path.name}`](raw/{raw_path.name})",
         "",
         "## Event excerpt",
@@ -174,7 +174,7 @@ def write_export(record: LedgerSource, index: int, output_dir: Path) -> dict[str
     ]
     for event in events:
         lines.extend([f"### {event.get('type', 'event')}", "", event_summary(event), ""])
-    readable_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    readable_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
     return {
         "agent": record.agent,
         "role": record.role,

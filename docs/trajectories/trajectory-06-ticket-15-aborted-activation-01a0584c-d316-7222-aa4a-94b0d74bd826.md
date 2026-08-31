@@ -359,4 +359,3 @@
 ### event_msg
 
 {"ordinal": 94, "payload": {"completed_at": 1788187997, "duration_ms": 97146, "reason": "interrupted", "started_at": 1788187900, "turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404", "type": "turn_aborted"}, "timestamp": "2026-08-31T14:53:17.169Z", "type": "event_msg"}
-

@@ -175,4 +175,3 @@
 ### event_msg
 
 {"ordinal": 41, "payload": {"completed_at": 1788186898, "duration_ms": 48389, "last_agent_message": "Critical: None.\n\nMajor: None.\n\nMinor: None.\n\nPass: No Ledger-seam regression found. Validation fixes target Verdict, Evaluator Manifest digest, and Case Blueprint version per allocation row; rejects all candidates following acceptance; and rejects every accepted evaluator outcome with a null Verdict. The staged public row-binding probe passed: 5 passed. No files edited.", "started_at": 1788186849, "time_to_first_token_ms": 6879, "turn_id": "01a0583d-f2c9-7bc3-bb74-7df5e4141813", "type": "task_complete"}, "timestamp": "2026-08-31T14:34:58.385Z", "type": "event_msg"}
-

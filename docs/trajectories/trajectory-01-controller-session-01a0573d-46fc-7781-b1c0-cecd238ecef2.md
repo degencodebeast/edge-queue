@@ -63,4 +63,3 @@
 ### event_msg
 
 {"ordinal": 6846, "payload": {"completed_at": 1788170107, "duration_ms": 77700, "reason": "interrupted", "started_at": 1788170029, "turn_id": "01a0573d-4a6a-7983-9f00-02043328ea6e", "type": "turn_aborted"}, "timestamp": "2026-08-31T09:55:07.366Z", "type": "event_msg"}
-

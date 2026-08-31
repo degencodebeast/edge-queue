@@ -487,4 +487,3 @@
 ### event_msg
 
 {"ordinal": 174, "payload": {"completed_at_ms": 1788193573251, "item": {"aggregated_output": "", "command": ["/bin/zsh", "-lc", "tmux-bridge message %5 'Ticket 19 Gate cycle 1/3 — HIGH blocker. `record_human_decision` does not bind its `gate_result` to its supplied `report` (`src/edgequeue/calibration.py:260-278`). An issued passing gate result from one report can promote the same candidate with another issued report that has a named regression. I reproduced this with public APIs: `promoted False True`. This bypasses the named-regression gate. Bind an immutable report digest to `CalibrationGateResult`, then require that exact digest in `record_human_decision`. Add a test with passing and failing reports for one candidate. Preflight passed. Focused tests: 6 passed. Full suite: 138 passed.'"…
-

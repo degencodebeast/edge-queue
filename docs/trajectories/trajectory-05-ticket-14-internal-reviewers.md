@@ -215,4 +215,3 @@
 ### event_msg
 
 {"ordinal": 51, "payload": {"completed_at": 1788186908, "duration_ms": 58497, "last_agent_message": "Pass\n\n- Critical: none.\n- Major: none.\n- Minor: none.\n\nThe staged Ledger validator preserves all three row bindings, rejects any candidate after acceptance, and rejects accepted evaluator attempts with a null Verdict. Verified at `contracts.py:1425`, `1488-1525`, with focused probes passing: 7 passed. No edits made.", "started_at": 1788186850, "time_to_first_token_ms": 4824, "turn_id": "01a0583d-f2fc-79b0-9c86-5d91530e7007", "type": "task_complete"}, "timestamp": "2026-08-31T14:35:08.545Z", "type": "event_msg"}
-

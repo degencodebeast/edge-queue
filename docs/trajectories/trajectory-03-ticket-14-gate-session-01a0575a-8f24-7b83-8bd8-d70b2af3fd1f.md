@@ -487,4 +487,3 @@
 ### response_item
 
 {"ordinal": 170, "payload": {"id": "rs_0c1a3a391cbdc723016a955daf0f9887d28e022e5a21c875f8", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05775-74b0-7e91-b81b-7d12183f4b1b"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:55:43.684Z", "type": "response_item"}
-

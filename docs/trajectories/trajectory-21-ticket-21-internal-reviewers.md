@@ -487,4 +487,3 @@
 ### event_msg
 
 {"ordinal": 165, "payload": {"completed_at_ms": 1788214526387, "item": {"aggregated_output": "...                                                                      [100%]\n3 passed in 0.10s\n", "command": ["/bin/zsh", "-lc", "uv run pytest -q tests/test_judge.py"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker", "duration": {"nanos": 646461875, "secs": 0}, "exit_code": 0, "formatted_output": "...                                                                      [100%]\n3 passed in 0.10s\n", "id": "exec-dbbebd39-71d6-401e-b668-85f0a9ecdfe4", "parsed_cmd": [{"cmd": "uv run pytest -q tests/test_judge.py", "type": "unknown"}], "process_id": "27413", "source": "unified_exec_startup", "status": "completed", "stderr": "", "stdout": "...         …
-

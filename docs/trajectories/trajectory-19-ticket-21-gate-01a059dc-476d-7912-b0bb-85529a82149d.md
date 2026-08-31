@@ -487,4 +487,3 @@
 ### response_item
 
 {"ordinal": 222, "payload": {"call_id": "call_aizvZiMnbvYymaNLx5M4QsxK", "id": "ctco_01a059fa-58ec-7c21-b327-41b89c5bc453", "internal_chat_message_metadata_passthrough": {"create_time": 1788215974.124005, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10762)\nTotal output lines: 755\n\n\"\"\"Offline orchestration for the four-case EdgeQueue Judge Fixture.\"\"\"\n\nfrom __future__ import annotations\n\nimport hashlib\nimport json\nimport shutil\nimport subprocess\nimport time\nfrom collections.abc import Mapping, Sequence\nfrom dataclasses import dataclass\nfrom pathlib import Path\nfrom typing import Any\n\nfrom edgequeue.adjudicat…
-

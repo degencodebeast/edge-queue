@@ -487,4 +487,3 @@
 ### response_item
 
 {"ordinal": 158, "payload": {"call_id": "call_brzn5rS1ln78BfhkPEp6n1nK", "id": "ctco_01a05856-587d-7e73-8a5d-20591af1c424", "internal_chat_message_metadata_passthrough": {"create_time": 1788188448.8932, "turn_id": "01a05852-bcce-7411-b136-d019836c56a6"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:00:48.893Z", "type": "response_item"}
-

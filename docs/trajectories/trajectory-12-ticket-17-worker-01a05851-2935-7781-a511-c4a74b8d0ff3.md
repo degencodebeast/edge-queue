@@ -487,4 +487,3 @@
 ### response_item
 
 {"ordinal": 176, "payload": {"call_id": "call_4UKucqVlUzeN7p3XRtakEcKw", "id": "ctc_05bc8b335257c2d3016a959798f0f087d2861dc2108975f15b", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_proof_bundle.py tests/test_verification.py tests/test_cli_contracts.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":6000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188567.337093, "turn_id": "01a05852-bccd-7f81-a181-366dbfba1945"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:02:50.249Z", "type": "response_item"}
-
