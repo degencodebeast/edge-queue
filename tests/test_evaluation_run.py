@@ -142,6 +142,71 @@ def test_recomputes_checked_in_allocation_receipt_from_current_frozen_inputs() -
     ]
 
 
+def test_recomputes_checked_in_development_receipt_from_current_frozen_inputs() -> None:
+    trace_root = Path("docs/evidence/ticket-20/development-traces")
+    ranker_cases = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(Path("corpus/ranker/development").glob("*.json"))
+    ]
+    captured_outputs = [
+        json.loads(
+            (trace_root / case["case_id"] / "attempt-01" / "final.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        for case in ranker_cases
+    ]
+    receipt = json.loads(
+        Path("docs/evidence/ticket-20/development-allocation-receipt.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    development_split = json.loads(
+        Path("corpus/manifests/development.json").read_text(encoding="utf-8")
+    )
+    corpus_manifest = json.loads(
+        Path("corpus/manifests/corpus.json").read_text(encoding="utf-8")
+    )
+
+    recomputed = build_allocation_receipt_from_captured_outputs(
+        ranker_cases=ranker_cases,
+        captured_outputs=captured_outputs,
+        allocator_config={"model": "gpt-5.6-luna", "reasoning_effort": "low"},
+        receipt_id="ticket-20-development-attempt-01",
+        evaluation_run_id="ticket-20-development",
+        corpus_digest=corpus_manifest["root_corpus_digest"],
+        split_digest=development_split["manifest_digest"],
+        review_budget=4,
+        attempt=1,
+    )
+
+    assert recomputed == receipt
+    assert digest_contract("allocation_receipt", receipt) == json.loads(
+        Path("docs/evidence/ticket-20/evaluation-results.json").read_text(
+            encoding="utf-8"
+        )
+    )["authoritative_sources"]["development_receipt"]["content_digest"]
+    trace_manifest = json.loads(
+        Path("docs/evidence/ticket-20/trace-manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert json.loads(
+        Path("docs/evidence/ticket-20/evaluation-results.json").read_text(
+            encoding="utf-8"
+        )
+    )["authoritative_sources"]["development_trace_manifest"] == {
+        "path": "trace-manifest.json",
+        "content_digest": content_digest(trace_manifest),
+    }
+    assert json.loads(
+        Path("docs/evidence/ticket-20/metrics.json").read_text(encoding="utf-8")
+    )["development_trace_manifest"] == {
+        "path": "trace-manifest.json",
+        "content_digest": content_digest(trace_manifest),
+    }
+
+
 def test_recomputes_metrics_from_authoritative_scorer_cases() -> None:
     metrics = recompute_allocation_metrics(
         review_queue=["case-a", "case-b"],
@@ -179,20 +244,6 @@ def test_preserves_development_and_three_accepted_holdout_results() -> None:
     assert len(results["allocation_holdout_runs"]) == 3
 
 
-def test_recomputes_the_saved_development_result_from_frozen_cases() -> None:
-    saved = json.loads(Path("runs/development/evaluation.json").read_text(encoding="utf-8"))
-    ranker_cases = [json.loads(path.read_text()) for path in sorted(Path("corpus/ranker/development").glob("*.json"))]
-    scorer_cases = [json.loads(path.read_text()) for path in sorted(Path("corpus/scorer/development").glob("*.json"))]
-
-    results = recompute_saved_evaluation_result(
-        saved_result=saved,
-        ranker_cases=ranker_cases,
-        scorer_cases=scorer_cases,
-    )
-
-    assert results["edgequeue"]["recall_at_k"] == 0.8
-
-
 def test_derives_all_holdout_results_from_current_frozen_traces() -> None:
     ranker_cases = [
         json.loads(path.read_text())
@@ -204,16 +255,33 @@ def test_derives_all_holdout_results_from_current_frozen_traces() -> None:
     ]
     evidence_root = Path("docs/evidence/ticket-20")
     results = json.loads((evidence_root / "evaluation-results.json").read_text())
-    development_source = json.loads(
-        Path("runs/development/evaluation.json").read_text(encoding="utf-8")
+    development_ranker_cases = [
+        json.loads(path.read_text())
+        for path in sorted(Path("corpus/ranker/development").glob("*.json"))
+    ]
+    development_scorer_cases = [
+        json.loads(path.read_text())
+        for path in sorted(Path("corpus/scorer/development").glob("*.json"))
+    ]
+    development_receipt = json.loads(
+        (evidence_root / "development-allocation-receipt.json").read_text()
+    )
+    development_metrics = recompute_allocation_metrics(
+        review_queue=development_receipt["review_queue"],
+        ranker_cases=development_ranker_cases,
+        scorer_cases=development_scorer_cases,
+        review_budget=4,
     )
 
-    assert results["authoritative_sources"]["development_evaluation"] == {
-        "path": "runs/development/evaluation.json",
-        "content_digest": content_digest(development_source),
+    assert results["authoritative_sources"]["development_receipt"] == {
+        "path": "development-allocation-receipt.json",
+        "content_digest": digest_contract("allocation_receipt", development_receipt),
     }
     assert results["development"]["split"] == "DEV"
-    assert results["development"]["edgequeue"] == development_source["fixed"]["edgequeue"]
+    assert results["development"]["edgequeue"] == {
+        "review_queue": development_receipt["review_queue"],
+        "metrics": development_metrics,
+    }
 
     for attempt in (1, 2, 3):
         receipt = json.loads(

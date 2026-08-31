@@ -90,45 +90,50 @@ def test_copies_the_archived_trace_with_its_real_accounting() -> None:
 
     evidence_root = Path("docs/evidence/ticket-20")
     traces = []
-    for case_directory in sorted(
-        path for path in evidence_root.joinpath("frozen-traces").iterdir() if path.is_dir()
-    ):
-        for attempt_directory in sorted(
+    for trace_directory in ("frozen-traces", "development-traces"):
+        for case_directory in sorted(
             path
-            for path in case_directory.iterdir()
-            if path.is_dir() and path.name.startswith("attempt-")
+            for path in evidence_root.joinpath(trace_directory).iterdir()
+            if path.is_dir()
         ):
-            copied = build_archived_trace_copy(
-                prompt=attempt_directory.joinpath("prompt.txt").read_text(
-                    encoding="utf-8"
-                ),
-                events_jsonl=attempt_directory.joinpath("events.jsonl").read_text(
-                    encoding="utf-8"
-                ),
-                final_output=json.loads(
-                    attempt_directory.joinpath("final.json").read_text(encoding="utf-8")
-                ),
-                metadata=json.loads(
-                    attempt_directory.joinpath("metadata.json").read_text(encoding="utf-8")
-                ),
-            )
-            copied["source_path"] = str(attempt_directory)
-            copied["copy_paths"] = {
-                name: str(attempt_directory.relative_to(evidence_root) / filename)
-                for name, filename in (
-                    ("prompt", "prompt.txt"),
-                    ("events_jsonl", "events.jsonl"),
-                    ("final_output", "final.json"),
-                    ("metadata", "metadata.json"),
+            for attempt_directory in sorted(
+                path
+                for path in case_directory.iterdir()
+                if path.is_dir() and path.name.startswith("attempt-")
+            ):
+                copied = build_archived_trace_copy(
+                    prompt=attempt_directory.joinpath("prompt.txt").read_text(
+                        encoding="utf-8"
+                    ),
+                    events_jsonl=attempt_directory.joinpath("events.jsonl").read_text(
+                        encoding="utf-8"
+                    ),
+                    final_output=json.loads(
+                        attempt_directory.joinpath("final.json").read_text(encoding="utf-8")
+                    ),
+                    metadata=json.loads(
+                        attempt_directory.joinpath("metadata.json").read_text(encoding="utf-8")
+                    ),
                 )
-            }
-            traces.append(copied)
-    assert len(traces) == 120
+                copied["source_path"] = str(attempt_directory)
+                copied["copy_paths"] = {
+                    name: str(attempt_directory.relative_to(evidence_root) / filename)
+                    for name, filename in (
+                        ("prompt", "prompt.txt"),
+                        ("events_jsonl", "events.jsonl"),
+                        ("final_output", "final.json"),
+                        ("metadata", "metadata.json"),
+                    )
+                }
+                traces.append(copied)
+    assert len(traces) == 140
     evaluation_run = json.loads(Path("docs/evidence/ticket-20/evaluation-run.json").read_text(encoding="utf-8"))
-    scorer_cases = [
-        json.loads(path.read_text(encoding="utf-8"))
-        for path in sorted(Path("corpus/scorer/allocation-holdout").glob("*.json"))
-    ]
+    scorer_cases = []
+    for split in ("allocation-holdout", "development"):
+        scorer_cases.extend(
+            json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted(Path("corpus/scorer").joinpath(split).glob("*.json"))
+        )
     expected_manifest = build_trace_manifest(
         evaluation_run_digest=digest_contract("evaluation_run", evaluation_run),
         traces=traces,
