@@ -1,0 +1,11 @@
+[
+  {
+    "schema_version": "1.0",
+    "claim_id": "allocation-holdout-recall-at-8",
+    "evaluation_run_digest": "aef669bab8e083a6cfea24b816654a7cc9d13119d930cb623a2cfd3a18aa867d",
+    "supporting_artifact": "metrics.json",
+    "metric": "allocation_holdout_recall_at_8",
+    "value": 0.3,
+    "text": "On this frozen synthetic Allocation Holdout, EdgeQueue recovered 0.30 Recall at 8. This small synthetic-corpus result does not establish production performance or Calibration Promotion."
+  }
+]

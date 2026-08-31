@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "evaluation_run_id": "ticket-20-allocation-holdout",
+  "corpus_digest": "ff509d989d9b2de1602528fc2b8c6a8d857786cc8b2c0c98456975c433c3ff61",
+  "split_digest": "04f63e41d339bc2bc3cdda86a74c5cf8b9c8a60034dfbc2556d50893ab9813e3",
+  "evaluation_config_digest": "47a58e464e7b24bee6d5a801e3db0246761be84a06f89b5c7e5691a10f550b34",
+  "allocator_config_digest": "b9e9678e0ce0a4a962a1d7c281091fc93028c36e47f8b15e47cfd48829d6d59a",
+  "scorer_version": "1.0",
+  "command_digest": "acb39f5ac6d2b798eee35d9bc1dff3213991acd04fc259036c2ab3dc4a34fffe",
+  "code_commit": "c9ef65d8ef00b642927525995df816d8c7a690f1",
+  "git_tree": "ticket-20-fresh-frozen-evidence",
+  "dirty_state": false,
+  "tested_working_tree_digest": "ec8e170b80d4c1c31d8542c5189659b211c3d777e8d467528cdd177f972aefb8",
+  "evaluation_core": {
+    "corpus_manifest": {
+      "name": "corpus_manifest",
+      "digest": "13304fdf08ea45f20daba77d8a9c648c41c663423df5aa244c142ad55891c700"
+    },
+    "split_manifest": {
+      "name": "split_manifest",
+      "digest": "a3ffdeb486f0ac96b42b0b860dbc6edb0cd5ef5f77e862bf33c5cc8c84ff37bd"
+    },
+    "ranker_case_bundle": {
+      "name": "ranker_case_bundle",
+      "digest": "60e41175aab3b9263feb53bd5ddc7131072b342a145a0b24cec3d6fdb9e653d5"
+    },
+    "rubric_snapshot": {
+      "name": "rubric_snapshot",
+      "digest": "6a2f809cccce39c88ed23e569d2ed2c9526c638946c9cebb84e8226a72e96e66"
+    },
+    "initial_evaluation_snapshot": {
+      "name": "initial_evaluation_snapshot",
+      "digest": "99560eafd766009ba2c7e340c8adb6d9b7e72d954a623357f3fc2db402d4b366"
+    },
+    "evidence_validation_manifest": {
+      "name": "evidence_validation_manifest",
+      "digest": "bb23c7ebc34405f8d0dc1d3a36c1611824c0be1e3366a314b57c679a01298b40"
+    },
+    "allocator_prompt": {
+      "name": "allocator_prompt",
+      "digest": "321b3398df830cb6c52337ef8aafb15068556d5e1c88897a9a5fd060c239ffbb"
+    },
+    "allocator_model_config": {
+      "name": "allocator_model_config",
+      "digest": "b9e9678e0ce0a4a962a1d7c281091fc93028c36e47f8b15e47cfd48829d6d59a"
+    },
+    "feature_version": {
+      "name": "feature_version",
+      "digest": "1beb9605efc1a9939143526ea309a03479a8a61bba1a72badc6102ed849e2052"
+    },
+    "ranking_policy": {
+      "name": "ranking_policy",
+      "digest": "121ce8545199abae0b3d458052e86a17288b9d9be68f2cd7db570f6cca08c840"
+    },
+    "evaluation_config": {
+      "name": "evaluation_config",
+      "digest": "47a58e464e7b24bee6d5a801e3db0246761be84a06f89b5c7e5691a10f550b34"
+    },
+    "scorer_reference_manifest": {
+      "name": "scorer_reference_manifest",
+      "digest": "bb23c7ebc34405f8d0dc1d3a36c1611824c0be1e3366a314b57c679a01298b40"
+    },
+    "canonical_scorer": {
+      "name": "canonical_scorer",
+      "digest": "94943c166732ee97d046d0eac15041b98040969b9963883d3cc92b5a6cfbd142"
+    },
+    "runtime_dependency_manifest": {
+      "name": "runtime_dependency_manifest",
+      "digest": "de5d5b7e00a1e176fa76a9bd6431b4f5b1d7d4d6f7c4d73bfb69e24983475c55"
+    },
+    "risk_findings": {
+      "name": "risk_findings",
+      "digest": "99560eafd766009ba2c7e340c8adb6d9b7e72d954a623357f3fc2db402d4b366"
+    },
+    "review_queue": {
+      "name": "review_queue",
+      "digest": "7072693f65e4fcf2b09a8255c6d3b9a47372fff3f30ad383d56ae9ee8bcb4b1a"
+    },
+    "allocation_receipt": {
+      "name": "allocation_receipt",
+      "digest": "b3283b98f130b65876983260246ff8c50558cd60f3f7c456642ea2e60a574800"
+    },
+    "raw_run_outputs": {
+      "name": "raw_run_outputs",
+      "digest": "cfbbcf2fe95c1d7b6ed60bf5283915b008489bf3435d47347621c48354fc2e36"
+    },
+    "optional_absences": []
+  },
+  "exit_code": 0,
+  "review_budget": 8,
+  "case_ids": [
+    "EQ-F01-AH-01",
+    "EQ-F01-AH-02",
+    "EQ-F01-AH-03",
+    "EQ-F01-AH-04",
+    "EQ-F02-AH-01",
+    "EQ-F02-AH-02",
+    "EQ-F02-AH-03",
+    "EQ-F02-AH-04",
+    "EQ-F03-AH-01",
+    "EQ-F03-AH-02",
+    "EQ-F03-AH-03",
+    "EQ-F03-AH-04",
+    "EQ-F04-AH-01",
+    "EQ-F04-AH-02",
+    "EQ-F04-AH-03",
+    "EQ-F04-AH-04",
+    "EQ-F05-AH-01",
+    "EQ-F05-AH-02",
+    "EQ-F05-AH-03",
+    "EQ-F05-AH-04",
+    "EQ-F06-AH-01",
+    "EQ-F06-AH-02",
+    "EQ-F06-AH-03",
+    "EQ-F06-AH-04",
+    "EQ-F07-AH-01",
+    "EQ-F07-AH-02",
+    "EQ-F07-AH-03",
+    "EQ-F07-AH-04",
+    "EQ-F08-AH-01",
+    "EQ-F08-AH-02",
+    "EQ-F08-AH-03",
+    "EQ-F08-AH-04",
+    "EQ-F09-AH-01",
+    "EQ-F09-AH-02",
+    "EQ-F09-AH-03",
+    "EQ-F09-AH-04",
+    "EQ-F10-AH-01",
+    "EQ-F10-AH-02",
+    "EQ-F10-AH-03",
+    "EQ-F10-AH-04"
+  ],
+  "review_queue": [
+    "EQ-F05-AH-02",
+    "EQ-F07-AH-04",
+    "EQ-F01-AH-01",
+    "EQ-F01-AH-02",
+    "EQ-F02-AH-01",
+    "EQ-F02-AH-03",
+    "EQ-F03-AH-02",
+    "EQ-F04-AH-01"
+  ],
+  "allocation_receipt_digest": "b3283b98f130b65876983260246ff8c50558cd60f3f7c456642ea2e60a574800",
+  "disposition": "valid",
+  "raw_artifact_refs": [
+    "frozen-traces",
+    "allocation-receipts/attempt-01.json",
+    "trace-manifest.json"
+  ],
+  "runtime_seconds": 429.05002093315125,
+  "request_count": 40,
+  "token_count": 649681,
+  "available_cost": null
+}

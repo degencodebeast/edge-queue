@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "ticket-20-development-attempt-01",
+  "evaluation_run_id": "ticket-20-development",
+  "corpus_digest": "ff509d989d9b2de1602528fc2b8c6a8d857786cc8b2c0c98456975c433c3ff61",
+  "split_digest": "e0531d96c0a8b8d96233f4dcac9ce9b3383db87d0d9ac101c746b766dfc8b46a",
+  "allocator_config_digest": "b9e9678e0ce0a4a962a1d7c281091fc93028c36e47f8b15e47cfd48829d6d59a",
+  "review_budget": 4,
+  "assessments": [
+    {
+      "case_id": "EQ-F01-DEV-01",
+      "assessment_digest": "53de500d2c55b5396255dc20198505077c8d8e3fe43ffc263463e956f331f206"
+    },
+    {
+      "case_id": "EQ-F01-DEV-02",
+      "assessment_digest": "b97b4d3a092545827b0a5bb9b421250c369eb71f026a560b081f8942bf50248a"
+    },
+    {
+      "case_id": "EQ-F02-DEV-01",
+      "assessment_digest": "107ebb8e832c07e80271c24d981a74ffdede4ccb2493df00432052953ce4d91f"
+    },
+    {
+      "case_id": "EQ-F02-DEV-02",
+      "assessment_digest": "eaff0dd0b6afac3923e51709c96b7c7fef0ee91723233f8395fc5be135d189ed"
+    },
+    {
+      "case_id": "EQ-F03-DEV-01",
+      "assessment_digest": "01a1da72f64ce9e77eea65d75df7440967542de8dff4b50cb03f3945dde7a899"
+    },
+    {
+      "case_id": "EQ-F03-DEV-02",
+      "assessment_digest": "6877bfac5184bc0852a73f88f9851e4359743eee22b684f8f36d74148ef11790"
+    },
+    {
+      "case_id": "EQ-F04-DEV-01",
+      "assessment_digest": "40293c6ea6124f45a0ab7028b1157c324325ff7980eca38ab0de63ca77802b9f"
+    },
+    {
+      "case_id": "EQ-F04-DEV-02",
+      "assessment_digest": "ae9f190cbf0d29d6e1a472102fc92669a4432b1d76284bd9dfa844201d1b99c7"
+    },
+    {
+      "case_id": "EQ-F05-DEV-01",
+      "assessment_digest": "c9030863dcf6d0eb80e7ba1e65dbeb1f4c88a3eb082fd7cc2b51d4577b8bb0dc"
+    },
+    {
+      "case_id": "EQ-F05-DEV-02",
+      "assessment_digest": "9b84c71ead1d58d2de1016e153374a0a073a5e0d953bc3a8581a737ada218ba6"
+    },
+    {
+      "case_id": "EQ-F06-DEV-01",
+      "assessment_digest": "bd719c8f5f799dbff7c91dcb6c1c92a152c886a35d2665a680ffc288e2c1e5c8"
+    },
+    {
+      "case_id": "EQ-F06-DEV-02",
+      "assessment_digest": "e88b7fdb7a6c4b925dff003b0ac7e1010fd052d140de9e21270b825881436a6e"
+    },
+    {
+      "case_id": "EQ-F07-DEV-01",
+      "assessment_digest": "9b31c91259f3e9f33863b8c3668068d813681e6c4775d43e220b574e28be5298"
+    },
+    {
+      "case_id": "EQ-F07-DEV-02",
+      "assessment_digest": "687590befda34b2e1f8d1ff4968c3a32dd67e123dcb3725be15c4c0e01ae1ded"
+    },
+    {
+      "case_id": "EQ-F08-DEV-01",
+      "assessment_digest": "f526cc01c7c1952b13f8a9dc0591ede53105a3f5dc991be5571a295c3617c8ca"
+    },
+    {
+      "case_id": "EQ-F08-DEV-02",
+      "assessment_digest": "61665ac558ae13c51b5afed1226e9ab8adcd54527787532ca06c81c2a7a25fde"
+    },
+    {
+      "case_id": "EQ-F09-DEV-01",
+      "assessment_digest": "6c5c4df8b265e397dfbcb03cecb85af88bec59f05d63ed3c41f20b04bf30fd61"
+    },
+    {
+      "case_id": "EQ-F09-DEV-02",
+      "assessment_digest": "5df4dcf328c682287bb832fea89cd61b9b753fdb67899ee7893d5226e50219d0"
+    },
+    {
+      "case_id": "EQ-F10-DEV-01",
+      "assessment_digest": "a5927bab870c397bcd2810aca4a11bcfaf02eb7f577783f6cb10a03e0e382619"
+    },
+    {
+      "case_id": "EQ-F10-DEV-02",
+      "assessment_digest": "b22ebf8038e65342a76a07cc9be1d88fafe3cb59626dcaade9e39603c6872d98"
+    }
+  ],
+  "review_queue": [
+    "EQ-F04-DEV-02",
+    "EQ-F03-DEV-01",
+    "EQ-F02-DEV-02",
+    "EQ-F03-DEV-02"
+  ],
+  "first_excluded_case_id": "EQ-F09-DEV-01",
+  "selection_boundary": {
+    "excluded_case_id": "EQ-F09-DEV-01",
+    "excluded_status": "abstention",
+    "excluded_risk_score": 39,
+    "excluded_deterministic_score": 55
+  }
+}
