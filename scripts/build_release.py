@@ -105,9 +105,11 @@ def build_archive(project_root: Path, source_sha: str, output_dir: Path) -> tupl
     output_dir.mkdir(parents=True, exist_ok=True)
 
     files = tracked_files(project_root, resolved_sha)
+    source_tree = git(project_root, "rev-parse", f"{resolved_sha}^{{tree}}").strip()
     manifest = {
         "archive_format": "edgequeue-source-v1",
         "source_sha": resolved_sha,
+        "source_tree": source_tree,
         "tracked_file_count": len(files),
         "files": [
             {"path": str(path), "sha256": hashlib.sha256(payload).hexdigest()}
