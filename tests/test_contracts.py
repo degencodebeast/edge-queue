@@ -58,6 +58,41 @@ def _assessment() -> dict[str, object]:
     }
 
 
+def _ledger_candidate(
+    candidate_number: int,
+    status: str,
+    *,
+    primary_verdict: str = "PASS",
+    attempts: list[dict[str, object]] | None = None,
+) -> dict[str, object]:
+    return {
+        "allocation_row_id": "EQ-F01-DEV-01",
+        "candidate_id": f"candidate-{candidate_number}",
+        "candidate_number": candidate_number,
+        "case_blueprint_version": "F01-v1",
+        "trajectory_digest": "b" * 64,
+        "evaluator_manifest_digest": "c" * 64,
+        "target_verdict": "PASS",
+        "status": status,
+        "evaluator_attempts": attempts
+        or [
+            {"attempt": 1, "evaluator_id": "primary-v1", "evaluator_role": "primary", "outcome": "accepted", "verdict": primary_verdict, "runtime_seconds": 0.5},
+            {"attempt": 2, "evaluator_id": "shadow-a-v1", "evaluator_role": "shadow", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+            {"attempt": 3, "evaluator_id": "shadow-b-v1", "evaluator_role": "shadow", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+        ],
+        "reason": "Candidate evaluation result.",
+        "reviewer_id": "human-1",
+        "recorded_at": "2026-08-31T00:00:00Z",
+        "referenced_digests": ["a" * 64],
+    }
+
+
+def _authoring_ledger(entries: list[dict[str, object]]) -> dict[str, object]:
+    payload = {"schema_version": "1.0", "ledger_id": "ledger-v1", "entries": entries}
+    payload["content_digest"] = content_digest(payload)
+    return payload
+
+
 def test_validates_versioned_case_assessment() -> None:
     assert validate_contract("case_assessment", _assessment()) == _assessment()
 
@@ -159,46 +194,7 @@ def test_evaluator_manifest_requires_complete_frozen_configurations() -> None:
 
 
 def test_authoring_ledger_requires_closed_candidate_attempt_records() -> None:
-    payload = {
-        "schema_version": "1.0",
-        "ledger_id": "ledger-v1",
-        "entries": [
-            {
-                "allocation_row_id": "EQ-F01-DEV-01",
-                "candidate_id": "candidate-1",
-                "candidate_number": 1,
-                "case_blueprint_version": "F01-v1",
-                "trajectory_digest": "b" * 64,
-                "evaluator_manifest_digest": "c" * 64,
-                "status": "accepted",
-                "evaluator_attempts": [
-                    {
-                        "attempt": 1,
-                        "evaluator_id": "primary-v1",
-                        "outcome": "accepted",
-                        "runtime_seconds": 0.5,
-                    },
-                    {
-                        "attempt": 2,
-                        "evaluator_id": "shadow-a-v1",
-                        "outcome": "accepted",
-                        "runtime_seconds": 0.5,
-                    },
-                    {
-                        "attempt": 3,
-                        "evaluator_id": "shadow-b-v1",
-                        "outcome": "accepted",
-                        "runtime_seconds": 0.5,
-                    },
-                ],
-                "reason": "Matches the frozen current Verdict.",
-                "reviewer_id": "human-1",
-                "recorded_at": "2026-08-31T00:00:00Z",
-                "referenced_digests": ["a" * 64],
-            }
-        ],
-    }
-    payload["content_digest"] = content_digest(payload)
+    payload = _authoring_ledger([_ledger_candidate(1, "accepted")])
 
     assert validate_contract("authoring_ledger", payload) == payload
 
@@ -218,6 +214,55 @@ def test_authoring_ledger_requires_closed_candidate_attempt_records() -> None:
     payload["entries"] = []
     with pytest.raises(ContractValidationError, match="too few"):
         validate_contract("authoring_ledger", payload)
+
+
+def test_authoring_ledger_rejects_all_failed_candidates_for_one_row() -> None:
+    ledger = _authoring_ledger(
+        [
+            _ledger_candidate(number, "rejected", primary_verdict="FAIL")
+            for number in range(1, 4)
+        ]
+    )
+
+    with pytest.raises(ContractValidationError, match="all three candidates failed"):
+        validate_contract("authoring_ledger", ledger)
+
+
+def test_authoring_ledger_rejects_multiple_accepted_candidates_for_one_row() -> None:
+    ledger = _authoring_ledger(
+        [_ledger_candidate(1, "accepted"), _ledger_candidate(2, "accepted")]
+    )
+
+    with pytest.raises(ContractValidationError, match="one accepted candidate"):
+        validate_contract("authoring_ledger", ledger)
+
+
+def test_authoring_ledger_rejects_a_third_primary_execution_attempt() -> None:
+    attempts = [
+        {"attempt": 1, "evaluator_id": "primary-v1", "evaluator_role": "primary", "outcome": "execution_failure", "verdict": None, "runtime_seconds": 0.5},
+        {"attempt": 2, "evaluator_id": "primary-v1", "evaluator_role": "primary", "outcome": "execution_failure", "verdict": None, "runtime_seconds": 0.5},
+        {"attempt": 3, "evaluator_id": "primary-v1", "evaluator_role": "primary", "outcome": "execution_failure", "verdict": None, "runtime_seconds": 0.5},
+        {"attempt": 4, "evaluator_id": "primary-v1", "evaluator_role": "primary", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+        {"attempt": 5, "evaluator_id": "shadow-a-v1", "evaluator_role": "shadow", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+        {"attempt": 6, "evaluator_id": "shadow-b-v1", "evaluator_role": "shadow", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+    ]
+    ledger = _authoring_ledger([_ledger_candidate(1, "accepted", attempts=attempts)])
+
+    with pytest.raises(ContractValidationError, match="at most two attempts"):
+        validate_contract("authoring_ledger", ledger)
+
+
+def test_authoring_ledger_rejects_retry_after_execution_failure() -> None:
+    attempts = [
+        {"attempt": 1, "evaluator_id": "primary-v1", "evaluator_role": "primary", "outcome": "execution_failure", "verdict": None, "runtime_seconds": 0.5},
+        {"attempt": 2, "evaluator_id": "primary-v1", "evaluator_role": "primary", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+        {"attempt": 3, "evaluator_id": "shadow-a-v1", "evaluator_role": "shadow", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+        {"attempt": 4, "evaluator_id": "shadow-b-v1", "evaluator_role": "shadow", "outcome": "accepted", "verdict": "PASS", "runtime_seconds": 0.5},
+    ]
+    ledger = _authoring_ledger([_ledger_candidate(1, "accepted", attempts=attempts)])
+
+    with pytest.raises(ContractValidationError, match="retryable evaluator failure"):
+        validate_contract("authoring_ledger", ledger)
 
 
 def test_rejects_unknown_fields_in_nested_authoritative_records() -> None:
@@ -905,46 +950,7 @@ def test_corpus_manifest_binds_all_splits_and_the_supplied_ledger_digest() -> No
 
 
 def test_authoring_ledger_binds_its_content_without_a_root_digest_cycle() -> None:
-    payload = {
-        "schema_version": "1.0",
-        "ledger_id": "ledger-v1",
-        "entries": [
-            {
-                "allocation_row_id": "EQ-F01-DEV-01",
-                "candidate_id": "candidate-1",
-                "candidate_number": 1,
-                "case_blueprint_version": "F01-v1",
-                "trajectory_digest": "b" * 64,
-                "evaluator_manifest_digest": "c" * 64,
-                "status": "accepted",
-                "evaluator_attempts": [
-                    {
-                        "attempt": 1,
-                        "evaluator_id": "primary-v1",
-                        "outcome": "accepted",
-                        "runtime_seconds": 0.5,
-                    },
-                    {
-                        "attempt": 2,
-                        "evaluator_id": "shadow-a-v1",
-                        "outcome": "accepted",
-                        "runtime_seconds": 0.5,
-                    },
-                    {
-                        "attempt": 3,
-                        "evaluator_id": "shadow-b-v1",
-                        "outcome": "accepted",
-                        "runtime_seconds": 0.5,
-                    },
-                ],
-                "reason": "The candidate matches the frozen current Verdict.",
-                "reviewer_id": "reviewer-1",
-                "recorded_at": "2026-08-31T00:00:00Z",
-                "referenced_digests": ["a" * 64],
-            }
-        ],
-    }
-    payload["content_digest"] = content_digest(payload)
+    payload = _authoring_ledger([_ledger_candidate(1, "accepted")])
 
     assert validate_contract("authoring_ledger", payload) == payload
 

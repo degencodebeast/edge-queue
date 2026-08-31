@@ -1393,31 +1393,40 @@ def validate_contract(
                 code="invalid_evaluator_manifest",
             )
     if canonical_name == "authoring_ledger":
-        candidate_ids_by_row: dict[str, set[str]] = {}
+        candidates_by_row: dict[str, list[Mapping[str, Any]]] = {}
         for candidate in payload["entries"]:
-            row_candidate_ids = candidate_ids_by_row.setdefault(
-                candidate["allocation_row_id"], set()
-            )
+            row_candidates = candidates_by_row.setdefault(candidate["allocation_row_id"], [])
+            row_candidate_ids = {entry["candidate_id"] for entry in row_candidates}
             if candidate["candidate_id"] in row_candidate_ids:
                 raise ContractValidationError(
                     "Authoring Ledger candidate identifiers must be unique within an allocation row",
                     code="invalid_attempt",
                 )
-            row_candidate_ids.add(candidate["candidate_id"])
-            if len(row_candidate_ids) > 3:
+            row_candidates.append(candidate)
+            if len(row_candidates) > 3:
                 raise ContractValidationError(
                     "An Authoring Ledger allocation row permits at most three candidates",
                     code="invalid_attempt",
                 )
             attempts = candidate["evaluator_attempts"]
-            if len({attempt["evaluator_id"] for attempt in attempts}) < 3:
+            roles_by_evaluator: dict[str, str] = {}
+            attempts_by_evaluator: dict[str, list[Mapping[str, Any]]] = {}
+            for attempt in attempts:
+                evaluator_id = attempt["evaluator_id"]
+                prior_role = roles_by_evaluator.setdefault(
+                    evaluator_id, attempt["evaluator_role"]
+                )
+                if prior_role != attempt["evaluator_role"]:
+                    raise ContractValidationError(
+                        "Authoring Ledger evaluator roles must not change between attempts",
+                        code="invalid_attempt",
+                    )
+                attempts_by_evaluator.setdefault(evaluator_id, []).append(attempt)
+            if set(roles_by_evaluator.values()) != {"primary", "shadow"} or list(
+                roles_by_evaluator.values()
+            ).count("primary") != 1 or list(roles_by_evaluator.values()).count("shadow") != 2:
                 raise ContractValidationError(
                     "Authoring Ledger candidates require all three frozen evaluator attempts",
-                    code="invalid_attempt",
-                )
-            if candidate["status"] == "accepted" and attempts[-1]["outcome"] != "accepted":
-                raise ContractValidationError(
-                    "An accepted candidate requires a final accepted evaluator attempt",
                     code="invalid_attempt",
                 )
             if [attempt["attempt"] for attempt in attempts] != list(
@@ -1425,6 +1434,88 @@ def validate_contract(
             ):
                 raise ContractValidationError(
                     "Authoring Ledger attempt records must be numbered consecutively",
+                    code="invalid_attempt",
+                )
+            for evaluator_attempts in attempts_by_evaluator.values():
+                if len(evaluator_attempts) > 2:
+                    raise ContractValidationError(
+                        "An evaluator permits at most two attempts for one candidate",
+                        code="invalid_attempt",
+                    )
+                if len(evaluator_attempts) == 2 and evaluator_attempts[0]["outcome"] not in {
+                    "timeout",
+                    "malformed",
+                    "schema_failure",
+                }:
+                    raise ContractValidationError(
+                        "A retry requires an identical retryable evaluator failure",
+                        code="invalid_attempt",
+                    )
+            primary_attempts = next(
+                evaluator_attempts
+                for evaluator_id, evaluator_attempts in attempts_by_evaluator.items()
+                if roles_by_evaluator[evaluator_id] == "primary"
+            )
+            primary_verdict = primary_attempts[-1]["verdict"]
+            primary_matches_target = (
+                primary_attempts[-1]["outcome"] == "accepted"
+                and primary_verdict == candidate["target_verdict"]
+            )
+            if candidate["status"] == "accepted" and any(
+                evaluator_attempts[-1]["outcome"] != "accepted"
+                for evaluator_attempts in attempts_by_evaluator.values()
+            ):
+                raise ContractValidationError(
+                    "An accepted candidate requires final accepted evaluator attempts",
+                    code="invalid_attempt",
+                )
+            if candidate["status"] == "accepted" and not primary_matches_target:
+                raise ContractValidationError(
+                    "An accepted candidate requires a primary Verdict that matches its target Verdict",
+                    code="invalid_attempt",
+                )
+            if candidate["status"] == "rejected" and primary_matches_target:
+                raise ContractValidationError(
+                    "A matching primary Verdict must accept its first candidate",
+                    code="invalid_attempt",
+                )
+        for row_candidates in candidates_by_row.values():
+            candidate_numbers = [candidate["candidate_number"] for candidate in row_candidates]
+            if candidate_numbers != list(range(1, len(row_candidates) + 1)):
+                raise ContractValidationError(
+                    "Authoring Ledger candidate records must be numbered consecutively",
+                    code="invalid_attempt",
+                )
+            accepted_candidates = [
+                candidate for candidate in row_candidates if candidate["status"] == "accepted"
+            ]
+            if not accepted_candidates:
+                if len(row_candidates) == 3:
+                    raise ContractValidationError(
+                        "Corpus Freeze is blocked because all three candidates failed",
+                        code="invalid_attempt",
+                    )
+                raise ContractValidationError(
+                    "An Authoring Ledger allocation row requires one accepted candidate",
+                    code="invalid_attempt",
+                )
+            if len(accepted_candidates) != 1:
+                raise ContractValidationError(
+                    "An Authoring Ledger allocation row permits one accepted candidate",
+                    code="invalid_attempt",
+                )
+            first_matching = next(
+                candidate
+                for candidate in row_candidates
+                if candidate["status"] == "accepted"
+            )
+            if first_matching["candidate_number"] != min(
+                candidate["candidate_number"]
+                for candidate in row_candidates
+                if candidate["status"] == "accepted"
+            ):
+                raise ContractValidationError(
+                    "The first matching candidate must be accepted",
                     code="invalid_attempt",
                 )
     self_digest_field = _SELF_DIGEST_FIELDS.get(canonical_name)

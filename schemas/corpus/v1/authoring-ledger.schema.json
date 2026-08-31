@@ -16,7 +16,7 @@
     "candidate_record": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["allocation_row_id", "candidate_id", "candidate_number", "case_blueprint_version", "trajectory_digest", "evaluator_manifest_digest", "status", "evaluator_attempts", "reason", "reviewer_id", "recorded_at", "referenced_digests"],
+      "required": ["allocation_row_id", "candidate_id", "candidate_number", "case_blueprint_version", "trajectory_digest", "evaluator_manifest_digest", "target_verdict", "status", "evaluator_attempts", "reason", "reviewer_id", "recorded_at", "referenced_digests"],
       "properties": {
         "allocation_row_id": {"type": "string", "minLength": 1},
         "candidate_id": {"type": "string", "minLength": 1},
@@ -24,6 +24,7 @@
         "case_blueprint_version": {"type": "string", "minLength": 1},
         "trajectory_digest": {"$ref": "#/$defs/digest"},
         "evaluator_manifest_digest": {"$ref": "#/$defs/digest"},
+        "target_verdict": {"enum": ["PASS", "FAIL", "UNDETERMINED"]},
         "status": {"enum": ["accepted", "rejected"]},
         "evaluator_attempts": {"type": "array", "minItems": 3, "maxItems": 6, "items": {"$ref": "#/$defs/evaluator_attempt"}},
         "reason": {"type": "string", "minLength": 1},
@@ -35,11 +36,13 @@
     "evaluator_attempt": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["attempt", "evaluator_id", "outcome", "runtime_seconds"],
+      "required": ["attempt", "evaluator_id", "evaluator_role", "outcome", "verdict", "runtime_seconds"],
       "properties": {
         "attempt": {"type": "integer", "minimum": 1, "maximum": 6},
         "evaluator_id": {"type": "string", "minLength": 1},
+        "evaluator_role": {"enum": ["primary", "shadow"]},
         "outcome": {"enum": ["accepted", "timeout", "malformed", "schema_failure", "execution_failure"]},
+        "verdict": {"type": ["string", "null"], "enum": ["PASS", "FAIL", "UNDETERMINED", null]},
         "runtime_seconds": {"type": "number", "minimum": 0},
         "error": {"type": "string"}
       }
