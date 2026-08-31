@@ -9,6 +9,7 @@ from typing import Any, Literal
 
 from edgequeue.contracts import (
     ContractValidationError,
+    content_digest,
     digest_contract,
     validate_allocation_receipt,
     validate_case_assessment,
@@ -32,6 +33,7 @@ class AssessmentBatchRun:
     disposition: Literal["valid", "invalid"]
     assessments: tuple[Mapping[str, Any], ...]
     attempts_by_case: Mapping[str, tuple[str, ...]]
+    attempt_records_by_case: Mapping[str, tuple[Mapping[str, Any], ...]]
     invalid_case_id: str | None
     unprocessed_case_ids: tuple[str, ...]
 
@@ -63,16 +65,21 @@ def assess_review_batch(
     _validate_unique_case_ids(ranker_cases)
     assessments: list[Mapping[str, Any]] = []
     attempts_by_case: dict[str, tuple[str, ...]] = {}
+    attempt_records_by_case: dict[str, tuple[Mapping[str, Any], ...]] = {}
 
     for case_index, ranker_case in enumerate(ranker_cases):
         case_id = _case_id(ranker_case)
         frozen_ranker_case = deepcopy(ranker_case)
         outcomes: list[str] = []
+        attempt_records: list[Mapping[str, Any]] = []
         for attempt in range(2):
             try:
                 assessment = allocator(deepcopy(frozen_ranker_case))
-            except Exception:
+            except Exception as error:
                 outcomes.append("execution_failure")
+                attempt_records.append(
+                    _attempt_record(attempt, "execution_failure", str(error))
+                )
             else:
                 try:
                     validate_case_assessment(assessment, frozen_ranker_case)
@@ -82,19 +89,26 @@ def assess_review_batch(
                             "Case Assessment requires verified same-case evidence"
                         ) from error
                     outcomes.append("schema_failure")
+                    attempt_records.append(
+                        _attempt_record(attempt, "schema_failure", str(error))
+                    )
                 else:
                     outcomes.append("accepted")
+                    attempt_records.append(_attempt_record(attempt, "accepted"))
                     assessments.append(assessment)
                     attempts_by_case[case_id] = tuple(outcomes)
+                    attempt_records_by_case[case_id] = tuple(attempt_records)
                     break
 
             if attempt == 1:
                 attempts_by_case[case_id] = tuple(outcomes)
+                attempt_records_by_case[case_id] = tuple(attempt_records)
                 return AssessmentBatchRun(
                     valid=False,
                     disposition="invalid",
                     assessments=tuple(assessments),
                     attempts_by_case=attempts_by_case,
+                    attempt_records_by_case=attempt_records_by_case,
                     invalid_case_id=case_id,
                     unprocessed_case_ids=tuple(
                         _case_id(remaining_case)
@@ -107,9 +121,186 @@ def assess_review_batch(
         disposition="valid",
         assessments=tuple(assessments),
         attempts_by_case=attempts_by_case,
+        attempt_records_by_case=attempt_records_by_case,
         invalid_case_id=None,
         unprocessed_case_ids=(),
     )
+
+
+def create_allocation_run_evidence(
+    *,
+    receipt: Mapping[str, Any],
+    assessment_run: AssessmentBatchRun,
+    allocation_decision: AllocationDecision,
+) -> Mapping[str, Any]:
+    """Create source-bound evidence for receipt explanations and runner outcomes."""
+    _validate_evidence_sources(receipt, assessment_run, allocation_decision)
+    receipt_digest = digest_contract("allocation_receipt", receipt)
+    payload: dict[str, Any] = {
+        "schema_version": "1.0",
+        "allocation_receipt_digest": receipt_digest,
+        "evaluation_run_id": receipt["evaluation_run_id"],
+        "runner_outcomes": _runner_outcome_payloads(assessment_run),
+        "selection_explanations": _selection_explanation_payloads(
+            allocation_decision
+        ),
+    }
+    payload["content_digest"] = content_digest(
+        payload, excluded_keys={"content_digest"}
+    )
+    validate_allocation_run_evidence(
+        payload,
+        receipt=receipt,
+        assessment_run=assessment_run,
+        allocation_decision=allocation_decision,
+    )
+    return payload
+
+
+def validate_allocation_run_evidence(
+    evidence: Mapping[str, Any],
+    *,
+    receipt: Mapping[str, Any],
+    assessment_run: AssessmentBatchRun,
+    allocation_decision: AllocationDecision,
+) -> Mapping[str, Any]:
+    """Validate the non-authoritative companion against one Allocation Receipt."""
+    expected_fields = {
+        "schema_version",
+        "allocation_receipt_digest",
+        "evaluation_run_id",
+        "runner_outcomes",
+        "selection_explanations",
+        "content_digest",
+    }
+    if set(evidence) != expected_fields:
+        raise AssessmentValidationError("Allocation Run Evidence has unsupported fields")
+    if evidence["schema_version"] != "1.0":
+        raise AssessmentValidationError("Allocation Run Evidence schema version is invalid")
+    if evidence["allocation_receipt_digest"] != digest_contract(
+        "allocation_receipt", receipt
+    ):
+        raise AssessmentValidationError("Allocation Run Evidence receipt digest does not match")
+    if evidence["evaluation_run_id"] != receipt["evaluation_run_id"]:
+        raise AssessmentValidationError("Allocation Run Evidence EvaluationRun does not match")
+    if evidence["content_digest"] != content_digest(
+        evidence, excluded_keys={"content_digest"}
+    ):
+        raise AssessmentValidationError("Allocation Run Evidence content digest does not match")
+
+    _validate_evidence_sources(receipt, assessment_run, allocation_decision)
+    if evidence["runner_outcomes"] != _runner_outcome_payloads(assessment_run):
+        raise AssessmentValidationError(
+            "Allocation Run Evidence runner outcomes do not match the assessment run"
+        )
+    if evidence["selection_explanations"] != _selection_explanation_payloads(
+        allocation_decision
+    ):
+        raise AssessmentValidationError(
+            "Allocation Run Evidence selection explanations do not match the allocation decision"
+        )
+    return evidence
+
+
+def _attempt_record(
+    attempt: int, outcome: str, error: str | None = None
+) -> Mapping[str, Any]:
+    record: dict[str, Any] = {
+        "schema_version": "1.0",
+        "attempt": attempt + 1,
+        "outcome": outcome,
+    }
+    if error:
+        record["error"] = error
+    return record
+
+
+def _normalized_attempt_record(attempt_record: Mapping[str, Any]) -> Mapping[str, Any]:
+    record = {"schema_version": "1.0", **attempt_record}
+    if not isinstance(record.get("attempt"), int) or record["attempt"] < 1:
+        raise AssessmentValidationError("Runner attempt number is invalid")
+    if record.get("outcome") not in {
+        "accepted",
+        "timeout",
+        "malformed",
+        "schema_failure",
+        "execution_failure",
+    }:
+        raise AssessmentValidationError("Runner attempt outcome is invalid")
+    if "error" in record and not isinstance(record["error"], str):
+        raise AssessmentValidationError("Runner attempt error is invalid")
+    return record
+
+
+def _selection_explanation_payload(
+    explanation: SelectionExplanation,
+) -> Mapping[str, Any]:
+    return {
+        "selected_case_id": explanation.selected_case_id,
+        "excluded_case_id": explanation.excluded_case_id,
+        "selected_ordering_fields": list(explanation.selected_ordering_fields),
+        "excluded_ordering_fields": list(explanation.excluded_ordering_fields),
+        "first_differing_field": explanation.first_differing_field,
+    }
+
+
+def _validate_evidence_sources(
+    receipt: Mapping[str, Any],
+    assessment_run: AssessmentBatchRun,
+    allocation_decision: AllocationDecision,
+) -> None:
+    if dict(receipt) != dict(allocation_decision.receipt):
+        raise AssessmentValidationError(
+            "Allocation Run Evidence receipt does not match the allocation decision"
+        )
+    if not assessment_run.valid:
+        raise AssessmentValidationError(
+            "Allocation Run Evidence requires a valid assessment run"
+        )
+    recorded_assessments = [
+        {
+            "case_id": assessment["case_id"],
+            "assessment_digest": digest_contract("case_assessment", assessment),
+        }
+        for assessment in assessment_run.assessments
+    ]
+    if receipt["assessments"] != recorded_assessments:
+        raise AssessmentValidationError(
+            "Allocation Run Evidence assessment run does not match the receipt"
+        )
+    assessment_case_ids = {assessment["case_id"] for assessment in assessment_run.assessments}
+    if set(assessment_run.attempt_records_by_case) != assessment_case_ids:
+        raise AssessmentValidationError(
+            "Allocation Run Evidence runner outcomes do not cover the assessment run"
+        )
+
+
+def _runner_outcome_payloads(
+    assessment_run: AssessmentBatchRun,
+) -> list[Mapping[str, Any]]:
+    if not assessment_run.attempt_records_by_case:
+        raise AssessmentValidationError("Allocation Run Evidence requires runner outcomes")
+    return [
+        {
+            "case_id": case_id,
+            "attempts": [
+                _normalized_attempt_record(attempt_record)
+                for attempt_record in attempt_records
+            ],
+        }
+        for case_id, attempt_records in sorted(
+            assessment_run.attempt_records_by_case.items()
+        )
+    ]
+
+
+def _selection_explanation_payloads(
+    allocation_decision: AllocationDecision,
+) -> list[Mapping[str, Any]]:
+    return [
+        _selection_explanation_payload(explanation)
+        for explanation in allocation_decision.explanations
+    ]
 
 
 def invalidate_evaluation_run(

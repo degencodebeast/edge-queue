@@ -58,5 +58,13 @@
       ]
     }
   ],
+  "runner_attempt_records_by_case": {
+    "EQ-F01-DEV-01": [
+      {"schema_version": "1.0", "attempt": 1, "outcome": "accepted"}
+    ],
+    "EQ-F01-DEV-02": [
+      {"schema_version": "1.0", "attempt": 1, "outcome": "accepted"}
+    ]
+  },
   "receipt_metadata": {"evaluation_run_id": "ticket-16-fixed-batch", "receipt_id": "ticket-16-fixed-batch-receipt", "review_budget": 1}
 }

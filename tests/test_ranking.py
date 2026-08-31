@@ -1,4 +1,4 @@
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 from pathlib import Path
 
@@ -8,7 +8,9 @@ from edgequeue.allocation import (
     AssessmentValidationError,
     allocate_review_queue,
     assess_review_batch,
+    create_allocation_run_evidence,
     invalidate_evaluation_run,
+    validate_allocation_run_evidence,
 )
 from edgequeue.contracts import (
     content_digest,
@@ -235,6 +237,15 @@ def test_retries_a_schema_failure_then_accepts_the_second_assessment() -> None:
         "schema_failure",
         "accepted",
     )
+    assert run.attempt_records_by_case["EQ-F01-DEV-01"] == (
+        {
+            "schema_version": "1.0",
+            "attempt": 1,
+            "outcome": "schema_failure",
+            "error": "case_assessment contains unknown field(s): unexpected",
+        },
+        {"schema_version": "1.0", "attempt": 2, "outcome": "accepted"},
+    )
 
 
 def test_marks_the_evaluation_run_invalid_and_preserves_remaining_batch_state() -> None:
@@ -336,6 +347,87 @@ def test_binds_all_assessments_and_explains_the_first_excluded_case() -> None:
     assert decision.explanations[0].first_differing_field == "risk_score"
 
 
+def test_companion_retains_an_execution_failure_before_an_accepted_retry() -> None:
+    ranker_cases = [
+        asdict(build_development_cases()[0].ranker_case),
+        asdict(build_development_cases()[1].ranker_case),
+    ]
+    allocator_config_digest = _test_digest("risk-finding-allocator-config")
+    calls_by_case: dict[str, int] = {}
+
+    def allocator(case: dict[str, object]) -> dict[str, object]:
+        case_id = str(case["case_id"])
+        calls_by_case[case_id] = calls_by_case.get(case_id, 0) + 1
+        if case_id == "EQ-F01-DEV-01" and calls_by_case[case_id] == 1:
+            raise RuntimeError("allocator unavailable")
+        return _risk_finding(case, allocator_config_digest=allocator_config_digest)
+
+    assessment_run = assess_review_batch(ranker_cases, allocator=allocator)
+    decision = allocate_review_queue(
+        assessments=assessment_run.assessments,
+        ranker_cases=ranker_cases,
+        review_budget=1,
+        receipt_id="ticket-16-execution-retry-receipt",
+        evaluation_run_id="ticket-16-execution-retry",
+        corpus_digest=_test_digest("execution-retry-corpus"),
+        split_digest=_test_digest("execution-retry-split"),
+        allocator_config_digest=allocator_config_digest,
+    )
+    evidence = create_allocation_run_evidence(
+        receipt=decision.receipt,
+        assessment_run=assessment_run,
+        allocation_decision=decision,
+    )
+
+    assert assessment_run.valid is True
+    assert evidence["runner_outcomes"] == [
+        {
+            "case_id": "EQ-F01-DEV-01",
+            "attempts": [
+                {
+                    "schema_version": "1.0",
+                    "attempt": 1,
+                    "outcome": "execution_failure",
+                    "error": "allocator unavailable",
+                },
+                {"schema_version": "1.0", "attempt": 2, "outcome": "accepted"},
+            ],
+        },
+        {
+            "case_id": "EQ-F01-DEV-02",
+            "attempts": [
+                {"schema_version": "1.0", "attempt": 1, "outcome": "accepted"}
+            ],
+        },
+    ]
+    assert validate_allocation_run_evidence(
+        evidence,
+        receipt=decision.receipt,
+        assessment_run=assessment_run,
+        allocation_decision=decision,
+    ) == evidence
+
+    timestamped_attempt_records = dict(assessment_run.attempt_records_by_case)
+    first_case_records = timestamped_attempt_records["EQ-F01-DEV-01"]
+    timestamped_attempt_records["EQ-F01-DEV-01"] = (
+        {**first_case_records[0], "created_at": "2026-08-31T00:00:00Z"},
+        *first_case_records[1:],
+    )
+    timestamped_run = replace(
+        assessment_run,
+        attempt_records_by_case=timestamped_attempt_records,
+    )
+    timestamped_evidence = create_allocation_run_evidence(
+        receipt=decision.receipt,
+        assessment_run=timestamped_run,
+        allocation_decision=decision,
+    )
+
+    assert timestamped_evidence["content_digest"] == content_digest(
+        timestamped_evidence, excluded_keys={"content_digest"}
+    )
+
+
 def test_recomputes_the_fixed_batch_allocation_receipt_from_tracked_input() -> None:
     fixture_path = (
         Path(__file__).parent / "fixtures/ticket-16/fixed-batch-input.json"
@@ -381,7 +473,7 @@ def test_recomputes_the_fixed_batch_allocation_receipt_from_tracked_input() -> N
             "case_digests": [case["content_digest"] for case in ranker_cases],
         }
     )
-    receipt = allocate_review_queue(
+    decision = allocate_review_queue(
         assessments=assessments,
         ranker_cases=ranker_cases,
         review_budget=fixture["receipt_metadata"]["review_budget"],
@@ -390,7 +482,87 @@ def test_recomputes_the_fixed_batch_allocation_receipt_from_tracked_input() -> N
         corpus_digest=corpus_digest,
         split_digest=split_digest,
         allocator_config_digest=allocator_config_digest,
-    ).receipt
+    )
+    receipt = decision.receipt
+    evidence_path = (
+        Path(__file__).parents[1]
+        / "docs/evidence/ticket-16/fixed-batch-allocation-run-evidence.json"
+    )
+    expected_evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+    outputs = iter(assessments)
+    assessment_run = assess_review_batch(
+        ranker_cases,
+        allocator=lambda _: next(outputs),
+    )
+    evidence = create_allocation_run_evidence(
+        receipt=receipt,
+        assessment_run=assessment_run,
+        allocation_decision=decision,
+    )
 
     assert validate_allocation_receipt(receipt, assessments, ranker_cases) == receipt
+    assert {
+        case_id: [dict(record) for record in records]
+        for case_id, records in assessment_run.attempt_records_by_case.items()
+    } == fixture["runner_attempt_records_by_case"]
+    assert validate_allocation_run_evidence(
+        evidence,
+        receipt=receipt,
+        assessment_run=assessment_run,
+        allocation_decision=decision,
+    ) == evidence
     assert receipt == expected_receipt
+    assert evidence == expected_evidence
+
+    tampered_runner_outcomes = {
+        **evidence,
+        "runner_outcomes": [
+            {
+                **evidence["runner_outcomes"][0],
+                "attempts": [
+                    {
+                        "schema_version": "1.0",
+                        "attempt": 1,
+                        "outcome": "execution_failure",
+                        "error": "tampered",
+                    }
+                ],
+            },
+            evidence["runner_outcomes"][1],
+        ],
+    }
+    tampered_runner_outcomes["content_digest"] = content_digest(
+        tampered_runner_outcomes, excluded_keys={"content_digest"}
+    )
+    with pytest.raises(AssessmentValidationError, match="runner outcomes"):
+        validate_allocation_run_evidence(
+            tampered_runner_outcomes,
+            receipt=receipt,
+            assessment_run=assessment_run,
+            allocation_decision=decision,
+        )
+
+    tampered_explanations = {
+        **evidence,
+        "selection_explanations": [
+            {
+                **evidence["selection_explanations"][0],
+                "selected_ordering_fields": [
+                    "risk_finding",
+                    100,
+                    100,
+                    "EQ-F01-DEV-01",
+                ],
+            }
+        ],
+    }
+    tampered_explanations["content_digest"] = content_digest(
+        tampered_explanations, excluded_keys={"content_digest"}
+    )
+    with pytest.raises(AssessmentValidationError, match="selection explanations"):
+        validate_allocation_run_evidence(
+            tampered_explanations,
+            receipt=receipt,
+            assessment_run=assessment_run,
+            allocation_decision=decision,
+        )

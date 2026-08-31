@@ -33,6 +33,12 @@ The deterministic score and case identifier remain exact ordering fields.
 
 The canonical receipt is [fixed-batch-allocation-receipt.json](fixed-batch-allocation-receipt.json).
 
+The companion [fixed-batch-allocation-run-evidence.json](fixed-batch-allocation-run-evidence.json) binds the receipt digest, EvaluationRun, runner outcomes, and selection explanations.
+
+Its `content_digest` includes every other companion field.
+
+It excludes only `content_digest` itself.
+
 ## Baselines and scoring
 
 The implementation runs these fair baselines with the same Review Budget:
@@ -59,18 +65,20 @@ Recall at K is the sole primary ranking metric.
 | Retry immutability and invalid disposition | `uv run pytest -q tests/test_ranking.py::test_retries_one_identical_execution_failure_then_invalidates_second tests/test_ranking.py::test_retries_a_schema_failure_then_accepts_the_second_assessment tests/test_ranking.py::test_accepts_an_agent_abstention_for_one_ranker_case` failed: `AssessmentBatchRun` had no `disposition`. | `uv run pytest -q tests/test_ranking.py` passed: `8 passed in 0.04s`. |
 | EvaluationRun invalidation | `uv run pytest -q tests/test_ranking.py::test_marks_the_evaluation_run_invalid_and_preserves_remaining_batch_state` failed because `invalidate_evaluation_run` did not exist. | `uv run pytest -q tests/test_ranking.py` passed: `9 passed in 0.05s`. |
 | Tracked receipt derivation | `uv run pytest -q tests/test_ranking.py::test_recomputes_the_fixed_batch_allocation_receipt_from_tracked_input` failed because the receipt assessment digests used an earlier output-digest source. | The same command passed: `1 passed in 0.02s`. |
+| Allocation Run Evidence | `uv run pytest -q tests/test_ranking.py -k recomputes` failed: the constructor accepted caller-supplied evidence records. | The same command passed: `1 passed in 0.02s`. |
+| Allocation Run Evidence digest | `uv run pytest -q tests/test_ranking.py -k companion_retains` failed: creation excluded a nested timestamp that validation included. | The same command passed: `1 passed in 0.03s`. |
 
 Derivation command: `uv run pytest -q tests/test_ranking.py::test_recomputes_the_fixed_batch_allocation_receipt_from_tracked_input`.
 
-The Ticket 16 focused check passed: `20 passed in 0.06s`.
+The Ticket 16 focused check passed: `21 passed in 0.07s`.
 
-The complete required suite passed: `105 passed in 2.23s`.
+The complete required suite passed: `106 passed in 2.24s`.
 
 ## Run records
 
 | Field | Value |
 | --- | --- |
-| Runtime | 0.06 seconds for the Ticket 16 focused check. 2.23 seconds for the required suite. |
+| Runtime | 0.07 seconds for the Ticket 16 focused check. 2.24 seconds for the required suite. |
 | Request count | 0 |
 | Token count | 0 |
 | Available cost | 0 |
@@ -78,4 +86,6 @@ The complete required suite passed: `105 passed in 2.23s`.
 
 The frozen v1 Case Assessment contract rejects execution-failure retries inside an accepted assessment record.
 
-The allocation runner therefore preserves retry outcomes separately and invalidates a run after the second failure.
+The Allocation Run Evidence preserves all runner outcomes from the bound assessment run.
+
+The allocation runner invalidates an EvaluationRun after the second failure.
