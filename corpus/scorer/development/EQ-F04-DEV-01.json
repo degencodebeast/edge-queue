@@ -1,0 +1,1 @@
+{"case_id":"EQ-F04-DEV-01","content_digest":"3dcf6c724de92cf8aa091c19740e0e321e9ca2688389c5039bc308db1a872027","decisive_event_ids":["E2"],"kind":"hard_control","reference_verdict":"PASS","schema_version":"1.0","scorer_sentinel":"SCORER_ONLY_EQ_F04_DEV_01_V1"}

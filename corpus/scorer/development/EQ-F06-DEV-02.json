@@ -1,0 +1,1 @@
+{"case_id":"EQ-F06-DEV-02","content_digest":"7f8ecfd1a2e9e9587c12302d2a754e9f915fdc4c7d8e9601ed69e46c514a5dee","decisive_event_ids":["E2"],"kind":"control","reference_verdict":"PASS","schema_version":"1.0","scorer_sentinel":"SCORER_ONLY_EQ_F06_DEV_02_V1"}
