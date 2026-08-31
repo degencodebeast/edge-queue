@@ -62,7 +62,7 @@ def test_rejects_scorer_leakage_in_a_trace() -> None:
 
 
 def test_copies_the_archived_trace_with_its_real_accounting() -> None:
-    root = Path("runs/allocation-holdout/EQ-F01-AH-01/attempt-01")
+    root = Path("docs/evidence/ticket-20/frozen-traces/EQ-F01-AH-01/attempt-01")
     trace = build_archived_trace_copy(
         prompt=root.joinpath("prompt.txt").read_text(encoding="utf-8"),
         events_jsonl=root.joinpath("events.jsonl").read_text(encoding="utf-8"),
@@ -72,36 +72,70 @@ def test_copies_the_archived_trace_with_its_real_accounting() -> None:
 
     assert trace["case_id"] == "EQ-F01-AH-01"
     assert trace["prompt"].startswith("You are the EdgeQueue allocator.")
-    assert trace["events"][3]["item"]["type"] == "agent_message"
-    assert trace["final_output"]["risk_score"] == 95
-    assert trace["metadata"]["elapsed_seconds"] == 13.356252193450928
-    assert trace["runtime_seconds"] == 13.356252193450928
+    assert trace["events"][-1]["type"] == "turn.completed"
+    assert trace["final_output"]["status"] == "abstention"
+    assert trace["metadata"]["elapsed_seconds"] == 11.666308164596558
+    assert trace["runtime_seconds"] == 11.666308164596558
     assert trace["request_count"] == 1
-    assert trace["token_count"] == 16270
+    assert trace["token_count"] == 16217
     assert trace["token_usage"] == {
-        "input_tokens": 16007,
-        "cached_input_tokens": 15104,
+        "input_tokens": 15981,
+        "cached_input_tokens": 0,
         "cache_write_input_tokens": 0,
-        "output_tokens": 263,
-        "reasoning_output_tokens": 48,
+        "output_tokens": 236,
+        "reasoning_output_tokens": 43,
     }
     assert trace["available_cost"] is None
     assert set(trace["source_digests"]) == {"prompt", "events_jsonl", "final_output", "metadata"}
 
-    trace["source_path"] = str(root)
-    trace["copy_paths"] = {
-        "prompt": "traces/EQ-F01-AH-01/attempt-01/prompt.txt",
-        "events_jsonl": "traces/EQ-F01-AH-01/attempt-01/events.jsonl",
-        "final_output": "traces/EQ-F01-AH-01/attempt-01/final.json",
-        "metadata": "traces/EQ-F01-AH-01/attempt-01/metadata.json",
-    }
+    evidence_root = Path("docs/evidence/ticket-20")
+    traces = []
+    for case_directory in sorted(
+        path for path in evidence_root.joinpath("frozen-traces").iterdir() if path.is_dir()
+    ):
+        for attempt_directory in sorted(
+            path
+            for path in case_directory.iterdir()
+            if path.is_dir() and path.name.startswith("attempt-")
+        ):
+            copied = build_archived_trace_copy(
+                prompt=attempt_directory.joinpath("prompt.txt").read_text(
+                    encoding="utf-8"
+                ),
+                events_jsonl=attempt_directory.joinpath("events.jsonl").read_text(
+                    encoding="utf-8"
+                ),
+                final_output=json.loads(
+                    attempt_directory.joinpath("final.json").read_text(encoding="utf-8")
+                ),
+                metadata=json.loads(
+                    attempt_directory.joinpath("metadata.json").read_text(encoding="utf-8")
+                ),
+            )
+            copied["source_path"] = str(attempt_directory)
+            copied["copy_paths"] = {
+                name: str(attempt_directory.relative_to(evidence_root) / filename)
+                for name, filename in (
+                    ("prompt", "prompt.txt"),
+                    ("events_jsonl", "events.jsonl"),
+                    ("final_output", "final.json"),
+                    ("metadata", "metadata.json"),
+                )
+            }
+            traces.append(copied)
+    assert len(traces) == 120
     evaluation_run = json.loads(Path("docs/evidence/ticket-20/evaluation-run.json").read_text(encoding="utf-8"))
-    scorer_case = json.loads(Path("corpus/scorer/allocation-holdout/EQ-F01-AH-01.json").read_text(encoding="utf-8"))
+    scorer_cases = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(Path("corpus/scorer/allocation-holdout").glob("*.json"))
+    ]
     expected_manifest = build_trace_manifest(
         evaluation_run_digest=digest_contract("evaluation_run", evaluation_run),
-        traces=[trace],
+        traces=traces,
         forbidden_field_names={"reference_verdict", "scorer_sentinel", "decisive_evidence"},
-        scorer_sentinels={scorer_case["scorer_sentinel"]},
+        scorer_sentinels={case["scorer_sentinel"] for case in scorer_cases},
     )
-    assert expected_manifest["scorer_sentinel_digests"] == [content_digest(scorer_case["scorer_sentinel"])]
+    assert expected_manifest["scorer_sentinel_digests"] == sorted(
+        content_digest(case["scorer_sentinel"]) for case in scorer_cases
+    )
     assert json.loads(Path("docs/evidence/ticket-20/trace-manifest.json").read_text(encoding="utf-8")) == expected_manifest

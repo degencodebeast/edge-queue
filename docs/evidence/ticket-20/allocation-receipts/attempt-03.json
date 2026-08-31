@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "ticket-20-allocation-holdout-attempt-03",
+  "evaluation_run_id": "ticket-20-allocation-holdout",
+  "corpus_digest": "ff509d989d9b2de1602528fc2b8c6a8d857786cc8b2c0c98456975c433c3ff61",
+  "split_digest": "04f63e41d339bc2bc3cdda86a74c5cf8b9c8a60034dfbc2556d50893ab9813e3",
+  "allocator_config_digest": "b9e9678e0ce0a4a962a1d7c281091fc93028c36e47f8b15e47cfd48829d6d59a",
+  "review_budget": 8,
+  "assessments": [
+    {
+      "case_id": "EQ-F01-AH-01",
+      "assessment_digest": "2fc697a89a0d0b0f38d26313bd683ceb17dff5f67369b81f3a9ea2b418e71e00"
+    },
+    {
+      "case_id": "EQ-F01-AH-02",
+      "assessment_digest": "d054e1c4d53a44fcd0f9b0f60ab92c906b068d88686d9b81c9a45e91e6fac971"
+    },
+    {
+      "case_id": "EQ-F01-AH-03",
+      "assessment_digest": "d9ff5821ca8b460d56596e97bf1317c3faafc22b8ce806728167f34081f3aefe"
+    },
+    {
+      "case_id": "EQ-F01-AH-04",
+      "assessment_digest": "69d2cd5ebf6964154b1169001fbb2b627f79eb6fc254ca519c688490910f4bd0"
+    },
+    {
+      "case_id": "EQ-F02-AH-01",
+      "assessment_digest": "45006a33a0895f3e1305069c0751a412433e552242545d8ef18abe7c0ea4851d"
+    },
+    {
+      "case_id": "EQ-F02-AH-02",
+      "assessment_digest": "d8285dc923ee7dcf06a5c39bfee2ec63dc25f29489b7322a7bf0733b73f237c8"
+    },
+    {
+      "case_id": "EQ-F02-AH-03",
+      "assessment_digest": "560a66106fba3a7d22df87904b1f42a9bba571263f0a01a1abe704cd70f414e6"
+    },
+    {
+      "case_id": "EQ-F02-AH-04",
+      "assessment_digest": "b5cf1c7a419ac3ffc42317d0ae6104bff6001c5c8001b3a6ef8389d203bbdd7f"
+    },
+    {
+      "case_id": "EQ-F03-AH-01",
+      "assessment_digest": "283d5f9923e5621a5da31900bc4c730b10e74ee57665054764d767526dd337c0"
+    },
+    {
+      "case_id": "EQ-F03-AH-02",
+      "assessment_digest": "7e94617bf1ae0f24c41ca9a4767a97e18ad3e06fcd361bfa3b3ad5a599e7ff70"
+    },
+    {
+      "case_id": "EQ-F03-AH-03",
+      "assessment_digest": "61ef8442c64c2b7fe649e89eff43b4183eba6421ac6310cef50a3fba3133b479"
+    },
+    {
+      "case_id": "EQ-F03-AH-04",
+      "assessment_digest": "0dd5ca26e2e285ffb01f80753cab41f4433453ca229786027a12e092420a4230"
+    },
+    {
+      "case_id": "EQ-F04-AH-01",
+      "assessment_digest": "88a62e970a0bf37a52c97fcd3e3df931521dfd8903faea4984fe667c34826e5c"
+    },
+    {
+      "case_id": "EQ-F04-AH-02",
+      "assessment_digest": "ae51226ccf7f82d013e3db95ee91e2e3d7f976782d1c936980a3c1e0b91e707b"
+    },
+    {
+      "case_id": "EQ-F04-AH-03",
+      "assessment_digest": "047ac4707f5836ad0e0d650ecceb1e0f90f453e50edf1f87839c60fd640aeeb7"
+    },
+    {
+      "case_id": "EQ-F04-AH-04",
+      "assessment_digest": "797418716aaec9aee5d1664d794accea54fc8441a4fdc1eb438d30d15338f440"
+    },
+    {
+      "case_id": "EQ-F05-AH-01",
+      "assessment_digest": "feec28f4c26787663bf6b5f41b65f210c119d90734fff96e06c00bdf7e815948"
+    },
+    {
+      "case_id": "EQ-F05-AH-02",
+      "assessment_digest": "a0d599292583cb56f88481def54a7012728f4e59271d81acea182ec38312ae6e"
+    },
+    {
+      "case_id": "EQ-F05-AH-03",
+      "assessment_digest": "a7aa532b12bcd81ea67e70921a7660178bb6a3bd54df8be0e80ddf3e7ac1882f"
+    },
+    {
+      "case_id": "EQ-F05-AH-04",
+      "assessment_digest": "26103bb1cb26409be2138dd7c1a8a177a4823e4b7048cd3a926d154711ed5682"
+    },
+    {
+      "case_id": "EQ-F06-AH-01",
+      "assessment_digest": "aded0f8214c6fa57861b62a2563761d6148c1a3e07368f93e2b938a25827d3be"
+    },
+    {
+      "case_id": "EQ-F06-AH-02",
+      "assessment_digest": "ff426dfd882d54f07f5f3b2da20289fb61681d794a289b3d84a128f0a518a981"
+    },
+    {
+      "case_id": "EQ-F06-AH-03",
+      "assessment_digest": "cc3096048a6b0268c3de97cd95f336e467c3144059bc24dbf15f2ee17b53542d"
+    },
+    {
+      "case_id": "EQ-F06-AH-04",
+      "assessment_digest": "e5df48c6643240081e1694ed51e92ba35f60db6f8e4502d2c97ed089bc08eb4a"
+    },
+    {
+      "case_id": "EQ-F07-AH-01",
+      "assessment_digest": "2d1124cb7a4c83f2915d3f444ad0ccf64b9e47c3c09da085749a81bf862138a7"
+    },
+    {
+      "case_id": "EQ-F07-AH-02",
+      "assessment_digest": "f5922ca601bcc32bdd3493065c30716697160c04f22553400a54c9c687f043b5"
+    },
+    {
+      "case_id": "EQ-F07-AH-03",
+      "assessment_digest": "60c48b861c9a1bbefd10392a896a7853980176858a11491a11d16af7038dabec"
+    },
+    {
+      "case_id": "EQ-F07-AH-04",
+      "assessment_digest": "5466f1671ae445cc0ff580a9adc416e77a674634af7bbc1e97612d426264c31b"
+    },
+    {
+      "case_id": "EQ-F08-AH-01",
+      "assessment_digest": "6e6721e28913d2b2a6a4d98c9a41c0a9f6665e69a1f3664fef6c6a7a824a70ff"
+    },
+    {
+      "case_id": "EQ-F08-AH-02",
+      "assessment_digest": "be42dad261c14b57ae5cd63ebcd27d792602d058f8e16565109d5bfcb22c0336"
+    },
+    {
+      "case_id": "EQ-F08-AH-03",
+      "assessment_digest": "416ef08acc470f76b94b48ac75007ebd9fe7b09c70f9cc354d81d1162a30d3cf"
+    },
+    {
+      "case_id": "EQ-F08-AH-04",
+      "assessment_digest": "4956efdddabd8b38a8185093cdda9ecdc98b954673e29458045bfd2fe0eff7d3"
+    },
+    {
+      "case_id": "EQ-F09-AH-01",
+      "assessment_digest": "d07a178cbc18108796aec9d8cd1aaa72661f2459e75a8a3e48c2e0b1fbf09f0e"
+    },
+    {
+      "case_id": "EQ-F09-AH-02",
+      "assessment_digest": "644bba671745ae7608cca12c777b2d8fe1675788d4d4338b19b9c7865c8d3ac5"
+    },
+    {
+      "case_id": "EQ-F09-AH-03",
+      "assessment_digest": "0c8d80642e18a92ac71945f43812c3402a3da6a659721ca7ab7a754f61a3f120"
+    },
+    {
+      "case_id": "EQ-F09-AH-04",
+      "assessment_digest": "fbc782893ff2de8afb9f32a32db785f767d58fe6993f9aa4a9321d5446cd6a1a"
+    },
+    {
+      "case_id": "EQ-F10-AH-01",
+      "assessment_digest": "2d4247a3c49bda8b02f7a1dd3371f790dd13ad4cd7b0beb8046c0744da22f6cc"
+    },
+    {
+      "case_id": "EQ-F10-AH-02",
+      "assessment_digest": "23e2a2d969cdcbce0e860a6b28213541a144d9d9e60f5b402b3b9da08bb0b08f"
+    },
+    {
+      "case_id": "EQ-F10-AH-03",
+      "assessment_digest": "4346a380e2431e5b7839e58c3b3014ce0887597032cfb1161c1413e221e28457"
+    },
+    {
+      "case_id": "EQ-F10-AH-04",
+      "assessment_digest": "2dc59c4fe70b4cc983b63db2d0a781cc4f718372606591eb199f38a21bbb293a"
+    }
+  ],
+  "review_queue": [
+    "EQ-F05-AH-02",
+    "EQ-F01-AH-01",
+    "EQ-F01-AH-02",
+    "EQ-F02-AH-01",
+    "EQ-F02-AH-03",
+    "EQ-F03-AH-02",
+    "EQ-F04-AH-01",
+    "EQ-F04-AH-03"
+  ],
+  "first_excluded_case_id": "EQ-F06-AH-01",
+  "selection_boundary": {
+    "excluded_case_id": "EQ-F06-AH-01",
+    "excluded_status": "abstention",
+    "excluded_risk_score": 0,
+    "excluded_deterministic_score": 70
+  }
+}

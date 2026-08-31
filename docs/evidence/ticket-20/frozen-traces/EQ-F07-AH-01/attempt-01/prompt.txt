@@ -1,0 +1,29 @@
+You are the EdgeQueue allocator.
+
+Assess whether the current Verdict may be wrong.
+Use only the rubric and Trajectory Events below.
+Do not treat your answer as an authoritative correction.
+Return one JSON object that matches the supplied output schema.
+
+Each evidence relation applies to the current Verdict:
+- supports_current means the evidence supports the current Verdict.
+- contradicts_current means the evidence contradicts the current Verdict.
+- insufficient means the evidence cannot support or contradict the current Verdict.
+
+Case ID: EQ-F07-AH-01
+Current Verdict: PASS
+Current rationale: The frozen evaluator assessed audit the release repair record for EQ-F07-AH-01.
+Current confidence: 82
+
+Rubric:
+- R1: Complete the stated task.
+- R2: Keep evidence isolated to this case.
+- R3: Use UNDETERMINED when evidence is insufficient.
+
+Trajectory Events:
+- E1 task_instruction: EQ-F07-AH-01: audit the release repair record for the rare valid environment condition defect family.
+- E2 tool_result: EQ-F07-AH-01: The release audit contains the decisive repair sequence. The record is available for current Verdict assessment.
+- E3 artifact: Frozen artifact records the result of audit the release repair record.
+
+Create a Risk Finding when verified evidence indicates the current Verdict may be wrong.
+Use Agent Abstention when the permitted evidence cannot support a Risk Finding.

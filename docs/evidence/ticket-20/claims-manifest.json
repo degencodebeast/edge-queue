@@ -1,1 +1,8 @@
-{"claims":["3b9a7b5edcbe96fb4a8bfd966e046500bbe2c19ce92f591ded0f53dc5d4deca1"],"content_digest":"efffeaed584d0b77d4d12090728eba697a49bf39647e4161b70643c5b21c75a2","evaluation_run_digest":"94d0037bc4c58ec15204c545e668c24b77ccc8214151445bb1b56678f937bef4","schema_version":"1.0"}
+{
+  "schema_version": "1.0",
+  "evaluation_run_digest": "aef669bab8e083a6cfea24b816654a7cc9d13119d930cb623a2cfd3a18aa867d",
+  "claims": [
+    "1aae10d6f4472e6e04367d7048b5029f3ad8268523db6c960dac249201636060"
+  ],
+  "content_digest": "aebf81a3593be22550551b4653b8af47f12c989c6a4cc6e9bf99c27fceb549d5"
+}

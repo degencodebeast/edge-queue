@@ -1,17 +1,18 @@
 # Ticket 20 evidence
 
-This directory records an offline frozen-synthetic-corpus EvaluationRun.
+This directory records a frozen-synthetic-corpus EvaluationRun.
 
 The claim has one scope. It reports Allocation Holdout Recall at 8.
 
 The fixture does not establish production performance or Calibration Promotion.
 
-The results derive from `runs/development/evaluation.json` and
-`runs/allocation-holdout/evaluation.json`.
+Development derives from `runs/development/evaluation.json`.
 
-The representative trace is copied from
-`runs/allocation-holdout/EQ-F01-AH-01/attempt-01`.
+Allocation Holdout derives from 120 current-frozen traces under
+`frozen-traces/` and three Allocation Receipts under `allocation-receipts/`.
 
-Its runtime was 13.356252193450928 seconds. It made one request.
+The trace manifest binds all 40 cases and all three fresh attempts.
 
-It used 16,270 input-plus-output tokens. Its available cost is not recorded.
+Fresh Recall at 8 was 0.30, 0.40, and 0.30 for attempts 1, 2, and 3.
+
+Each trace records its runtime, request count, token use, and available cost.

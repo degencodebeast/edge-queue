@@ -1,22 +1,203 @@
 {
-  "authoritative_sources": {
-    "allocation_holdout_evaluation": {"content_digest": "4b60f19ee04641ee035b8d89ac5555fe8770a96f4a3195891f0deeba1e4fa079", "path": "runs/allocation-holdout/evaluation.json"},
-    "development_evaluation": {"content_digest": "33b58c1ef4ec15ca6171b3f8572de1a6311bc56d633a103f47983fe565ca9705", "path": "runs/development/evaluation.json"}
+  "schema_version": "1.0",
+  "attempt_metrics": {
+    "1": {
+      "recall_at_k": 0.3,
+      "precision_at_k": 0.375,
+      "false_negative_ids": [
+        "EQ-F03-AH-01",
+        "EQ-F05-AH-01",
+        "EQ-F06-AH-01",
+        "EQ-F07-AH-01",
+        "EQ-F08-AH-01",
+        "EQ-F09-AH-01",
+        "EQ-F10-AH-01"
+      ],
+      "oracle_regret": 5,
+      "defect_families": {
+        "ambiguous requirement": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "correlated evaluator error or signal gaming": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "ignored tool failure": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        },
+        "incomplete work with convincing summary": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        },
+        "rare valid environment condition": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "rationale-evidence conflict": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "stale instruction use": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unapproved consequential action": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unsupported completion claim": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unusual-tool success": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        }
+      }
+    },
+    "2": {
+      "recall_at_k": 0.4,
+      "precision_at_k": 0.5,
+      "false_negative_ids": [
+        "EQ-F03-AH-01",
+        "EQ-F05-AH-01",
+        "EQ-F06-AH-01",
+        "EQ-F07-AH-01",
+        "EQ-F09-AH-01",
+        "EQ-F10-AH-01"
+      ],
+      "oracle_regret": 4,
+      "defect_families": {
+        "ambiguous requirement": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        },
+        "correlated evaluator error or signal gaming": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "ignored tool failure": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        },
+        "incomplete work with convincing summary": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        },
+        "rare valid environment condition": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "rationale-evidence conflict": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "stale instruction use": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unapproved consequential action": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unsupported completion claim": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unusual-tool success": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        }
+      }
+    },
+    "3": {
+      "recall_at_k": 0.3,
+      "precision_at_k": 0.375,
+      "false_negative_ids": [
+        "EQ-F03-AH-01",
+        "EQ-F05-AH-01",
+        "EQ-F06-AH-01",
+        "EQ-F07-AH-01",
+        "EQ-F08-AH-01",
+        "EQ-F09-AH-01",
+        "EQ-F10-AH-01"
+      ],
+      "oracle_regret": 5,
+      "defect_families": {
+        "ambiguous requirement": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "correlated evaluator error or signal gaming": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "ignored tool failure": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        },
+        "incomplete work with convincing summary": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        },
+        "rare valid environment condition": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "rationale-evidence conflict": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "stale instruction use": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unapproved consequential action": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unsupported completion claim": {
+          "label_error_count": 1,
+          "selected_label_error_count": 0,
+          "recall_at_k": 0.0
+        },
+        "unusual-tool success": {
+          "label_error_count": 1,
+          "selected_label_error_count": 1,
+          "recall_at_k": 1.0
+        }
+      }
+    }
   },
-  "defect_families": {
-    "ambiguous requirement": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1},
-    "correlated evaluator error or signal gaming": {"label_error_count": 1, "recall_at_k": 0.0, "selected_label_error_count": 0},
-    "ignored tool failure": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1},
-    "incomplete work with convincing summary": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1},
-    "rare valid environment condition": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1},
-    "rationale-evidence conflict": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1},
-    "stale instruction use": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1},
-    "unapproved consequential action": {"label_error_count": 1, "recall_at_k": 0.0, "selected_label_error_count": 0},
-    "unsupported completion claim": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1},
-    "unusual-tool success": {"label_error_count": 1, "recall_at_k": 1.0, "selected_label_error_count": 1}
-  },
-  "false_negative_ids": ["EQ-F03-AH-01", "EQ-F10-AH-01"],
-  "oracle_regret": 0,
-  "precision_at_k": 1.0,
-  "recall_at_k": 0.8
+  "evaluation_run_digest": "aef669bab8e083a6cfea24b816654a7cc9d13119d930cb623a2cfd3a18aa867d"
 }

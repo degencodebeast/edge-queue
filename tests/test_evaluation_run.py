@@ -1,8 +1,9 @@
 import json
 from pathlib import Path
 
-from edgequeue.contracts import content_digest, validate_contract
+from edgequeue.contracts import content_digest, digest_contract, validate_contract
 from edgequeue.evaluation_run import (
+    build_allocation_receipt_from_captured_outputs,
     build_evaluation_run,
     derive_archived_evaluation_results,
     preserve_evaluation_results,
@@ -82,6 +83,65 @@ def test_builds_a_content_bound_evaluation_run() -> None:
     assert validate_contract("evaluation_run", run) == run
 
 
+def test_recomputes_checked_in_allocation_receipt_from_current_frozen_inputs() -> None:
+    root = Path("docs/evidence/ticket-20/frozen-traces")
+    ranker_cases = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(Path("corpus/ranker/allocation-holdout").glob("*.json"))
+    ]
+    evaluation_run = json.loads(
+        Path("docs/evidence/ticket-20/evaluation-run.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    attempt_one_receipt = None
+    for attempt in (1, 2, 3):
+        captured_outputs = [
+            json.loads(
+                (
+                    root / case["case_id"] / f"attempt-{attempt:02d}" / "final.json"
+                ).read_text(encoding="utf-8")
+            )
+            for case in ranker_cases
+        ]
+        receipt = json.loads(
+            Path(
+                f"docs/evidence/ticket-20/allocation-receipts/attempt-{attempt:02d}.json"
+            ).read_text(encoding="utf-8")
+        )
+        metadata = json.loads(
+            (root / ranker_cases[0]["case_id"] / f"attempt-{attempt:02d}" / "metadata.json").read_text(
+                encoding="utf-8"
+            )
+        )
+
+        recomputed = build_allocation_receipt_from_captured_outputs(
+            ranker_cases=ranker_cases,
+            captured_outputs=captured_outputs,
+            allocator_config={"model": "gpt-5.6-luna", "reasoning_effort": "low"},
+            receipt_id=f"ticket-20-allocation-holdout-attempt-{attempt:02d}",
+            evaluation_run_id="ticket-20-allocation-holdout",
+            corpus_digest=evaluation_run["corpus_digest"],
+            split_digest=evaluation_run["split_digest"],
+            review_budget=8,
+            attempt=metadata["attempt"],
+        )
+
+        assert metadata["attempt"] == attempt
+        assert recomputed == receipt
+        if attempt == 1:
+            attempt_one_receipt = receipt
+
+    assert attempt_one_receipt is not None
+    assert evaluation_run["allocation_receipt_digest"] == digest_contract(
+        "allocation_receipt", attempt_one_receipt
+    )
+    assert evaluation_run["evaluation_core"]["allocation_receipt"]["digest"] == evaluation_run[
+        "allocation_receipt_digest"
+    ]
+
+
 def test_recomputes_metrics_from_authoritative_scorer_cases() -> None:
     metrics = recompute_allocation_metrics(
         review_queue=["case-a", "case-b"],
@@ -133,74 +193,48 @@ def test_recomputes_the_saved_development_result_from_frozen_cases() -> None:
     assert results["edgequeue"]["recall_at_k"] == 0.8
 
 
-def test_derives_development_and_all_holdout_results_from_archived_sources() -> None:
-    development_source = json.loads(Path("runs/development/evaluation.json").read_text(encoding="utf-8"))
-    holdout_source = json.loads(Path("runs/allocation-holdout/evaluation.json").read_text(encoding="utf-8"))
-    development_ranker = [json.loads(path.read_text()) for path in sorted(Path("corpus/ranker/development").glob("*.json"))]
-    development_scorer = [json.loads(path.read_text()) for path in sorted(Path("corpus/scorer/development").glob("*.json"))]
-    holdout_ranker = [json.loads(path.read_text()) for path in sorted(Path("corpus/ranker/allocation-holdout").glob("*.json"))]
-    holdout_scorer = [json.loads(path.read_text()) for path in sorted(Path("corpus/scorer/allocation-holdout").glob("*.json"))]
-
-    results = derive_archived_evaluation_results(
-        development_source=development_source,
-        development_ranker_cases=development_ranker,
-        development_scorer_cases=development_scorer,
-        allocation_holdout_source=holdout_source,
-        allocation_holdout_ranker_cases=holdout_ranker,
-        allocation_holdout_scorer_cases=holdout_scorer,
+def test_derives_all_holdout_results_from_current_frozen_traces() -> None:
+    ranker_cases = [
+        json.loads(path.read_text())
+        for path in sorted(Path("corpus/ranker/allocation-holdout").glob("*.json"))
+    ]
+    scorer_cases = [
+        json.loads(path.read_text())
+        for path in sorted(Path("corpus/scorer/allocation-holdout").glob("*.json"))
+    ]
+    evidence_root = Path("docs/evidence/ticket-20")
+    results = json.loads((evidence_root / "evaluation-results.json").read_text())
+    development_source = json.loads(
+        Path("runs/development/evaluation.json").read_text(encoding="utf-8")
     )
 
-    assert results["development"]["fixed"] == development_source["fixed"]
-    assert results["development"]["seeded_random"]["p95_recall_at_k"] == 0.4
-    assert [run["fixed"] for run in results["allocation_holdout_runs"]] == [
-        holdout_source["attempts_detail"][str(attempt)]["fixed"]
-        for attempt in (1, 2, 3)
-    ]
-    assert [run["edgequeue"]["recall_at_k"] for run in results["allocation_holdout_runs"]] == [0.8, 0.8, 0.8]
-    assert [run["simple_baseline"]["recall_at_k"] for run in results["allocation_holdout_runs"]] == [0.0, 0.0, 0.0]
-    assert [run["seeded_random"]["p95_recall_at_k"] for run in results["allocation_holdout_runs"]] == [0.4, 0.4, 0.4]
+    assert results["authoritative_sources"]["development_evaluation"] == {
+        "path": "runs/development/evaluation.json",
+        "content_digest": content_digest(development_source),
+    }
+    assert results["development"]["split"] == "DEV"
+    assert results["development"]["edgequeue"] == development_source["fixed"]["edgequeue"]
 
-    evidence = json.loads(Path("docs/evidence/ticket-20/evaluation-results.json").read_text(encoding="utf-8"))
-    assert evidence["authoritative_sources"] == {
-        "development_evaluation": {
-            "path": "runs/development/evaluation.json",
-            "content_digest": content_digest(development_source),
-        },
-        "allocation_holdout_evaluation": {
-            "path": "runs/allocation-holdout/evaluation.json",
-            "content_digest": content_digest(holdout_source),
-        },
-    }
-    assert evidence["development"] == {
-        "split": "DEV",
-        "review_budget": 4,
-        "edgequeue": results["development"]["fixed"]["edgequeue"],
-        "strongest_simple_baseline_recall_at_k": 0.0,
-        "seeded_random": results["development"]["seeded_random"],
-    }
-    assert evidence["allocation_holdout_runs"] == [
-        {
-            "run_id": result["run_id"],
-            "split": result["split"],
-            "review_budget": result["review_budget"],
-            "edgequeue": result["fixed"]["edgequeue"],
-            "simple_baseline": result["simple_baseline"],
-            "seeded_random": result["seeded_random"],
+    for attempt in (1, 2, 3):
+        receipt = json.loads(
+            (evidence_root / f"allocation-receipts/attempt-{attempt:02d}.json").read_text()
+        )
+        expected_metrics = recompute_allocation_metrics(
+            review_queue=receipt["review_queue"],
+            ranker_cases=ranker_cases,
+            scorer_cases=scorer_cases,
+            review_budget=8,
+        )
+        assert results["authoritative_sources"][f"attempt_{attempt:02d}_receipt"] == {
+            "path": f"allocation-receipts/attempt-{attempt:02d}.json",
+            "content_digest": digest_contract("allocation_receipt", receipt),
         }
-        for result in results["allocation_holdout_runs"]
-    ]
+        assert results["allocation_holdout_runs"][attempt - 1]["edgequeue"] == {
+            "review_queue": receipt["review_queue"],
+            "metrics": expected_metrics,
+        }
 
-    run = json.loads(Path("docs/evidence/ticket-20/evaluation-run.json").read_text(encoding="utf-8"))
-    assert run["review_queue"] == results["allocation_holdout_runs"][0]["fixed"]["edgequeue"]["review_queue"]
-    assert run["runtime_seconds"] == 13.356252193450928
-    assert run["request_count"] == 1
-    assert run["token_count"] == 16270
+    run = json.loads((evidence_root / "evaluation-run.json").read_text())
+    assert run["review_queue"] == results["allocation_holdout_runs"][0]["edgequeue"]["review_queue"]
+    assert run["request_count"] == 40
     assert run["available_cost"] is None
-
-    metrics = json.loads(Path("docs/evidence/ticket-20/metrics.json").read_text(encoding="utf-8"))
-    assert {key: metrics[key] for key in ("recall_at_k", "precision_at_k", "false_negative_ids", "oracle_regret", "defect_families")} == recompute_allocation_metrics(
-        review_queue=run["review_queue"],
-        ranker_cases=holdout_ranker,
-        scorer_cases=holdout_scorer,
-        review_budget=8,
-    )

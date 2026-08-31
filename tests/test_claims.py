@@ -19,7 +19,7 @@ def test_generates_only_a_scoped_synthetic_corpus_claim() -> None:
     )
 
     assert [claim["metric"] for claim in claims] == ["allocation_holdout_recall_at_8"]
-    assert claims[0]["value"] == 0.8
+    assert claims[0]["value"] == 0.3
     assert "frozen synthetic Allocation Holdout" in claims[0]["text"]
     assert "does not establish production performance" in claims[0]["text"]
     assert "does not establish" in claims[0]["text"]

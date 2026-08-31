@@ -6,7 +6,8 @@ from collections.abc import Mapping, Sequence
 from math import ceil
 from typing import Any, Final
 
-from edgequeue.contracts import content_digest, validate_contract
+from edgequeue.allocation import allocate_review_queue
+from edgequeue.contracts import content_digest, digest_contract, validate_contract
 from edgequeue.scoring import score_review_queue
 
 
@@ -34,6 +35,77 @@ EVALUATION_CORE_NAMES: Final[tuple[str, ...]] = (
 
 class EvaluationRunError(ValueError):
     """The supplied allocation result cannot form one EvaluationRun."""
+
+
+def build_allocation_receipt_from_captured_outputs(
+    *,
+    ranker_cases: Sequence[Mapping[str, Any]],
+    captured_outputs: Sequence[Mapping[str, Any]],
+    allocator_config: Mapping[str, Any],
+    receipt_id: str,
+    evaluation_run_id: str,
+    corpus_digest: str,
+    split_digest: str,
+    review_budget: int,
+    attempt: int,
+) -> dict[str, Any]:
+    """Normalize one captured run attempt and create its Allocation Receipt."""
+    if attempt < 1 or not receipt_id.endswith(f"attempt-{attempt:02d}"):
+        raise EvaluationRunError("Allocation Receipt identifier must bind its captured attempt")
+    output_by_case = {str(output["case_id"]): output for output in captured_outputs}
+    ranker_ids = [str(case["case_id"]) for case in ranker_cases]
+    if len(output_by_case) != len(captured_outputs) or set(output_by_case) != set(ranker_ids):
+        raise EvaluationRunError("Captured outputs must provide one exact output per RankerCase")
+    allocator_config_digest = content_digest(allocator_config)
+    assessments = [
+        _normalize_captured_case_assessment(
+            ranker_case=ranker_case,
+            captured_output=output_by_case[str(ranker_case["case_id"])],
+            allocator_config_digest=allocator_config_digest,
+            attempt=attempt,
+        )
+        for ranker_case in ranker_cases
+    ]
+    decision = allocate_review_queue(
+        assessments=assessments,
+        ranker_cases=ranker_cases,
+        review_budget=review_budget,
+        receipt_id=receipt_id,
+        evaluation_run_id=evaluation_run_id,
+        corpus_digest=corpus_digest,
+        split_digest=split_digest,
+        allocator_config_digest=allocator_config_digest,
+    )
+    return dict(decision.receipt)
+
+
+def _normalize_captured_case_assessment(
+    *,
+    ranker_case: Mapping[str, Any],
+    captured_output: Mapping[str, Any],
+    allocator_config_digest: str,
+    attempt: int,
+) -> dict[str, Any]:
+    case_id = str(ranker_case["case_id"])
+    if captured_output.get("case_id") != case_id:
+        raise EvaluationRunError("Captured output must bind its frozen RankerCase")
+    assessment = {
+        "schema_version": "1.0",
+        **dict(captured_output),
+        "evidence_references": [
+            {**reference, "case_id": case_id, "status": "verified"}
+            for reference in captured_output["evidence_references"]
+        ],
+        "allocator_config_digest": allocator_config_digest,
+        "input_digest": digest_contract("ranker_case", ranker_case),
+        "output_digest": content_digest(
+            {"capture_attempt": attempt, "captured_output": dict(captured_output)}
+        ),
+        # Frozen v1 Case Assessment attempts record retries within one capture.
+        # The outer Holdout attempt is bound by receipt_id and output_digest.
+        "attempts": [{"schema_version": "1.0", "attempt": 1, "outcome": "accepted"}],
+    }
+    return assessment
 
 
 def build_evaluation_run(
