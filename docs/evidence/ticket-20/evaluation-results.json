@@ -1,1 +1,51 @@
-{"allocation_holdout_runs":[{"edgequeue":{"recall_at_k":0.8},"run_id":"holdout-1","seeded_random":{"p95_recall_at_k":0.4},"simple_baseline":{"recall_at_k":0.0},"split":"AH"},{"edgequeue":{"recall_at_k":0.8},"run_id":"holdout-2","seeded_random":{"p95_recall_at_k":0.4},"simple_baseline":{"recall_at_k":0.0},"split":"AH"},{"edgequeue":{"recall_at_k":0.8},"run_id":"holdout-3","seeded_random":{"p95_recall_at_k":0.4},"simple_baseline":{"recall_at_k":0.0},"split":"AH"}],"development":{"edgequeue":{"recall_at_k":0.8},"split":"DEV"}}
+{
+  "allocation_holdout_runs": [
+    {
+      "edgequeue": {
+        "metrics": {"false_negative_ids": ["EQ-F03-AH-01", "EQ-F10-AH-01"], "oracle_regret": 0, "precision_at_k": 1.0, "recall_at_k": 0.8},
+        "review_queue": ["EQ-F02-AH-01", "EQ-F01-AH-01", "EQ-F07-AH-01", "EQ-F08-AH-01", "EQ-F09-AH-01", "EQ-F06-AH-01", "EQ-F04-AH-01", "EQ-F05-AH-01"]
+      },
+      "review_budget": 8,
+      "run_id": "holdout-1",
+      "seeded_random": {"p95_recall_at_k": 0.4, "recall_at_k_mean": 0.1907, "run_count": 1000},
+      "simple_baseline": {"recall_at_k": 0.0},
+      "split": "AH"
+    },
+    {
+      "edgequeue": {
+        "metrics": {"false_negative_ids": ["EQ-F03-AH-01", "EQ-F10-AH-01"], "oracle_regret": 0, "precision_at_k": 1.0, "recall_at_k": 0.8},
+        "review_queue": ["EQ-F09-AH-01", "EQ-F01-AH-01", "EQ-F07-AH-01", "EQ-F02-AH-01", "EQ-F05-AH-01", "EQ-F06-AH-01", "EQ-F08-AH-01", "EQ-F04-AH-01"]
+      },
+      "review_budget": 8,
+      "run_id": "holdout-2",
+      "seeded_random": {"p95_recall_at_k": 0.4, "recall_at_k_mean": 0.1907, "run_count": 1000},
+      "simple_baseline": {"recall_at_k": 0.0},
+      "split": "AH"
+    },
+    {
+      "edgequeue": {
+        "metrics": {"false_negative_ids": ["EQ-F03-AH-01", "EQ-F10-AH-01"], "oracle_regret": 0, "precision_at_k": 1.0, "recall_at_k": 0.8},
+        "review_queue": ["EQ-F05-AH-01", "EQ-F06-AH-01", "EQ-F01-AH-01", "EQ-F02-AH-01", "EQ-F07-AH-01", "EQ-F09-AH-01", "EQ-F08-AH-01", "EQ-F04-AH-01"]
+      },
+      "review_budget": 8,
+      "run_id": "holdout-3",
+      "seeded_random": {"p95_recall_at_k": 0.4, "recall_at_k_mean": 0.1907, "run_count": 1000},
+      "simple_baseline": {"recall_at_k": 0.0},
+      "split": "AH"
+    }
+  ],
+  "authoritative_sources": {
+    "allocation_holdout_evaluation": {"content_digest": "4b60f19ee04641ee035b8d89ac5555fe8770a96f4a3195891f0deeba1e4fa079", "path": "runs/allocation-holdout/evaluation.json"},
+    "development_evaluation": {"content_digest": "33b58c1ef4ec15ca6171b3f8572de1a6311bc56d633a103f47983fe565ca9705", "path": "runs/development/evaluation.json"}
+  },
+  "development": {
+    "edgequeue": {
+      "metrics": {"false_negative_ids": ["EQ-F07-DEV-01"], "oracle_regret": 0, "precision_at_k": 1.0, "recall_at_k": 0.8},
+      "review_queue": ["EQ-F03-DEV-01", "EQ-F05-DEV-01", "EQ-F09-DEV-01", "EQ-F01-DEV-01"]
+    },
+    "review_budget": 4,
+    "seeded_random": {"p95_recall_at_k": 0.4, "recall_at_k_mean": 0.196, "run_count": 1000},
+    "split": "DEV",
+    "strongest_simple_baseline_recall_at_k": 0.0
+  }
+}

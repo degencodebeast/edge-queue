@@ -25,3 +25,5 @@ def test_generates_only_a_scoped_synthetic_corpus_claim() -> None:
     assert "does not establish" in claims[0]["text"]
     assert manifest["evaluation_run_digest"] == digest_contract("evaluation_run", run)
     assert validate_claims_manifest(manifest, claims) == manifest
+    assert json.loads((root / "claims-manifest.json").read_text(encoding="utf-8")) == manifest
+    assert json.loads((root / "claims.json").read_text(encoding="utf-8")) == claims

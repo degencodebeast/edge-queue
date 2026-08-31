@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
+from math import ceil
 from typing import Any, Final
 
 from edgequeue.contracts import content_digest, validate_contract
@@ -215,3 +216,135 @@ def recompute_saved_evaluation_result(
             raise EvaluationRunError(f"Allocator result {name} does not match scorer recomputation")
         recomputed[str(name)] = metrics
     return recomputed
+
+
+def derive_archived_evaluation_results(
+    *,
+    development_source: Mapping[str, Any],
+    development_ranker_cases: Sequence[Mapping[str, Any]],
+    development_scorer_cases: Sequence[Mapping[str, Any]],
+    allocation_holdout_source: Mapping[str, Any],
+    allocation_holdout_ranker_cases: Sequence[Mapping[str, Any]],
+    allocation_holdout_scorer_cases: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    """Derive preserved results from frozen Development and Holdout archives."""
+    development = _derive_archived_split_result(
+        source=development_source,
+        ranker_cases=development_ranker_cases,
+        scorer_cases=development_scorer_cases,
+        expected_split="DEV",
+    )
+    if allocation_holdout_source.get("split") != "AH":
+        raise EvaluationRunError("Allocation Holdout archive must bind the AH split")
+    attempts = allocation_holdout_source.get("attempts")
+    details = allocation_holdout_source.get("attempts_detail")
+    if attempts != [1, 2, 3] or not isinstance(details, Mapping):
+        raise EvaluationRunError("Allocation Holdout archive must contain attempts 1, 2, and 3")
+
+    allocation_holdout_runs = []
+    for attempt in attempts:
+        source = details.get(str(attempt))
+        if not isinstance(source, Mapping):
+            raise EvaluationRunError(f"Allocation Holdout archive is missing attempt {attempt}")
+        derived = _derive_archived_split_result(
+            source={
+                "split": "AH",
+                "review_budget": allocation_holdout_source["review_budget"],
+                **source,
+            },
+            ranker_cases=allocation_holdout_ranker_cases,
+            scorer_cases=allocation_holdout_scorer_cases,
+            expected_split="AH",
+        )
+        simple_baseline = max(
+            float(derived["fixed"][name]["metrics"]["recall_at_k"])
+            for name in ("lowest_confidence", "disagreement", "deterministic")
+        )
+        allocation_holdout_runs.append(
+            {
+                "run_id": f"holdout-{attempt}",
+                **derived,
+                "edgequeue": dict(derived["fixed"]["edgequeue"]["metrics"]),
+                "simple_baseline": {"recall_at_k": simple_baseline},
+            }
+        )
+
+    return {
+        "development": development,
+        "allocation_holdout_runs": allocation_holdout_runs,
+    }
+
+
+def _derive_archived_split_result(
+    *,
+    source: Mapping[str, Any],
+    ranker_cases: Sequence[Mapping[str, Any]],
+    scorer_cases: Sequence[Mapping[str, Any]],
+    expected_split: str,
+) -> dict[str, Any]:
+    if source.get("split") != expected_split:
+        raise EvaluationRunError(f"Archived result must bind the {expected_split} split")
+    review_budget = int(source["review_budget"])
+    fixed = source.get("fixed")
+    random_source = source.get("random")
+    random_runs = random_source.get("runs") if isinstance(random_source, Mapping) else random_source
+    if not isinstance(fixed, Mapping) or not isinstance(random_runs, Sequence):
+        raise EvaluationRunError("Archived result must contain fixed and seeded random outputs")
+
+    _verify_archived_allocator_results(
+        results=fixed.values(),
+        ranker_cases=ranker_cases,
+        scorer_cases=scorer_cases,
+        review_budget=review_budget,
+    )
+    _verify_archived_allocator_results(
+        results=random_runs,
+        ranker_cases=ranker_cases,
+        scorer_cases=scorer_cases,
+        review_budget=review_budget,
+    )
+    random_recalls = sorted(float(result["metrics"]["recall_at_k"]) for result in random_runs)
+    if not random_recalls:
+        raise EvaluationRunError("Archived seeded random output must not be empty")
+    random_mean = sum(random_recalls) / len(random_recalls)
+    random_p95 = random_recalls[ceil(0.95 * len(random_recalls)) - 1]
+
+    declared_random_mean = random_source.get("recall_at_k_mean") if isinstance(random_source, Mapping) else None
+    declared_random_p95 = random_source.get("recall_at_k_p95") if isinstance(random_source, Mapping) else None
+    if declared_random_mean is not None and float(declared_random_mean) != random_mean:
+        raise EvaluationRunError("Archived seeded random mean does not match scorer recomputation")
+    if declared_random_p95 is not None and float(declared_random_p95) != random_p95:
+        raise EvaluationRunError("Archived seeded random p95 does not match scorer recomputation")
+
+    return {
+        "split": expected_split,
+        "review_budget": review_budget,
+        "fixed": {str(name): dict(result) for name, result in fixed.items()},
+        "seeded_random": {
+            "recall_at_k_mean": random_mean,
+            "p95_recall_at_k": random_p95,
+            "run_count": len(random_runs),
+        },
+    }
+
+
+def _verify_archived_allocator_results(
+    *,
+    results: Sequence[Mapping[str, Any]],
+    ranker_cases: Sequence[Mapping[str, Any]],
+    scorer_cases: Sequence[Mapping[str, Any]],
+    review_budget: int,
+) -> None:
+    for result in results:
+        metrics = recompute_allocation_metrics(
+            review_queue=result["review_queue"],
+            ranker_cases=ranker_cases,
+            scorer_cases=scorer_cases,
+            review_budget=review_budget,
+        )
+        declared = result.get("metrics")
+        if not isinstance(declared, Mapping) or any(
+            declared.get(name) != metrics[name]
+            for name in ("recall_at_k", "precision_at_k", "false_negative_ids", "oracle_regret")
+        ):
+            raise EvaluationRunError("Archived allocator result does not match scorer recomputation")
