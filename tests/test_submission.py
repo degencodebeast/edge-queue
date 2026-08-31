@@ -97,7 +97,21 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
     evaluation_run = json.loads((judge_output / "proof-bundle/evaluation-run.json").read_text(encoding="utf-8"))
     assert evaluation_run["code_commit"] == source_sha
     assert evaluation_run["git_tree"] == manifest["source_tree"]
-    assert evaluation_run["tested_working_tree"]["status"] == "release-manifest"
+    assert evaluation_run["dirty_state"] is False
+
+    judge_source = extracted / "src/edgequeue/judge.py"
+    judge_source.write_bytes(judge_source.read_bytes() + b"\n")
+    tampered_result = subprocess.run(
+        [sys.executable, "-m", "edgequeue.cli", "judge", "--output-dir", str(extracted / "tampered-output")],
+        cwd=extracted,
+        env=environment,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert tampered_result.returncode == 2
+    assert "Release manifest digest mismatch: src/edgequeue/judge.py" in tampered_result.stderr
 
 
 def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_path: Path) -> None:
