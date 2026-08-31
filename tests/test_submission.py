@@ -7,6 +7,7 @@ import sys
 import zipfile
 import json
 import os
+import hashlib
 from pathlib import Path
 
 
@@ -45,6 +46,10 @@ def test_submission_validator_accepts_the_complete_package() -> None:
 
 def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) -> None:
     """The archive binds an extracted judge replay to its declared source tree."""
+    if not (PROJECT_ROOT / ".git").exists():
+        _assert_release_manifest(PROJECT_ROOT)
+        return
+
     source_sha = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=PROJECT_ROOT, text=True
     ).strip()
@@ -75,10 +80,12 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
         assert "docs/evidence/ticket-21/artifacts/video-data.json" in names
         manifest = json.loads(archive.read("RELEASE_MANIFEST.json"))
         assert manifest["source_sha"] == source_sha
-        assert len(manifest["source_tree"]) == 40
+        _assert_release_manifest_values(manifest)
         assert any(entry["path"] == "src/edgequeue/judge.py" for entry in manifest["files"])
         extracted = tmp_path / "extracted"
         archive.extractall(extracted)
+
+    _assert_release_manifest(extracted)
 
     judge_output = extracted / "judge-output"
     environment = os.environ | {
@@ -113,6 +120,35 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
 
     assert tampered_result.returncode == 2
     assert "Release manifest digest mismatch: src/edgequeue/judge.py" in tampered_result.stderr
+
+
+def _assert_release_manifest(project_root: Path) -> None:
+    """Validate the self-contained source binding in an extracted package."""
+    manifest = json.loads((project_root / "RELEASE_MANIFEST.json").read_text(encoding="utf-8"))
+    _assert_release_manifest_values(manifest)
+    files = manifest["files"]
+    assert manifest["tracked_file_count"] == len(files)
+    paths: set[str] = set()
+    for entry in files:
+        path_text = entry["path"]
+        digest = entry["sha256"]
+        relative_path = Path(path_text)
+        assert not relative_path.is_absolute()
+        assert ".." not in relative_path.parts
+        assert path_text not in paths
+        paths.add(path_text)
+        assert len(digest) == 64 and all(character in "0123456789abcdef" for character in digest)
+        assert hashlib.sha256((project_root / relative_path).read_bytes()).hexdigest() == digest
+
+
+def _assert_release_manifest_values(manifest: dict[str, object]) -> None:
+    """Validate required release identity fields before archive-specific checks."""
+    for field in ("source_sha", "source_tree"):
+        value = manifest[field]
+        assert isinstance(value, str)
+        assert len(value) == 40 and all(character in "0123456789abcdef" for character in value)
+    assert isinstance(manifest["tracked_file_count"], int)
+    assert isinstance(manifest["files"], list)
 
 
 def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_path: Path) -> None:
