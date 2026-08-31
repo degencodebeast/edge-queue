@@ -6,6 +6,7 @@ import subprocess
 import sys
 import zipfile
 import json
+import os
 from pathlib import Path
 
 
@@ -43,7 +44,7 @@ def test_submission_validator_accepts_the_complete_package() -> None:
 
 
 def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) -> None:
-    """The public archive CLI reads one commit and excludes repository metadata."""
+    """The archive binds an extracted judge replay to its declared source tree."""
     source_sha = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=PROJECT_ROOT, text=True
     ).strip()
@@ -72,7 +73,31 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
         assert "docs/evidence/ticket-20/claims.json" in names
         assert "docs/evidence/ticket-20/frozen-traces/EQ-F01-AH-01/attempt-01/metadata.json" in names
         assert "docs/evidence/ticket-21/artifacts/video-data.json" in names
-        assert source_sha in archive.read("RELEASE_MANIFEST.json").decode("utf-8")
+        manifest = json.loads(archive.read("RELEASE_MANIFEST.json"))
+        assert manifest["source_sha"] == source_sha
+        assert len(manifest["source_tree"]) == 40
+        assert any(entry["path"] == "src/edgequeue/judge.py" for entry in manifest["files"])
+        extracted = tmp_path / "extracted"
+        archive.extractall(extracted)
+
+    judge_output = extracted / "judge-output"
+    environment = os.environ | {
+        "PYTHONPATH": str(extracted / "src") + os.pathsep + os.environ.get("PYTHONPATH", "")
+    }
+    extracted_result = subprocess.run(
+        [sys.executable, "-m", "edgequeue.cli", "judge", "--output-dir", str(judge_output)],
+        cwd=extracted,
+        env=environment,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert extracted_result.returncode == 0, extracted_result.stdout + extracted_result.stderr
+    evaluation_run = json.loads((judge_output / "proof-bundle/evaluation-run.json").read_text(encoding="utf-8"))
+    assert evaluation_run["code_commit"] == source_sha
+    assert evaluation_run["git_tree"] == manifest["source_tree"]
+    assert evaluation_run["tested_working_tree"]["status"] == "release-manifest"
 
 
 def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_path: Path) -> None:
