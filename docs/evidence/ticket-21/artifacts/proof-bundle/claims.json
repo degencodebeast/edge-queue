@@ -1,0 +1,1 @@
+[{"claim_id":"judge-fixture-recall-at-1","evaluation_run_digest":"aad334205b7d97b51ccfc617c8c5fcf579ddff665d0975d54b3d7f3355709c41","metric":"recall_at_k","schema_version":"1.0","supporting_artifact":"metrics.json","text":"EdgeQueue recovered the frozen Judge Fixture Label Error at Recall@1.","value":1.0}]

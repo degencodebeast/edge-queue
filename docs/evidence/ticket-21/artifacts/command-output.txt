@@ -1,0 +1,10 @@
+EdgeQueue Judge Fixture (Offline Replay)
+Baseline deterministic_only: EQ-F02-DEV-01
+EdgeQueue: EQ-F01-DEV-01
+Primary Recall@1: baseline=0.00 EdgeQueue=1.00
+Correction: authorized human correction replayed
+Calibration Candidate: accepted; not promoted; no PCH claim
+Proof Bundle: valid
+Tamper result: metric_recomputation_mismatch
+Offline Replay: 0.057s, requests=0, tokens=0, model_cost=$0.00
+Artifacts: docs/evidence/ticket-21/artifacts

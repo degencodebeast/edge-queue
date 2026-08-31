@@ -9,6 +9,7 @@ from pathlib import Path
 
 from edgequeue.adjudication import AdjudicationError, append_adjudication, create_adjudication
 from edgequeue.contracts import ContractValidationError, digest_contract, validate_contract
+from edgequeue.judge import JudgeFixtureError, format_judge_summary, record_live_run_unavailable, run_judge_fixture
 from edgequeue.verification import verify_proof_bundle
 
 
@@ -27,7 +28,7 @@ def build_parser() -> argparse.ArgumentParser:
     judge.add_argument(
         "--live",
         action="store_true",
-        help="Record optional live provider behavior separately from offline proof.",
+        help="Reserved for a separately configured live provider; unavailable in Offline Replay.",
     )
     judge.add_argument(
         "--output-dir",
@@ -90,11 +91,23 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    """Parse a frozen command interface and report unimplemented later slices."""
+    """Parse and run the frozen local command interfaces."""
     parser = build_parser()
     args = parser.parse_args(argv)
     if args.command == "judge":
-        parser.error("judge execution is provided by the later proof slice")
+        output_dir = Path(args.output_dir) if args.output_dir else Path("judge-output")
+        if args.live:
+            record = record_live_run_unavailable(output_dir)
+            print(f"Live Run: {record['status']} ({record['reason']})")
+            print(f"Artifacts: {output_dir}")
+            return 0
+        fixture_path = Path("corpus/fixtures/judge-fixture-v1.json")
+        try:
+            result = run_judge_fixture(fixture_path, output_dir)
+        except (JudgeFixtureError, OSError, ValueError) as error:
+            parser.error(str(error))
+        print(format_judge_summary(result))
+        return 0
     if args.command == "adjudicate":
         return _run_adjudicate(parser, args)
     result = verify_proof_bundle(Path(args.bundle))
