@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/corpus/v1/corpus-manifest.schema.json",
+  "title": "Corpus Manifest", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "corpus_id", "split_manifests", "schema_versions", "case_blueprint_versions", "evaluator_manifest_digest", "authoring_ledger_digest", "root_corpus_digest"],
+  "properties": {"schema_version": {"const": "1.0"}, "corpus_id": {"type": "string"}, "split_manifests": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "schema_versions": {"type": "object", "additionalProperties": {"type": "string"}}, "case_blueprint_versions": {"type": "array", "items": {"type": "string"}}, "evaluator_manifest_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "authoring_ledger_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "root_corpus_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

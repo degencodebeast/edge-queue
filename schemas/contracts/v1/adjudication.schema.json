@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/adjudication.schema.json",
+  "title": "Adjudication", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "adjudication_id", "case_id", "action", "prior_record_digest", "prior_verdict", "resulting_verdict", "rationale", "reviewer_id", "reviewer_role", "reviewer_manifest_version", "reviewer_manifest_digest", "trajectory_schema_version", "trajectory_digest", "allocation_receipt_schema_version", "allocation_receipt_digest", "evidence_references", "corpus_digest", "split_digest", "rubric_version", "prompt_version", "feature_version", "model_config_digest", "evaluation_config_digest", "predecessor_digest"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "adjudication_id": {"type": "string"}, "case_id": {"type": "string"},
+    "action": {"enum": ["preserve", "correct", "abstain"]}, "prior_record_digest": {"$ref": "#/$defs/digest"},
+    "prior_verdict": {"$ref": "#/$defs/verdict"}, "resulting_verdict": {"$ref": "#/$defs/verdict"}, "rationale": {"type": "string"},
+    "reviewer_id": {"type": "string"}, "reviewer_role": {"enum": ["reviewer", "conflict_resolver", "calibration_promoter"]}, "reviewer_manifest_version": {"type": "string"}, "reviewer_manifest_digest": {"$ref": "#/$defs/digest"}, "trajectory_schema_version": {"const": "1.0"}, "trajectory_digest": {"$ref": "#/$defs/digest"}, "allocation_receipt_schema_version": {"const": "1.0"}, "allocation_receipt_digest": {"$ref": "#/$defs/digest"},
+    "evidence_references": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["case_id", "event_id", "relation", "claim", "status"], "properties": {"case_id": {"type": "string"}, "event_id": {"type": "string"}, "relation": {"enum": ["supports_current", "contradicts_current", "insufficient"]}, "claim": {"type": "string"}, "status": {"enum": ["verified", "unavailable", "malformed", "digest_mismatch", "forbidden", "wrong_case"]}}}},
+    "corpus_digest": {"$ref": "#/$defs/digest"}, "split_digest": {"$ref": "#/$defs/digest"}, "rubric_version": {"type": "string"},
+    "prompt_version": {"type": "string"}, "feature_version": {"type": "string"}, "model_config_digest": {"$ref": "#/$defs/digest"},
+    "evaluation_config_digest": {"$ref": "#/$defs/digest"}, "predecessor_digest": {"$ref": "#/$defs/digest"}, "created_at": {"type": "string"}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "verdict": {"enum": ["PASS", "FAIL", "UNDETERMINED"]}},
+  "allOf": [{"oneOf": [
+    {"properties": {"action": {"enum": ["preserve", "abstain"]}, "prior_verdict": {"const": "PASS"}, "resulting_verdict": {"const": "PASS"}}},
+    {"properties": {"action": {"enum": ["preserve", "abstain"]}, "prior_verdict": {"const": "FAIL"}, "resulting_verdict": {"const": "FAIL"}}},
+    {"properties": {"action": {"enum": ["preserve", "abstain"]}, "prior_verdict": {"const": "UNDETERMINED"}, "resulting_verdict": {"const": "UNDETERMINED"}}},
+    {"properties": {"action": {"const": "correct"}, "prior_verdict": {"const": "PASS"}, "resulting_verdict": {"enum": ["FAIL", "UNDETERMINED"]}}},
+    {"properties": {"action": {"const": "correct"}, "prior_verdict": {"const": "FAIL"}, "resulting_verdict": {"enum": ["PASS", "UNDETERMINED"]}}},
+    {"properties": {"action": {"const": "correct"}, "prior_verdict": {"const": "UNDETERMINED"}, "resulting_verdict": {"enum": ["PASS", "FAIL"]}}}
+  ]}]
+}

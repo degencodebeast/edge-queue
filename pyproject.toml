@@ -5,6 +5,9 @@ description = "Fixed-budget review allocation for agent trajectory evaluations"
 requires-python = ">=3.11"
 dependencies = []
 
+[project.scripts]
+edgequeue = "edgequeue.cli:main"
+
 [dependency-groups]
 dev = [
   "pytest>=8.4,<9",

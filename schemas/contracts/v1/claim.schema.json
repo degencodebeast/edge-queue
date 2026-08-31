@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/claim.schema.json",
+  "title": "Claim", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "claim_id", "evaluation_run_digest", "supporting_artifact", "metric", "value", "text"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "claim_id": {"type": "string"}, "evaluation_run_digest": {"$ref": "#/$defs/digest"}, "supporting_artifact": {"type": "string"}, "metric": {"type": "string"}, "value": {"type": ["number", "string", "boolean"]}, "text": {"type": "string"}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

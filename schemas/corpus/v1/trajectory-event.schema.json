@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/corpus/v1/trajectory-event.schema.json",
+  "title": "Trajectory Event", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "case_id", "event_id", "event_type", "content"],
+  "properties": {"schema_version": {"const": "1.0"}, "case_id": {"type": "string", "pattern": "^EQ-F(?:0[1-9]|10)-(?:DEV|AH|PCH)-[0-9]{2}$"}, "event_id": {"type": "string"}, "event_type": {"enum": ["task", "tool_result", "artifact", "evaluator_note"]}, "content": {"type": "string"}, "occurred_at": {"type": "string"}}
+}

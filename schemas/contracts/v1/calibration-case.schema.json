@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/calibration-case.schema.json",
+  "title": "Calibration Case", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "case_id", "source_adjudication_digest", "prior_verdict", "resulting_verdict", "rationale", "evidence_references", "rubric_version", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "case_id": {"type": "string"}, "source_adjudication_digest": {"$ref": "#/$defs/digest"},
+    "prior_verdict": {"$ref": "#/$defs/verdict"}, "resulting_verdict": {"$ref": "#/$defs/verdict"}, "rationale": {"type": "string"},
+    "evidence_references": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["case_id", "event_id", "relation", "claim", "status"], "properties": {"case_id": {"type": "string"}, "event_id": {"type": "string"}, "relation": {"enum": ["supports_current", "contradicts_current", "insufficient"]}, "claim": {"type": "string"}, "status": {"enum": ["verified", "unavailable", "malformed", "digest_mismatch", "forbidden", "wrong_case"]}}}},
+    "rubric_version": {"type": "string"}, "content_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "verdict": {"enum": ["PASS", "FAIL", "UNDETERMINED"]}}
+}

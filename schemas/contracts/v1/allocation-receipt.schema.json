@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/allocation-receipt.schema.json",
+  "title": "Allocation Receipt", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "receipt_id", "evaluation_run_id", "corpus_digest", "split_digest", "allocator_config_digest", "review_budget", "assessments", "review_queue", "first_excluded_case_id", "selection_boundary"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "receipt_id": {"type": "string"}, "evaluation_run_id": {"type": "string"},
+    "corpus_digest": {"$ref": "#/$defs/digest"}, "split_digest": {"$ref": "#/$defs/digest"}, "allocator_config_digest": {"$ref": "#/$defs/digest"},
+    "review_budget": {"type": "integer", "minimum": 1}, "assessments": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["case_id", "assessment_digest"], "properties": {"case_id": {"type": "string"}, "assessment_digest": {"$ref": "#/$defs/digest"}}}},
+    "review_queue": {"type": "array", "items": {"type": "string"}}, "first_excluded_case_id": {"type": ["string", "null"]},
+    "selection_boundary": {"type": ["object", "null"], "additionalProperties": false, "required": ["excluded_case_id", "excluded_status", "excluded_risk_score", "excluded_deterministic_score"], "properties": {"excluded_case_id": {"type": "string"}, "excluded_status": {"enum": ["risk_finding", "abstention"]}, "excluded_risk_score": {"type": "integer", "minimum": 0, "maximum": 100}, "excluded_deterministic_score": {"type": "integer", "minimum": 0, "maximum": 100}}}, "created_at": {"type": "string"}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

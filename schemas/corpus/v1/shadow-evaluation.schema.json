@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/corpus/v1/shadow-evaluation.schema.json",
+  "title": "Shadow Evaluation", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "case_id", "evaluator_id", "verdict", "confidence", "output_digest"],
+  "properties": {"schema_version": {"const": "1.0"}, "case_id": {"type": "string", "pattern": "^EQ-F(?:0[1-9]|10)-(?:DEV|AH|PCH)-[0-9]{2}$"}, "evaluator_id": {"type": "string"}, "verdict": {"enum": ["PASS", "FAIL", "UNDETERMINED"]}, "confidence": {"type": "integer", "minimum": 0, "maximum": 100}, "output_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/corpus/v1/authoring-ledger.schema.json",
+  "title": "Authoring Ledger", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "ledger_id", "entries"],
+  "properties": {"schema_version": {"const": "1.0"}, "ledger_id": {"type": "string"}, "entries": {"type": "array", "items": {"type": "string"}}, "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

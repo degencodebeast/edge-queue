@@ -1,6 +1,7 @@
 from dataclasses import asdict
 
 from edgequeue.corpus import build_allocation_holdout_cases, build_development_cases
+from edgequeue.contracts import validate_contract
 
 
 def test_builds_isolated_development_case_from_frozen_allocation() -> None:
@@ -14,6 +15,12 @@ def test_builds_isolated_development_case_from_frozen_allocation() -> None:
     assert "reference_verdict" not in ranker_payload
     assert "scorer_sentinel" not in ranker_payload
     assert scorer_payload["scorer_sentinel"].startswith("SCORER_ONLY_EQ_F01_DEV_01_")
+    assert ranker_payload["schema_version"] == "1.0"
+    assert scorer_payload["schema_version"] == "1.0"
+    assert ranker_payload["rubric_clauses"][0]["schema_version"] == "1.0"
+    assert ranker_payload["trajectory_events"][0]["schema_version"] == "1.0"
+    validate_contract("ranker_case", ranker_payload)
+    validate_contract("scorer_case", scorer_payload)
 
 
 def test_builds_the_twenty_cases_required_for_the_development_split() -> None:

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/case-assessment.schema.json",
+  "title": "Case Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "status", "risk_score", "reason_codes", "rubric_clause_ids", "evidence_references", "explanation", "abstention_reason", "allocator_config_digest", "input_digest", "output_digest", "attempts"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["risk_finding", "abstention"]},
+    "risk_score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "rubric_clause_ids": {"type": "array", "items": {"type": "string"}},
+    "evidence_references": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence_reference"}},
+    "explanation": {"type": "string"},
+    "abstention_reason": {"type": ["string", "null"]},
+    "allocator_config_digest": {"$ref": "#/$defs/digest"},
+    "input_digest": {"$ref": "#/$defs/digest"},
+    "output_digest": {"$ref": "#/$defs/digest"},
+    "attempts": {"oneOf": [
+      {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/accepted_attempt"}},
+      {"type": "array", "minItems": 2, "maxItems": 2, "prefixItems": [{"$ref": "#/$defs/retry_attempt"}, {"$ref": "#/$defs/accepted_attempt"}], "items": false}
+    ]}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evidence_reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["case_id", "event_id", "relation", "claim", "status"],
+      "properties": {
+        "case_id": {"type": "string"},
+        "event_id": {"type": "string"},
+        "relation": {"enum": ["supports_current", "contradicts_current", "insufficient"]},
+        "claim": {"type": "string"},
+        "status": {"enum": ["verified", "unavailable", "malformed", "digest_mismatch", "forbidden", "wrong_case"]}
+      }
+    },
+    "attempt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "attempt", "outcome"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "attempt": {"type": "integer", "minimum": 1},
+        "outcome": {"enum": ["accepted", "timeout", "malformed", "schema_failure", "execution_failure"]},
+        "error": {"type": "string"},
+        "runtime_seconds": {"type": "number", "minimum": 0}
+      }
+    },
+    "accepted_attempt": {"allOf": [{"$ref": "#/$defs/attempt"}, {"properties": {"outcome": {"const": "accepted"}}}]},
+    "retry_attempt": {"allOf": [{"$ref": "#/$defs/attempt"}, {"properties": {"outcome": {"enum": ["timeout", "malformed", "schema_failure"]}}}]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "risk_finding"}}},
+      "then": {"properties": {"abstention_reason": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "abstention"}}},
+      "then": {"properties": {"abstention_reason": {"type": "string", "minLength": 1}, "evidence_references": {"items": {"properties": {"status": {"enum": ["verified", "unavailable"]}}}}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "risk_finding"}}},
+      "then": {"properties": {"evidence_references": {"items": {"properties": {"status": {"const": "verified"}}}}}}
+    }
+  ]
+}

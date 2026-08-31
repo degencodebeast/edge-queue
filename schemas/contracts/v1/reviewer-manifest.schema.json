@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/reviewer-manifest.schema.json",
+  "title": "Reviewer Manifest", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "manifest_id", "version", "reviewers", "content_digest"],
+  "properties": {"schema_version": {"const": "1.0"}, "manifest_id": {"type": "string"}, "version": {"type": "string"}, "reviewers": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["reviewer_id", "roles", "can_adjudicate", "can_resolve_conflicts", "can_promote_calibration"], "properties": {"reviewer_id": {"type": "string"}, "roles": {"type": "array", "items": {"enum": ["reviewer", "conflict_resolver", "calibration_promoter"]}}, "can_adjudicate": {"type": "boolean"}, "can_resolve_conflicts": {"type": "boolean"}, "can_promote_calibration": {"type": "boolean"}}}}, "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

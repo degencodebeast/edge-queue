@@ -2,13 +2,16 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
+
+from edgequeue.contracts import SCHEMA_VERSION, content_digest, validate_contract
 
 
 @dataclass(frozen=True)
 class RubricClause:
     clause_id: str
     text: str
+    schema_version: str = SCHEMA_VERSION
 
 
 @dataclass(frozen=True)
@@ -16,6 +19,8 @@ class TrajectoryEvent:
     event_id: str
     event_type: str
     content: str
+    schema_version: str = SCHEMA_VERSION
+    case_id: str = ""
 
 
 @dataclass(frozen=True)
@@ -32,6 +37,20 @@ class RankerCase:
     deterministic_score: int
     rubric_clauses: tuple[RubricClause, ...]
     trajectory_events: tuple[TrajectoryEvent, ...]
+    schema_version: str = SCHEMA_VERSION
+    content_digest: str = ""
+
+    def __post_init__(self) -> None:
+        payload = asdict(self)
+        payload.pop("content_digest")
+        validate_contract(
+            "ranker_case",
+            {**payload, "content_digest": "0" * 64},
+            verify_digest=False,
+        )
+        digest = content_digest(payload)
+        validate_contract("ranker_case", {**payload, "content_digest": digest})
+        object.__setattr__(self, "content_digest", digest)
 
 
 @dataclass(frozen=True)
@@ -41,6 +60,20 @@ class ScorerCase:
     kind: str
     decisive_event_ids: tuple[str, ...]
     scorer_sentinel: str
+    schema_version: str = SCHEMA_VERSION
+    content_digest: str = ""
+
+    def __post_init__(self) -> None:
+        payload = asdict(self)
+        payload.pop("content_digest")
+        validate_contract(
+            "scorer_case",
+            {**payload, "content_digest": "0" * 64},
+            verify_digest=False,
+        )
+        digest = content_digest(payload)
+        validate_contract("scorer_case", {**payload, "content_digest": digest})
+        object.__setattr__(self, "content_digest", digest)
 
 
 @dataclass(frozen=True)
@@ -86,26 +119,31 @@ def build_development_cases() -> tuple[CorpusCase, ...]:
                         "E1",
                         "task",
                         "Create a migration that adds a non-null account status column.",
+                        case_id="EQ-F01-DEV-01",
                     ),
                     TrajectoryEvent(
                         "E2",
                         "tool_result",
                         "migratekit created 20260831_add_account_status.sql and returned exit code 0.",
+                        case_id="EQ-F01-DEV-01",
                     ),
                     TrajectoryEvent(
                         "E3",
                         "artifact",
                         "The migration file adds account.status with a default before the non-null constraint.",
+                        case_id="EQ-F01-DEV-01",
                     ),
                     TrajectoryEvent(
                         "E4",
                         "tool_result",
                         "The approved verification command could not start because the Docker service was unavailable.",
+                        case_id="EQ-F01-DEV-01",
                     ),
                     TrajectoryEvent(
                         "E5",
                         "evaluator_note",
                         "The evaluator rejected the unfamiliar tool and assigned FAIL.",
+                        case_id="EQ-F01-DEV-01",
                     ),
                 ),
             ),
@@ -298,9 +336,9 @@ def _case_from_seed(seed: DevelopmentCaseSeed) -> CorpusCase:
                 ),
             ),
             trajectory_events=(
-                TrajectoryEvent("E1", "task", seed.task),
-                TrajectoryEvent("E2", "tool_result", seed.evidence),
-                TrajectoryEvent("E3", "evaluator_note", seed.evaluator_note),
+                TrajectoryEvent("E1", "task", seed.task, case_id=seed.case_id),
+                TrajectoryEvent("E2", "tool_result", seed.evidence, case_id=seed.case_id),
+                TrajectoryEvent("E3", "evaluator_note", seed.evaluator_note, case_id=seed.case_id),
             ),
         ),
         scorer_case=ScorerCase(
@@ -393,9 +431,14 @@ def _case_from_holdout_row(row: HoldoutRow) -> CorpusCase:
                 RubricClause("R3", "Use UNDETERMINED when evidence cannot establish PASS or FAIL."),
             ),
             trajectory_events=(
-                TrajectoryEvent("E1", "task", topic),
-                TrajectoryEvent("E2", "tool_result", evidence),
-                TrajectoryEvent("E3", "evaluator_note", _holdout_evaluator_note(row, topic)),
+                TrajectoryEvent("E1", "task", topic, case_id=row.case_id),
+                TrajectoryEvent("E2", "tool_result", evidence, case_id=row.case_id),
+                TrajectoryEvent(
+                    "E3",
+                    "evaluator_note",
+                    _holdout_evaluator_note(row, topic),
+                    case_id=row.case_id,
+                ),
             ),
         ),
         scorer_case=ScorerCase(

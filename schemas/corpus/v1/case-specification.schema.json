@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/corpus/v1/case-specification.schema.json",
+  "title": "Case Specification", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "case_id", "task", "defect_family", "current_verdict", "reference_verdict", "decisive_event_ids", "decisive_evidence"],
+  "properties": {"schema_version": {"const": "1.0"}, "case_id": {"type": "string", "pattern": "^EQ-F(?:0[1-9]|10)-(?:DEV|AH|PCH)-[0-9]{2}$"}, "task": {"type": "string"}, "defect_family": {"type": "string"}, "current_verdict": {"enum": ["PASS", "FAIL", "UNDETERMINED"]}, "reference_verdict": {"enum": ["PASS", "FAIL", "UNDETERMINED"]}, "decisive_event_ids": {"type": "array", "items": {"type": "string"}}, "decisive_evidence": {"type": "string"}, "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

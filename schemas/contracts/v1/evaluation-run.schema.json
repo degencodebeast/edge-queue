@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/evaluation-run.schema.json",
+  "title": "EvaluationRun",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "evaluation_run_id", "corpus_digest", "split_digest", "evaluation_config_digest", "allocator_config_digest", "scorer_version", "command_digest", "code_commit", "git_tree", "dirty_state", "tested_working_tree_digest", "evaluation_core", "exit_code", "review_budget", "case_ids", "review_queue", "allocation_receipt_digest", "disposition", "raw_artifact_refs"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "evaluation_run_id": {"type": "string"},
+    "corpus_digest": {"$ref": "#/$defs/digest"}, "split_digest": {"$ref": "#/$defs/digest"},
+    "evaluation_config_digest": {"$ref": "#/$defs/digest"}, "allocator_config_digest": {"$ref": "#/$defs/digest"},
+    "scorer_version": {"type": "string"}, "command_digest": {"$ref": "#/$defs/digest"},
+    "code_commit": {"type": "string"}, "git_tree": {"type": "string"}, "dirty_state": {"type": "boolean"},
+    "tested_working_tree_digest": {"$ref": "#/$defs/digest"}, "evaluation_core": {"$ref": "#/$defs/evaluation_core"}, "exit_code": {"type": "integer"}, "review_budget": {"type": "integer", "minimum": 1},
+    "case_ids": {"type": "array", "items": {"type": "string"}}, "review_queue": {"type": "array", "items": {"type": "string"}},
+    "allocation_receipt_digest": {"$ref": "#/$defs/digest"}, "disposition": {"enum": ["valid", "invalid"]},
+    "raw_artifact_refs": {"type": "array", "items": {"type": "string"}}, "runtime_seconds": {"type": "number", "minimum": 0},
+    "request_count": {"type": "integer", "minimum": 0}, "token_count": {"type": "integer", "minimum": 0},
+    "available_cost": {"type": ["number", "null"], "minimum": 0}, "created_at": {"type": "string"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "content_reference": {"type": "object", "additionalProperties": false, "required": ["name", "digest"], "properties": {"name": {"type": "string"}, "digest": {"$ref": "#/$defs/digest"}}},
+    "evaluation_core": {"type": "object", "additionalProperties": false, "required": ["corpus_manifest", "split_manifest", "ranker_case_bundle", "rubric_snapshot", "initial_evaluation_snapshot", "evidence_validation_manifest", "allocator_prompt", "allocator_model_config", "feature_version", "ranking_policy", "evaluation_config", "scorer_reference_manifest", "canonical_scorer", "runtime_dependency_manifest", "risk_findings", "review_queue", "allocation_receipt", "raw_run_outputs", "optional_absences"], "properties": {"corpus_manifest": {"$ref": "#/$defs/content_reference"}, "split_manifest": {"$ref": "#/$defs/content_reference"}, "ranker_case_bundle": {"$ref": "#/$defs/content_reference"}, "rubric_snapshot": {"$ref": "#/$defs/content_reference"}, "initial_evaluation_snapshot": {"$ref": "#/$defs/content_reference"}, "evidence_validation_manifest": {"$ref": "#/$defs/content_reference"}, "allocator_prompt": {"$ref": "#/$defs/content_reference"}, "allocator_model_config": {"$ref": "#/$defs/content_reference"}, "feature_version": {"$ref": "#/$defs/content_reference"}, "ranking_policy": {"$ref": "#/$defs/content_reference"}, "evaluation_config": {"$ref": "#/$defs/content_reference"}, "scorer_reference_manifest": {"$ref": "#/$defs/content_reference"}, "canonical_scorer": {"$ref": "#/$defs/content_reference"}, "runtime_dependency_manifest": {"$ref": "#/$defs/content_reference"}, "risk_findings": {"$ref": "#/$defs/content_reference"}, "review_queue": {"$ref": "#/$defs/content_reference"}, "allocation_receipt": {"$ref": "#/$defs/content_reference"}, "raw_run_outputs": {"$ref": "#/$defs/content_reference"}, "optional_absences": {"type": "array", "items": {"type": "string"}}}}
+  }
+}

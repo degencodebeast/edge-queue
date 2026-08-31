@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/verification-failure.schema.json",
+  "title": "Verification Failure", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "code", "artifact", "expected", "observed", "message"],
+  "properties": {"schema_version": {"const": "1.0"}, "code": {"enum": ["manifest_missing_file", "manifest_unlisted_file", "file_digest_mismatch", "corpus_digest_mismatch", "budget_violation", "case_not_in_split", "scorer_leakage", "invalid_evidence", "unauthorized_adjudication", "adjudication_conflict", "calibration_version_mismatch", "metric_recomputation_mismatch", "public_claim_mismatch"]}, "artifact": {"type": "string"}, "expected": {"type": ["string", "number", "boolean", "null"]}, "observed": {"type": ["string", "number", "boolean", "null"]}, "message": {"type": "string"}}
+}

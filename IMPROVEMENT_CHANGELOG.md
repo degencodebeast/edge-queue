@@ -2,6 +2,16 @@
 
 This file records material changes to EdgeQueue. Each entry names the evidence that guided the next decision.
 
+## 2026-08-31 — Shared contract spine
+
+**Change.** Added versioned, fail-closed contracts for corpus records, Case Assessments, EvaluationRuns, Allocation Receipts, Adjudications, Calibration records, Proof Bundles, Claims, and Verification results. Added canonical UTF-8 JSON serialization, declared timestamp exclusion, named verification failures, and frozen `judge`, `adjudicate`, and `verify` command help interfaces.
+
+**Why.** Parallel EdgeQueue slices need one authority for fields, versions, serialization, and failure names.
+
+**Evidence.** `docs/evidence/ticket-14/contract-validation.md` records RED-GREEN commands, the independent digest vector, 25 versioned schema files, CLI help checks, and the full `73 passed` suite.
+
+**Decision.** Later slices must use schema version `1.0` and must not add fields without a schema-version change.
+
 ## 2026-08-31 — Baseline contract
 
 **Change.** Defined three fair baseline allocators. They select lowest confidence, evaluator disagreement, and deterministic risk. The prototype also includes an oracle ceiling and seeded random allocation.

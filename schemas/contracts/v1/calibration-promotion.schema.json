@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/calibration-promotion.schema.json",
+  "title": "Calibration Promotion", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "promotion_id", "candidate_digest", "predecessor_digest", "rollback_target", "reviewer_id", "reviewer_role", "reviewer_manifest_version", "reviewer_manifest_digest", "decision", "rationale"],
+  "properties": {"schema_version": {"const": "1.0"}, "promotion_id": {"type": "string"}, "candidate_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "predecessor_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "rollback_target": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "reviewer_id": {"type": "string"}, "reviewer_role": {"const": "calibration_promoter"}, "reviewer_manifest_version": {"type": "string"}, "reviewer_manifest_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "decision": {"enum": ["promote", "reject"]}, "rationale": {"type": "string"}, "created_at": {"type": "string"}}
+}

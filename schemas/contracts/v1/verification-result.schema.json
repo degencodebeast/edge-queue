@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/verification-result.schema.json",
+  "title": "Verification Result", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "valid", "bundle_digest", "failures", "checked_files", "offline", "read_only"],
+  "properties": {"schema_version": {"const": "1.0"}, "valid": {"type": "boolean"}, "bundle_digest": {"$ref": "#/$defs/digest"}, "failures": {"type": "array", "items": {"$ref": "#/$defs/failure"}}, "checked_files": {"type": "array", "items": {"type": "string"}}, "offline": {"const": true}, "read_only": {"const": true}},
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "failure": {"type": "object", "additionalProperties": false, "required": ["schema_version", "code", "artifact", "expected", "observed", "message"], "properties": {"schema_version": {"const": "1.0"}, "code": {"enum": ["manifest_missing_file", "manifest_unlisted_file", "file_digest_mismatch", "corpus_digest_mismatch", "budget_violation", "case_not_in_split", "scorer_leakage", "invalid_evidence", "unauthorized_adjudication", "adjudication_conflict", "calibration_version_mismatch", "metric_recomputation_mismatch", "public_claim_mismatch"]}, "artifact": {"type": "string"}, "expected": {"type": ["string", "number", "boolean", "null"]}, "observed": {"type": ["string", "number", "boolean", "null"]}, "message": {"type": "string"}}}},
+  "allOf": [{"oneOf": [{"properties": {"valid": {"const": true}, "failures": {"maxItems": 0}}}, {"properties": {"valid": {"const": false}, "failures": {"minItems": 1}}}]}]
+}

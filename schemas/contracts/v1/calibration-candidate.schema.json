@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/calibration-candidate.schema.json",
+  "title": "Calibration Candidate", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "candidate_id", "predecessor_digest", "rollback_target", "source_adjudication_digests", "calibration_case_digests", "guideline_amendments", "configuration_digests", "status", "nominator_id", "nominator_role", "reviewer_manifest_version", "reviewer_manifest_digest"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "candidate_id": {"type": "string"}, "predecessor_digest": {"$ref": "#/$defs/digest"}, "rollback_target": {"$ref": "#/$defs/digest"},
+    "source_adjudication_digests": {"type": "array", "items": {"$ref": "#/$defs/digest"}}, "calibration_case_digests": {"type": "array", "items": {"$ref": "#/$defs/digest"}},
+    "guideline_amendments": {"type": "array", "items": {"type": "string"}}, "configuration_digests": {"type": "array", "items": {"$ref": "#/$defs/digest"}},
+    "status": {"enum": ["candidate", "promoted", "rejected"]}, "decision_digest": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}, "nominator_id": {"type": "string"}, "nominator_role": {"const": "reviewer"}, "reviewer_manifest_version": {"type": "string"}, "reviewer_manifest_digest": {"$ref": "#/$defs/digest"}, "created_at": {"type": "string"}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/contracts/v1/calibration-pack.schema.json",
+  "title": "Calibration Pack", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pack_id", "predecessor_digest", "rollback_target", "calibration_case_digests", "guideline_amendments", "status", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "pack_id": {"type": "string"}, "predecessor_digest": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}, "rollback_target": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "calibration_case_digests": {"type": "array", "items": {"$ref": "#/$defs/digest"}}, "guideline_amendments": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["candidate", "promoted", "rejected"]}, "content_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
