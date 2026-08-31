@@ -426,7 +426,7 @@
 
 ### response_item
 
-{"ordinal": 152, "payload": {"call_id": "call_ckEUeP63fuUE2dkyvVIYV6pf", "id": "ctco_01a05857-2fa9-7953-a008-cc2a3ae6bdf2", "internal_chat_message_metadata_passthrough": {"create_time": 1788188503.977581, "turn_id": "01a05852-bccd-7f81-a181-366dbfba1945"}, "output": [{"text": "Script completed\nWall time 0.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_____________ test_verify_prints_a_machine_readable_offline_result _____________\n\ntmp_path = PosixPath('/private/var/folders/gy/zdy3h00d62d1008nv39p35_c0000gn/T/pytest-of-degencodebeast/pytest-814/test_verify_prints_a_machine_r0')\n\n    def test_verify_prints_a_machine_…
+{"ordinal": 152, "payload": {"call_id": "call_ckEUeP63fuUE2dkyvVIYV6pf", "id": "ctco_01a05857-2fa9-7953-a008-cc2a3ae6bdf2", "internal_chat_message_metadata_passthrough": {"create_time": 1788188503.977581, "turn_id": "01a05852-bccd-7f81-a181-366dbfba1945"}, "output": [{"text": "Script completed\nWall time 0.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_____________ test_verify_prints_a_machine_readable_offline_result _____________\n\ntmp_path = PosixPath('<PRIVATE_PATH>')\n\n    def test_verify_prints_a_machine_readable_offline_result(tmp_path) -> None:\n        bundle = tmp_path / \"bundle\"\n        digest = \"a\" * 6…
 
 ### response_item
 

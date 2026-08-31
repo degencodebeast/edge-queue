@@ -14,6 +14,7 @@ from typing import Any
 SOURCE_PATTERN = re.compile(r"/(?:Users|private)/[^` ;|]+\.jsonl")
 SESSION_ID_PATTERN = re.compile(r"[0-9a-f]{8}-[0-9a-f-]{27,}")
 HOME_PATTERN = re.compile(r"/Users/\s*[^/\\\"\s]+")
+PRIVATE_PATH_PATTERN = re.compile(r"/private/(?:var|tmp)/[^\\\"'`\s,;|]+")
 EMAIL_PATTERN = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 TOKEN_PATTERN = re.compile(r"\b(?:sk-[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9_-]{12,}|AIza[A-Za-z0-9_-]{12,})\b")
 JWT_PATTERN = re.compile(r"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{4,}\b")
@@ -39,6 +40,7 @@ class LedgerSource:
 def redact_text(value: str) -> str:
     """Remove user-home paths, credentials, and personal addresses from text."""
     value = HOME_PATTERN.sub("<USER_HOME>", value)
+    value = PRIVATE_PATH_PATTERN.sub("<PRIVATE_PATH>", value)
     value = EMAIL_PATTERN.sub("<REDACTED_EMAIL>", value)
     value = TOKEN_PATTERN.sub("<REDACTED_TOKEN>", value)
     value = JWT_PATTERN.sub("<REDACTED_TOKEN>", value)
@@ -199,7 +201,7 @@ def export(ledger_path: Path, output_dir: Path) -> Path:
         "ledger_entries": ledger_entries,
         "source_count": len(records),
         "records": manifest_records,
-        "redaction": ["credentials", "private values", "user-home paths", "email addresses"],
+        "redaction": ["credentials", "private values", "user-home paths", "private local paths", "email addresses"],
     }
     manifest_path = output_dir / "trace-manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")

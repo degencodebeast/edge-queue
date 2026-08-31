@@ -402,7 +402,7 @@
 
 ### response_item
 
-{"ordinal": 131, "payload": {"call_id": "call_qpsVhHdEiL3TgRxK6zm0iaZB", "id": "ctco_01a05857-2d1d-7793-929a-2245ec36f522", "internal_chat_message_metadata_passthrough": {"create_time": 1788188503.325844, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "output": [{"text": "Script completed\nWall time 0.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "F                                                                        [100%]\n=================================== FAILURES ===================================\n________ test_freeze_complete_corpus_materializes_the_accepted_topology ________\n\ntmp_path = PosixPath('/private/var/folders/gy/zdy3h00d62d1008nv39p35_c0000gn/T/pytest-of-degencodebeast/pytest-813/test_freeze_complete_corpus_ma0')\n\n    def test_freeze_complete_corpus_m…
+{"ordinal": 131, "payload": {"call_id": "call_qpsVhHdEiL3TgRxK6zm0iaZB", "id": "ctco_01a05857-2d1d-7793-929a-2245ec36f522", "internal_chat_message_metadata_passthrough": {"create_time": 1788188503.325844, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "output": [{"text": "Script completed\nWall time 0.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "F                                                                        [100%]\n=================================== FAILURES ===================================\n________ test_freeze_complete_corpus_materializes_the_accepted_topology ________\n\ntmp_path = PosixPath('<PRIVATE_PATH>')\n\n    def test_freeze_complete_corpus_materializes_the_accepted_topology(tmp_path) -> None:\n>       frozen = freeze_complete_corpus(tmp_path)\n     …
 
 ### response_item
 

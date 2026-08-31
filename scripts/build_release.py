@@ -86,6 +86,12 @@ def canonical_json(value: object) -> bytes:
     return (json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
 
 
+def source_identity_binding(source_sha: str, source_tree: str, files: list[dict[str, str]]) -> str:
+    """Bind the declared Git identity to the complete archive file list."""
+    payload = {"files": files, "source_sha": source_sha, "source_tree": source_tree}
+    return hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
 def zip_info(name: str) -> zipfile.ZipInfo:
     """Create stable ZIP metadata without local timestamps or permissions."""
     info = zipfile.ZipInfo(name, date_time=FIXED_ZIP_TIME)
@@ -106,15 +112,17 @@ def build_archive(project_root: Path, source_sha: str, output_dir: Path) -> tupl
 
     files = tracked_files(project_root, resolved_sha)
     source_tree = git(project_root, "rev-parse", f"{resolved_sha}^{{tree}}").strip()
+    file_entries = [
+        {"path": str(path), "sha256": hashlib.sha256(payload).hexdigest()}
+        for path, payload in files
+    ]
     manifest = {
         "archive_format": "edgequeue-source-v1",
         "source_sha": resolved_sha,
         "source_tree": source_tree,
+        "source_identity_binding": source_identity_binding(resolved_sha, source_tree, file_entries),
         "tracked_file_count": len(files),
-        "files": [
-            {"path": str(path), "sha256": hashlib.sha256(payload).hexdigest()}
-            for path, payload in files
-        ],
+        "files": file_entries,
         "excluded": ["Git metadata", "environments", "caches", "bytecode", "secrets", "build outputs"],
         "legacy_excluded_prefixes": {
             "runs/**": "legacy path-bearing run records; current proof is under docs/evidence/ticket-20/",

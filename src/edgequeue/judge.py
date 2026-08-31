@@ -581,12 +581,19 @@ def _release_manifest_source_state(repository_root: Path) -> tuple[str, str, boo
         raise JudgeFixtureError("Release manifest has an unsupported format")
     source_sha = manifest.get("source_sha")
     source_tree = manifest.get("source_tree")
+    source_identity = manifest.get("source_identity_binding")
     files = manifest.get("files")
-    if not _is_git_object_id(source_sha) or not _is_git_object_id(source_tree) or not isinstance(files, list):
-        raise JudgeFixtureError("Release manifest requires source_sha, source_tree, and files")
+    if (
+        not _is_git_object_id(source_sha)
+        or not _is_git_object_id(source_tree)
+        or not _is_digest(source_identity)
+        or not isinstance(files, list)
+    ):
+        raise JudgeFixtureError("Release manifest requires source_sha, source_tree, identity binding, and files")
 
     source_files: dict[str, str] = {}
     seen_paths: set[str] = set()
+    file_entries: list[dict[str, str]] = []
     for entry in files:
         if not isinstance(entry, dict):
             raise JudgeFixtureError("Release manifest file entry is invalid")
@@ -610,8 +617,12 @@ def _release_manifest_source_state(repository_root: Path) -> tuple[str, str, boo
             raise JudgeFixtureError(f"Release manifest file is missing: {path_text}") from error
         if actual_digest != digest:
             raise JudgeFixtureError(f"Release manifest digest mismatch: {path_text}")
+        file_entries.append({"path": path_text, "sha256": digest})
         if relative_path.parts[:2] == ("src", "edgequeue") and relative_path.suffix == ".py":
             source_files[path_text] = actual_digest
+
+    if source_identity != _release_identity_binding(source_sha, source_tree, file_entries):
+        raise JudgeFixtureError("Release manifest identity binding mismatch")
 
     expected_source_files = {
         path.relative_to(repository_root).as_posix()
@@ -633,6 +644,11 @@ def _is_git_object_id(value: object) -> bool:
 
 def _is_digest(value: object) -> bool:
     return isinstance(value, str) and len(value) == 64 and all(character in "0123456789abcdef" for character in value)
+
+
+def _release_identity_binding(source_sha: str, source_tree: str, files: Sequence[Mapping[str, str]]) -> str:
+    payload = {"files": list(files), "source_sha": source_sha, "source_tree": source_tree}
+    return hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
 def _claims_for_metrics(evaluation_run: Mapping[str, Any], metrics: Mapping[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:

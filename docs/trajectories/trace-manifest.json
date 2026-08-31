@@ -339,6 +339,7 @@
     "credentials",
     "private values",
     "user-home paths",
+    "private local paths",
     "email addresses"
   ],
   "schema_version": "1.0",

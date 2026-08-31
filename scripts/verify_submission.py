@@ -32,6 +32,7 @@ PUBLIC_TEXT_PATHS = (
 TOKEN_PATTERN = re.compile(r"\b(?:sk-[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9_-]{12,}|AIza[A-Za-z0-9_-]{12,})\b")
 JWT_PATTERN = re.compile(r"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{4,}\b")
 HOME_PATH_PATTERN = re.compile(r"/Users/[A-Za-z0-9._-]+(?:/|$)")
+PRIVATE_PATH_PATTERN = re.compile(r"/private/(?:var|tmp)/[^\\\"'`\s,;|]+")
 PRIVATE_ASSIGNMENT = re.compile(r"(?i)^(?:api[_-]?key|token|password|secret)\s*=\s*\S+")
 MARKDOWN_LINK = re.compile(r"\[[^]]+\]\(([^)#]+)(?:#[^)]+)?\)")
 
@@ -114,6 +115,8 @@ def check_private_data(project_root: Path) -> list[str]:
             continue
         if HOME_PATH_PATTERN.search(content):
             errors.append(f"private_data: user-home path in {path.relative_to(project_root)}")
+        if PRIVATE_PATH_PATTERN.search(content):
+            errors.append(f"private_data: private local path in {path.relative_to(project_root)}")
         if TOKEN_PATTERN.search(content) or JWT_PATTERN.search(content):
             errors.append(f"secret: token-like value in {path.relative_to(project_root)}")
         if path.name == ".env.example" and any(PRIVATE_ASSIGNMENT.match(line) for line in content.splitlines()):
