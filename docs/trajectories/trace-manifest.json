@@ -1,0 +1,346 @@
+{
+  "ledger_digest": "5bcd9ce6a7455d4ed9283a69f7f1716d76ba2e9f26b5b999e04e53909caf2ead",
+  "ledger_entries": [
+    {
+      "agent": "Controller session `01a0573d-46fc-7781-b1c0-cecd238ecef2",
+      "pane": "controller",
+      "role": "Controller",
+      "scope": "Planning and Ticket 14 dispatch"
+    },
+    {
+      "agent": "Ticket 14 Worker session `01a0575a-8ed6-7f11-9b58-f246e77edfdb",
+      "pane": "worker-lane-1",
+      "role": "Worker",
+      "scope": "Ticket 14"
+    },
+    {
+      "agent": "Ticket 14 Gate session `01a0575a-8f24-7b83-8bd8-d70b2af3fd1f",
+      "pane": "gate-lane-1",
+      "role": "Gate",
+      "scope": "Ticket 14"
+    },
+    {
+      "agent": "Ticket 14 internal reviewers",
+      "pane": "Worker subagents",
+      "role": "Internal review",
+      "scope": "Ticket 14"
+    },
+    {
+      "agent": "Ticket 15 aborted activation `01a0584c-d316-7222-aa4a-94b0d74bd826",
+      "pane": "worker-lane-1",
+      "role": "Worker",
+      "scope": "Ticket 15 preflight only; cleared because Lane 1 retained prior context"
+    },
+    {
+      "agent": "Ticket 15 Gate `01a0584f-7c7d-7ff2-b8a2-2b6b73166802",
+      "pane": "gate-lane-1",
+      "role": "Gate",
+      "scope": "Ticket 15"
+    },
+    {
+      "agent": "Ticket 15 Worker `01a0584f-7c5b-7fd2-a393-849cbc1dafe6",
+      "pane": "worker-lane-1",
+      "role": "Worker",
+      "scope": "Ticket 15"
+    },
+    {
+      "agent": "Ticket 16 Gate `01a05851-28ec-7c03-884d-44a90bf9e79c",
+      "pane": "gate-lane-2",
+      "role": "Gate",
+      "scope": "Ticket 16"
+    },
+    {
+      "agent": "Ticket 16 Worker `01a05851-29b0-7ee1-8fa7-3483e0ce11dc",
+      "pane": "worker-lane-2",
+      "role": "Worker",
+      "scope": "Ticket 16"
+    },
+    {
+      "agent": "Ticket 17 Gate `01a05851-2944-7391-ba12-8edd1d112e0f",
+      "pane": "gate-lane-3",
+      "role": "Gate",
+      "scope": "Ticket 17"
+    },
+    {
+      "agent": "Ticket 17 Worker `01a05851-2935-7781-a511-c4a74b8d0ff3",
+      "pane": "worker-lane-3",
+      "role": "Worker",
+      "scope": "Ticket 17"
+    },
+    {
+      "agent": "Ticket 18 Gate `01a05887-eeb4-7c21-a929-b508182465d9",
+      "pane": "gate-lane-1",
+      "role": "Gate",
+      "scope": "Ticket 18"
+    },
+    {
+      "agent": "Ticket 18 Worker `01a05887-eff2-7133-9d31-e1d9b7bf06f8",
+      "pane": "worker-lane-1",
+      "role": "Worker",
+      "scope": "Ticket 18"
+    },
+    {
+      "agent": "Ticket 19 Gate `01a05887-f137-7f62-a33f-2a4fad7da5ef",
+      "pane": "gate-lane-2",
+      "role": "Gate",
+      "scope": "Ticket 19"
+    },
+    {
+      "agent": "Ticket 19 Worker `01a05887-f354-7342-bc73-8a86e638691e",
+      "pane": "worker-lane-2",
+      "role": "Worker",
+      "scope": "Ticket 19"
+    },
+    {
+      "agent": "Ticket 20 Gate `01a05887-f621-73f1-b3b5-bb01b3b8e61c",
+      "pane": "gate-lane-3",
+      "role": "Gate",
+      "scope": "Ticket 20"
+    },
+    {
+      "agent": "Ticket 20 Worker `01a05887-f86d-7043-b62c-525554cd727d",
+      "pane": "worker-lane-3",
+      "role": "Worker",
+      "scope": "Ticket 20"
+    },
+    {
+      "agent": "Ticket 21 Gate `01a059dc-476d-7912-b0bb-85529a82149d",
+      "pane": "gate-lane-3",
+      "role": "Gate",
+      "scope": "Ticket 21"
+    },
+    {
+      "agent": "Ticket 21 Worker `01a059dc-4821-7ba1-b22c-886b3214961e",
+      "pane": "worker-lane-3",
+      "role": "Worker",
+      "scope": "Ticket 21"
+    },
+    {
+      "agent": "Ticket 21 internal reviewers",
+      "pane": "Worker subagents",
+      "role": "Internal review",
+      "scope": "Ticket 21"
+    }
+  ],
+  "ledger_entry_count": 20,
+  "records": [
+    {
+      "agent": "Controller session `01a0573d-46fc-7781-b1c0-cecd238ecef2",
+      "event_count": 14,
+      "pane": "controller",
+      "raw_excerpt_path": "raw/trajectory-01-controller-session-01a0573d-46fc-7781-b1c0-cecd238ecef2.jsonl",
+      "readable_path": "trajectory-01-controller-session-01a0573d-46fc-7781-b1c0-cecd238ecef2.md",
+      "role": "Controller",
+      "scope": "Planning and Ticket 14 dispatch",
+      "source_digest": "a9e74847e3f111d081332aa78c854a7ed7bd3a7b20da6872882c772f10c80c62"
+    },
+    {
+      "agent": "Ticket 14 Worker session `01a0575a-8ed6-7f11-9b58-f246e77edfdb",
+      "event_count": 120,
+      "pane": "worker-lane-1",
+      "raw_excerpt_path": "raw/trajectory-02-ticket-14-worker-session-01a0575a-8ed6-7f11-9b58-f246e77edfdb.jsonl",
+      "readable_path": "trajectory-02-ticket-14-worker-session-01a0575a-8ed6-7f11-9b58-f246e77edfdb.md",
+      "role": "Worker",
+      "scope": "Ticket 14",
+      "source_digest": "f250ca4cde49cd77223b7b9ba5ca5d2ef2481ab12eb617cd40eed11bd0e3aaff"
+    },
+    {
+      "agent": "Ticket 14 Gate session `01a0575a-8f24-7b83-8bd8-d70b2af3fd1f",
+      "event_count": 120,
+      "pane": "gate-lane-1",
+      "raw_excerpt_path": "raw/trajectory-03-ticket-14-gate-session-01a0575a-8f24-7b83-8bd8-d70b2af3fd1f.jsonl",
+      "readable_path": "trajectory-03-ticket-14-gate-session-01a0575a-8f24-7b83-8bd8-d70b2af3fd1f.md",
+      "role": "Gate",
+      "scope": "Ticket 14",
+      "source_digest": "e7336eef82d181ab207af7eb63a4eebe0562ee5c9f48b0bb1b583dad60748737"
+    },
+    {
+      "agent": "Ticket 14 internal reviewers",
+      "event_count": 42,
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-04-ticket-14-internal-reviewers.jsonl",
+      "readable_path": "trajectory-04-ticket-14-internal-reviewers.md",
+      "role": "Internal review",
+      "scope": "Ticket 14",
+      "source_digest": "d688fedb278be4057b2469157ab3b03a001f62e786644415fa30a4e2732cd123"
+    },
+    {
+      "agent": "Ticket 14 internal reviewers",
+      "event_count": 52,
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-05-ticket-14-internal-reviewers.jsonl",
+      "readable_path": "trajectory-05-ticket-14-internal-reviewers.md",
+      "role": "Internal review",
+      "scope": "Ticket 14",
+      "source_digest": "5fe23f209e12aab02203e85ead9bcdcc4e1959fe6bab910b3200740465763585"
+    },
+    {
+      "agent": "Ticket 15 aborted activation `01a0584c-d316-7222-aa4a-94b0d74bd826",
+      "event_count": 88,
+      "pane": "worker-lane-1",
+      "raw_excerpt_path": "raw/trajectory-06-ticket-15-aborted-activation-01a0584c-d316-7222-aa4a-94b0d74bd826.jsonl",
+      "readable_path": "trajectory-06-ticket-15-aborted-activation-01a0584c-d316-7222-aa4a-94b0d74bd826.md",
+      "role": "Worker",
+      "scope": "Ticket 15 preflight only; cleared because Lane 1 retained prior context",
+      "source_digest": "9c9fdf11fb76fb5fd1c8a761549ab8b2cb572bf6506f37d11e60a9597986c86f"
+    },
+    {
+      "agent": "Ticket 15 Gate `01a0584f-7c7d-7ff2-b8a2-2b6b73166802",
+      "event_count": 120,
+      "pane": "gate-lane-1",
+      "raw_excerpt_path": "raw/trajectory-07-ticket-15-gate-01a0584f-7c7d-7ff2-b8a2-2b6b73166802.jsonl",
+      "readable_path": "trajectory-07-ticket-15-gate-01a0584f-7c7d-7ff2-b8a2-2b6b73166802.md",
+      "role": "Gate",
+      "scope": "Ticket 15",
+      "source_digest": "69adde8f9903784e98021a9eb1d3705b95a4c191f5697c2da20ea7ec9ba0813f"
+    },
+    {
+      "agent": "Ticket 15 Worker `01a0584f-7c5b-7fd2-a393-849cbc1dafe6",
+      "event_count": 120,
+      "pane": "worker-lane-1",
+      "raw_excerpt_path": "raw/trajectory-08-ticket-15-worker-01a0584f-7c5b-7fd2-a393-849cbc1dafe6.jsonl",
+      "readable_path": "trajectory-08-ticket-15-worker-01a0584f-7c5b-7fd2-a393-849cbc1dafe6.md",
+      "role": "Worker",
+      "scope": "Ticket 15",
+      "source_digest": "4d49182f4e79beb71d2f9c9083ed056cd232a5c74281cc1d40eb9a84eca67846"
+    },
+    {
+      "agent": "Ticket 16 Gate `01a05851-28ec-7c03-884d-44a90bf9e79c",
+      "event_count": 120,
+      "pane": "gate-lane-2",
+      "raw_excerpt_path": "raw/trajectory-09-ticket-16-gate-01a05851-28ec-7c03-884d-44a90bf9e79c.jsonl",
+      "readable_path": "trajectory-09-ticket-16-gate-01a05851-28ec-7c03-884d-44a90bf9e79c.md",
+      "role": "Gate",
+      "scope": "Ticket 16",
+      "source_digest": "37b8cf1d27f819c88ad8f3bfafd674ac15cc3613614ab3c84075bf327f969168"
+    },
+    {
+      "agent": "Ticket 16 Worker `01a05851-29b0-7ee1-8fa7-3483e0ce11dc",
+      "event_count": 120,
+      "pane": "worker-lane-2",
+      "raw_excerpt_path": "raw/trajectory-10-ticket-16-worker-01a05851-29b0-7ee1-8fa7-3483e0ce11dc.jsonl",
+      "readable_path": "trajectory-10-ticket-16-worker-01a05851-29b0-7ee1-8fa7-3483e0ce11dc.md",
+      "role": "Worker",
+      "scope": "Ticket 16",
+      "source_digest": "bc4a9e41b2be6f4459cd4499780dea684e515a6b2048b5ed1f49aa7cc19782fe"
+    },
+    {
+      "agent": "Ticket 17 Gate `01a05851-2944-7391-ba12-8edd1d112e0f",
+      "event_count": 120,
+      "pane": "gate-lane-3",
+      "raw_excerpt_path": "raw/trajectory-11-ticket-17-gate-01a05851-2944-7391-ba12-8edd1d112e0f.jsonl",
+      "readable_path": "trajectory-11-ticket-17-gate-01a05851-2944-7391-ba12-8edd1d112e0f.md",
+      "role": "Gate",
+      "scope": "Ticket 17",
+      "source_digest": "e9e364e47496c22874a5bc8712bee7b18966c8b0519c0801d53d551de86a0b2d"
+    },
+    {
+      "agent": "Ticket 17 Worker `01a05851-2935-7781-a511-c4a74b8d0ff3",
+      "event_count": 120,
+      "pane": "worker-lane-3",
+      "raw_excerpt_path": "raw/trajectory-12-ticket-17-worker-01a05851-2935-7781-a511-c4a74b8d0ff3.jsonl",
+      "readable_path": "trajectory-12-ticket-17-worker-01a05851-2935-7781-a511-c4a74b8d0ff3.md",
+      "role": "Worker",
+      "scope": "Ticket 17",
+      "source_digest": "d14322f69d8e11f4b08a240f50977a9b2c7b796979df88a3b8829b6ac2c68c3f"
+    },
+    {
+      "agent": "Ticket 18 Gate `01a05887-eeb4-7c21-a929-b508182465d9",
+      "event_count": 120,
+      "pane": "gate-lane-1",
+      "raw_excerpt_path": "raw/trajectory-13-ticket-18-gate-01a05887-eeb4-7c21-a929-b508182465d9.jsonl",
+      "readable_path": "trajectory-13-ticket-18-gate-01a05887-eeb4-7c21-a929-b508182465d9.md",
+      "role": "Gate",
+      "scope": "Ticket 18",
+      "source_digest": "37b72620cc86b07676272fda5ea63134d74df77c310708216108a328932f0e19"
+    },
+    {
+      "agent": "Ticket 18 Worker `01a05887-eff2-7133-9d31-e1d9b7bf06f8",
+      "event_count": 120,
+      "pane": "worker-lane-1",
+      "raw_excerpt_path": "raw/trajectory-14-ticket-18-worker-01a05887-eff2-7133-9d31-e1d9b7bf06f8.jsonl",
+      "readable_path": "trajectory-14-ticket-18-worker-01a05887-eff2-7133-9d31-e1d9b7bf06f8.md",
+      "role": "Worker",
+      "scope": "Ticket 18",
+      "source_digest": "8b7f1ea445a08795884a96875570684d4b7090df486eb565a7641fd5865c9b40"
+    },
+    {
+      "agent": "Ticket 19 Gate `01a05887-f137-7f62-a33f-2a4fad7da5ef",
+      "event_count": 120,
+      "pane": "gate-lane-2",
+      "raw_excerpt_path": "raw/trajectory-15-ticket-19-gate-01a05887-f137-7f62-a33f-2a4fad7da5ef.jsonl",
+      "readable_path": "trajectory-15-ticket-19-gate-01a05887-f137-7f62-a33f-2a4fad7da5ef.md",
+      "role": "Gate",
+      "scope": "Ticket 19",
+      "source_digest": "31406793279b8f247bb4cc81d8f81cdce360c2e3067754a5816574b846acd2dc"
+    },
+    {
+      "agent": "Ticket 19 Worker `01a05887-f354-7342-bc73-8a86e638691e",
+      "event_count": 120,
+      "pane": "worker-lane-2",
+      "raw_excerpt_path": "raw/trajectory-16-ticket-19-worker-01a05887-f354-7342-bc73-8a86e638691e.jsonl",
+      "readable_path": "trajectory-16-ticket-19-worker-01a05887-f354-7342-bc73-8a86e638691e.md",
+      "role": "Worker",
+      "scope": "Ticket 19",
+      "source_digest": "e38b65a687c0b2cd76b491deced8625548cfa851fd4b630b94eaae8fda70a5da"
+    },
+    {
+      "agent": "Ticket 20 Gate `01a05887-f621-73f1-b3b5-bb01b3b8e61c",
+      "event_count": 120,
+      "pane": "gate-lane-3",
+      "raw_excerpt_path": "raw/trajectory-17-ticket-20-gate-01a05887-f621-73f1-b3b5-bb01b3b8e61c.jsonl",
+      "readable_path": "trajectory-17-ticket-20-gate-01a05887-f621-73f1-b3b5-bb01b3b8e61c.md",
+      "role": "Gate",
+      "scope": "Ticket 20",
+      "source_digest": "6b0ac71a58826663ec9aee017add3fe611d01d60a378fc8eb2f49ad0ef2583dc"
+    },
+    {
+      "agent": "Ticket 20 Worker `01a05887-f86d-7043-b62c-525554cd727d",
+      "event_count": 120,
+      "pane": "worker-lane-3",
+      "raw_excerpt_path": "raw/trajectory-18-ticket-20-worker-01a05887-f86d-7043-b62c-525554cd727d.jsonl",
+      "readable_path": "trajectory-18-ticket-20-worker-01a05887-f86d-7043-b62c-525554cd727d.md",
+      "role": "Worker",
+      "scope": "Ticket 20",
+      "source_digest": "1f00c10db51e23c2c3d01fbde0298f205966e7ec7dd87a3fa30e22c2e64fc048"
+    },
+    {
+      "agent": "Ticket 21 Gate `01a059dc-476d-7912-b0bb-85529a82149d",
+      "event_count": 120,
+      "pane": "gate-lane-3",
+      "raw_excerpt_path": "raw/trajectory-19-ticket-21-gate-01a059dc-476d-7912-b0bb-85529a82149d.jsonl",
+      "readable_path": "trajectory-19-ticket-21-gate-01a059dc-476d-7912-b0bb-85529a82149d.md",
+      "role": "Gate",
+      "scope": "Ticket 21",
+      "source_digest": "60b49518d21078be4d3284b4984ea27d576b75cd8185aded129caa92587c20cd"
+    },
+    {
+      "agent": "Ticket 21 Worker `01a059dc-4821-7ba1-b22c-886b3214961e",
+      "event_count": 120,
+      "pane": "worker-lane-3",
+      "raw_excerpt_path": "raw/trajectory-20-ticket-21-worker-01a059dc-4821-7ba1-b22c-886b3214961e.jsonl",
+      "readable_path": "trajectory-20-ticket-21-worker-01a059dc-4821-7ba1-b22c-886b3214961e.md",
+      "role": "Worker",
+      "scope": "Ticket 21",
+      "source_digest": "de66d0dabd06f22fd1d62b444e4fe0c296675e0a1abbcf8c492e6e49f99cb1df"
+    },
+    {
+      "agent": "Ticket 21 internal reviewers",
+      "event_count": 120,
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-21-ticket-21-internal-reviewers.jsonl",
+      "readable_path": "trajectory-21-ticket-21-internal-reviewers.md",
+      "role": "Internal review",
+      "scope": "Ticket 21",
+      "source_digest": "de66d0dabd06f22fd1d62b444e4fe0c296675e0a1abbcf8c492e6e49f99cb1df"
+    }
+  ],
+  "redaction": [
+    "credentials",
+    "private values",
+    "user-home paths",
+    "email addresses"
+  ],
+  "schema_version": "1.0",
+  "source_count": 21
+}
