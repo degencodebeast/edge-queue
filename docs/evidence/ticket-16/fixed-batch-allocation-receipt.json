@@ -1,0 +1,29 @@
+{
+  "allocator_config_digest": "7acadcc46087e27811c65f1f3e0a3db87b2e2f471a16ed243b31707116d72db1",
+  "assessments": [
+    {
+      "assessment_digest": "9127f1daea405c589ea2550168ec5575b2dfd078b8abcd38b41ba382e47e962a",
+      "case_id": "EQ-F01-DEV-01"
+    },
+    {
+      "assessment_digest": "0a2eb77f0bfdc2ce5537f78589981343359a8cbc427a6b8e171676285f93fd3a",
+      "case_id": "EQ-F01-DEV-02"
+    }
+  ],
+  "corpus_digest": "4f6f3afa68649390326cb078a8efee847667c311a40b5cba0e36ac4d134bbdc0",
+  "evaluation_run_id": "ticket-16-fixed-batch",
+  "first_excluded_case_id": "EQ-F01-DEV-02",
+  "receipt_id": "ticket-16-fixed-batch-receipt",
+  "review_budget": 1,
+  "review_queue": [
+    "EQ-F01-DEV-01"
+  ],
+  "schema_version": "1.0",
+  "selection_boundary": {
+    "excluded_case_id": "EQ-F01-DEV-02",
+    "excluded_deterministic_score": 42,
+    "excluded_risk_score": 51,
+    "excluded_status": "risk_finding"
+  },
+  "split_digest": "b5e85001f25bb35684c8f8e6caab96d0008e8649fe42dde7e723eb1b500a16e9"
+}

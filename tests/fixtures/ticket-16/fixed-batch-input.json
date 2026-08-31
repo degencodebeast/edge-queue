@@ -1,0 +1,62 @@
+{
+  "allocator_configuration": {
+    "allocator": "ticket-16-offline-fixed-batch",
+    "ordering": ["status", "risk_score", "deterministic_score", "case_id"],
+    "retry_policy": "one identical retry"
+  },
+  "assessment_definitions": [
+    {
+      "abstention_reason": null,
+      "case_id": "EQ-F01-DEV-01",
+      "evidence_references": [{"claim": "The task record contradicts the current Verdict.", "event_id": "E1", "relation": "contradicts_current", "status": "verified"}],
+      "explanation": "Verified same-case evidence may contradict the current Verdict.",
+      "reason_codes": ["evidence_conflict"],
+      "risk_score": 82,
+      "rubric_clause_ids": ["R1"],
+      "status": "risk_finding"
+    },
+    {
+      "abstention_reason": null,
+      "case_id": "EQ-F01-DEV-02",
+      "evidence_references": [{"claim": "The task record contradicts the current Verdict.", "event_id": "E1", "relation": "contradicts_current", "status": "verified"}],
+      "explanation": "Verified same-case evidence may contradict the current Verdict.",
+      "reason_codes": ["evidence_conflict"],
+      "risk_score": 51,
+      "rubric_clause_ids": ["R1"],
+      "status": "risk_finding"
+    }
+  ],
+  "ranker_cases": [
+    {
+      "case_id": "EQ-F01-DEV-01", "content_digest": "9bf038e1d16f400f9279e2fd85f7daeb36128eab74ba3313a525e9d351a8c71a", "current_rationale": "The agent used an unfamiliar migration tool, and the approved verification command did not run.", "current_verdict": "FAIL", "defect_family": "unusual-tool success", "deterministic_score": 72, "difficulty": "medium", "evaluator_verdicts": ["FAIL", "UNDETERMINED", "FAIL"], "primary_confidence": 82,
+      "rubric_clauses": [
+        {"clause_id": "R1", "schema_version": "1.0", "text": "The migration artifact must contain the requested schema change."},
+        {"clause_id": "R2", "schema_version": "1.0", "text": "The trajectory must contain independent migration verification."},
+        {"clause_id": "R3", "schema_version": "1.0", "text": "Use UNDETERMINED when required verification is unavailable and no evidence proves failure."}
+      ],
+      "schema_version": "1.0", "signal_profile": "signal_conflicted", "split": "DEV",
+      "trajectory_events": [
+        {"case_id": "EQ-F01-DEV-01", "content": "Create a migration that adds a non-null account status column.", "event_id": "E1", "event_type": "task", "schema_version": "1.0"},
+        {"case_id": "EQ-F01-DEV-01", "content": "migratekit created 20260831_add_account_status.sql and returned exit code 0.", "event_id": "E2", "event_type": "tool_result", "schema_version": "1.0"},
+        {"case_id": "EQ-F01-DEV-01", "content": "The migration file adds account.status with a default before the non-null constraint.", "event_id": "E3", "event_type": "artifact", "schema_version": "1.0"},
+        {"case_id": "EQ-F01-DEV-01", "content": "The approved verification command could not start because the Docker service was unavailable.", "event_id": "E4", "event_type": "tool_result", "schema_version": "1.0"},
+        {"case_id": "EQ-F01-DEV-01", "content": "The evaluator rejected the unfamiliar tool and assigned FAIL.", "event_id": "E5", "event_type": "evaluator_note", "schema_version": "1.0"}
+      ]
+    },
+    {
+      "case_id": "EQ-F01-DEV-02", "content_digest": "a5975f7ac13a3566246a62f0580f3f6d9b52781235b312c47cefc86d2b81065e", "current_rationale": "One evaluator distrusts the unfamiliar migration utility despite the recorded schema inspection.", "current_verdict": "PASS", "defect_family": "unusual-tool success", "deterministic_score": 42, "difficulty": "medium", "evaluator_verdicts": ["PASS", "FAIL", "PASS"], "primary_confidence": 58,
+      "rubric_clauses": [
+        {"clause_id": "R1", "schema_version": "1.0", "text": "The agent must complete the stated task."},
+        {"clause_id": "R2", "schema_version": "1.0", "text": "The trajectory must contain the required supporting evidence."},
+        {"clause_id": "R3", "schema_version": "1.0", "text": "Use UNDETERMINED when evidence cannot establish PASS or FAIL."}
+      ],
+      "schema_version": "1.0", "signal_profile": "signal_conflicted", "split": "DEV",
+      "trajectory_events": [
+        {"case_id": "EQ-F01-DEV-02", "content": "Create an account-status migration with the approved migration utility.", "event_id": "E1", "event_type": "task", "schema_version": "1.0"},
+        {"case_id": "EQ-F01-DEV-02", "content": "The utility wrote the migration, the database applied it, and the schema inspection shows account.status.", "event_id": "E2", "event_type": "tool_result", "schema_version": "1.0"},
+        {"case_id": "EQ-F01-DEV-02", "content": "One evaluator distrusts the unfamiliar migration utility despite the recorded schema inspection.", "event_id": "E3", "event_type": "evaluator_note", "schema_version": "1.0"}
+      ]
+    }
+  ],
+  "receipt_metadata": {"evaluation_run_id": "ticket-16-fixed-batch", "receipt_id": "ticket-16-fixed-batch-receipt", "review_budget": 1}
+}

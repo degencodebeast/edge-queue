@@ -2,6 +2,9 @@ from dataclasses import dataclass
 from typing import Mapping, Sequence
 
 
+PRIMARY_RANKING_METRIC = "recall_at_k"
+
+
 @dataclass(frozen=True)
 class AllocationMetrics:
     recall_at_k: float

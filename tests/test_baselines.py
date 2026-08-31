@@ -3,6 +3,7 @@ from edgequeue.baselines import (
     allocate_disagreement,
     allocate_lowest_confidence,
     allocate_random,
+    allocate_fair_baselines,
 )
 
 
@@ -65,3 +66,28 @@ def test_deterministic_baseline_uses_stable_descending_risk_order() -> None:
     )
 
     assert review_queue == ("case-b", "case-c")
+
+
+def test_runs_five_fair_baselines_with_one_review_budget() -> None:
+    queues = allocate_fair_baselines(
+        confidence_by_case={"case-a": 90, "case-b": 20, "case-c": 60},
+        verdicts_by_case={
+            "case-a": ("PASS", "PASS", "PASS"),
+            "case-b": ("PASS", "FAIL", "PASS"),
+            "case-c": ("FAIL", "FAIL", "FAIL"),
+        },
+        deterministic_scores_by_case={"case-a": 30, "case-b": 70, "case-c": 40},
+        current_verdicts={"case-a": "PASS", "case-b": "PASS", "case-c": "FAIL"},
+        reference_verdicts={"case-a": "FAIL", "case-b": "PASS", "case-c": "FAIL"},
+        review_budget=2,
+        random_seed=37,
+    )
+
+    assert set(queues) == {
+        "seeded_random",
+        "lowest_confidence",
+        "disagreement_only",
+        "deterministic_only",
+        "oracle",
+    }
+    assert all(len(queue) == 2 and len(set(queue)) == 2 for queue in queues.values())
