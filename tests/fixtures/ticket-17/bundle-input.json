@@ -1,0 +1,11 @@
+{
+  "evaluation-configuration.json": {"corpus_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "split": "DEV", "split_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "review_budget": 1, "calibration_pack_version": null},
+  "ranker-cases.jsonl": [{"case_id": "EQ-F01-DEV-01", "split": "DEV", "current_verdict": "PASS"}],
+  "scorer-cases.jsonl": [{"case_id": "EQ-F01-DEV-01", "reference_verdict": "FAIL", "scorer_sentinel": "scorer-only-01"}],
+  "baseline-rankings.json": {"random": ["EQ-F01-DEV-01"]},
+  "edgequeue-ranking.json": {"review_queue": ["EQ-F01-DEV-01"]},
+  "allocation-receipt.json": {"corpus_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "split_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "review_budget": 1, "review_queue": ["EQ-F01-DEV-01"]},
+  "adjudications.jsonl": [],
+  "metrics.json": {"recall_at_k": 1.0, "precision_at_k": 1.0},
+  "claims-manifest.json": {"claims": [{"metric": "recall_at_k", "value": 1.0, "supporting_artifact": "metrics.json"}]}
+}

@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 import argparse
+import json
 from collections.abc import Sequence
+from pathlib import Path
+
+from edgequeue.verification import verify_proof_bundle
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -83,7 +87,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         parser.error("judge execution is provided by the later proof slice")
     if args.command == "adjudicate":
         parser.error("adjudicate execution is provided by the later reviewer slice")
-    parser.error("verify execution is provided by the later proof slice")
+    result = verify_proof_bundle(Path(args.bundle))
+    if args.json:
+        print(json.dumps(result.as_dict(), separators=(",", ":"), sort_keys=True))
+    else:
+        print("Proof Bundle valid" if result.valid else "Proof Bundle invalid")
+        for failure in result.failures:
+            print(f"{failure.code}: {failure.message}")
+    return 0 if result.valid else 1
 
 
 if __name__ == "__main__":
