@@ -84,8 +84,9 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
     environment = os.environ | {
         "PYTHONPATH": str(extracted / "src") + os.pathsep + os.environ.get("PYTHONPATH", "")
     }
+    edgequeue_command = str(Path(sys.executable).with_name("edgequeue"))
     extracted_result = subprocess.run(
-        [sys.executable, "-m", "edgequeue.cli", "judge", "--output-dir", str(judge_output)],
+        [edgequeue_command, "judge", "--output-dir", str(judge_output)],
         cwd=extracted,
         env=environment,
         text=True,
@@ -102,7 +103,7 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
     judge_source = extracted / "src/edgequeue/judge.py"
     judge_source.write_bytes(judge_source.read_bytes() + b"\n")
     tampered_result = subprocess.run(
-        [sys.executable, "-m", "edgequeue.cli", "judge", "--output-dir", str(extracted / "tampered-output")],
+        [edgequeue_command, "judge", "--output-dir", str(extracted / "tampered-output")],
         cwd=extracted,
         env=environment,
         text=True,
