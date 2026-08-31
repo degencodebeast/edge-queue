@@ -32,6 +32,7 @@ Each versioned JSON Schema closes its object with `additionalProperties: false`.
 | Authorized corpus topology | Review found that a Ledger row could exceed three candidates, a Split Manifest could repeat or reorder case identifiers, and root references were not checked against supplied manifests and Ledger content. | `uv run pytest -q tests/test_contracts.py::test_authoring_ledger_requires_closed_candidate_attempt_records tests/test_contracts.py::test_split_manifest_rejects_duplicate_or_unordered_case_membership tests/test_contracts.py::test_corpus_manifest_binds_all_splits_and_the_supplied_ledger_digest` passed with `3 passed`. Runtime validation now bounds candidates, requires stable unique split membership, and binds exactly the supplied DEV, AH, PCH Split Manifests and Ledger digest. |
 | Gate cycle 2: candidate-attempt policy | `uv run pytest -q tests/test_contracts.py::test_authoring_ledger_rejects_all_failed_candidates_for_one_row tests/test_contracts.py::test_authoring_ledger_rejects_multiple_accepted_candidates_for_one_row tests/test_contracts.py::test_authoring_ledger_rejects_a_third_primary_execution_attempt` failed with `3 failed`: the closed schema had no target Verdict or evaluator-role/output fields. | The same command passed with `3 passed` after Ledger records bound target and evaluator Verdicts, roles, retry sequences, row terminal state, first-match acceptance, and the three-candidate Corpus Freeze block. |
 | Cycle 3 retry closure | A closure review reproduced an `execution_failure` followed by an accepted retry. | `uv run pytest -q tests/test_contracts.py::test_authoring_ledger_rejects_retry_after_execution_failure` passed after retries were limited to timeout, malformed response, and schema failure. |
+| Gate cycle 3 row bindings | `uv run pytest -q tests/test_contracts.py::test_authoring_ledger_rejects_row_binding_probes` failed with `5 failed`: row-level target, Evaluator Manifest, Case Blueprint, terminal-candidate, and accepted-output bindings were absent. | The same parameterized public test passed with `5 passed` after the Ledger rejects all five histories. |
 
 ## Direct validation results
 
@@ -49,8 +50,8 @@ The displayed digest vector is independently calculated as SHA-256 over the UTF-
 
 ## Required checks
 
-- Focused Gate replacement tests: `9 passed`.
-- Full suite: `uv run pytest -q` returned `89 passed`.
+- Focused Ledger closure tests: `7 passed`.
+- Full suite: `uv run pytest -q` returned `94 passed`.
 - Lock and syntax checks: `uv lock --check`, `git diff --check`, and `uv run python -m compileall -q src tests` passed.
 - CLI help checks: judge, adjudicate, and verify each returned exit code `0`.
 - Evidence artifact verification: this report contains the required RED and GREEN commands, digest vectors, named failure result, and CLI results.

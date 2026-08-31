@@ -233,7 +233,7 @@ def test_authoring_ledger_rejects_multiple_accepted_candidates_for_one_row() -> 
         [_ledger_candidate(1, "accepted"), _ledger_candidate(2, "accepted")]
     )
 
-    with pytest.raises(ContractValidationError, match="one accepted candidate"):
+    with pytest.raises(ContractValidationError, match="follow an accepted candidate"):
         validate_contract("authoring_ledger", ledger)
 
 
@@ -262,6 +262,40 @@ def test_authoring_ledger_rejects_retry_after_execution_failure() -> None:
     ledger = _authoring_ledger([_ledger_candidate(1, "accepted", attempts=attempts)])
 
     with pytest.raises(ContractValidationError, match="retryable evaluator failure"):
+        validate_contract("authoring_ledger", ledger)
+
+
+@pytest.mark.parametrize(
+    ("probe", "message"),
+    (
+        ("target_verdict", "target Verdict"),
+        ("evaluator_manifest_digest", "Evaluator Manifest digest"),
+        ("case_blueprint_version", "Case Blueprint version"),
+        ("candidate_after_acceptance", "follow an accepted candidate"),
+        ("accepted_null_verdict", "accepted evaluator outcome"),
+    ),
+)
+def test_authoring_ledger_rejects_row_binding_probes(
+    probe: str, message: str
+) -> None:
+    entries = [
+        _ledger_candidate(1, "rejected", primary_verdict="FAIL"),
+        _ledger_candidate(2, "accepted"),
+    ]
+    if probe == "target_verdict":
+        entries[1]["target_verdict"] = "FAIL"
+        entries[1]["evaluator_attempts"][0]["verdict"] = "FAIL"
+    elif probe == "evaluator_manifest_digest":
+        entries[1]["evaluator_manifest_digest"] = "d" * 64
+    elif probe == "case_blueprint_version":
+        entries[1]["case_blueprint_version"] = "F02-v1"
+    elif probe == "candidate_after_acceptance":
+        entries[0] = _ledger_candidate(1, "accepted")
+    else:
+        entries[1]["evaluator_attempts"][1]["verdict"] = None
+    ledger = _authoring_ledger(entries)
+
+    with pytest.raises(ContractValidationError, match=message):
         validate_contract("authoring_ledger", ledger)
 
 

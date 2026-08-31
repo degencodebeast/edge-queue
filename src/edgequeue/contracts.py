@@ -1422,6 +1422,11 @@ def validate_contract(
                         code="invalid_attempt",
                     )
                 attempts_by_evaluator.setdefault(evaluator_id, []).append(attempt)
+                if attempt["outcome"] == "accepted" and attempt["verdict"] is None:
+                    raise ContractValidationError(
+                        "An accepted evaluator outcome requires a Verdict",
+                        code="invalid_attempt",
+                    )
             if set(roles_by_evaluator.values()) != {"primary", "shadow"} or list(
                 roles_by_evaluator.values()
             ).count("primary") != 1 or list(roles_by_evaluator.values()).count("shadow") != 2:
@@ -1480,6 +1485,16 @@ def validate_contract(
                     code="invalid_attempt",
                 )
         for row_candidates in candidates_by_row.values():
+            for field, label in (
+                ("target_verdict", "target Verdict"),
+                ("evaluator_manifest_digest", "Evaluator Manifest digest"),
+                ("case_blueprint_version", "Case Blueprint version"),
+            ):
+                if len({candidate[field] for candidate in row_candidates}) != 1:
+                    raise ContractValidationError(
+                        f"Authoring Ledger rows must not change the {label}",
+                        code="invalid_attempt",
+                    )
             candidate_numbers = [candidate["candidate_number"] for candidate in row_candidates]
             if candidate_numbers != list(range(1, len(row_candidates) + 1)):
                 raise ContractValidationError(
@@ -1499,23 +1514,18 @@ def validate_contract(
                     "An Authoring Ledger allocation row requires one accepted candidate",
                     code="invalid_attempt",
                 )
+            accepted_number = accepted_candidates[0]["candidate_number"]
+            if any(
+                candidate["candidate_number"] > accepted_number
+                for candidate in row_candidates
+            ):
+                raise ContractValidationError(
+                    "No candidate may follow an accepted candidate",
+                    code="invalid_attempt",
+                )
             if len(accepted_candidates) != 1:
                 raise ContractValidationError(
                     "An Authoring Ledger allocation row permits one accepted candidate",
-                    code="invalid_attempt",
-                )
-            first_matching = next(
-                candidate
-                for candidate in row_candidates
-                if candidate["status"] == "accepted"
-            )
-            if first_matching["candidate_number"] != min(
-                candidate["candidate_number"]
-                for candidate in row_candidates
-                if candidate["status"] == "accepted"
-            ):
-                raise ContractValidationError(
-                    "The first matching candidate must be accepted",
                     code="invalid_attempt",
                 )
     self_digest_field = _SELF_DIGEST_FIELDS.get(canonical_name)
