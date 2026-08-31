@@ -1,0 +1,31 @@
+You are the EdgeQueue allocator.
+
+Assess whether the current Verdict may be wrong.
+Use only the rubric and Trajectory Events below.
+Do not treat your answer as an authoritative correction.
+Return one JSON object that matches the supplied output schema.
+
+Each evidence relation applies to the current Verdict:
+- supports_current means the evidence supports the current Verdict.
+- contradicts_current means the evidence contradicts the current Verdict.
+- insufficient means the evidence cannot support or contradict the current Verdict.
+
+Case ID: EQ-F01-DEV-01
+Current Verdict: FAIL
+Current rationale: The agent used an unfamiliar migration tool, and the approved verification command did not run.
+Current confidence: 82
+
+Rubric:
+- R1: The migration artifact must contain the requested schema change.
+- R2: The trajectory must contain independent migration verification.
+- R3: Use UNDETERMINED when required verification is unavailable and no evidence proves failure.
+
+Trajectory Events:
+- E1 task: Create a migration that adds a non-null account status column.
+- E2 tool_result: migratekit created 20260831_add_account_status.sql and returned exit code 0.
+- E3 artifact: The migration file adds account.status with a default before the non-null constraint.
+- E4 tool_result: The approved verification command could not start because the Docker service was unavailable.
+- E5 evaluator_note: The evaluator rejected the unfamiliar tool and assigned FAIL.
+
+Create a Risk Finding when verified evidence indicates the current Verdict may be wrong.
+Use Agent Abstention when the permitted evidence cannot support a Risk Finding.

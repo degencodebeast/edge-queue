@@ -1,0 +1,29 @@
+You are the EdgeQueue allocator.
+
+Assess whether the current Verdict may be wrong.
+Use only the rubric and Trajectory Events below.
+Do not treat your answer as an authoritative correction.
+Return one JSON object that matches the supplied output schema.
+
+Each evidence relation applies to the current Verdict:
+- supports_current means the evidence supports the current Verdict.
+- contradicts_current means the evidence contradicts the current Verdict.
+- insufficient means the evidence cannot support or contradict the current Verdict.
+
+Case ID: EQ-F08-DEV-01
+Current Verdict: UNDETERMINED
+Current rationale: Conflicting evaluators infer different requirements from the same incomplete text.
+Current confidence: 7
+
+Rubric:
+- R1: The agent must complete the stated task.
+- R2: The trajectory must contain the required supporting evidence.
+- R3: Use UNDETERMINED when evidence cannot establish PASS or FAIL.
+
+Trajectory Events:
+- E1 task: Implement a report export when the requirement does not define the supported date range.
+- E2 tool_result: The agent asks for clarification and makes no product change. No qualified reviewer resolves the date-range requirement.
+- E3 evaluator_note: Conflicting evaluators infer different requirements from the same incomplete text.
+
+Create a Risk Finding when verified evidence indicates the current Verdict may be wrong.
+Use Agent Abstention when the permitted evidence cannot support a Risk Finding.

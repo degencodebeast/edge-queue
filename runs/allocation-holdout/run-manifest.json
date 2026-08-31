@@ -1,0 +1,853 @@
+{
+  "split": "AH",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "attempts": [
+    1,
+    2,
+    3
+  ],
+  "case_count": 40,
+  "new_runs": [
+    {
+      "case_id": "EQ-F01-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 13.356252193450928,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F01-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 13.721955060958862,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F01-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 13.80829119682312,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F01-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 12.451172113418579,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F01-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.704565048217773,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F01-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.983625888824463,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F01-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.195795059204102,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F01-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.012287855148315,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F01-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 11.777853727340698,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F01-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.208555936813354,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F01-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.28954815864563,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F01-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.312253952026367,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F01-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F02-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.11722993850708,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F02-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.769235134124756,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F02-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 12.186738967895508,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F02-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.425310850143433,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F02-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.056276082992554,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F02-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.307178974151611,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F02-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.548971176147461,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F02-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.136097192764282,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F02-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.51937198638916,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F02-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.291286945343018,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F02-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.091737985610962,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F02-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.829540014266968,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F02-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F03-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.701663970947266,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F03-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.8505220413208,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F03-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 11.433532953262329,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F03-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.453298807144165,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F03-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.886844873428345,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F03-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 11.808624029159546,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F03-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.185797214508057,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F03-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.43073296546936,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F03-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.606369018554688,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F03-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.199119806289673,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F03-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.859345197677612,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F03-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.31203293800354,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F03-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F04-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.527998924255371,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F04-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 13.462370872497559,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F04-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.827759981155396,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F04-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 12.87986707687378,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F04-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 11.210776805877686,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F04-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.17156982421875,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F04-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.657236337661743,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F04-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.851964950561523,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F04-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.35849118232727,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F04-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.841586828231812,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F04-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 12.474808692932129,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F04-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.793687105178833,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F04-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F05-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 12.089215993881226,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F05-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.418390035629272,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F05-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.759052991867065,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F05-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.97788691520691,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F05-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 11.830849170684814,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F05-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.790977954864502,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F05-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.383435726165771,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F05-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.839513063430786,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F05-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.697299003601074,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F05-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.908204078674316,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F05-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 8.682455062866211,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F05-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.452604293823242,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F05-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F06-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 12.548882961273193,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F06-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 13.20491886138916,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F06-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 13.394912004470825,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F06-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.61657977104187,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F06-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 12.94441819190979,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F06-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 12.716841220855713,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F06-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.828657865524292,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F06-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.636646032333374,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F06-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 12.015506029129028,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F06-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.962095737457275,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F06-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.519280910491943,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F06-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 11.943618059158325,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F06-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F07-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.588714838027954,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F07-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 11.5225830078125,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F07-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 12.01817798614502,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F07-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.597286701202393,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F07-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.515117168426514,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F07-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 11.063293933868408,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F07-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.952247858047485,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F07-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.573160886764526,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F07-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.68789029121399,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F07-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.475104093551636,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F07-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.33983302116394,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F07-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.153811931610107,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F07-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F08-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.385609149932861,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F08-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 14.179863214492798,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F08-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 12.061951160430908,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F08-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 12.413249015808105,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F08-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 11.918864965438843,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F08-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 11.193031072616577,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F08-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.515600204467773,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F08-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.632519245147705,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F08-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.777783155441284,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F08-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 12.056797981262207,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F08-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.241339206695557,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F08-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.615262031555176,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F08-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F09-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 14.839378356933594,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F09-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 10.641387939453125,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F09-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 12.082215785980225,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F09-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.883201837539673,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F09-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 11.078932285308838,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F09-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 11.06328797340393,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F09-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.58514404296875,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F09-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.674701929092407,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F09-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.618309020996094,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F09-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.751023054122925,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F09-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.63267207145691,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F09-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.218244075775146,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-04/attempt-03"
+    },
+    {
+      "case_id": "EQ-F10-AH-01",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.228108167648315,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F10-AH-01",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 12.958877325057983,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-01/attempt-02"
+    },
+    {
+      "case_id": "EQ-F10-AH-01",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 15.186457872390747,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-01/attempt-03"
+    },
+    {
+      "case_id": "EQ-F10-AH-02",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 11.429754734039307,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F10-AH-02",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.686004877090454,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-02/attempt-02"
+    },
+    {
+      "case_id": "EQ-F10-AH-02",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 13.124756813049316,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-02/attempt-03"
+    },
+    {
+      "case_id": "EQ-F10-AH-03",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 9.90877103805542,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-03/attempt-01"
+    },
+    {
+      "case_id": "EQ-F10-AH-03",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 9.358800888061523,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-03/attempt-02"
+    },
+    {
+      "case_id": "EQ-F10-AH-03",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 9.808894157409668,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-03/attempt-03"
+    },
+    {
+      "case_id": "EQ-F10-AH-04",
+      "attempt": 1,
+      "return_code": 0,
+      "elapsed_seconds": 10.089189291000366,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-04/attempt-01"
+    },
+    {
+      "case_id": "EQ-F10-AH-04",
+      "attempt": 2,
+      "return_code": 0,
+      "elapsed_seconds": 8.970278024673462,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-04/attempt-02"
+    },
+    {
+      "case_id": "EQ-F10-AH-04",
+      "attempt": 3,
+      "return_code": 0,
+      "elapsed_seconds": 10.720338821411133,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F10-AH-04/attempt-03"
+    }
+  ]
+}

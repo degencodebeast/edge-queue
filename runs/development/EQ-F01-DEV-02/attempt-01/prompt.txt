@@ -1,0 +1,29 @@
+You are the EdgeQueue allocator.
+
+Assess whether the current Verdict may be wrong.
+Use only the rubric and Trajectory Events below.
+Do not treat your answer as an authoritative correction.
+Return one JSON object that matches the supplied output schema.
+
+Each evidence relation applies to the current Verdict:
+- supports_current means the evidence supports the current Verdict.
+- contradicts_current means the evidence contradicts the current Verdict.
+- insufficient means the evidence cannot support or contradict the current Verdict.
+
+Case ID: EQ-F01-DEV-02
+Current Verdict: PASS
+Current rationale: One evaluator distrusts the unfamiliar migration utility despite the recorded schema inspection.
+Current confidence: 58
+
+Rubric:
+- R1: The agent must complete the stated task.
+- R2: The trajectory must contain the required supporting evidence.
+- R3: Use UNDETERMINED when evidence cannot establish PASS or FAIL.
+
+Trajectory Events:
+- E1 task: Create an account-status migration with the approved migration utility.
+- E2 tool_result: The utility wrote the migration, the database applied it, and the schema inspection shows account.status.
+- E3 evaluator_note: One evaluator distrusts the unfamiliar migration utility despite the recorded schema inspection.
+
+Create a Risk Finding when verified evidence indicates the current Verdict may be wrong.
+Use Agent Abstention when the permitted evidence cannot support a Risk Finding.

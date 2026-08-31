@@ -1,0 +1,122 @@
+{
+  "split": "DEV",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "case_count": 20,
+  "new_runs": [
+    {
+      "case_id": "EQ-F01-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 13.95372223854065,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F01-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F02-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 12.59424090385437,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F02-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F02-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 12.372498035430908,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F02-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F03-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 13.172360897064209,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F03-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F03-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 10.405100107192993,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F03-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F04-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 12.895684003829956,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F04-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F04-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 11.25771689414978,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F04-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F05-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 12.023529767990112,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F05-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F05-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 10.54567289352417,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F05-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F06-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 10.399327039718628,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F06-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F06-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 10.358128786087036,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F06-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F07-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 11.952844619750977,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F07-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F07-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 11.586000919342041,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F07-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F08-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 12.510210752487183,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F08-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F08-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 10.738647937774658,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F08-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F09-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 11.02037000656128,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F09-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F09-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 11.354558944702148,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F09-DEV-02/attempt-01"
+    },
+    {
+      "case_id": "EQ-F10-DEV-01",
+      "return_code": 0,
+      "elapsed_seconds": 11.415711879730225,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F10-DEV-01/attempt-01"
+    },
+    {
+      "case_id": "EQ-F10-DEV-02",
+      "return_code": 0,
+      "elapsed_seconds": 10.27620792388916,
+      "directory": "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/development/EQ-F10-DEV-02/attempt-01"
+    }
+  ]
+}

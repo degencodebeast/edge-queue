@@ -1,0 +1,32 @@
+{
+  "case_id": "EQ-F09-AH-01",
+  "attempt": 2,
+  "command": [
+    "codex",
+    "exec",
+    "--ignore-user-config",
+    "--disable",
+    "plugins",
+    "--disable",
+    "skill_search",
+    "--disable",
+    "apps",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "-m",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "--json",
+    "--output-schema",
+    "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/schemas/case-assessment.schema.json",
+    "--output-last-message",
+    "/Users/degencodebeast/Projects/personal/micro1-hack/edge-queue/runs/allocation-holdout/EQ-F09-AH-01/attempt-02/final.json",
+    "-"
+  ],
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "return_code": 0,
+  "elapsed_seconds": 10.641387939453125
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgequeue.local/schemas/case-assessment.schema.json",
+  "title": "Case Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "status",
+    "risk_score",
+    "reason_codes",
+    "rubric_clause_ids",
+    "evidence_references",
+    "explanation",
+    "abstention_reason"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["risk_finding", "abstention"]},
+    "risk_score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "reason_codes": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "rubric_clause_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "relation", "claim"],
+        "properties": {
+          "event_id": {"type": "string"},
+          "relation": {
+            "type": "string",
+            "description": "The evidence relation to the current Verdict.",
+            "enum": ["supports_current", "contradicts_current", "insufficient"]
+          },
+          "claim": {"type": "string"}
+        }
+      }
+    },
+    "explanation": {"type": "string"},
+    "abstention_reason": {"type": ["string", "null"]}
+  }
+}
