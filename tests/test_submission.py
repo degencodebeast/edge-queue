@@ -78,8 +78,14 @@ def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) ->
 def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_path: Path) -> None:
     """The public exporter keeps meaningful events while removing private strings."""
     raw_events = tmp_path / "rollout-01a00000-0000-0000-0000-000000000000.jsonl"
+    synthetic_token = "sk-" + "secret-value"
+    synthetic_jwt = "eyJhbGciOiJIUzI1NiJ9" + ".eyJzdWIiOiJ0ZXN0In0.signature"
     raw_events.write_text(
-        '{"type":"response_item","payload":{"text":"Use /Users/alice/private and sk-secret-value","rate_limits":{"credits":{"balance":12}},"last_token_usage":99,"encrypted_content":"private blob","approved_command_prefixes":["curl -H apikey: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0In0.signature"]}}\n',
+        '{"type":"response_item","payload":{"text":"Use /Users/alice/private and '
+        + synthetic_token
+        + '","rate_limits":{"credits":{"balance":12}},"last_token_usage":99,"encrypted_content":"private blob","approved_command_prefixes":["curl -H apikey: '
+        + synthetic_jwt
+        + '"]}}\n',
         encoding="utf-8",
     )
     ledger = tmp_path / "ledger.md"
