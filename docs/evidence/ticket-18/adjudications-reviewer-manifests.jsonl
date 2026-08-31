@@ -1,0 +1,1 @@
+{"content_digest":"39e9cb163eacd7435e72fc3a61f74ffe9023000175e0f7dd2d5cce428d0a6718","manifest_id":"ticket-18-reviewers","reviewers":[{"can_adjudicate":true,"can_promote_calibration":false,"can_resolve_conflicts":true,"reviewer_id":"human-1","roles":["reviewer","conflict_resolver"]}],"schema_version":"1.0","version":"1.0"}
