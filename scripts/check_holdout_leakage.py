@@ -8,7 +8,7 @@ from edgequeue.corpus import build_allocation_holdout_cases
 from edgequeue.integrity import reject_scorer_leakage
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-TRACE_ROOT = PROJECT_ROOT / "runs" / "allocation-holdout"
+TRACE_ROOT = PROJECT_ROOT / "docs" / "evidence" / "ticket-20" / "frozen-traces"
 
 
 def main() -> int:
