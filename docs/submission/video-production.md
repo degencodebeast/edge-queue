@@ -52,7 +52,7 @@ Do not show setup, passwords, notifications, or your full home directory.
 
 **Say before the command:**
 
-> I will run EdgeQueue on the same four cases with the same one-case limit. This replay needs no API key.
+> I will run EdgeQueue on the same four cases with the same one-case limit. This saved run works without an internet connection or account key.
 
 **Run:**
 
@@ -102,7 +102,7 @@ Hold `Proof Bundle valid` on screen.
 
 **Say:**
 
-> The original passes. This copy has a changed score and a repaired file hash.
+> The original passes. In this copy, someone changed the score and updated the file check to hide the edit.
 
 **Run:**
 
@@ -135,7 +135,7 @@ Hold `metric_recomputation_mismatch` on screen for three seconds.
 
 **Say:**
 
-> EdgeQueue found the mistake the basic rules missed. The wider ranking still needs work. Today, a reviewer can see why a case was chosen, correct it, and check the result later.
+> EdgeQueue found the mistake the basic rules missed. EdgeQueue still needs work on the larger test. Today, a reviewer can see why a case was chosen, correct it, and check the result later.
 >
 > That is EdgeQueue.
 
