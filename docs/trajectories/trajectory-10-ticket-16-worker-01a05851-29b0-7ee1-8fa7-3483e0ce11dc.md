@@ -32,7 +32,7 @@
 
 {"ordinal": 5, "payload": {"content": [{"text": "# AGENTS.md instructions for <USER_HOME>/Projects/personal/micro1-hack\n\n<INSTRUCTIONS>\n<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n#…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 6, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 
@@ -214,7 +214,7 @@
 
 ### event_msg
 
-{"ordinal": 51, "payload": {"completed_at_ms": 1788188261573, "item": {"aggregated_output": "--- planning documents ---\n<USER_HOME>/Projects/personal/micro1-hack/AGENTS.md\n<USER_HOME>/Projects/personal/micro1-hack/CONTEXT.md\n<USER_HOME>/Projects/personal/micro1-hack/CONTROLLER_WORKFLOW.md\n<USER_HOME>/Projects/personal/micro1-hack/agno-agents/agentos-docker/AGENTS.md\n<USER_HOME>/Projects/personal/micro1-hack/agno-agents/demo-os/AGENTS.md\n<USER_HOME>/Projects/personal/micro1-hack/agno-agents/scout/AGENTS.md\n<USER_HOME>/Projects/personal/micro1-hack/agno-projects/clawbridge/AGENTS.md\n<USER_HOME>/Projects/personal/micro1-hack/agno-projects/cryptographic-memory/AGENTS.md\n<USER_HOME>/Projects/personal/micro1-hack/agno-projects/future-agi/futureagi/accounts/migrations/0005_orgapikey_work…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 

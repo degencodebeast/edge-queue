@@ -24,7 +24,7 @@
 
 {"ordinal": 3, "payload": {"content": [{"text": "<recommended_plugins>\nHere is a list of plugins that are available but not installed.\n\n- Airtable (airtable@openai-curated-remote)\n- Alpaca (alpaca@openai-curated-remote)\n- Apollo.io (apollo@openai-curated-remote)\n- Spotify (app-68de829bf7648191acd70a907364c67c@openai-curated-remote)\n- Apple Music (app-6938a94a61d881918ef32cb999ff937c@openai-curated-remote)\n- LONA Trading Assistant (app-694336b0c0948191a4ad234f9942885b@openai-curated-remote)\n- SciSpace (app-69439d715a7c8191aed9e2f6649e105f@openai-curated-remote)\n- Tarot (app-6943a2c078b0819188de39e4fe168d9b@openai-curated-remote)\n- Todoist: To Do List & Calendar (app-6943b73823548191a9f9216c6790c453@openai-curated-remote)\n- Consensus (app-6943e6f4a928819195962de16fb9ffe4@openai-c…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 4, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 

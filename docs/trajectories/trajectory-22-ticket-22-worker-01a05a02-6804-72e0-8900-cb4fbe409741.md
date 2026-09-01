@@ -1,10 +1,10 @@
-# Ticket 22 Worker sessions
+# Ticket 22 Worker `01a05a02-6804-72e0-8900-cb4fbe409741
 
 - Role: Worker
 - Scope: Ticket 22
 - Pane: worker-lane-3
 - Source digest: `c86c9531130552f76a13e3a07e2dce4e8b6e2b0777d1c32cbe0be60f6649df84`
-- Supporting raw-event excerpt: [`raw/trajectory-22-ticket-22-worker-sessions.jsonl`](raw/trajectory-22-ticket-22-worker-sessions.jsonl)
+- Supporting raw-event excerpt: [`raw/trajectory-22-ticket-22-worker-01a05a02-6804-72e0-8900-cb4fbe409741.jsonl`](raw/trajectory-22-ticket-22-worker-01a05a02-6804-72e0-8900-cb4fbe409741.jsonl)
 
 ## Event excerpt
 
@@ -32,7 +32,7 @@
 
 {"ordinal": 5, "payload": {"content": [{"text": "# AGENTS.md instructions for <USER_HOME>/Projects/personal/micro1-hack\n\n<INSTRUCTIONS>\n<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n#…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 6, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 

@@ -3,7 +3,7 @@
 - Role: Gate
 - Scope: Ticket 23 final clean-room verification
 - Pane: gate-lane-3
-- Source digest: `51b4fb519d1ddda1991b96e7631a115071a7c67ea563bb810c21fab82be4aa3d`
+- Source digest: `1fe14153fb5fd009eb5a7db518d43f4575791a967ed217b2d2b041bbbbbcedd8`
 - Supporting raw-event excerpt: [`raw/trajectory-25-ticket-23-gate-01a05a54-5908-7543-aec5-33cacac70d5a.jsonl`](raw/trajectory-25-ticket-23-gate-01a05a54-5908-7543-aec5-33cacac70d5a.jsonl)
 
 ## Event excerpt
@@ -32,7 +32,7 @@
 
 {"ordinal": 5, "payload": {"content": [{"text": "# AGENTS.md instructions for <USER_HOME>/Projects/personal/micro1-hack\n\n<INSTRUCTIONS>\n<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n#…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 6, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 
@@ -158,11 +158,11 @@
 
 ### event_msg
 
-{"ordinal": 37, "payload": {"completed_at_ms": 1788221969498, "item": {"aggregated_output": "---\nname: cso\ndescription: |\n  Chief Security Officer mode. Infrastructure-first security audit: secrets archaeology,\n  dependency supply chain, CI/CD pipeline security, LLM/AI security, skill supply chain\n  scanning, plus OWASP Top 10, STRIDE threat modeling, and active verification.\n  Two modes: daily (zero-noise, 8/10 confidence gate) and comprehensive (monthly deep\n  scan, 2/10 bar). Use when a user says \"security audit\", \"threat model\", \"pentest review\",\n  \"OWASP\", \"CSO review\", \"check for vulnerabilities\", or \"is my code secure\".\nallowed_tools:\n  - Bash\n  - Read\n  - Grep\n  - Glob\n  - Write\n  - Agent\n  - WebSearch\n  - AskUserQuestion\n---\n\n## Preamble (run firs…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
-{"ordinal": 38, "payload": {"call_id": "call_VwW4g8xv2rFUlM0SfeirKD9D", "id": "ctco_01a05a55-d45e-7713-a84b-7b3125de5ee8", "internal_chat_message_metadata_passthrough": {"create_time": 1788221969.502785, "turn_id": "01a05a55-7832-7011-b77a-3aee721aed10"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: cso\ndescription: |\n  Chief Security Officer mode. Infrastructure-first security audit: secrets archaeology,\n  dependency supply chain, CI/CD pipeline security, LLM/AI security, skill supply chain\n  scanning, plus OWASP Top 10, STRIDE threat modeling, and active verification.\n  Two modes: daily (zero-noise, 8/10 confidence gate) and comprehensive (monthly deep\n  scan, 2/10 bar). Use when a user says \"security audit\"…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 

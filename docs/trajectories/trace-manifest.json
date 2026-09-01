@@ -1,5 +1,5 @@
 {
-  "ledger_digest": "c88022bc8e16485c686dae49a9085c1ca29fe8bfec07e0f724106795168d05c3",
+  "ledger_digest": "63e2477ac96276fa81ae9a0918b040a87af2ac985c9782dd085a95c42c17023b",
   "ledger_entries": [
     {
       "agent": "Controller session `01a0573d-46fc-7781-b1c0-cecd238ecef2",
@@ -128,7 +128,7 @@
       "scope": "Ticket 22"
     },
     {
-      "agent": "Ticket 22 Worker sessions",
+      "agent": "Ticket 22 Worker `01a05a02-6804-72e0-8900-cb4fbe409741",
       "pane": "worker-lane-3",
       "role": "Worker",
       "scope": "Ticket 22"
@@ -371,32 +371,32 @@
       "source_digest": "02b6e4ca78ac313a93dfcae42b308112db78efe1bbbda933701d41a0f31301f9"
     },
     {
-      "agent": "Ticket 22 Worker sessions",
+      "agent": "Ticket 22 Worker `01a05a02-6804-72e0-8900-cb4fbe409741",
       "event_count": 120,
       "pane": "worker-lane-3",
-      "raw_excerpt_path": "raw/trajectory-22-ticket-22-worker-sessions.jsonl",
-      "readable_path": "trajectory-22-ticket-22-worker-sessions.md",
+      "raw_excerpt_path": "raw/trajectory-22-ticket-22-worker-01a05a02-6804-72e0-8900-cb4fbe409741.jsonl",
+      "readable_path": "trajectory-22-ticket-22-worker-01a05a02-6804-72e0-8900-cb4fbe409741.md",
       "role": "Worker",
       "scope": "Ticket 22",
       "source_digest": "c86c9531130552f76a13e3a07e2dce4e8b6e2b0777d1c32cbe0be60f6649df84"
     },
     {
-      "agent": "Ticket 22 Worker sessions",
+      "agent": "Ticket 22 internal reviewers",
       "event_count": 120,
-      "pane": "worker-lane-3",
-      "raw_excerpt_path": "raw/trajectory-23-ticket-22-worker-sessions.jsonl",
-      "readable_path": "trajectory-23-ticket-22-worker-sessions.md",
-      "role": "Worker",
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-23-ticket-22-internal-reviewers.jsonl",
+      "readable_path": "trajectory-23-ticket-22-internal-reviewers.md",
+      "role": "Internal review",
       "scope": "Ticket 22",
       "source_digest": "c872b10b902a5230cfb6fab18599f9c8741925f6c8d734d3827641815c57ecba"
     },
     {
-      "agent": "Ticket 22 Worker sessions",
+      "agent": "Ticket 22 internal reviewers",
       "event_count": 120,
-      "pane": "worker-lane-3",
-      "raw_excerpt_path": "raw/trajectory-24-ticket-22-worker-sessions.jsonl",
-      "readable_path": "trajectory-24-ticket-22-worker-sessions.md",
-      "role": "Worker",
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-24-ticket-22-internal-reviewers.jsonl",
+      "readable_path": "trajectory-24-ticket-22-internal-reviewers.md",
+      "role": "Internal review",
       "scope": "Ticket 22",
       "source_digest": "dd6130b9c603dab6e2047f21e6fcbed299a0a6b4198dbe299b1a6e3122beb875"
     },
@@ -408,7 +408,7 @@
       "readable_path": "trajectory-25-ticket-23-gate-01a05a54-5908-7543-aec5-33cacac70d5a.md",
       "role": "Gate",
       "scope": "Ticket 23 final clean-room verification",
-      "source_digest": "51b4fb519d1ddda1991b96e7631a115071a7c67ea563bb810c21fab82be4aa3d"
+      "source_digest": "1fe14153fb5fd009eb5a7db518d43f4575791a967ed217b2d2b041bbbbbcedd8"
     },
     {
       "agent": "Ticket 23 Worker `01a05a54-8d19-7f62-b14c-a9472cb568c8",
@@ -418,17 +418,17 @@
       "readable_path": "trajectory-26-ticket-23-worker-01a05a54-8d19-7f62-b14c-a9472cb568c8.md",
       "role": "Worker",
       "scope": "Ticket 23 final clean-room verification",
-      "source_digest": "a5539ad315afc39d961de3cae89cf8677d1c6588dd71f47b9fa0a71ab77388a6"
+      "source_digest": "3b26c00fbcd974afd07676a99c850ce7b2af0ec38dca3103a7cde460cce12207"
     },
     {
       "agent": "Ticket 23 internal reviewers",
-      "event_count": 106,
+      "event_count": 120,
       "pane": "Worker subagents",
       "raw_excerpt_path": "raw/trajectory-27-ticket-23-internal-reviewers.jsonl",
       "readable_path": "trajectory-27-ticket-23-internal-reviewers.md",
       "role": "Internal review",
       "scope": "Ticket 23",
-      "source_digest": "daa456d105a22306e19418af01d0d0d1e4e75888a9a6f4efaba55a82fb900079"
+      "source_digest": "6187a746795218ea408cf1bff36657d255214a7d101e854815fff3000d8d9636"
     },
     {
       "agent": "Ticket 23 internal reviewers",
@@ -438,7 +438,7 @@
       "readable_path": "trajectory-28-ticket-23-internal-reviewers.md",
       "role": "Internal review",
       "scope": "Ticket 23",
-      "source_digest": "830b540a912c7197be9c13f3444f0777a7ca066d9570d2d33659c78f5056d0f9"
+      "source_digest": "94c2cd65aa9d17c5e45a631dcf16331e0261fee76e95fc7e65c259a7704af1a2"
     },
     {
       "agent": "Ticket 21 internal reviewers",
@@ -449,16 +449,6 @@
       "role": "Internal review",
       "scope": "Ticket 21",
       "source_digest": "de66d0dabd06f22fd1d62b444e4fe0c296675e0a1abbcf8c492e6e49f99cb1df"
-    },
-    {
-      "agent": "Ticket 22 internal reviewers",
-      "event_count": 120,
-      "pane": "Worker subagents",
-      "raw_excerpt_path": "raw/trajectory-30-ticket-22-internal-reviewers.jsonl",
-      "readable_path": "trajectory-30-ticket-22-internal-reviewers.md",
-      "role": "Internal review",
-      "scope": "Ticket 22",
-      "source_digest": "c86c9531130552f76a13e3a07e2dce4e8b6e2b0777d1c32cbe0be60f6649df84"
     }
   ],
   "redaction": [
@@ -469,5 +459,5 @@
     "email addresses"
   ],
   "schema_version": "1.0",
-  "source_count": 30
+  "source_count": 29
 }

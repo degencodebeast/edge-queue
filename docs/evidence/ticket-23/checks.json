@@ -1,6 +1,6 @@
 {
   "archive_checkpoint": {
-    "command": "uv run python scripts/build_release.py --sha <SHA-A> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>",
+    "command": "uv run python scripts/build_release.py --sha <SHA-A2> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>",
     "measurements": "pending_controller_checkpoint",
     "owner": "Controller"
   },
@@ -24,10 +24,10 @@
   "proof": {
     "checked_in_bundle_digest": "3eca0104f3393533806ef0f71aff167c3a4adeef4b3c76853fbb48e23c24f70d",
     "checked_in_files_changed": false,
-    "generated_bundle_digest": "f849f16ef3dc98104f07d5c0229a578f453ceb796f437e728b2e77416a22dd14",
+    "generated_bundle_digest": "92395675367fcef7dc6b333bf021c152856741535fa9e4d9a9e769b65e03b467",
     "model_cost_usd": 0.0,
     "requests": 0,
-    "runtime_seconds": 0.1026373328641057,
+    "runtime_seconds": 0.0796574167907238,
     "tokens": 0,
     "valid": true
   },
@@ -35,7 +35,7 @@
     "compileall": "pass",
     "diff_check": "pass",
     "focused_submission_tests": "5 passed",
-    "full_suite": "172 passed in 31.41s",
+    "full_suite": "172 passed in 30.73s",
     "submission_validator": "pass",
     "uv_lock_check": "pass"
   },
@@ -47,7 +47,7 @@
   "trajectories": {
     "ledger_entry_count": 26,
     "privacy_scan": "pass",
-    "source_count": 30
+    "source_count": 29
   },
   "video": {
     "all_local_assets_exist": true,

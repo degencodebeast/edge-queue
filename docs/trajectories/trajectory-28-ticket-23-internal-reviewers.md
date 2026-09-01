@@ -3,7 +3,7 @@
 - Role: Internal review
 - Scope: Ticket 23
 - Pane: Worker subagents
-- Source digest: `830b540a912c7197be9c13f3444f0777a7ca066d9570d2d33659c78f5056d0f9`
+- Source digest: `94c2cd65aa9d17c5e45a631dcf16331e0261fee76e95fc7e65c259a7704af1a2`
 - Supporting raw-event excerpt: [`raw/trajectory-28-ticket-23-internal-reviewers.jsonl`](raw/trajectory-28-ticket-23-internal-reviewers.jsonl)
 
 ## Event excerpt
@@ -32,7 +32,7 @@
 
 {"ordinal": 5, "payload": {"content": [{"text": "<recommended_plugins>\nHere is a list of plugins that are available but not installed.\n\n- Airtable (airtable@openai-curated-remote)\n- Alpaca (alpaca@openai-curated-remote)\n- Apollo.io (apollo@openai-curated-remote)\n- Spotify (app-68de829bf7648191acd70a907364c67c@openai-curated-remote)\n- Apple Music (app-6938a94a61d881918ef32cb999ff937c@openai-curated-remote)\n- LONA Trading Assistant (app-694336b0c0948191a4ad234f9942885b@openai-curated-remote)\n- SciSpace (app-69439d715a7c8191aed9e2f6649e105f@openai-curated-remote)\n- Tarot (app-6943a2c078b0819188de39e4fe168d9b@openai-curated-remote)\n- Todoist: To Do List & Calendar (app-6943b73823548191a9f9216c6790c453@openai-curated-remote)\n- Consensus (app-6943e6f4a928819195962de16fb9ffe4@openai-c…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 6, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 
@@ -410,7 +410,7 @@
 
 ### response_item
 
-{"ordinal": 140, "payload": {"call_id": "call_VHV7unmholcN5qmPYw1ysJvy", "id": "ctco_01a05a61-c7f5-7772-85a6-d2717831436c", "internal_chat_message_metadata_passthrough": {"create_time": 1788222752.757894, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.6 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 30028)\nTotal output lines: 225\n\nWarning: truncated output (original token count: 51075)\nTotal output lines: 344\n\ndocs/trajectories/raw/trajectory-21-ticket-22-gate-01a05a02-6795-7610-b948-236031e4ae15.jsonl      120\n  35 event_msg\n  82 response_item\n   1 session_meta\n   1 turn_context\n   1 world_state\ndocs/trajectories/raw/trajectory-22-ticket-22-worker-sessions.jsonl     …
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -484,6 +484,6 @@
 
 {"ordinal": 175, "payload": {"call_id": "call_lFbMGmssgGJAT2kz6HiV4Pnp", "id": "ctco_01a05a65-d68f-78d1-958a-6e2c6201bd49", "internal_chat_message_metadata_passthrough": {"create_time": 1788223018.639606, "turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "output": [{"text": "Script completed\nWall time 0.9 seconds\nOutput:\n", "type": "input_text"}, {"text": "manifest-and-records=pass\ndocs/evidence/ticket-23/pre-release-qualification.md:52:Public submission text does not state the superseded four-AH Judge Fixture claim. Historical `0.80` text appears only as an explicitly removed experiment.\nsubmission-check: pass\nProof Bundle valid\n1:# Ticket 23 internal reviewers\n14:Both reviewers used `gpt-5.6-terra` with high reasoning. Both were read-only.\n       7 docs/trajectories/raw/trajec…
 
-### event_msg
+### response_item
 
-{"ordinal": 177, "payload": {"completed_at_ms": 1788223020855, "item": {"id": "rs_0e3f2c85d3dbdf65016a961e2c59e487d28cfad84718b253aa", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788223020248, "thread_id": "01a05a5e-5848-7ec2-802e-80326069d05e", "turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82", "type": "item_completed"}, "timestamp": "2026-09-01T00:37:00.855Z", "type": "event_msg"}
+{"ordinal": 178, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961e2c59e487d28cfad84718b253aa", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:37:00.870Z", "type": "response_item"}

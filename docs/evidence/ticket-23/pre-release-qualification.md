@@ -1,15 +1,16 @@
 # Ticket 23 pre-release qualification
 
-Status: clean-room qualification and the Controller archive checkpoint passed. The public Video URL is the only unresolved external input.
+Status: clean-room qualification passed. The replacement Controller archive checkpoint is pending. The public Video URL is the only unresolved external input.
 
 ## Candidate boundary
 
 - Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.
 - Branch: `ticket/23-verify-final-submission-clean-room`.
-- Checkpoint snapshot SHA A: `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc`.
-- Final Gate candidate SHA B: assigned after this report update is committed.
-- Archive input: exact checkpoint SHA A `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc`.
-- Archive command: `uv run python scripts/build_release.py --sha 9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc --output-dir /tmp/edgequeue-ticket-23-sha-a`.
+- Superseded release-measurement range: `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc` through `89fa6a4228a2965f9a43941de2924b95a7cbf31d`.
+- Replacement checkpoint SHA A2: assigned after this report is committed.
+- Final Gate candidate: pending the replacement Controller archive checkpoint.
+- Archive input: exact checkpoint SHA A2.
+- Archive command: `uv run python scripts/build_release.py --sha <SHA-A2> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>`.
 - Release owner: the Controller. Ticket 23 archives are verification artifacts, not the final release set.
 
 ## Clean-room result
@@ -27,11 +28,11 @@ env -u OPENAI_API_KEY -u ANTHROPIC_API_KEY -u GOOGLE_API_KEY \
 UV_OFFLINE=1 uv run edgequeue verify <TEMPORARY-DIRECTORY>/judge/proof-bundle
 ```
 
-The replay completed in `0.103` seconds. The timed command took `0.26` seconds of wall time.
+The replay completed in `0.080` seconds. The timed command took `0.25` seconds of wall time.
 
 The replay made `0` requests. It used `0` tokens. Its model cost was `$0.00`.
 
-The generated Proof Bundle was valid. Its bundle digest was `f849f16ef3dc98104f07d5c0229a578f453ceb796f437e728b2e77416a22dd14`.
+The generated Proof Bundle was valid. Its bundle digest was `92395675367fcef7dc6b333bf021c152856741535fa9e4d9a9e769b65e03b467`.
 
 The checked-in Ticket 21 Proof Bundle was valid. Its bundle digest was `3eca0104f3393533806ef0f71aff167c3a4adeef4b3c76853fbb48e23c24f70d`.
 
@@ -53,9 +54,13 @@ Public submission text does not state the superseded four-AH Judge Fixture claim
 
 ## Trajectories and privacy
 
-The Controller ledger contains `26` entries. The export contains `30` source records.
+The Controller ledger contains `26` entries. The corrected export contains `29` source records.
 
 The export covers Controller, Worker, Gate, and Internal review roles. It includes Ticket 22 and Ticket 23 sources.
+
+Ticket 22 has one Worker source and two distinct Internal review sources. The Standards source identifies Lovelace at `/root/standards_review`. The Specification source identifies Hume at `/root/specification_review`.
+
+No Ticket 22 Internal review record duplicates the Ticket 22 Worker source.
 
 Each manifest record names one readable trajectory and one supporting raw-event excerpt.
 
@@ -63,7 +68,7 @@ The final export scan passed. It found no user-home path, private local path, cr
 
 ## Submission and provenance
 
-The submission validator passed. The final full suite passed: `172 passed in 31.41s`.
+The submission validator passed. The final full suite passed: `172 passed in 30.73s`.
 
 `uv lock --check`, compileall, and `git diff --check` passed.
 
@@ -120,24 +125,20 @@ Both reviews identified the Video URL and eligibility confirmation as external i
 
 After the Controller added both reviewer JSONL sources, the Standards and Specification reviews passed. No in-scope Critical or Major finding remained before SHA A.
 
+Gate cycle 1 later found that the Ticket 22 reviewer sources were labeled as Worker continuations. The Ticket 22 Internal review record also duplicated the primary Worker source.
+
+The Controller corrected the authoritative ledger. The replacement export binds the primary source to Worker and both reviewer sources to Internal review.
+
+The Gate BLOCK is the RED evidence for this provenance gap. The focused submission tests remained GREEN, so no speculative or protected-surface test was added.
+
+The replacement Standards and Specification reviews passed. No in-scope Critical or Major finding remains before checkpoint SHA A2.
+
 ## Controller archive checkpoint
 
-The Controller built twice from exact SHA A outside Git. The two archives were byte-identical.
+The archive measurements for `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc` are superseded. They do not qualify the corrected trajectory corpus.
 
-- Archive name: `edgequeue-9b98f1d315cc-source.zip`.
-- Archive size: `2,561,122` bytes.
-- Archive SHA-256: `cf8d4d7e87d69e29c276776f96d9fae87caffd54d39946571c18d198e5afd027`.
-- Source-tree digest: `acdfe2d2cfd850a0762eec8c700ff38c1f1a44c9`.
-- Source identity binding: `e531165838b134961d6d9ead400a5d682a793126ce782979a5bee2540c8f307e`.
-- Archive contents: `1,271` tracked files plus the release manifest.
-- Controller preservation path: `.scratch/edgequeue/release/ticket-23-verification-9b98f1d/`.
+The Controller must build twice from exact checkpoint SHA A2 outside Git. The Controller must compare the two archives byte-for-byte.
 
-The Controller extracted the archive into a no-Git environment. The full suite passed: `172 passed in 18.60s`.
+The Controller must extract one archive into a no-Git environment. The Controller must run the full suite and Root Verification Command from that extraction.
 
-The extracted credential-free, offline Judge and verifier passed. Replay took `0.112` seconds. Observed wall time was `0.910151` seconds.
-
-The extracted run made `0` requests. It used `0` tokens. Its model cost was `$0.00`.
-
-The extracted Proof Bundle digest was `1e47522775d94a367861e26b7c3429df6e7c0a2d75d2466df77133273a596a5d`. The tamper check returned `metric_recomputation_mismatch`.
-
-Proof immutability, lock validation, compileall, the submission validator, and checked-in Proof Bundle verification passed in the extracted checkpoint.
+Replacement archive measurements: pending Controller checkpoint.

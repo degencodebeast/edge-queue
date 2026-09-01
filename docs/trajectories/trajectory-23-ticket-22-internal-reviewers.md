@@ -1,10 +1,10 @@
-# Ticket 22 Worker sessions
+# Ticket 22 internal reviewers
 
-- Role: Worker
+- Role: Internal review
 - Scope: Ticket 22
-- Pane: worker-lane-3
+- Pane: Worker subagents
 - Source digest: `c872b10b902a5230cfb6fab18599f9c8741925f6c8d734d3827641815c57ecba`
-- Supporting raw-event excerpt: [`raw/trajectory-23-ticket-22-worker-sessions.jsonl`](raw/trajectory-23-ticket-22-worker-sessions.jsonl)
+- Supporting raw-event excerpt: [`raw/trajectory-23-ticket-22-internal-reviewers.jsonl`](raw/trajectory-23-ticket-22-internal-reviewers.jsonl)
 
 ## Event excerpt
 
@@ -28,7 +28,7 @@
 
 {"ordinal": 4, "payload": {"content": [{"text": "# AGENTS.md instructions for <USER_HOME>/Projects/personal/micro1-hack\n\n<INSTRUCTIONS>\n<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n#…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 5, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 
@@ -44,9 +44,9 @@
 
 <REDACTED_PRIVATE_EVENT>
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
-{"ordinal": 9, "payload": {"full": false, "state": {"environments": {"current_date": "2026-09-01"}}}, "timestamp": "2026-08-31T23:07:24.736Z", "type": "world_state"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -72,9 +72,9 @@
 
 {"ordinal": 15, "payload": {"content": [{"text": "<collaboration_mode></collaboration_mode>", "type": "input_text"}, {"text": "<multi_agent_mode>Any earlier instruction enabling proactive multi-agent delegation no longer applies. Do not spawn sub-agents unless the user or applicable AGENTS.md/skill instructions explicitly ask for sub-agents, delegation, or parallel agent work.</multi_agent_mode>", "type": "input_text"}], "id": "msg_01a05a13-dff1-7142-aa39-86ba88a11082", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["collaboration_mode.instructions", "multi_agent.mode_instructions"], "create_time": 1788217647.089482, "turn_id": "01a05a13-d6e0-7fe2-bcf3-48b45ca85ab8"}, "role": "developer", "type": "message"}, "timestamp": "2026-08-31T23:07:27.089Z", "type": "response_…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
-{"ordinal": 16, "payload": {"full": false, "state": {"collaboration_mode": {"instructions": "dfd53114f5f6f9f5fd7816370d0bf2847806246d"}, "multi_agent_mode": {"usage_hint_hash": "b9f2b9adaebe36bafe7d27250fa4bb2ee7d11165"}, "multi_agent_usage_hint": "b9f2b9adaebe36bafe7d27250fa4bb2ee7d11165"}}, "timestamp": "2026-08-31T23:07:27.090Z", "type": "world_state"}
+<REDACTED_PRIVATE_EVENT>
 
 ### turn_context
 
@@ -366,7 +366,7 @@
 
 ### response_item
 
-{"ordinal": 119, "payload": {"call_id": "call_ck4RyPriM0llTQQVbLYxWP8u", "id": "ctc_086c334e31cf604a016a9609bb07c087d2a2df3044243b6ba9", "input": "const r = await tools.exec_command({\"cmd\":\"echo 'unredacted likely privacy patterns'; rg -n --hidden -i --glob '*.md' --glob '*.jsonl' --glob '*.json' '(<USER_HOME>/private/|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}|api[_-]?key.{0,40}[=:]|token.{0,40}[=:]|password.{0,40}[=:]|secret.{0,40}[=:])' docs/trajectories | head -160 || true; echo 'legacy incl exact archive exclusions'; git ls-tree -r --name-only HEAD | rg '^(runs/|docs/evidence/ticket-20/traces/)' | sed -n '1,4p'; echo 'names not expected exclusion'; git ls-tree -r --name-only HEAD | rg '^(?:\\\\.git|\\\\.venv|venv|\\\\.mypy_cache|\\\\.pytest_cache|\\\\.ruff_cache|.*(?:\\\\.py…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 

@@ -1,10 +1,10 @@
-# Ticket 22 Worker sessions
+# Ticket 22 internal reviewers
 
-- Role: Worker
+- Role: Internal review
 - Scope: Ticket 22
-- Pane: worker-lane-3
+- Pane: Worker subagents
 - Source digest: `dd6130b9c603dab6e2047f21e6fcbed299a0a6b4198dbe299b1a6e3122beb875`
-- Supporting raw-event excerpt: [`raw/trajectory-24-ticket-22-worker-sessions.jsonl`](raw/trajectory-24-ticket-22-worker-sessions.jsonl)
+- Supporting raw-event excerpt: [`raw/trajectory-24-ticket-22-internal-reviewers.jsonl`](raw/trajectory-24-ticket-22-internal-reviewers.jsonl)
 
 ## Event excerpt
 
@@ -28,7 +28,7 @@
 
 {"ordinal": 4, "payload": {"content": [{"text": "# AGENTS.md instructions for <USER_HOME>/Projects/personal/micro1-hack\n\n<INSTRUCTIONS>\n<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n#…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 5, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 
@@ -44,9 +44,9 @@
 
 <REDACTED_PRIVATE_EVENT>
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
-{"ordinal": 9, "payload": {"full": false, "state": {"environments": {"current_date": "2026-09-01"}}}, "timestamp": "2026-08-31T23:07:30.159Z", "type": "world_state"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -56,9 +56,9 @@
 
 {"ordinal": 11, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Proceed within that boundary. Send no further status acknowledgements. Your next message must be the clean draft-package snapshot SHA A, exact archive command, focused/full check results, review results, and confirmation that you are paused for the Controller archive checkpoint.", "type": "input_text"}], "id": "msg_01a05a13-44d3-70a2-a772-60dbfb0800cb", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788217607.379211, "turn_id": "01a05a05-96f0-7ee2-b9ee-332db603a0af"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T23:07:30.159Z", "type": "response_item"}
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
-{"ordinal": 12, "payload": {"full": false, "state": {"environments": {"subagents": "- standards_review: Lovelace"}}}, "timestamp": "2026-08-31T23:07:30.159Z", "type": "world_state"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -76,9 +76,9 @@
 
 {"ordinal": 16, "payload": {"content": [{"text": "<collaboration_mode></collaboration_mode>", "type": "input_text"}, {"text": "<multi_agent_mode>Any earlier instruction enabling proactive multi-agent delegation no longer applies. Do not spawn sub-agents unless the user or applicable AGENTS.md/skill instructions explicitly ask for sub-agents, delegation, or parallel agent work.</multi_agent_mode>", "type": "input_text"}], "id": "msg_01a05a13-f4dd-7cd2-8f1a-d966ba389091", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["collaboration_mode.instructions", "multi_agent.mode_instructions"], "create_time": 1788217652.445085, "turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "role": "developer", "type": "message"}, "timestamp": "2026-08-31T23:07:32.445Z", "type": "response_…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
-{"ordinal": 17, "payload": {"full": false, "state": {"collaboration_mode": {"instructions": "dfd53114f5f6f9f5fd7816370d0bf2847806246d"}, "environments": {"subagents": null}, "multi_agent_mode": {"usage_hint_hash": "b9f2b9adaebe36bafe7d27250fa4bb2ee7d11165"}, "multi_agent_usage_hint": "b9f2b9adaebe36bafe7d27250fa4bb2ee7d11165"}}, "timestamp": "2026-08-31T23:07:32.446Z", "type": "world_state"}
+<REDACTED_PRIVATE_EVENT>
 
 ### turn_context
 
@@ -470,7 +470,7 @@
 
 ### response_item
 
-{"ordinal": 187, "payload": {"call_id": "call_e4QcRhL7bKsUwm8rczd0O0Px", "id": "ctco_01a05a2e-31ca-7130-b8b2-cd0464c67faa", "internal_chat_message_metadata_passthrough": {"create_time": 1788219371.978878, "turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5"}, "output": [{"text": "Script completed\nWall time 13.9 seconds\nOutput:\n", "type": "input_text"}, {"text": "c6f182f Exercise extracted edgequeue judge command\n1d7bdd6 Check extracted release manifest rejection\n1d277b3 Bind extracted judge runs to release manifest\n163cd70 Test extracted release judge binding\ncff8fae Remove trajectory export whitespace\n9954341 Make archive privacy fixture runtime-only\nf2e4629 Keep release fixture free of literal secrets\ncec1530 Prepare hackathon submission package\ndiff --git a/docs/evidence/ticket-…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 

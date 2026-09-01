@@ -3,7 +3,7 @@
 - Role: Internal review
 - Scope: Ticket 23
 - Pane: Worker subagents
-- Source digest: `daa456d105a22306e19418af01d0d0d1e4e75888a9a6f4efaba55a82fb900079`
+- Source digest: `6187a746795218ea408cf1bff36657d255214a7d101e854815fff3000d8d9636`
 - Supporting raw-event excerpt: [`raw/trajectory-27-ticket-23-internal-reviewers.jsonl`](raw/trajectory-27-ticket-23-internal-reviewers.jsonl)
 
 ## Event excerpt
@@ -32,7 +32,7 @@
 
 {"ordinal": 5, "payload": {"content": [{"text": "<recommended_plugins>\nHere is a list of plugins that are available but not installed.\n\n- Airtable (airtable@openai-curated-remote)\n- Alpaca (alpaca@openai-curated-remote)\n- Apollo.io (apollo@openai-curated-remote)\n- Spotify (app-68de829bf7648191acd70a907364c67c@openai-curated-remote)\n- Apple Music (app-6938a94a61d881918ef32cb999ff937c@openai-curated-remote)\n- LONA Trading Assistant (app-694336b0c0948191a4ad234f9942885b@openai-curated-remote)\n- SciSpace (app-69439d715a7c8191aed9e2f6649e105f@openai-curated-remote)\n- Tarot (app-6943a2c078b0819188de39e4fe168d9b@openai-curated-remote)\n- Todoist: To Do List & Calendar (app-6943b73823548191a9f9216c6790c453@openai-curated-remote)\n- Consensus (app-6943e6f4a928819195962de16fb9ffe4@openai-c…
 
-### world_state
+<REDACTED_PRIVATE_EVENT>
 
 {"ordinal": 6, "payload": {"full": true, "state": {"agents_md": {"directory": "<USER_HOME>/Projects/personal/micro1-hack", "text": "<!-- context7 -->\nUse Context7 MCP to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service -- even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer -- your training data may not reflect recent changes. Prefer this over web search for library docs.\n\nDo not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.\n\n## Steps…
 
@@ -218,7 +218,7 @@
 
 ### response_item
 
-{"ordinal": 52, "payload": {"call_id": "call_Stx6H7wjSNZu928mK0t3eta2", "id": "ctc_000fde6d7766d07c016a961c6924c087d2a5cccc140a6a0f74", "input": "const r = await tools.exec_command({\"cmd\":\"WORKTREE=<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\\nprintf '%s\\\\n' '===== forbidden-path/private-data hits ====='\\nrg -n -i --glob '*.md' --glob '*.json' --glob '*.jsonl' '<USER_HOME>/private/(var|tmp)|(^|[^A-Za-z0-9_])(sk|pk|ghp|github_pat|api[_-]?key|token|secret|password|authorization)[^A-Za-z0-9_]|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}|rate[ -]?limit|token[ -]?usage|encrypted|private (value|account|data)' \\\"$WORKTREE/docs/trajectories\\\" \\\"$WORKTREE/docs/evidence/ticket-23\\\" || true\\nprintf '%s\\\\n' '===== source tree suspect files ====='\…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -356,37 +356,17 @@
 
 {"ordinal": 114, "payload": {"call_id": "call_8S8750FoYWBH60rZ8wo35SSt", "id": "ctco_01a05a66-353f-7e41-9fa8-3cb032e570f7", "internal_chat_message_metadata_passthrough": {"create_time": 1788223042.879126, "turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "===== isolated reviewer raw-event semantics =====\n413 event_msg SubAgentActivity started /root/ticket23_standards \n418 event_msg SubAgentActivity started /root/ticket23_specification \n479 event_msg SubAgentActivity completed /root/ticket23_standards \n484 response_item None None None \n499 event_msg SubAgentActivity interacted /root/ticket23_specification \n511 event_msg SubAgentActivity completed /root/ticket23_specification \n5…
 
-### event_msg
-
-<REDACTED_PRIVATE_EVENT>
-
-### event_msg
-
-{"ordinal": 116, "payload": {"completed_at_ms": 1788223053352, "item": {"id": "rs_000fde6d7766d07c016a961e44210887d2a922b380c81346e6", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788223044031, "thread_id": "01a05a5e-3b6e-7cc2-9830-9ff9c3b56fe9", "turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44", "type": "item_completed"}, "timestamp": "2026-09-01T00:37:33.352Z", "type": "event_msg"}
-
 ### response_item
 
-{"ordinal": 117, "payload": {"id": "rs_000fde6d7766d07c016a961e44210887d2a922b380c81346e6", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:37:33.356Z", "type": "response_item"}
-
-### event_msg
-
-{"ordinal": 118, "payload": {"completed_at_ms": 1788223057702, "item": {"id": "rs_000fde6d7766d07c016a961e4d735887d29c0b684151e70920", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788223053357, "thread_id": "01a05a5e-3b6e-7cc2-9830-9ff9c3b56fe9", "turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44", "type": "item_completed"}, "timestamp": "2026-09-01T00:37:37.703Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
 {"ordinal": 119, "payload": {"id": "rs_000fde6d7766d07c016a961e4d735887d29c0b684151e70920", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:37:37.709Z", "type": "response_item"}
 
-### event_msg
-
-{"ordinal": 120, "payload": {"completed_at_ms": 1788223058183, "item": {"id": "rs_000fde6d7766d07c016a961e51cd0c87d281674d26213f5191", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788223057710, "thread_id": "01a05a5e-3b6e-7cc2-9830-9ff9c3b56fe9", "turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44", "type": "item_completed"}, "timestamp": "2026-09-01T00:37:38.183Z", "type": "event_msg"}
-
 ### response_item
 
 {"ordinal": 121, "payload": {"id": "rs_000fde6d7766d07c016a961e51cd0c87d281674d26213f5191", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:37:38.186Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 122, "payload": {"call_id": "call_15uoyd1oRgF9v65akZG2IId1", "id": "ctc_000fde6d7766d07c016a961e52484c87d2bb8509bc997423c9", "input": "const r = await tools.exec_command({\"cmd\":\"WORKTREE=<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\\nnl -ba \\\"$WORKTREE/docs/trajectories/raw/trajectory-29-ticket-23-internal-reviewers.jsonl\\\"\\nprintf '%s\\\\n' '===== ledger source rule ====='\\nrg -n -C 3 'Ticket 23|internal reviewers|Internal review' <USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/agent-trajectory-ledger.md\\nprintf '%s\\\\n' '===== reviewer-readable tail ====='\\nnl -ba \\\"$WORKTREE/docs/trajectories/trajectory-29-ticket-23-internal-reviewers.md\\\" | sed -n '1,180p'\\nprintf '%s\\\\n' '===== exact event JSON shape data ====…
 
 ### event_msg
 
@@ -395,14 +375,6 @@
 ### response_item
 
 {"ordinal": 124, "payload": {"call_id": "call_15uoyd1oRgF9v65akZG2IId1", "id": "ctco_01a05a66-8e62-7981-96a1-54fa1671e9de", "internal_chat_message_metadata_passthrough": {"create_time": 1788223065.698172, "turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44"}, "output": [{"text": "Script completed\nWall time 0.6 seconds\nOutput:\n", "type": "input_text"}, {"text": "     1\t{\"timestamp\":\"2026-09-01T00:28:40.280Z\",\"ordinal\":413,\"type\":\"event_msg\",\"payload\":{\"type\":\"item_completed\",\"thread_id\":\"01a05a54-8d19-7f62-b14c-a9472cb568c8\",\"turn_id\":\"01a05a56-5176-7d50-ad66-7e0de80c79b1\",\"item\":{\"type\":\"SubAgentActivity\",\"id\":\"call_Nph2Jy8QGIfxbA7k5HTVHknD\",\"kind\":\"started\",\"agent_thread_id\":\"01a05a5e-3b6e-7cc2-9830-9ff9c3b56fe9\",\"agent_path\":\"/root/ticket23_s…
-
-### event_msg
-
-<REDACTED_PRIVATE_EVENT>
-
-### event_msg
-
-{"ordinal": 126, "payload": {"completed_at_ms": 1788223073939, "item": {"id": "rs_000fde6d7766d07c016a961e5b346487d29386a85f4f7a01fa", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788223067104, "thread_id": "01a05a5e-3b6e-7cc2-9830-9ff9c3b56fe9", "turn_id": "01a05a65-6e9c-7403-98e3-b04c0bd0ad44", "type": "item_completed"}, "timestamp": "2026-09-01T00:37:54.061Z", "type": "event_msg"}
 
 ### response_item
 
@@ -428,6 +400,90 @@
 
 <REDACTED_PRIVATE_EVENT>
 
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 139, "payload": {"id": "rs_000fde6d7766d07c016a961f16db1c87d2ab6be5430a710c9c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:40:55.012Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 141, "payload": {"content": [{"text": "I will verify that the regenerated export now preserves one complete readable/raw trajectory per internal reviewer and recheck privacy and owned-surface standards.", "type": "output_text"}], "id": "msg_000fde6d7766d07c016a961f171be887d2a3737005a736a348", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788223252.48541, "turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:40:55.719Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 144, "payload": {"call_id": "call_lFN4bLlTHDkHud6qxRHg3j77", "id": "ctco_01a05a69-8ef0-7b92-9264-5fe5c6b3fbbd", "internal_chat_message_metadata_passthrough": {"create_time": 1788223262.448078, "turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": " M docs/trajectories/raw/trajectory-01-controller-session-01a0573d-46fc-7781-b1c0-cecd238ecef2.jsonl\n M docs/trajectories/raw/trajectory-02-ticket-14-worker-session-01a0575a-8ed6-7f11-9b58-f246e77edfdb.jsonl\n M docs/trajectories/raw/trajectory-03-ticket-14-gate-session-01a0575a-8f24-7b83-8bd8-d70b2af3fd1f.jsonl\n M docs/trajectories/raw/trajectory-04-ticket-14-internal-reviewers.jsonl\n M docs/trajectories/raw/trajectory-05-ticket…
+
+### response_item
+
+{"ordinal": 147, "payload": {"id": "rs_000fde6d7766d07c016a961f1fe11487d28ca964e7073c1b58", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:41:04.477Z", "type": "response_item"}
+
 ### event_msg
 
-{"ordinal": 133, "payload": {"completed_at": 1788223080, "duration_ms": 88916, "last_agent_message": "PASS — no in-scope Critical or Major finding remains before checkpoint SHA A.\n\nVerified:\n\n- Isolated Ticket 23 internal-review evidence names both reviewers and preserves their start, completion, and final reports ([trajectory-29](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/trajectories/trajectory-29-ticket-23-internal-reviewers.md:9>); [raw events](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/trajectories/raw/trajectory-29-ticket-23-internal-reviewers.jsonl:1>)).\n- Privacy status agrees: report says scan passed and `checks.json` records `\"privacy_scan\": \"pass\"` ([report line 62](<<USER_HOME>/Projects/per…
+{"ordinal": 149, "payload": {"completed_at_ms": 1788223277945, "item": {"aggregated_output": "submission-check: pass\n", "command": ["/bin/zsh", "-lc", "WORKTREE=<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\nfor item in trajectory-27-ticket-23-internal-reviewers trajectory-28-ticket-23-internal-reviewers; do\n  printf '\\n===== %s readable structure =====\\n' \"$item\"\n  sed -n '1,120p' \"$WORKTREE/docs/trajectories/$item.md\"\n  printf '\\n===== %s raw event types =====\\n' \"$item\"\n  python3 - \"$WORKTREE/docs/trajectories/raw/$item.jsonl\" <<'PY'\nimport collections,json,sys\np=sys.argv[1]; events=[json.loads(x) for x in open(p)]\nprint('count',len(events),collections.Counter(e.get('type') for e in events))\nfor n,e in enumerate(events,1):\n  data=json…
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 153, "payload": {"id": "rs_000fde6d7766d07c016a961f2f6b1487d28af9480639e21dca", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:41:22.032Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 156, "payload": {"call_id": "call_mxVbO4uGlxK9M4R6dEAgPH4c", "id": "ctco_01a05a6a-179b-78c3-9203-9b809b2158cc", "internal_chat_message_metadata_passthrough": {"create_time": 1788223297.435601, "turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "trajectory-27-ticket-23-internal-reviewers\ncount 106 type_counts {'session_meta': 1, 'event_msg': 32, 'response_item': 47, 'redacted_private_event': 25, 'inter_agent_communication_metadata': 1}\ninstruction True tool_call True tool_result True final True feedback True\nprivacy_hits {'home': False, 'private': False, 'email': False, 'token': False, 'jwt': False}\nmd_has_result False md_has_raw_link True\ntrajectory-28-ticket-23-inter…
+
+### response_item
+
+{"ordinal": 159, "payload": {"id": "rs_000fde6d7766d07c016a961f42979887d2aa586fc1283882f2", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:41:40.166Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 161, "payload": {"id": "rs_000fde6d7766d07c016a961f4442a487d28916aca4689f5e06", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:41:40.567Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 162, "payload": {"call_id": "call_Oat36ASfeiKeJwf5H7bWPVaa", "id": "ctc_000fde6d7766d07c016a961f44a3b487d28e8f5e73ff3339c5", "input": "const r = await tools.exec_command({\"cmd\":\"WORKTREE=<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\\nfor item in trajectory-27-ticket-23-internal-reviewers trajectory-28-ticket-23-internal-reviewers; do\\n printf '\\\\n===== %s final readable events =====\\\\n' \\\"$item\\\"\\n tail -80 \\\"$WORKTREE/docs/trajectories/$item.md\\\"\\ndone\\nrg -n -i 'final.answer|pass|major|critical|finding|result|conclusion' \\\"$WORKTREE/docs/trajectories/trajectory-27-ticket-23-internal-reviewers.md\\\" \\\"$WORKTREE/docs/trajectories/trajectory-28-ticket-23-internal-reviewers.md\\\" | tail -60\",\"workdir\":\"<USER_HOME>/Proje…
+
+### event_msg
+
+{"ordinal": 163, "payload": {"completed_at_ms": 1788223304467, "item": {"aggregated_output": "\n===== trajectory-27-ticket-23-internal-reviewers final readable events =====\n\n### response_item\n\n{\"ordinal\": 114, \"payload\": {\"call_id\": \"call_8S8750FoYWBH60rZ8wo35SSt\", \"id\": \"ctco_01a05a66-353f-7e41-9fa8-3cb032e570f7\", \"internal_chat_message_metadata_passthrough\": {\"create_time\": 1788223042.879126, \"turn_id\": \"01a05a65-6e9c-7403-98e3-b04c0bd0ad44\"}, \"output\": [{\"text\": \"Script completed\\nWall time 0.3 seconds\\nOutput:\\n\", \"type\": \"input_text\"}, {\"text\": \"===== isolated reviewer raw-event semantics =====\\n413 event_msg SubAgentActivity started /root/ticket23_standards \\n418 event_msg SubAgentActivity started /root/ticket23_specification \\n479 event_msg…
+
+### response_item
+
+{"ordinal": 164, "payload": {"call_id": "call_Oat36ASfeiKeJwf5H7bWPVaa", "id": "ctco_01a05a6a-3318-77d0-a333-1f35a9e96000", "internal_chat_message_metadata_passthrough": {"create_time": 1788223304.472681, "turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 16095)\nTotal output lines: 224\n\n\n===== trajectory-27-ticket-23-internal-reviewers final readable events =====\n\n### response_item\n\n{\"ordinal\": 114, \"payload\": {\"call_id\": \"call_8S8750FoYWBH60rZ8wo35SSt\", \"id\": \"ctco_01a05a66-353f-7e41-9fa8-3cb032e570f7\", \"internal_chat_message_metadata_passthrough\": {\"create_time\": 1788223042.879126, \"turn_id\": \"01a05a65-6e9c…
+
+### response_item
+
+{"ordinal": 167, "payload": {"id": "rs_000fde6d7766d07c016a961f4a309487d28223345a8d2b1894", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a69-6040-7023-97df-d55e9998d3c2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:41:48.783Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 168, "payload": {"completed_at_ms": 1788223314232, "item": {"content": [{"text": "PASS — no in-scope Critical or Major finding remains.\n\n- Ticket 23 now has two distinct internal-review records with separate source digests and raw/readable paths ([manifest lines 424–441](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/trajectories/trace-manifest.json:424>)).\n- Both records include the reviewer task, tool calls and results, findings, feedback, and final outcome. The Standards record has 106 events; the Specification record has 120.\n- Privacy scan found no prohibited paths, credentials, emails, token-like values, or private event fields. The report and `checks.json` both record a passing scan ([report line 62](<<USER_HOME>/Projects/personal/…
+
+### response_item
+
+{"ordinal": 169, "payload": {"content": [{"text": "PASS — no in-scope Critical or Major finding remains.\n\n- Ticket 23 now has two distinct internal-review records with separate source digests and raw/readable paths ([manifest lines 424–441](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/trajectories/trace-manifest.json:424>)).\n- Both records include the reviewer task, tool calls and results, findings, feedback, and final outcome. The Standards record has 106 events; the Specification record has 120.\n- Privacy scan found no prohibited paths, credentials, emails, token-like values, or private event fields. The report and `checks.json` both record a passing scan ([report line 62](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-wor…
+
+### event_msg
+
+{"ordinal": 171, "payload": {"completed_at": 1788223314, "duration_ms": 63776, "last_agent_message": "PASS — no in-scope Critical or Major finding remains.\n\n- Ticket 23 now has two distinct internal-review records with separate source digests and raw/readable paths ([manifest lines 424–441](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/trajectories/trace-manifest.json:424>)).\n- Both records include the reviewer task, tool calls and results, findings, feedback, and final outcome. The Standards record has 106 events; the Specification record has 120.\n- Privacy scan found no prohibited paths, credentials, emails, token-like values, or private event fields. The report and `checks.json` both record a passing scan ([report line 62](<<USER_HOME>/Projects/p…
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 177, "payload": {"id": "rs_000fde6d7766d07c016a962157dc6c87d2845ce0cc65b332fc", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a72-33cc-75d2-b835-3a86c7ad0f03"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:50:32.108Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 179, "payload": {"content": [{"text": "I will review SHA A plus the uncommitted Controller-report update, verify every supplied archive measurement, and check the requested standards sources and release boundaries.", "type": "output_text"}], "id": "msg_000fde6d7766d07c016a962158413c87d2aad0bde0f8e6e940", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788223830.711426, "turn_id": "01a05a72-33cc-75d2-b835-3a86c7ad0f03"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:50:32.875Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 181, "payload": {"completed_at_ms": 1788223838027, "item": {"aggregated_output": "===== candidate state =====\n9b98f1d Verify final submission clean-room checkpoint\n M docs/evidence/ticket-23/pre-release-qualification.md\n9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc\n===== current report update =====\ndiff --git a/docs/evidence/ticket-23/pre-release-qualification.md b/docs/evidence/ticket-23/pre-release-qualification.md\nindex b1cf341..56c43c8 100644\n--- a/docs/evidence/ticket-23/pre-release-qualification.md\n+++ b/docs/evidence/ticket-23/pre-release-qualification.md\n@@ -1,133 +1,143 @@\n # Ticket 23 pre-release qualification\n \n-Status: checkpoint qualification complete, except Controller archive measurements and the external human inputs.\n+Status: clean-room qualification an…
