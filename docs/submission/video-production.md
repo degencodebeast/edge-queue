@@ -1,28 +1,14 @@
-# EdgeQueue demo script and capture plan
+# EdgeQueue Loom demo
 
-Target duration: 3 minutes 10 seconds.
+Target duration: 2 minutes 55 seconds.
 
-Core story: four agent verdicts, one wrong verdict, and one available review slot.
+The whole demo follows one question: four AI verdicts, one known mistake, and time to review one case.
 
 Authoritative fixture: `corpus/fixtures/judge-fixture-v1.json`.
 
-## Recording method
+## Before you record
 
-Use one Loom recording with your microphone enabled. Record the full screen so Loom captures the terminal and browser when you switch between them.
-
-Speak live while you follow the timed sections. Keep the narration on a phone or second screen that Loom does not capture.
-
-Pause Loom before you switch windows or prepare the next command. Resume when the correct screen is ready. On macOS, Loom uses `Option + Shift + P` to pause or resume by default.
-
-Do not read shell commands aloud. Introduce each action, run it, and explain the result after it appears.
-
-You do not need text overlays or a downloaded video file. Use the rendered README for the opening and closing text. Use terminal output and the generated Review Packet for the product evidence.
-
-## Before recording
-
-Use a 1920 by 1080 canvas. Put the terminal and browser side by side. Increase the terminal font until every line is readable at 720p.
-
-Prepare the demo from the repository root:
+Run this from the repository root:
 
 ```sh
 uv sync --frozen
@@ -30,195 +16,143 @@ DEMO_OUTPUT="$(mktemp -d /tmp/edgequeue-video.XXXXXX)"
 clear
 ```
 
-Complete these commands before screen recording starts. Keep the same terminal open because `DEMO_OUTPUT` exists only in that shell.
+Keep that terminal open. The `DEMO_OUTPUT` name points to the new folder where EdgeQueue will save the review page and proof files.
 
-Keep these files ready:
+Open `README.md` in the VS Code Markdown Preview. Make the text large enough to read in Loom.
 
-- `docs/evidence/ticket-21/artifacts/summary.json`
-- `docs/evidence/ticket-20/claims.json`
-- `docs/evidence/ticket-21/artifacts/tampered-proof-bundle/`
-- `README.md`
+In Loom:
 
-Open `README.md` in the VS Code Markdown Preview. Zoom until the opening statement and results table are easy to read in Loom.
+- Record the full screen.
+- Turn on your microphone.
+- Keep the script on your phone or another screen.
+- Use `Option + Shift + P` to pause while you change windows.
+- Resume only when the next screen is ready.
 
-Do not show a user home path in the recording. Crop unrelated tabs, shell history, notifications, and personal information.
+Do not show setup, passwords, notifications, or your full home directory.
 
-## Recording script
+## 0:00 to 0:18 | One wrong verdict
 
-### 0:00 to 0:12 | The decision
+**Show:** The top of the rendered README.
 
-**Screen:** Show the top of `README.md` in the VS Code Markdown Preview. The opening block supplies the on-screen text.
+**Say:**
 
-**On-screen text:**
+> Four AI verdicts are waiting. One is wrong, and I can review only one. If I choose badly, the mistake stays. EdgeQueue helps me choose the case to check first.
 
-```text
-4 agent verdicts
-1 wrong verdict
-1 review slot
-```
+## 0:18 to 0:36 | The basic rules miss it
 
-**Say live:**
+**Show:** Scroll to the Judge Fixture row in the README results table.
 
-> Four agent verdicts arrive for evaluation. One verdict is wrong. A qualified reviewer only has time to inspect one case. Which case should they open?
+**Say:**
 
-### 0:12 to 0:32 | The baseline misses
+> The basic warning rules choose F02. The known mistake is in F01, so they spend the only review slot on the wrong case.
 
-**Screen:** Keep the README opening visible. Point to the fixed Review Budget statement.
+## 0:36 to 1:02 | Run EdgeQueue
 
-**Say live:**
+**Do:** Pause Loom. Switch to the prepared terminal. Resume Loom.
 
-> A deterministic warning baseline selects case F02. The actual Label Error is in F01, so the baseline spends the review slot on the wrong case. Recall at one is zero.
+**Say before the command:**
 
-Pause on these values:
+> I will run EdgeQueue on the same four cases with the same one-case limit. This replay needs no API key.
 
-```text
-Baseline: EQ-F02-DEV-01
-False negative: EQ-F01-DEV-01
-Recall@1: 0.00
-```
-
-### 0:32 to 1:02 | Run EdgeQueue
-
-**Loom action:** Pause Loom. Switch to the prepared terminal. Resume Loom, then paste and run:
+**Run:**
 
 ```sh
 UV_OFFLINE=1 uv run edgequeue judge --output-dir "$DEMO_OUTPUT"
 ```
 
-Do not read the command aloud. Hold the completed output for five seconds.
+**Say after the result appears:**
 
-**Say live before running the command:**
+> EdgeQueue chooses F01. The basic rules got zero out of one. EdgeQueue got one out of one on this example.
 
-> Now I will run EdgeQueue on the same four frozen Development cases with the same Review Budget of one. The ranker assesses evidence without access to hidden scoring labels. Deterministic code validates the records, enforces the budget, and owns the final queue order.
+Keep both selected case IDs and both scores on screen for three seconds.
 
-Let the real command finish. Do not replace its output with staged terminal text. The command already prints the comparison.
+## 1:02 to 1:35 | Show the reviewer what happened
 
-### 1:02 to 1:27 | The right case reaches the reviewer
-
-**Screen:** Hold on the command output. Highlight both selected case IDs and the Recall values.
-
-**Say live after the result appears:**
-
-> EdgeQueue selects F01, the case that contains the known Label Error. Under the same budget, Recall at one is now one point zero. The reviewer gets the case the baseline missed.
-
-Pause on these values:
-
-```text
-Baseline: EQ-F02-DEV-01
-EdgeQueue: EQ-F01-DEV-01
-Recall@1: 0.00 versus 1.00
-```
-
-### 1:27 to 1:57 | Evidence and human authority
-
-**Screen:** Open the generated Review Packet:
+**Run:**
 
 ```sh
 open "$DEMO_OUTPUT/review-packet.html"
 ```
 
-Show the Review Budget, selected case, risk score, evidence, and first excluded case.
+**Show:** The selected case, its evidence, and the first case that missed the cut.
 
-**Say live:**
+**Say:**
 
-> This is the packet an Evaluation Operations Lead receives. It explains why F01 crossed the selection boundary and links the finding to frozen evidence. Our most important improvement was separating semantic judgment from deterministic authority. The agent recommends a case. It cannot change the canonical Verdict. Only an authorized human can do that.
+> This is the page the reviewer gets. F01 is first, with the evidence and the reason it was chosen. The page also shows the first case left out.
+>
+> The biggest change was taking the final choice away from the AI. The AI can flag a risk. Code chooses the list. Only the reviewer can change the official verdict.
+>
+> Here the reviewer changes F01 from FAIL to UNDETERMINED. EdgeQueue keeps both results.
 
-Scroll to the correction.
+## 1:35 to 2:05 | Check the proof, then break it
 
-> Here, the reviewer changes F01 from FAIL to UNDETERMINED. The correction is append-only and bound into the evidence trail.
+**Do:** Pause Loom. Return to the terminal. Resume Loom.
 
-### 1:57 to 2:29 | Verify, then attack the proof
+**Say:**
 
-**Loom action:** Pause Loom. Return to the same terminal. Resume and run:
+> Every run leaves the cases, the review result, and the score. This command recalculates the score instead of trusting the saved number.
+
+**Run:**
 
 ```sh
 UV_OFFLINE=1 uv run edgequeue verify "$DEMO_OUTPUT/proof-bundle"
 ```
 
-Hold `Proof Bundle valid` for three seconds.
+Hold `Proof Bundle valid` on screen.
 
-**Say live:**
+**Say:**
 
-> The run produces a Proof Bundle. Verification recomputes its bindings and metrics instead of trusting the saved claim. The untouched bundle passes.
+> The original passes. This copy has a changed score and a repaired file hash.
 
-Run the checked-in hostile case:
+**Run:**
 
 ```sh
 UV_OFFLINE=1 uv run edgequeue verify \
   docs/evidence/ticket-21/artifacts/tampered-proof-bundle
 ```
 
-This command must return a failure. That failure is the expected product behavior.
+This command must fail.
 
-**Say live:**
+**Say:**
 
-> This copy contains a changed Recall value and a repaired file digest. EdgeQueue still rejects it because the reported metric no longer matches the underlying cases.
+> It still fails because the saved score does not match the cases.
 
-Hold on:
+Hold `metric_recomputation_mismatch` on screen for three seconds.
 
-```text
-Proof Bundle invalid
-metric_recomputation_mismatch
-```
+## 2:05 to 2:35 | Show the result we removed
 
-### 2:29 to 2:52 | State the evidence boundary
+**Do:** Pause Loom. Return to the README results table. Resume Loom.
 
-**Screen:** Pause Loom. Open the README `Measured results` table in Markdown Preview. Resume Loom.
+**Say:**
 
-**Say live:**
+> An early version reported zero point eight on the wider test. Those runs did not match the final cases.
+>
+> With the final saved data, the results were zero point three, zero point four, and zero point three. I removed the zero point eight claim. They do not prove EdgeQueue beats the other methods, so I do not say they do.
 
-> The one point zero result comes from this four-case Judge Fixture. It demonstrates the workflow, not production performance. On the separate frozen synthetic Allocation Holdout, the public Recall at eight result is zero point three zero. The broad gate rejects a general improvement claim.
+## 2:35 to 2:55 | Close
 
-> We previously recorded a broader zero point eight zero result. Authoritative frozen reruns disproved it, so we removed it instead of defending a number the evidence could not support.
+**Show:** Return to the top of the rendered README.
 
-### 2:52 to 3:10 | Close
+**Say:**
 
-**Screen:** Return to the top of the rendered README. The repository link and opening statement serve as the end card.
+> EdgeQueue found the mistake the basic rules missed. The wider ranking still needs work. Today, a reviewer can see why a case was chosen, correct it, and check the result later.
+>
+> That is EdgeQueue.
 
-**Say live:**
+## If something goes wrong
 
-> EdgeQueue helps evaluation teams spend limited expert time on cases most likely to contain a wrong verdict. The ranker assesses risk. Deterministic code verifies the evidence. The reviewer owns the correction.
+If the Judge command fails, stop the recording and fix it. Do not show an old successful output.
 
-**Visible README text:**
-
-```text
-EdgeQueue
-Find wrong agent verdicts before review time runs out.
-
-github.com/degencodebeast/edge-queue
-Offline replay: 0 requests | 0 tokens | $0.00 model cost
-```
-
-## Recording priorities
-
-Show the result during the first minute. Do not start with architecture.
-
-Keep the baseline and EdgeQueue case IDs visible together. This comparison is the central product moment.
-
-Show the generated Review Packet. A browser view makes the reviewer workflow easier to understand than terminal output alone.
-
-Keep `metric_recomputation_mismatch` visible for two seconds. This is the memorable refusal in the demo.
-
-Say the synthetic-data limit aloud. The short fixture result and broad holdout result answer different questions.
-
-Use real command output. If a command finishes quickly, pause on the result.
-
-Use Loom pause and resume between sections. Do not leave window switching or preparation time in the final recording.
-
-## Fallback capture plan
-
-If the live Judge command fails during recording, stop the take and fix the environment. Do not substitute a staged success.
-
-If the browser does not open the generated packet, open the checked-in packet:
+If the browser does not open the new Review Packet, run:
 
 ```sh
-open docs/evidence/ticket-21/artifacts/review-packet.html
+open "$DEMO_OUTPUT/review-packet.html"
 ```
 
-If the Judge output scrolls out of view, print its saved copy:
+If the terminal output scrolls away, run:
 
 ```sh
 cat "$DEMO_OUTPUT/command-output.txt"
 ```
 
-If the recording exceeds 3 minutes 20 seconds, shorten the evidence-boundary section. Preserve the comparison, Review Packet, proof verification, tamper rejection, and limits statement.
+If the video runs long, shorten the explanation of the removed result. Keep the bad baseline choice, the Review Packet, the changed-score refusal, and the honest limit.
