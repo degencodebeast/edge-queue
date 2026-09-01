@@ -1,15 +1,15 @@
 # Ticket 23 pre-release qualification
 
-Status: checkpoint qualification complete, except Controller archive measurements and the external human inputs.
+Status: clean-room qualification and the Controller archive checkpoint passed. External human inputs remain unresolved.
 
 ## Candidate boundary
 
 - Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.
 - Branch: `ticket/23-verify-final-submission-clean-room`.
-- Checkpoint snapshot SHA A: recorded in the Controller checkpoint handoff after this report is committed.
-- Final Gate candidate SHA B: pending the Controller archive checkpoint.
-- Archive input: exact checkpoint SHA A.
-- Archive command: `uv run python scripts/build_release.py --sha <SHA-A> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>`.
+- Checkpoint snapshot SHA A: `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc`.
+- Final Gate candidate SHA B: assigned after this report update is committed.
+- Archive input: exact checkpoint SHA A `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc`.
+- Archive command: `uv run python scripts/build_release.py --sha 9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc --output-dir /tmp/edgequeue-ticket-23-sha-a`.
 - Release owner: the Controller. Ticket 23 archives are verification artifacts, not the final release set.
 
 ## Clean-room result
@@ -102,7 +102,7 @@ The focused submission test first found a ledger binding gap. The RED result was
 
 After the Controller added exact internal-review source IDs, the focused test was GREEN: `5 passed`.
 
-Full-suite and archive-checkpoint results are recorded in `checks.json` and the Controller checkpoint handoff.
+Full-suite results are recorded in `checks.json`. Archive-checkpoint results are recorded below and in the Controller checkpoint handoff.
 
 ## Internal reviews
 
@@ -114,20 +114,30 @@ The Controller added both exact reviewer sources. Each Ticket 23 reviewer now ha
 
 The Worker also aligned the privacy evidence. The final export preserves reviewer instructions, actions, tool responses, feedback, and results.
 
-The Specification review found the same privacy mismatch. It also identified the exact-SHA and archive fields that the checkpoint protocol intentionally completes after SHA A.
+The Specification review found the same privacy mismatch. It also identified the exact-SHA and archive fields completed by this report update.
 
 Both reviews identified the unresolved Video URL and eligibility confirmation. Those inputs require the user.
 
-After the Controller added both reviewer JSONL sources, the final Standards and Specification reviews passed. No in-scope Critical or Major finding remains before SHA A.
+After the Controller added both reviewer JSONL sources, the Standards and Specification reviews passed. No in-scope Critical or Major finding remained before SHA A.
 
 ## Controller archive checkpoint
 
-The Controller must build twice from exact SHA A outside Git.
+The Controller built twice from exact SHA A outside Git. The two archives were byte-identical.
 
-The Controller must compare both archive SHA-256 checksums. The Controller must extract one archive into a clean environment.
+- Archive name: `edgequeue-9b98f1d315cc-source.zip`.
+- Archive size: `2,561,122` bytes.
+- Archive SHA-256: `cf8d4d7e87d69e29c276776f96d9fae87caffd54d39946571c18d198e5afd027`.
+- Source-tree digest: `acdfe2d2cfd850a0762eec8c700ff38c1f1a44c9`.
+- Source identity binding: `e531165838b134961d6d9ead400a5d682a793126ce782979a5bee2540c8f307e`.
+- Archive contents: `1,271` tracked files plus the release manifest.
+- Controller preservation path: `.scratch/edgequeue/release/ticket-23-verification-9b98f1d/`.
 
-The Controller must run the full suite and Root Verification Command from the extraction.
+The Controller extracted the archive into a no-Git environment. The full suite passed: `172 passed in 18.60s`.
 
-The Controller must return the archive name, size, checksum, source tree, source identity binding, extracted checks, and runtime.
+The extracted credential-free, offline Judge and verifier passed. Replay took `0.112` seconds. Observed wall time was `0.910151` seconds.
 
-Archive measurements: pending Controller checkpoint.
+The extracted run made `0` requests. It used `0` tokens. Its model cost was `$0.00`.
+
+The extracted Proof Bundle digest was `1e47522775d94a367861e26b7c3429df6e7c0a2d75d2466df77133273a596a5d`. The tamper check returned `metric_recomputation_mismatch`.
+
+Proof immutability, lock validation, compileall, the submission validator, and checked-in Proof Bundle verification passed in the extracted checkpoint.
