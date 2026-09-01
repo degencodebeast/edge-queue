@@ -6,6 +6,16 @@ Core story: four agent verdicts, one wrong verdict, and one available review slo
 
 Authoritative fixture: `corpus/fixtures/judge-fixture-v1.json`.
 
+## Recording method
+
+Record the screen first. Add the narration as a voice-over afterward.
+
+Record one clip for each timed section. Keep each command and its real output in the same clip. Hold each important result for three to five seconds.
+
+Do not read shell commands aloud. Do not try to type, navigate, and deliver the full narration at the same time.
+
+This method keeps the evidence real while giving you control over pacing. A mistake in one section will not require a complete new take.
+
 ## Before recording
 
 Use a 1920 by 1080 canvas. Put the terminal and browser side by side. Increase the terminal font until every line is readable at 720p.
@@ -15,7 +25,10 @@ Prepare the demo from the repository root:
 ```sh
 uv sync --frozen
 DEMO_OUTPUT="$(mktemp -d /tmp/edgequeue-video.XXXXXX)"
+clear
 ```
+
+Complete these commands before screen recording starts. Keep the same terminal open because `DEMO_OUTPUT` exists only in that shell.
 
 Keep these files ready:
 
@@ -40,7 +53,7 @@ Do not show a user home path in the recording. Crop unrelated tabs, shell histor
 1 review slot
 ```
 
-**Narration:**
+**Voice-over:**
 
 > Four agent verdicts arrive for evaluation. One verdict is wrong. A qualified reviewer only has time to inspect one case. Which case should they open?
 
@@ -48,7 +61,7 @@ Do not show a user home path in the recording. Crop unrelated tabs, shell histor
 
 **Screen:** Show the baseline fields from `docs/evidence/ticket-21/artifacts/summary.json`. Keep the EdgeQueue result outside the crop.
 
-**Narration:**
+**Voice-over:**
 
 > A deterministic warning baseline selects case F02. The actual Label Error is in F01, so the baseline spends the review slot on the wrong case. Recall at one is zero.
 
@@ -62,24 +75,25 @@ Recall@1: 0.00
 
 ### 0:32 to 1:02 | Run EdgeQueue
 
-**Screen:** Switch to a clean terminal and run:
+**Screen capture:** Start a new terminal clip. Paste and run:
 
 ```sh
 UV_OFFLINE=1 uv run edgequeue judge --output-dir "$DEMO_OUTPUT"
-cat "$DEMO_OUTPUT/command-output.txt"
 ```
 
-**Narration:**
+Do not read the command aloud. Hold the completed output for five seconds.
+
+**Voice-over:**
 
 > Now I will run EdgeQueue on the same four frozen Development cases with the same Review Budget of one. The ranker assesses evidence without access to hidden scoring labels. Deterministic code validates the records, enforces the budget, and owns the final queue order.
 
-Let the real command finish. Do not replace its output with staged terminal text.
+Let the real command finish. Do not replace its output with staged terminal text. The command already prints the comparison.
 
 ### 1:02 to 1:27 | The right case reaches the reviewer
 
 **Screen:** Hold on the command output. Highlight both selected case IDs and the Recall values.
 
-**Narration:**
+**Voice-over:**
 
 > EdgeQueue selects F01, the case that contains the known Label Error. Under the same budget, Recall at one is now one point zero. The reviewer gets the case the baseline missed.
 
@@ -101,7 +115,7 @@ open "$DEMO_OUTPUT/review-packet.html"
 
 Show the Review Budget, selected case, risk score, evidence, and first excluded case.
 
-**Narration:**
+**Voice-over:**
 
 > This is the packet an Evaluation Operations Lead receives. It explains why F01 crossed the selection boundary and links the finding to frozen evidence. Our most important improvement was separating semantic judgment from deterministic authority. The agent recommends a case. It cannot change the canonical Verdict. Only an authorized human can do that.
 
@@ -111,24 +125,28 @@ Scroll to the correction.
 
 ### 1:57 to 2:29 | Verify, then attack the proof
 
-**Screen:** Return to the terminal and run:
+**Screen capture:** Return to the same terminal. Start a new clip and run:
 
 ```sh
 UV_OFFLINE=1 uv run edgequeue verify "$DEMO_OUTPUT/proof-bundle"
 ```
 
-**Narration:**
+Hold `Proof Bundle valid` for three seconds.
+
+**Voice-over:**
 
 > The run produces a Proof Bundle. Verification recomputes its bindings and metrics instead of trusting the saved claim. The untouched bundle passes.
 
-Run the checked-in hostile case:
+Start another clip. Run the checked-in hostile case:
 
 ```sh
 UV_OFFLINE=1 uv run edgequeue verify \
   docs/evidence/ticket-21/artifacts/tampered-proof-bundle
 ```
 
-**Narration:**
+This command must return a failure. That failure is the expected product behavior.
+
+**Voice-over:**
 
 > This copy contains a changed Recall value and a repaired file digest. EdgeQueue still rejects it because the reported metric no longer matches the underlying cases.
 
@@ -143,7 +161,7 @@ metric_recomputation_mismatch
 
 **Screen:** Show the compact claim from `docs/evidence/ticket-20/claims.json`, then the Judge Fixture summary.
 
-**Narration:**
+**Voice-over:**
 
 > The one point zero result comes from this four-case Judge Fixture. It demonstrates the workflow, not production performance. On the separate frozen synthetic Allocation Holdout, the public Recall at eight result is zero point three zero. The broad gate rejects a general improvement claim.
 
@@ -153,7 +171,7 @@ metric_recomputation_mismatch
 
 **Screen:** Return to the Review Packet. End on the selected case beside the verified Proof Bundle result.
 
-**Narration:**
+**Voice-over:**
 
 > EdgeQueue helps evaluation teams spend limited expert time on cases most likely to contain a wrong verdict. The ranker assesses risk. Deterministic code verifies the evidence. The reviewer owns the correction.
 
@@ -181,6 +199,8 @@ Say the synthetic-data limit aloud. The short fixture result and broad holdout r
 
 Use real command output. If a command finishes quickly, pause on the result.
 
+Record the spoken track after the screen clips are complete. Use the section text as narration, not as terminal commentary.
+
 ## Fallback capture plan
 
 If the live Judge command fails during recording, stop the take and fix the environment. Do not substitute a staged success.
@@ -189,6 +209,12 @@ If the browser does not open the generated packet, open the checked-in packet:
 
 ```sh
 open docs/evidence/ticket-21/artifacts/review-packet.html
+```
+
+If the Judge output scrolls out of view, print its saved copy:
+
+```sh
+cat "$DEMO_OUTPUT/command-output.txt"
 ```
 
 If the recording exceeds 3 minutes 20 seconds, shorten the evidence-boundary section. Preserve the comparison, Review Packet, proof verification, tamper rejection, and limits statement.
