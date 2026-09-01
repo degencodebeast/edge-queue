@@ -17,15 +17,15 @@
 
 ## Draft archive measurement
 
-The Gate ran the approved draft snapshot twice outside Git.
+The Controller created and preserved the approved A4 draft archive outside Git. The Gate independently rebuilt and verified A4.
 
 - Draft snapshot SHA A4: `a5ff413585ef1687f66b21aaa4b7a63c7cc66781`.
 - Draft archive: `edgequeue-a5ff413585ef-source.zip`, `2,216,245` bytes.
 - Draft archive SHA-256, both runs: `9d8880db4a03f6d9eae311e075bcb7c83b303d54c2c794076d5fc5d4e23e6e4e`.
 - Source tree: `8b3e746062753a04176732e4923a8644a39f9ecb`.
 - Source identity binding: `d6b2385ffffa6b23b3998c82b6d14583416f61657c16f2005068be401054f353`.
-- Gate release set: `.scratch/edgequeue/release/ticket-22-draft-a5ff413/`.
-- Gate checks passed: determinism, exclusions, required proof inclusion, redaction scan, trajectory coverage, no-Git extraction, offline judge, proof verification, and submission validation.
+- Controller release set: `.scratch/edgequeue/release/ticket-22-draft-a5ff413/`.
+- Controller and Gate checks passed: determinism, exclusions, required proof inclusion, redaction scan, trajectory coverage, no-Git extraction, offline judge, proof verification, and submission validation.
 
 The archive command was:
 
