@@ -16,7 +16,7 @@ from edgequeue.experiment import (
 from edgequeue.results import load_case_assessment
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-TRACE_ROOT = PROJECT_ROOT / "runs" / "allocation-holdout"
+TRACE_ROOT = PROJECT_ROOT / "docs" / "evidence" / "ticket-20" / "frozen-traces"
 REVIEW_BUDGET = 8
 RANDOM_SEEDS = tuple(range(1000))
 ATTEMPTS = (1, 2, 3)
@@ -119,9 +119,7 @@ def main() -> int:
             "decision": decision,
         },
     }
-    output_path = TRACE_ROOT / "evaluation.json"
-    output_path.write_text(json.dumps(artifact, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"artifact": str(output_path), **artifact["summary"]}, indent=2))
+    print(json.dumps({"source": str(TRACE_ROOT), **artifact["summary"]}, indent=2))
     return 0
 
 
