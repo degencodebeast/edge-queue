@@ -1,16 +1,16 @@
 # Ticket 23 pre-release qualification
 
-Status: the replacement clean-room checks passed. Controller archive qualification for checkpoint SHA A3 is pending. The public Video URL is the only unresolved external input.
+Status: the replacement clean-room checks and Controller archive qualification passed. The public Video URL is the only unresolved external input.
 
 ## Candidate boundary
 
 - Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.
 - Branch: `ticket/23-verify-final-submission-clean-room`.
 - Superseded release-measurement range: `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc` through `8e96cccb487c36dffa896be712864e48cbb7ed8f`.
-- Replacement checkpoint SHA A3: assigned when this clean verification snapshot is committed.
-- Final Gate candidate: assigned only after the Controller qualifies the SHA A3 archive and the report records those measurements.
-- Archive input: exact checkpoint SHA A3, assigned after this report is committed.
-- Archive command: `uv run python scripts/build_release.py --sha <SHA-A3> --output-dir /tmp/edgequeue-ticket-23-sha-a3`.
+- Replacement checkpoint SHA A3: `aafc3faee21d67be4ea4c372a363a6c57714b8f9`.
+- Final Gate candidate: assigned when this report-only descendant is committed.
+- Archive input: exact checkpoint SHA A3 `aafc3faee21d67be4ea4c372a363a6c57714b8f9`.
+- Archive command: `uv run python scripts/build_release.py --sha aafc3faee21d67be4ea4c372a363a6c57714b8f9 --output-dir /tmp/edgequeue-ticket-23-sha-a3`.
 - Release owner: the Controller. Ticket 23 archives are verification artifacts, not the final release set.
 
 ## Clean-room result
@@ -149,32 +149,32 @@ The Controller authorized one CLI-seam regression and the narrow `select_events`
 
 The SHA A3 Standards and Specification reviews passed. No in-scope Critical or Major finding remains.
 
-No Gate candidate will be sent before the Controller qualifies the replacement archive.
+The Controller qualified the replacement archive. The report-only descendant is ready for the final Gate cycle.
 
 ## Controller archive checkpoint
 
 The archive measurements for SHA A, SHA A2, and all descendants through `8e96cccb487c36dffa896be712864e48cbb7ed8f` are superseded. They do not qualify the corrected completion-aware trajectory corpus.
 
-The Controller built twice from exact checkpoint SHA A2 outside Git. Those two archives were byte-identical, but Gate cycle 2 later found incomplete trajectory excerpts.
+The Controller built twice from exact checkpoint SHA A3 outside Git. The two archives were byte-identical.
 
-- Archive name: `edgequeue-5b4ee4b51b6e-source.zip`.
-- Archive size: `2,317,410` bytes.
-- Archive SHA-256: `58ee91e28d69b5841594327ebe83d3c509cfaa4efd7ac54a04bef8a3f2d0ba4e`.
-- Source-tree digest: `cd26759e85c687da547876df468e2dcea0b8fadc`.
-- Source identity binding: `01c43b7926fdec5a894e8b61ca3f02ea31d8aa9c6cc44bb25aec03b5005e5665`.
+- Archive name: `edgequeue-aafc3faee21d-source.zip`.
+- Archive size: `2,053,989` bytes.
+- Archive SHA-256: `b8c1f8a904797261143d096707669a8dbc7c0dab6aea49ba2df6847f40cac3ad`.
+- Source-tree digest: `897243d6df0346a8610d15b7b2fb2bb8d33f9ade`.
+- Source identity binding: `eb4cdf8fa29ecd255aa94ad52d6b286dbef005b31171f7b002d78302342382db`.
 - Archive contents: `1,269` tracked files plus the release manifest.
-- Controller preservation path: `.scratch/edgequeue/release/ticket-23-verification-5b4ee4b/`.
+- Controller preservation path: `.scratch/edgequeue/release/ticket-23-verification-aafc3fa/`.
 
-The Controller extracted the archive into a no-Git environment. The full suite passed: `172 passed in 18.83s`.
+The Controller extracted the archive into a no-Git environment. The full suite passed: `173 passed in 19.03s`.
 
-The extracted credential-free, offline Judge and verifier passed. Replay took `0.121` seconds. Observed wall time was `0.915534` seconds.
+The extracted Ticket 23 Gate and Worker exports each contain `120` chronological events. Both retain late blocker, repair, checkpoint, and completion evidence.
+
+The extracted credential-free, offline Judge and verifier passed. Replay took `0.123` seconds. Observed wall time was `0.888278` seconds.
 
 The extracted run made `0` requests. It used `0` tokens. Its model cost was `$0.00`.
 
-The extracted Proof Bundle digest was `588c96c03572ab5fabdfd74b8fa30421c1d481270646f7931d4ae7808437525f`. The tamper check returned `metric_recomputation_mismatch`.
+The extracted Proof Bundle digest was `32e19e08ae382bcf6b5e7cfe8f17883edb921f637500afd44d66154aeeca0fed`. The tamper check returned `metric_recomputation_mismatch`.
 
 Proof immutability, lock validation, compileall, the submission validator, and checked-in Proof Bundle verification passed in the extracted checkpoint.
 
-The Controller must build and verify a new archive twice from exact checkpoint SHA A3 outside Git. The new measurements are pending.
-
-`checks.json` preserves the pre-archive SHA A3 checkpoint state. The Controller owns the replacement archive qualification.
+`checks.json` preserves the pre-archive SHA A3 checkpoint state. This section records the later Controller-owned archive qualification.
