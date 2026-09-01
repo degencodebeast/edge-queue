@@ -27,16 +27,15 @@ def test_public_scoring_reproduces_the_accepted_read_only_results(
             PROJECT_ROOT / "scripts" / script_name,
             project_root / "scripts" / script_name,
         )
-    shutil.copytree(PROJECT_ROOT / "runs", project_root / "runs")
     evidence_root = project_root / "docs" / "evidence" / "ticket-20"
     evidence_root.parent.mkdir(parents=True)
     shutil.copytree(PROJECT_ROOT / "docs" / "evidence" / "ticket-20", evidence_root)
 
-    archived_paths = (
-        project_root / "runs" / "development" / "evaluation.json",
-        project_root / "runs" / "allocation-holdout" / "evaluation.json",
-    )
-    before = {path: path.read_bytes() for path in archived_paths}
+    before = {
+        path.relative_to(project_root): path.read_bytes()
+        for path in project_root.rglob("*")
+        if path.is_file()
+    }
     environment = os.environ | {"PYTHONPATH": str(PROJECT_ROOT / "src")}
 
     development = subprocess.run(
@@ -60,16 +59,19 @@ def test_public_scoring_reproduces_the_accepted_read_only_results(
     assert holdout.returncode == 0, holdout.stdout + holdout.stderr
     development_result = json.loads(development.stdout)
     holdout_result = json.loads(holdout.stdout)
+    after = {
+        path.relative_to(project_root): path.read_bytes()
+        for path in project_root.rglob("*")
+        if path.is_file()
+    }
     observed = {
         "development_recall": development_result["edgequeue"]["metrics"]["recall_at_k"],
         "holdout_recalls": holdout_result["edgequeue_recalls"],
-        "archived_runs_unchanged": all(
-            path.read_bytes() == content for path, content in before.items()
-        ),
+        "project_files_unchanged": after == before,
     }
 
     assert observed == {
         "development_recall": 0.2,
         "holdout_recalls": [0.3, 0.4, 0.3],
-        "archived_runs_unchanged": True,
+        "project_files_unchanged": True,
     }
