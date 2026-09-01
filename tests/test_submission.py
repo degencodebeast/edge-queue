@@ -173,7 +173,7 @@ def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_
     """The public exporter keeps meaningful events while removing private strings."""
     raw_events = tmp_path / "rollout-01a00000-0000-0000-0000-000000000000.jsonl"
     synthetic_home = "/" + "Users" + "/alice/private"
-    synthetic_private_path = "/private/var/folders/example/pytest-of-user/value"
+    synthetic_private_path = "/" + "private" + "/var/folders/example/pytest-of-user/value"
     synthetic_token = "sk-" + "secret-value"
     synthetic_jwt = "eyJhbGciOiJIUzI1NiJ9" + ".eyJzdWIiOiJ0ZXN0In0.signature"
     raw_events.write_text(
@@ -229,7 +229,7 @@ def test_submission_validator_rejects_private_local_paths(tmp_path: Path) -> Non
         ignore=shutil.ignore_patterns(".git", ".venv", "__pycache__", ".pytest_cache"),
     )
     private_path = copied_project / "docs/trajectories/private-local-path.md"
-    private_path.write_text("/private/var/folders/example/pytest-of-user/value\n", encoding="utf-8")
+    private_path.write_text("/" + "private" + "/var/folders/example/pytest-of-user/value\n", encoding="utf-8")
 
     result = run_script("verify_submission.py", "--project-root", str(copied_project), cwd=copied_project)
 
