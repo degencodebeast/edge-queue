@@ -1,5 +1,5 @@
 {
-  "ledger_digest": "5bcd9ce6a7455d4ed9283a69f7f1716d76ba2e9f26b5b999e04e53909caf2ead",
+  "ledger_digest": "c88022bc8e16485c686dae49a9085c1ca29fe8bfec07e0f724106795168d05c3",
   "ledger_entries": [
     {
       "agent": "Controller session `01a0573d-46fc-7781-b1c0-cecd238ecef2",
@@ -120,9 +120,45 @@
       "pane": "Worker subagents",
       "role": "Internal review",
       "scope": "Ticket 21"
+    },
+    {
+      "agent": "Ticket 22 Gate `01a05a02-6795-7610-b948-236031e4ae15",
+      "pane": "gate-lane-3",
+      "role": "Gate",
+      "scope": "Ticket 22"
+    },
+    {
+      "agent": "Ticket 22 Worker sessions",
+      "pane": "worker-lane-3",
+      "role": "Worker",
+      "scope": "Ticket 22"
+    },
+    {
+      "agent": "Ticket 22 internal reviewers",
+      "pane": "Worker subagents",
+      "role": "Internal review",
+      "scope": "Ticket 22"
+    },
+    {
+      "agent": "Ticket 23 Gate `01a05a54-5908-7543-aec5-33cacac70d5a",
+      "pane": "gate-lane-3",
+      "role": "Gate",
+      "scope": "Ticket 23 final clean-room verification"
+    },
+    {
+      "agent": "Ticket 23 Worker `01a05a54-8d19-7f62-b14c-a9472cb568c8",
+      "pane": "worker-lane-3",
+      "role": "Worker",
+      "scope": "Ticket 23 final clean-room verification"
+    },
+    {
+      "agent": "Ticket 23 internal reviewers",
+      "pane": "Worker subagents",
+      "role": "Internal review",
+      "scope": "Ticket 23"
     }
   ],
-  "ledger_entry_count": 20,
+  "ledger_entry_count": 26,
   "records": [
     {
       "agent": "Controller session `01a0573d-46fc-7781-b1c0-cecd238ecef2",
@@ -252,7 +288,7 @@
       "readable_path": "trajectory-13-ticket-18-gate-01a05887-eeb4-7c21-a929-b508182465d9.md",
       "role": "Gate",
       "scope": "Ticket 18",
-      "source_digest": "37b72620cc86b07676272fda5ea63134d74df77c310708216108a328932f0e19"
+      "source_digest": "e45fd69e530a78eb7b6a15a839ade8f9fe34fdff1534baed33af9b9576256c33"
     },
     {
       "agent": "Ticket 18 Worker `01a05887-eff2-7133-9d31-e1d9b7bf06f8",
@@ -272,7 +308,7 @@
       "readable_path": "trajectory-15-ticket-19-gate-01a05887-f137-7f62-a33f-2a4fad7da5ef.md",
       "role": "Gate",
       "scope": "Ticket 19",
-      "source_digest": "31406793279b8f247bb4cc81d8f81cdce360c2e3067754a5816574b846acd2dc"
+      "source_digest": "6d9f3323b85d218a63f99611a93533431076ea1438967ae6cb469e90ff708286"
     },
     {
       "agent": "Ticket 19 Worker `01a05887-f354-7342-bc73-8a86e638691e",
@@ -325,14 +361,104 @@
       "source_digest": "de66d0dabd06f22fd1d62b444e4fe0c296675e0a1abbcf8c492e6e49f99cb1df"
     },
     {
+      "agent": "Ticket 22 Gate `01a05a02-6795-7610-b948-236031e4ae15",
+      "event_count": 120,
+      "pane": "gate-lane-3",
+      "raw_excerpt_path": "raw/trajectory-21-ticket-22-gate-01a05a02-6795-7610-b948-236031e4ae15.jsonl",
+      "readable_path": "trajectory-21-ticket-22-gate-01a05a02-6795-7610-b948-236031e4ae15.md",
+      "role": "Gate",
+      "scope": "Ticket 22",
+      "source_digest": "02b6e4ca78ac313a93dfcae42b308112db78efe1bbbda933701d41a0f31301f9"
+    },
+    {
+      "agent": "Ticket 22 Worker sessions",
+      "event_count": 120,
+      "pane": "worker-lane-3",
+      "raw_excerpt_path": "raw/trajectory-22-ticket-22-worker-sessions.jsonl",
+      "readable_path": "trajectory-22-ticket-22-worker-sessions.md",
+      "role": "Worker",
+      "scope": "Ticket 22",
+      "source_digest": "c86c9531130552f76a13e3a07e2dce4e8b6e2b0777d1c32cbe0be60f6649df84"
+    },
+    {
+      "agent": "Ticket 22 Worker sessions",
+      "event_count": 120,
+      "pane": "worker-lane-3",
+      "raw_excerpt_path": "raw/trajectory-23-ticket-22-worker-sessions.jsonl",
+      "readable_path": "trajectory-23-ticket-22-worker-sessions.md",
+      "role": "Worker",
+      "scope": "Ticket 22",
+      "source_digest": "c872b10b902a5230cfb6fab18599f9c8741925f6c8d734d3827641815c57ecba"
+    },
+    {
+      "agent": "Ticket 22 Worker sessions",
+      "event_count": 120,
+      "pane": "worker-lane-3",
+      "raw_excerpt_path": "raw/trajectory-24-ticket-22-worker-sessions.jsonl",
+      "readable_path": "trajectory-24-ticket-22-worker-sessions.md",
+      "role": "Worker",
+      "scope": "Ticket 22",
+      "source_digest": "dd6130b9c603dab6e2047f21e6fcbed299a0a6b4198dbe299b1a6e3122beb875"
+    },
+    {
+      "agent": "Ticket 23 Gate `01a05a54-5908-7543-aec5-33cacac70d5a",
+      "event_count": 120,
+      "pane": "gate-lane-3",
+      "raw_excerpt_path": "raw/trajectory-25-ticket-23-gate-01a05a54-5908-7543-aec5-33cacac70d5a.jsonl",
+      "readable_path": "trajectory-25-ticket-23-gate-01a05a54-5908-7543-aec5-33cacac70d5a.md",
+      "role": "Gate",
+      "scope": "Ticket 23 final clean-room verification",
+      "source_digest": "51b4fb519d1ddda1991b96e7631a115071a7c67ea563bb810c21fab82be4aa3d"
+    },
+    {
+      "agent": "Ticket 23 Worker `01a05a54-8d19-7f62-b14c-a9472cb568c8",
+      "event_count": 120,
+      "pane": "worker-lane-3",
+      "raw_excerpt_path": "raw/trajectory-26-ticket-23-worker-01a05a54-8d19-7f62-b14c-a9472cb568c8.jsonl",
+      "readable_path": "trajectory-26-ticket-23-worker-01a05a54-8d19-7f62-b14c-a9472cb568c8.md",
+      "role": "Worker",
+      "scope": "Ticket 23 final clean-room verification",
+      "source_digest": "a5539ad315afc39d961de3cae89cf8677d1c6588dd71f47b9fa0a71ab77388a6"
+    },
+    {
+      "agent": "Ticket 23 internal reviewers",
+      "event_count": 106,
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-27-ticket-23-internal-reviewers.jsonl",
+      "readable_path": "trajectory-27-ticket-23-internal-reviewers.md",
+      "role": "Internal review",
+      "scope": "Ticket 23",
+      "source_digest": "daa456d105a22306e19418af01d0d0d1e4e75888a9a6f4efaba55a82fb900079"
+    },
+    {
+      "agent": "Ticket 23 internal reviewers",
+      "event_count": 120,
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-28-ticket-23-internal-reviewers.jsonl",
+      "readable_path": "trajectory-28-ticket-23-internal-reviewers.md",
+      "role": "Internal review",
+      "scope": "Ticket 23",
+      "source_digest": "830b540a912c7197be9c13f3444f0777a7ca066d9570d2d33659c78f5056d0f9"
+    },
+    {
       "agent": "Ticket 21 internal reviewers",
       "event_count": 120,
       "pane": "Worker subagents",
-      "raw_excerpt_path": "raw/trajectory-21-ticket-21-internal-reviewers.jsonl",
-      "readable_path": "trajectory-21-ticket-21-internal-reviewers.md",
+      "raw_excerpt_path": "raw/trajectory-29-ticket-21-internal-reviewers.jsonl",
+      "readable_path": "trajectory-29-ticket-21-internal-reviewers.md",
       "role": "Internal review",
       "scope": "Ticket 21",
       "source_digest": "de66d0dabd06f22fd1d62b444e4fe0c296675e0a1abbcf8c492e6e49f99cb1df"
+    },
+    {
+      "agent": "Ticket 22 internal reviewers",
+      "event_count": 120,
+      "pane": "Worker subagents",
+      "raw_excerpt_path": "raw/trajectory-30-ticket-22-internal-reviewers.jsonl",
+      "readable_path": "trajectory-30-ticket-22-internal-reviewers.md",
+      "role": "Internal review",
+      "scope": "Ticket 22",
+      "source_digest": "c86c9531130552f76a13e3a07e2dce4e8b6e2b0777d1c32cbe0be60f6649df84"
     }
   ],
   "redaction": [
@@ -343,5 +469,5 @@
     "email addresses"
   ],
   "schema_version": "1.0",
-  "source_count": 21
+  "source_count": 30
 }

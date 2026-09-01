@@ -38,7 +38,7 @@
 
 ### turn_context
 
-{"ordinal": 7, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, strongly prefer making rea…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -66,7 +66,7 @@
 
 ### response_item
 
-{"ordinal": 14, "payload": {"call_id": "call_9PNicmqJ28gyIVUkRT0k0Pyo", "id": "ctc_0c7f943fc8c288b1016a95a4803cb487d2b4705d725d307920", "input": "const r = await Promise.all([\n  tools.exec_command({\"cmd\":\"sed -n '1,240p' <USER_HOME>/.agents/skills/smux/SKILL.md && sed -n '1,260p' <USER_HOME>/.agents/skills/tdd/SKILL.md && sed -n '1,260p' <USER_HOME>/.agents/skills/code-review/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000}),\n  tools.exec_command({\"cmd\":\"pwd; rg --files -g AGENTS.md -g CONTEXT.md -g CONTROLLER_WORKFLOW.md -g '20-generate-evaluation-run-and-claims.md' -g proof-bundle-contract.md -g 0003-use-offline-recomputed-proof.md -g 0005-separate-agent-assessment-from-allocation-authority.md -g 0006-preser…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -82,7 +82,7 @@
 
 ### event_msg
 
-{"ordinal": 18, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:57:57.716Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### response_item
 
-{"ordinal": 23, "payload": {"call_id": "call_ovuRpJs8WOh4Coq1GS2cyv8D", "id": "ctc_0c7f943fc8c288b1016a95a48e6be087d2bf0d1a4d18b9b6a5", "input": "const r = await Promise.all([\n  tools.exec_command({\"cmd\":\"test \\\"<USER_HOME>/Projects/personal/micro1-hack\\\" = \\\"\\\"; preflight_one=$?; test \\\"\\\" = 08e1a8575e5ed20f00b1d9700517fee2ee17facd; preflight_two=$?; test -z \\\"\\\"; preflight_three=$?; printf 'preflight_one=%s\\\\npreflight_two=%s\\\\npreflight_three=%s\\\\n' \\\"$preflight_one\\\" \\\"$preflight_two\\\" \\\"$preflight_three\\\"\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":2000}),\n  tools.exec_command({\"cmd\":\"sed -n '1,260p' AGENTS.md; sed -n '1,260p' CONTEXT.md; sed -n '1…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -122,7 +122,7 @@
 
 ### event_msg
 
-{"ordinal": 28, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:16.118Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -134,7 +134,7 @@
 
 ### response_item
 
-{"ordinal": 31, "payload": {"call_id": "call_rtLtQPp41RBUsUlg7LPQn8BM", "id": "ctc_0c7f943fc8c288b1016a95a49ad81c87d2a0896fa328be3da9", "input": "const r = await Promise.all([\n  tools.exec_command({\"cmd\":\"pwd -P; git rev-parse --show-toplevel; git branch --show-current; git rev-parse HEAD; git status --short; rg --files -g AGENTS.md -g CONTEXT.md -g '*20*' -g proof-bundle-contract.md -g spec.md -g map.md -g CONTROLLER_WORKFLOW.md -g ENGINEERING_WORKFLOW.md | sed -n '1,160p'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":20000}),\n  tools.exec_command({\"cmd\":\"git -C <USER_HOME>/Projects/personal/micro1-hack status --short; git -C <USER_HOME>/Projects/personal/micro1-hack worktree list --porc…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -158,7 +158,7 @@
 
 ### event_msg
 
-{"ordinal": 37, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:29.487Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -190,7 +190,7 @@
 
 ### event_msg
 
-{"ordinal": 45, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:40.255Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -210,7 +210,7 @@
 
 ### event_msg
 
-{"ordinal": 50, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:46.088Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -218,7 +218,7 @@
 
 ### event_msg
 
-{"ordinal": 52, "payload": {"thread_settings": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, stron…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -226,7 +226,7 @@
 
 ### turn_context
 
-{"ordinal": 54, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, strongly prefer making re…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -358,7 +358,7 @@
 
 ### response_item
 
-{"ordinal": 140, "payload": {"call_id": "call_Z94ISoWsYvqEz6rnOAMqeWKR", "id": "ctc_0c7f943fc8c288b1016a95a56a6e7c87d2890d10b828183c83", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_evaluation_run.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788192104.84087, "turn_id": "01a0588c-8dc9-7882-8238-fc6cf1fa71f2"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:01:47.675Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -378,7 +378,7 @@
 
 ### response_item
 
-{"ordinal": 150, "payload": {"call_id": "call_qoftw9hMeAjYYMhvrxJUttOn", "id": "ctc_0c7f943fc8c288b1016a95a588a97c87d2bf44c693ffb76efb", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_evaluation_run.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788192135.196224, "turn_id": "01a0588c-8dc9-7882-8238-fc6cf1fa71f2"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:02:17.921Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -402,7 +402,7 @@
 
 ### response_item
 
-{"ordinal": 162, "payload": {"call_id": "call_3OMviLOYBqtRHFOy533rRQz8", "id": "ctc_0c7f943fc8c288b1016a95a599e42c87d282b77c7f9912d958", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_evaluation_run.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788192153.21856, "turn_id": "01a0588c-8dc9-7882-8238-fc6cf1fa71f2"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:02:35.136Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -422,7 +422,7 @@
 
 ### response_item
 
-{"ordinal": 172, "payload": {"call_id": "call_ANuyoh1FN3PSHbyKhiepJYFu", "id": "ctc_0c7f943fc8c288b1016a95a5ac077087d28e71ba3d124c89a6", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_evaluation_run.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788192171.310825, "turn_id": "01a0588c-8dc9-7882-8238-fc6cf1fa71f2"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:02:53.234Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -446,7 +446,7 @@
 
 ### response_item
 
-{"ordinal": 182, "payload": {"call_id": "call_dtHAns9GnHiyIwrIkWp21iUR", "id": "ctc_0c7f943fc8c288b1016a95a5b4ded887d294f4f02eb32cce83", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_evaluation_run.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788192179.856835, "turn_id": "01a0588c-8dc9-7882-8238-fc6cf1fa71f2"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:03:02.154Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -470,7 +470,7 @@
 
 ### response_item
 
-{"ordinal": 194, "payload": {"call_id": "call_KYRBJMcM9VrqWcPw6uFpZOuO", "id": "ctc_0c7f943fc8c288b1016a95a5c25a3087d2a3e8a6105d5729d5", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_claims.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788192193.611879, "turn_id": "01a0588c-8dc9-7882-8238-fc6cf1fa71f2"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:03:15.600Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 

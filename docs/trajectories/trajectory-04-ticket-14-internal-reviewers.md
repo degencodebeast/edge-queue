@@ -30,7 +30,7 @@
 
 ### turn_context
 
-{"ordinal": 5, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": null, "model": "gpt-5.6-terra", "reasoning_effort": "high"}}, "comp_hash": "3000", "current_date": "2026-08-31", "cwd": "<USER_HOME>/Projects/personal/micro1-hack", "effort": "high", "model": "gpt-5.6-terra", "multi_agent_version": "v1", "personality": "friendly", "realtime_active": false, "summary": "auto", "timezone": "Africa/Kinshasa", "turn_id": "01a0583d-f2c9-7bc3-bb74-7df5e4141813", "workspace_roots": ["<USER_HOME>/Projects/personal/micro1-hack"]}, "timestamp": "2026-08-31T14:34:13.399Z", "type": "turn_context"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -58,7 +58,7 @@
 
 ### response_item
 
-{"ordinal": 12, "payload": {"call_id": "call_mG63iMB8deridqAPH4uYIRUT", "id": "ctc_0b4cf8a7f3b363c1016a9590e9d09c87d2992641e163167280", "input": "const r = await tools.exec_command({\"cmd\":\"pwd && sed -n '1,240p' <USER_HOME>/.agents/skills/code-review/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":20000});\ntext(r.output);\n", "internal_chat_message_metadata_passthrough": {"create_time": 1788186854.345589, "turn_id": "01a0583d-f2c9-7bc3-bb74-7df5e4141813"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T14:34:19.289Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -70,7 +70,7 @@
 
 ### event_msg
 
-{"ordinal": 15, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:19.392Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -94,7 +94,7 @@
 
 ### event_msg
 
-{"ordinal": 21, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:29.701Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:39.586Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -138,7 +138,7 @@
 
 ### response_item
 
-{"ordinal": 32, "payload": {"call_id": "call_hkANDvxOoQS4UPBdO2jy38C4", "id": "ctc_0b4cf8a7f3b363c1016a959102982887d2b88f55ffe8cca45b", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,180p' schemas/corpus/v1/authoring-ledger.schema.json && sed -n '1438,1608p' src/edgequeue/contracts.py && sed -n '255,302p' tests/test_contracts.py && uv run pytest -q tests/test_contracts.py::test_authoring_ledger_rejects_row_binding_probes\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":30000});\ntext(r.output);\n", "internal_chat_message_metadata_passthrough": {"create_time": 1788186880.451463, "turn_id": "01a0583d-f2c9-7bc3-bb74-7df5e4141813"}, "name": "exec", "status": "completed", "type": "c…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:45.679Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -170,7 +170,7 @@
 
 ### event_msg
 
-{"ordinal": 40, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:58.379Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 

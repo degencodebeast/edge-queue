@@ -30,7 +30,7 @@
 
 ### turn_context
 
-{"ordinal": 5, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": null, "model": "gpt-5.6-terra", "reasoning_effort": "high"}}, "comp_hash": "3000", "current_date": "2026-08-31", "cwd": "<USER_HOME>/Projects/personal/micro1-hack", "effort": "high", "model": "gpt-5.6-terra", "multi_agent_version": "v1", "personality": "friendly", "realtime_active": false, "summary": "auto", "timezone": "Africa/Kinshasa", "turn_id": "01a0583d-f2fc-79b0-9c86-5d91530e7007", "workspace_roots": ["<USER_HOME>/Projects/personal/micro1-hack"]}, "timestamp": "2026-08-31T14:34:13.268Z", "type": "turn_context"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -62,7 +62,7 @@
 
 ### event_msg
 
-{"ordinal": 13, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:21.303Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -82,7 +82,7 @@
 
 ### response_item
 
-{"ordinal": 18, "payload": {"call_id": "call_Enec038biRrcCcMgfYCMPdxi", "id": "ctc_0b1ad83dfe8c6f25016a9590f16abc87d29554da2f305c5597", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/review-verification-protocol/SKILL.md && sed -n '1,240p' <USER_HOME>/.agents/skills/code-reviewer/SKILL.md && sed -n '1,220p' <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788186862.097263, "turn_id": "01a0583d-f2fc-79b0-9c86-5d91530e7007"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T14:34:27.742Z", "typ…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -94,7 +94,7 @@
 
 ### event_msg
 
-{"ordinal": 21, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:27.946Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -106,7 +106,7 @@
 
 ### response_item
 
-{"ordinal": 24, "payload": {"call_id": "call_urGVyfAO1xIMgOlmF2dYHIq3", "id": "ctc_0b1ad83dfe8c6f25016a9590f6579c87d28a616ef063294179", "input": "const r = await tools.exec_command({\"cmd\":\"task_root=<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\\nrg -n -C 8 \\\"authoring|Authoring|ledger|Ledger|accepted|candidate|verdict|Verdict|evaluator_manifest|case_blueprint\\\" \\\"$task_root/src/edgequeue/contracts.py\\\" \\\"$task_root/schemas/corpus/v1/authoring-ledger.schema.json\\\" \\\"$task_root/schemas/corpus/v1/evaluator-manifest.schema.json\\\" \\\"$task_root/tests/test_contracts.py\\\" \\\"$task_root/docs/evidence/ticket-14/contract-validation.md\\\"\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\"…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -118,7 +118,7 @@
 
 ### event_msg
 
-{"ordinal": 27, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:33.645Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -142,7 +142,7 @@
 
 ### event_msg
 
-{"ordinal": 33, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:39.349Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -166,7 +166,7 @@
 
 ### event_msg
 
-{"ordinal": 39, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:49.698Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -190,7 +190,7 @@
 
 ### event_msg
 
-{"ordinal": 45, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:59.691Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -210,7 +210,7 @@
 
 ### event_msg
 
-{"ordinal": 50, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:35:08.529Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 

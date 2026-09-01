@@ -14,11 +14,11 @@
 
 ### event_msg
 
-{"ordinal": 6834, "payload": {"thread_settings": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": null, "model": "gpt-5.6-luna", "reasoning_effort": "high"}}, "cwd": "<USER_HOME>/Projects/personal/micro1-hack", "model": "gpt-5.6-luna", "model_provider_id": "openai", "personality": "friendly", "reasoning_effort": "high", "service_tier": "default"}, "type": "thread_settings_applied"}, "timestamp": "2026-08-31T09:53:48.965Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
-{"ordinal": 6835, "payload": {"thread_settings": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, str…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -42,7 +42,7 @@
 
 ### turn_context
 
-{"ordinal": 6841, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, strongly prefer making …
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 

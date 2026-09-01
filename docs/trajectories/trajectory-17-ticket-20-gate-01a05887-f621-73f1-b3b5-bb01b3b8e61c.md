@@ -38,7 +38,7 @@
 
 ### turn_context
 
-{"ordinal": 7, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, strongly prefer making rea…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -66,7 +66,7 @@
 
 ### response_item
 
-{"ordinal": 14, "payload": {"call_id": "call_kzLlh3JKHFK5VZCMSLgGAT1J", "id": "ctc_0c73471f6f7fdf98016a95a42a557487d29589c4a2c5ada790", "input": "const r = await tools.exec_command({\"cmd\":\"for f in <USER_HOME>/.agents/skills/smux/SKILL.md <USER_HOME>/.agents/skills/general-review-protocol/SKILL.md <USER_HOME>/.agents/skills/review-verification-protocol/SKILL.md; do printf '\\\\n===== %s =====\\\\n' \\\"$f\\\"; sed -n '1,240p' \\\"$f\\\"; done\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191783.52426, "turn_id": "01a05889-2e58-7e11-b0ec-26738d564d90"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "20…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -78,7 +78,7 @@
 
 ### event_msg
 
-{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:28.904Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -90,7 +90,7 @@
 
 ### response_item
 
-{"ordinal": 20, "payload": {"call_id": "call_s7czJ9VsACGYGbeCJjP5RqZh", "id": "ctc_0c73471f6f7fdf98016a95a4335acc87d284e262c023d75dbf", "input": "const r = await tools.exec_command({\"cmd\":\"tmux-bridge read %9 20 && tmux-bridge message %9 'Ticket 20 Gate standby. Required review procedures are loaded. I will await one exact candidate SHA before I inspect the Worker worktree.' && tmux-bridge read %9 20 && tmux-bridge keys %9 Enter\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":2000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191789.71274, "turn_id": "01a05889-2e58-7e11-b0ec-26738d564d90"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:56:…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:37.495Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:44.638Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -138,7 +138,7 @@
 
 ### response_item
 
-{"ordinal": 32, "payload": {"call_id": "call_DR7muhY6sZE2rOr1ofPmYGrp", "id": "ctc_0c73471f6f7fdf98016a95a43fecf087d2ac542959f7b0479f", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,120p' <USER_HOME>/.agents/skills/code-reviewer/SKILL.md\\nsed -n '1,560p' <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191805.26007, "turn_id": "01a05889-2e58-7e11-b0ec-26738d564d90"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:56:49.767Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:49.863Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -174,7 +174,7 @@
 
 ### event_msg
 
-{"ordinal": 41, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:56.853Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -186,7 +186,7 @@
 
 ### response_item
 
-{"ordinal": 44, "payload": {"call_id": "call_BpoicCX0xomIFeNw8N4QrwhX", "id": "ctc_0c73471f6f7fdf98016a95a44d48a487d2bd3d0367335a05d2", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '220,320p' CONTEXT.md\\nsed -n '1,150p' .scratch/edgequeue/spec.md\\nsed -n '151,310p' .scratch/edgequeue/spec.md\\nsed -n '1,300p' CONTROLLER_WORKFLOW.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191817.463354, "turn_id": "01a05889-2e58-7e11-b0ec-26738d564d90"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:03.247Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -198,7 +198,7 @@
 
 ### event_msg
 
-{"ordinal": 47, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:57:03.433Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -210,7 +210,7 @@
 
 ### response_item
 
-{"ordinal": 50, "payload": {"call_id": "call_u14TcAlBwbckqrOLM0xr71bZ", "id": "ctc_0c73471f6f7fdf98016a95a451c1c087d29aab8c6e6b69f5f2", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '301,600p' CONTROLLER_WORKFLOW.md\\nsed -n '601,900p' CONTROLLER_WORKFLOW.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191824.1063, "turn_id": "01a05889-2e58-7e11-b0ec-26738d564d90"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:07.036Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -222,7 +222,7 @@
 
 ### event_msg
 
-{"ordinal": 53, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:57:07.146Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 

@@ -1,0 +1,58 @@
+{
+  "archive_checkpoint": {
+    "command": "uv run python scripts/build_release.py --sha <SHA-A> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>",
+    "measurements": "pending_controller_checkpoint",
+    "owner": "Controller"
+  },
+  "base_sha": "ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473",
+  "claims": {
+    "allocation_holdout_attempt_recall_at_8": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "allocation_holdout_public_recall_at_8": 0.3,
+    "claims_manifests_match": true,
+    "judge_fixture_baseline_recall_at_1": 0.0,
+    "judge_fixture_edgequeue_recall_at_1": 1.0,
+    "production_generality_claim": false
+  },
+  "eligibility": {
+    "private_details_stored": false,
+    "status": "not_confirmed"
+  },
+  "proof": {
+    "checked_in_bundle_digest": "3eca0104f3393533806ef0f71aff167c3a4adeef4b3c76853fbb48e23c24f70d",
+    "checked_in_files_changed": false,
+    "generated_bundle_digest": "f849f16ef3dc98104f07d5c0229a578f453ceb796f437e728b2e77416a22dd14",
+    "model_cost_usd": 0.0,
+    "requests": 0,
+    "runtime_seconds": 0.1026373328641057,
+    "tokens": 0,
+    "valid": true
+  },
+  "required_checks": {
+    "compileall": "pass",
+    "diff_check": "pass",
+    "focused_submission_tests": "5 passed",
+    "full_suite": "172 passed in 31.41s",
+    "submission_validator": "pass",
+    "uv_lock_check": "pass"
+  },
+  "reviews": {
+    "specification": "pass",
+    "standards": "pass"
+  },
+  "schema_version": "1.0",
+  "trajectories": {
+    "ledger_entry_count": 26,
+    "privacy_scan": "pass",
+    "source_count": 30
+  },
+  "video": {
+    "all_local_assets_exist": true,
+    "data_bindings_match": true,
+    "duration_seconds": 260,
+    "public_url": "required_external_input"
+  }
+}

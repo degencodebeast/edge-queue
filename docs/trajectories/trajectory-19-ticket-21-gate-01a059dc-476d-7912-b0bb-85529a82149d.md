@@ -38,7 +38,7 @@
 
 ### turn_context
 
-{"ordinal": 7, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, strongly prefer making rea…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -66,7 +66,7 @@
 
 ### response_item
 
-{"ordinal": 14, "payload": {"call_id": "call_xTy5u0LgJNOh1FMJSmMiAx1P", "id": "ctc_046a77e031452bec016a95fb589b2487d2811f48ab1d3504dd", "input": "const r = await tools.exec_command({\"cmd\":\"for f in <USER_HOME>/.agents/skills/smux/SKILL.md <USER_HOME>/.agents/skills/general-review-protocol/SKILL.md <USER_HOME>/.agents/skills/review-verification-protocol/SKILL.md <USER_HOME>/.agents/skills/code-reviewer/SKILL.md <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md <USER_HOME>/.agents/skills/llm-evaluation/SKILL.md; do printf '\\\\n===== %s =====\\\\n' \\\"$f\\\"; sed -n '1,240p' \\\"$f\\\"; done\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_t…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -78,7 +78,7 @@
 
 ### event_msg
 
-{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:28.260Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:38.453Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -114,7 +114,7 @@
 
 ### response_item
 
-{"ordinal": 26, "payload": {"call_id": "call_rmnNqoqiiRpaCC2QNYCJuNNp", "id": "ctc_046a77e031452bec016a95fb698ea887d28df2738f25f9456b", "input": "const r = await tools.exec_command({\"cmd\":\"tmux-bridge read controller 20 && tmux-bridge message controller 'Ticket 21 Gate is ready. I loaded the review stack and source packet. I will wait for the exact worker candidate SHA.' && tmux-bridge read controller 20 && tmux-bridge keys controller Enter\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":3000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788214119.335602, "turn_id": "01a059dd-be02-7113-be6b-da6595eefb05"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:43.676Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -138,7 +138,7 @@
 
 ### response_item
 
-{"ordinal": 32, "payload": {"call_id": "call_C0puBoW5miY0BSwkY3ivUc4a", "id": "ctc_046a77e031452bec016a95fb6e4da887d2b622a35e14588acb", "input": "const r = await tools.exec_command({\"cmd\":\"wc -l CONTEXT.md .scratch/edgequeue/spec.md .scratch/edgequeue/map.md .scratch/edgequeue/issues/21-run-complete-judge-fixture.md .scratch/edgequeue/judge-path-contract.md .scratch/edgequeue/judge-fixture-v1.md edge-queue/docs/ENGINEERING_WORKFLOW.md CONTROLLER_WORKFLOW.md hack.md\\nfind docs/adr -maxdepth 1 -type f -print | sort\\nfind . -maxdepth 2 -iname '*First*Hackathon*.pdf' -print\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":6000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788214124.214506, "tur…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:49.309Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -162,7 +162,7 @@
 
 ### response_item
 
-{"ordinal": 38, "payload": {"call_id": "call_DYHDypctNk6Zdn8lOPl7j9Ts", "id": "ctc_046a77e031452bec016a95fb74967c87d292518a4478ce2ef9", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,320p' CONTEXT.md\\nsed -n '1,320p' .scratch/edgequeue/spec.md\\nsed -n '1,100p' .scratch/edgequeue/map.md\\nsed -n '1,100p' .scratch/edgequeue/issues/21-run-complete-judge-fixture.md\\nsed -n '1,120p' .scratch/edgequeue/judge-path-contract.md\\nsed -n '1,120p' .scratch/edgequeue/judge-fixture-v1.md\\nfor f in docs/adr/*.md; do printf '\\\\n===== %s =====\\\\n' \\\"$f\\\"; sed -n '1,260p' \\\"$f\\\"; done\\nsed -n '1,100p' edge-queue/docs/ENGINEERING_WORKFLOW.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":60000});\ntext(r.output);"…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -174,7 +174,7 @@
 
 ### event_msg
 
-{"ordinal": 41, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:56.691Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -186,7 +186,7 @@
 
 ### response_item
 
-{"ordinal": 44, "payload": {"call_id": "call_5RNHEabfGdRfy0fOYF5o7SKO", "id": "ctc_046a77e031452bec016a95fb7bb29887d290964a2d9a87ef83", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '121,300p' .scratch/edgequeue/spec.md\\nsed -n '201,380p' CONTEXT.md\\nsed -n '1,120p' .scratch/edgequeue/map.md\\npdftotext 'micro1 - First Hackathon97ce7c5.pdf' - | sed -n '1,500p'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":50000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788214137.61638, "turn_id": "01a059dd-be02-7113-be6b-da6595eefb05"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T22:09:01.964Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -198,7 +198,7 @@
 
 ### event_msg
 
-{"ordinal": 47, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:09:02.180Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -210,7 +210,7 @@
 
 ### response_item
 
-{"ordinal": 50, "payload": {"call_id": "call_68h9Llmw84H5xxRScNVI37iC", "id": "ctc_046a77e031452bec016a95fb8307d487d2bd85b428a3fb861a", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,300p' CONTROLLER_WORKFLOW.md\\nsed -n '301,600p' CONTROLLER_WORKFLOW.md\\nsed -n '601,900p' CONTROLLER_WORKFLOW.md\\npdftotext 'micro1 - First Hackathon97ce7c5.pdf' - | wc -l\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":60000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788214143.046348, "turn_id": "01a059dd-be02-7113-be6b-da6595eefb05"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T22:09:09.252Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -222,7 +222,7 @@
 
 ### event_msg
 
-{"ordinal": 53, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:09:09.414Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -234,7 +234,7 @@
 
 ### response_item
 
-{"ordinal": 56, "payload": {"call_id": "call_jRtmoUwn5PZRTvakByqgGPAp", "id": "ctc_046a77e031452bec016a95fb88999487d28c22ff5613f1370c", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,220p' CONTEXT.md\\nsed -n '1,180p' hack.md\\npdftotext 'micro1 - First Hackathon97ce7c5.pdf' - | sed -n '501,540p'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788214150.186985, "turn_id": "01a059dd-be02-7113-be6b-da6595eefb05"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T22:09:14.453Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -246,7 +246,7 @@
 
 ### event_msg
 
-{"ordinal": 59, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:09:14.566Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -274,7 +274,7 @@
 
 ### response_item
 
-{"ordinal": 77, "payload": {"call_id": "call_l5Fkz9jxcYL2EWppcx5Vuo9Y", "id": "ctc_046a77e031452bec016a95fbaf8d9487d2a65b52ccc16f82e2", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/smux/SKILL.md\\ntmux-bridge read %9 20 && tmux-bridge message %9 'Acknowledged. The Gate remains read-only and will start cycle 1 only after worker-lane-3 sends one exact clean candidate SHA.' && tmux-bridge read %9 20 && tmux-bridge keys %9 Enter\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788214188.870503, "turn_id": "01a059df-180a-71a3-9fa5-b94cff8ac7fb"}, "name": "exec", "status": "completed", "type": "cu…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -370,7 +370,7 @@
 
 ### response_item
 
-{"ordinal": 153, "payload": {"call_id": "call_VioO3aFxOB2ZhuNZfYc3uEx5", "id": "ctc_046a77e031452bec016a95ff543e4c87d2ac6f5eac00ce5459", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/smux/SKILL.md\\ntmux-bridge read %9 20 && tmux-bridge message %9 'Acknowledged. I will apply the exact calibration boundary during candidate review and remain read-only until worker-lane-3 sends one clean candidate SHA.' && tmux-bridge read %9 20 && tmux-bridge keys %9 Enter\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788215122.449475, "turn_id": "01a059ed-5700-7320-a463-87c0ad49bcac"}, "name": "exec", "stat…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -398,7 +398,7 @@
 
 ### response_item
 
-{"ordinal": 172, "payload": {"call_id": "call_lg041eZA5Fi2UsYoFo2fb56X", "id": "ctc_046a77e031452bec016a95ff66c11087d2889f47324fc1490d", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/smux/SKILL.md\\ntmux-bridge read %9 20 && tmux-bridge message %9 'Confirmed. The recorded calibration and evidence boundaries remain unchanged. I will start review only after worker-lane-3 sends one exact clean candidate SHA.' && tmux-bridge read %9 20 && tmux-bridge keys %9 Enter\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788215141.170771, "turn_id": "01a059ed-9b21-78c3-aaec-c9f8236be6ef"}, "name": "exec",…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -446,7 +446,7 @@
 
 ### response_item
 
-{"ordinal": 202, "payload": {"call_id": "call_bPT2SdJmD8mtuw5uv28HlnEQ", "id": "ctc_046a77e031452bec016a960289fed087d2b106956f10cdec78", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/smux/SKILL.md\\nsed -n '1,260p' <USER_HOME>/.agents/skills/general-review-protocol/SKILL.md\\nsed -n '1,320p' <USER_HOME>/.agents/skills/review-verification-protocol/SKILL.md\\nsed -n '1,260p' <USER_HOME>/.agents/skills/code-reviewer/SKILL.md\\nsed -n '1,520p' <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md\\nsed -n '1,260p' <USER_HOME>/.agents/skills/llm-evaluation/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":50000});\ntext(r.output);", "internal_chat_message_metadata_passthrou…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 

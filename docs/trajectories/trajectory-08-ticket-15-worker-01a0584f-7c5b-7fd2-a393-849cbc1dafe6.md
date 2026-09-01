@@ -38,7 +38,7 @@
 
 ### turn_context
 
-{"ordinal": 7, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, strongly prefer making rea…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -66,7 +66,7 @@
 
 ### response_item
 
-{"ordinal": 14, "payload": {"call_id": "call_Etnd412CYgektJg8RTfb0EtH", "id": "ctc_035c6ebcc677cd58016a9595ac320c87d2b0263a742291e9ac", "input": "const r = await tools.exec_command({\"cmd\":\"for f in <USER_HOME>/.agents/skills/{implement,tdd,code-review,python-pro,python-testing-patterns,generate-synthetic-data,codebase-design,python-type-safety,smux}/SKILL.md <USER_HOME>/Projects/personal/micro1-hack/AGENTS.md; do printf '\\\\n===== %s =====\\\\n' \\\"$f\\\"; sed -n '1,240p' \\\"$f\\\"; done\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188073.553706, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "complet…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -78,7 +78,7 @@
 
 ### event_msg
 
-{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:54:38.938Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:54:47.668Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:54:54.937Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -158,7 +158,7 @@
 
 ### event_msg
 
-{"ordinal": 37, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:55:02.243Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -182,7 +182,7 @@
 
 ### event_msg
 
-{"ordinal": 43, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:55:11.400Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -206,7 +206,7 @@
 
 ### event_msg
 
-{"ordinal": 49, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:55:19.389Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -230,7 +230,7 @@
 
 ### event_msg
 
-{"ordinal": 55, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:55:28.990Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -242,7 +242,7 @@
 
 ### response_item
 
-{"ordinal": 58, "payload": {"call_id": "call_JzSbfM5BcOUyyUlhknrf0ccR", "id": "ctc_035c6ebcc677cd58016a9595e31bbc87d28012f614a2757d48", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,320p' src/edgequeue/integrity.py\\nprintf '\\\\n===== runtime manifest validation =====\\\\n'; nl -ba src/edgequeue/contracts.py | sed -n '1340,1415p'\\nprintf '\\\\n===== ticket 14 evidence =====\\\\n'; sed -n '1,400p' docs/evidence/ticket-14/contract-validation.md\\nprintf '\\\\n===== git log =====\\\\n'; git log --oneline -10\\nprintf '\\\\n===== fixtures dirs =====\\\\n'; find tests/fixtures -maxdepth 3 -type f | sort | head -80\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.out…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -262,7 +262,7 @@
 
 ### response_item
 
-{"ordinal": 66, "payload": {"call_id": "call_Ysgu94XhOUxvPcephIz24xMG", "id": "ctc_035c6ebcc677cd58016a9595f4343c87d2a9e98b82cabdd2f6", "input": "const r = await tools.exec_command({\"cmd\":\"base='<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/corpus-allocation-matrix.md'\\nsed -n '1,340p' \\\"$base\\\"\\nprintf '\\\\n===== evaluation / ledger contract checks =====\\\\n'; nl -ba src/edgequeue/contracts.py | sed -n '1390,1495p'\\nprintf '\\\\n===== digest validation =====\\\\n'; nl -ba src/edgequeue/contracts.py | sed -n '1004,1025p;1265,1310p'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":35000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -290,7 +290,7 @@
 
 ### response_item
 
-{"ordinal": 78, "payload": {"call_id": "call_op8iKf7XF7YF5apA3QgRF7re", "id": "ctc_035c6ebcc677cd58016a9596092e9087d289f455faf9e7e974", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q tests/test_corpus.py::test_freeze_complete_corpus_materializes_the_accepted_topology\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188167.517272, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T14:56:10.638Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -310,7 +310,7 @@
 
 ### response_item
 
-{"ordinal": 86, "payload": {"call_id": "call_BxMYd920qmmcNjEc0pRVIaRg", "id": "ctc_035c6ebcc677cd58016a959611271c87d2852d2089877925e1", "input": "const r = await tools.exec_command({\"cmd\":\"command -v pytest || true\\nuv run python -c 'import sys; print(sys.executable); import pytest; print(pytest.__version__)'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188172.859198, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T14:56:18.741Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -322,7 +322,7 @@
 
 ### response_item
 
-{"ordinal": 92, "payload": {"call_id": "call_5Zc0KgVIoAPLaua7C0Od6944", "id": "ctc_035c6ebcc677cd58016a9596154fb487d2bd31f8f05213a803", "input": "const r = await tools.exec_command({\"cmd\":\"uv run python -m pytest -q tests/test_corpus.py::test_freeze_complete_corpus_materializes_the_accepted_topology\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188179.744547, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T14:56:22.814Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -350,7 +350,7 @@
 
 ### response_item
 
-{"ordinal": 104, "payload": {"call_id": "call_IuDIoNURvdmlMnbABPgCX4bP", "id": "ctc_035c6ebcc677cd58016a9596316a1087d29744c694cb0e404b", "input": "const r = await tools.exec_command({\"cmd\":\"nl -ba src/edgequeue/contracts.py | sed -n '1485,1574p'\\nprintf '\\\\n===== digest self verification =====\\\\n'; rg -n -C 5 '_DIGEST_FIELDS|digest_field|digest_contract|verify_digest' src/edgequeue/contracts.py\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":18000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188184.191023, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -398,7 +398,7 @@
 
 ### response_item
 
-{"ordinal": 129, "payload": {"call_id": "call_qpsVhHdEiL3TgRxK6zm0iaZB", "id": "ctc_035c6ebcc677cd58016a959755202c87d29ec5bb8b73f1d208", "input": "const r = await tools.exec_command({\"cmd\":\"uv run python -m pytest -q tests/test_corpus.py::test_freeze_complete_corpus_materializes_the_accepted_topology\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188499.998359, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:01:42.832Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -418,7 +418,7 @@
 
 ### response_item
 
-{"ordinal": 141, "payload": {"call_id": "call_ltuF5fLTKjoRxHch7bTA5cNL", "id": "ctc_035c6ebcc677cd58016a959763ee9087d2acb2896dddb7a7da", "input": "const r = await tools.exec_command({\"cmd\":\"uv run python -m pytest -q tests/test_corpus.py::test_freeze_complete_corpus_materializes_the_accepted_topology\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188514.381355, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:01:57.514Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -438,7 +438,7 @@
 
 ### response_item
 
-{"ordinal": 149, "payload": {"call_id": "call_NZeQQ5YiVmSq290kJEG0OAed", "id": "ctc_035c6ebcc677cd58016a95976ad78c87d2835feaec6feebfba", "input": "const r = await tools.exec_command({\"cmd\":\"uv run python -c 'from edgequeue.corpus import compile_complete_corpus; frozen=compile_complete_corpus(); print(frozen.root_manifest[\\\"root_corpus_digest\\\"]); print(*[manifest[\\\"manifest_digest\\\"] for manifest in frozen.split_manifests], sep=\\\"\\\\n\\\")'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":10000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188518.989619, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", …
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -458,7 +458,7 @@
 
 ### response_item
 
-{"ordinal": 159, "payload": {"call_id": "call_KNEQZ3mfqxm7GRXMCpxTbmJO", "id": "ctc_035c6ebcc677cd58016a959782c25887d2a0e09f7848ab3f61", "input": "const r = await tools.exec_command({\"cmd\":\"uv run python -m pytest -q tests/test_corpus.py::test_complete_compiler_preserves_the_fixed_reference_audit_and_allocation\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":10000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188545.76493, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:02:28.440Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -478,7 +478,7 @@
 
 ### response_item
 
-{"ordinal": 169, "payload": {"call_id": "call_Ufu7gIAZBG2AeGhZGKH8z7HS", "id": "ctc_035c6ebcc677cd58016a95978f3cf087d29a46e37b7118ebeb", "input": "const r = await tools.exec_command({\"cmd\":\"uv run python -m pytest -q tests/test_corpus.py::test_complete_compiler_preserves_the_fixed_reference_audit_and_allocation\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":10000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788188557.9526, "turn_id": "01a05850-964d-71a2-a672-baa601249f95"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:02:40.779Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 

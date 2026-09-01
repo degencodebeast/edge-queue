@@ -3,7 +3,7 @@
 - Role: Gate
 - Scope: Ticket 19
 - Pane: gate-lane-2
-- Source digest: `31406793279b8f247bb4cc81d8f81cdce360c2e3067754a5816574b846acd2dc`
+- Source digest: `6d9f3323b85d218a63f99611a93533431076ea1438967ae6cb469e90ff708286`
 - Supporting raw-event excerpt: [`raw/trajectory-15-ticket-19-gate-01a05887-f137-7f62-a33f-2a4fad7da5ef.jsonl`](raw/trajectory-15-ticket-19-gate-01a05887-f137-7f62-a33f-2a4fad7da5ef.jsonl)
 
 ## Event excerpt
@@ -38,7 +38,7 @@
 
 ### turn_context
 
-{"ordinal": 7, "payload": {"active_permission_profile": {"id": ":danger-full-access"}, "approval_policy": "never", "approvals_reviewer": "user", "collaboration_mode": {"mode": "default", "settings": {"developer_instructions": "# Collaboration Mode: Default\n\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\n\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\n\n## request_user_input availability\n\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\n\nIn Default mode, strongly prefer making rea…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -78,7 +78,7 @@
 
 ### event_msg
 
-{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:31.631Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -90,7 +90,7 @@
 
 ### response_item
 
-{"ordinal": 20, "payload": {"call_id": "call_L690EAT3wOPo3jMk46IuQyQN", "id": "ctc_074da79a2ca67666016a95a43351dc87d2a9985ac52d96d0e3", "input": "const r = await tools.exec_command({\"cmd\":\"wc -l <USER_HOME>/.agents/skills/smux/SKILL.md <USER_HOME>/.agents/skills/general-review-protocol/SKILL.md <USER_HOME>/.agents/skills/review-verification-protocol/SKILL.md AGENTS.md CONTEXT.md .scratch/edgequeue/spec.md .scratch/edgequeue/map.md .scratch/edgequeue/issues/19-gate-calibration-candidate.md .scratch/edgequeue/calibration-ci-contract.md docs/adr/0002-preserve-human-authority-with-append-only-decisions.md edge-queue/docs/ENGINEERING_WORKFLOW.md CONTROLLER_WORKFLOW.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":3000});\ntext(r.out…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:38.963Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:46.718Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -138,7 +138,7 @@
 
 ### response_item
 
-{"ordinal": 32, "payload": {"call_id": "call_QcQCRdB99b9YnYQBzCKsffba", "id": "ctc_074da79a2ca67666016a95a444061487d29be35080459cfa9b", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,150p' CONTEXT.md && sed -n '151,292p' CONTEXT.md && sed -n '1,150p' .scratch/edgequeue/spec.md && sed -n '151,281p' .scratch/edgequeue/spec.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191807.379121, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:56:53.889Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:56:54.188Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -162,7 +162,7 @@
 
 ### response_item
 
-{"ordinal": 38, "payload": {"call_id": "call_80L21jFLbamULXwfVKvqgLwZ", "id": "ctc_074da79a2ca67666016a95a44ac11487d288dd77998bc8aff9", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,300p' CONTROLLER_WORKFLOW.md && sed -n '301,600p' CONTROLLER_WORKFLOW.md && sed -n '601,900p' CONTROLLER_WORKFLOW.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191814.812927, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:00.382Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -174,7 +174,7 @@
 
 ### event_msg
 
-{"ordinal": 41, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:57:00.664Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -194,7 +194,7 @@
 
 ### response_item
 
-{"ordinal": 46, "payload": {"call_id": "call_VAneeOBcurYTXMQNUW1REbtj", "id": "ctc_074da79a2ca67666016a95a4501fb887d2822920d45b337cdf", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/code-reviewer/SKILL.md && sed -n '1,260p' <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191821.286811, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:05.988Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -206,7 +206,7 @@
 
 ### event_msg
 
-{"ordinal": 49, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:57:06.273Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -218,7 +218,7 @@
 
 ### response_item
 
-{"ordinal": 52, "payload": {"call_id": "call_ZaL2ZEHwJfCKU0ueswaMmAl6", "id": "ctc_074da79a2ca67666016a95a4540f7887d299ee13d34482726a", "input": "const r = await tools.exec_command({\"cmd\":\"wc -l <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md <USER_HOME>/.agents/skills/code-reviewer/SKILL.md && sed -n '201,400p' <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191826.863992, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:10.036Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -230,7 +230,7 @@
 
 ### event_msg
 
-{"ordinal": 55, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:57:10.392Z", "type": "event_msg"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -242,7 +242,7 @@
 
 ### response_item
 
-{"ordinal": 58, "payload": {"call_id": "call_K2iHnJKQ9jPX67VGUiY0GZwH", "id": "ctc_074da79a2ca67666016a95a4582b4c87d2ada392e89927329c", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '401,560p' <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":12000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191831.034165, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:13.531Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -258,7 +258,7 @@
 
 ### response_item
 
-{"ordinal": 64, "payload": {"call_id": "call_0CcEGPpI6el4Zs9SF1Iq1zqK", "id": "ctc_074da79a2ca67666016a95a45e138887d2bf260ab4ea28b97b", "input": "const r = await tools.exec_command({\"cmd\":\"tmux-bridge read %9 20\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":3000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191834.453863, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:18.692Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -270,7 +270,7 @@
 
 ### response_item
 
-{"ordinal": 70, "payload": {"call_id": "call_oPfeARZKrE2LaF4qMcCY7ghq", "id": "ctc_074da79a2ca67666016a95a460a3ec87d28afa8dc8139c77cb", "input": "const r = await tools.exec_command({\"cmd\":\"tmux-bridge message %9 'Ticket 19 Gate standby is ready. I loaded the review procedures and source documents. I will remain read-only and wait for one exact worker-lane-2 candidate SHA before worktree inspection.'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":3000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191839.682356, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:22.332Z", "type": "response_i…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -278,7 +278,7 @@
 
 ### response_item
 
-{"ordinal": 74, "payload": {"call_id": "call_ZlhrNxVNd7uTwKdPJOrEQmHy", "id": "ctc_074da79a2ca67666016a95a4644ec887d28650cb1cbe590870", "input": "const r = await tools.exec_command({\"cmd\":\"tmux-bridge read %9 20\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":3000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191843.483089, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:25.310Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -286,7 +286,7 @@
 
 ### response_item
 
-{"ordinal": 78, "payload": {"call_id": "call_4zZTCOAt4hyzY0uGVksJZItZ", "id": "ctc_074da79a2ca67666016a95a46720e087d28abacd791648bf48", "input": "const r = await tools.exec_command({\"cmd\":\"tmux-bridge keys %9 Enter\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":3000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788191846.383827, "turn_id": "01a05889-2d04-7ac1-833d-da6149270604"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T15:57:28.153Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -318,7 +318,7 @@
 
 ### response_item
 
-{"ordinal": 97, "payload": {"call_id": "call_M5jjljQ6q5TINY5QsjScCcA7", "id": "ctc_074da79a2ca67666016a95aa89366487d2a9dc5d00508c4687", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/smux/SKILL.md && sed -n '1,230p' <USER_HOME>/.agents/skills/general-review-protocol/SKILL.md && sed -n '1,240p' <USER_HOME>/.agents/skills/review-verification-protocol/SKILL.md && sed -n '1,120p' <USER_HOME>/.agents/skills/code-reviewer/SKILL.md && sed -n '1,560p' <USER_HOME>/.agents/skills/code-review-excellence/SKILL.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":60000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788193410.383473, "turn_id": "01a058a1-fda1-…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -362,7 +362,7 @@
 
 ### response_item
 
-{"ordinal": 121, "payload": {"call_id": "call_mX7RQ1wwIn9hvK3nQJ8t2HnX", "id": "ctc_074da79a2ca67666016a95aabdbfc087d28aab0b8c381ca35e", "input": "const r = await tools.exec_command({\"cmd\":\"nl -ba src/edgequeue/calibration.py | sed -n '1,460p'\\nnl -ba tests/test_calibration.py | sed -n '1,380p'\\nrg -n -C 4 'def validate_(adjudication|calibration)_authority|def validate_contract|calibration_(candidate|pack|case|promotion)' src/edgequeue/contracts.py schemas src tests -g '*.py' -g '*.json'\\nnl -ba src/edgequeue/scoring.py | sed -n '1,320p'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-2-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":60000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788193443.638829, …
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -382,7 +382,7 @@
 
 ### response_item
 
-{"ordinal": 133, "payload": {"call_id": "call_MTTBHNDpNkGYJT681fXx0Yoj", "id": "ctc_074da79a2ca67666016a95aac9548487d2beab749ef6e57e73", "input": "const r = await tools.exec_command({\"cmd\":\"nl -ba src/edgequeue/contracts.py | sed -n '1620,1725p'\\nnl -ba src/edgequeue/contracts.py | sed -n '1960,2070p'\\nnl -ba src/edgequeue/contracts.py | sed -n '740,830p'\\nnl -ba src/edgequeue/contracts.py | sed -n '980,1040p'\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-2-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":30000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788193479.629585, "turn_id": "01a058a1-fda1-74a3-a24e-fe414546e3ee"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -430,7 +430,7 @@
 
 ### response_item
 
-{"ordinal": 151, "payload": {"call_id": "call_dzrWGve1ih3VIokBP5mFUCsI", "id": "ctc_074da79a2ca67666016a95aaf44fc487d28447b1d667814638", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest tests/test_calibration.py -q\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-2-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":10000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788193519.703446, "turn_id": "01a058a1-fda1-74a3-a24e-fe414546e3ee"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:25:25.525Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -442,7 +442,7 @@
 
 ### response_item
 
-{"ordinal": 155, "payload": {"call_id": "call_9XGxnsYoSRfboYuLse95D7W8", "id": "ctc_074da79a2ca67666016a95aaf794ac87d2b4fe3835c1029559", "input": "const r = await tools.exec_command({\"cmd\":\"uv run pytest -q\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-2-worker\",\"yield_time_ms\":30000,\"max_output_tokens\":10000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788193526.695135, "turn_id": "01a058a1-fda1-74a3-a24e-fe414546e3ee"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:25:28.656Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -458,7 +458,7 @@
 
 ### response_item
 
-{"ordinal": 161, "payload": {"call_id": "call_LncxPwBPdOJ5MecIMMdffnku", "id": "ctc_074da79a2ca67666016a95ab13725c87d2aa91e37ee90e40fd", "input": "const r = await tools.exec_command({\"cmd\":\"test -z \\\"$(git status --porcelain)\\\" && test \\\"$(git rev-parse HEAD)\\\" = '2c8a0530d5e2323c284e98ebe90c38cb6bb9b131' && git merge-base --is-ancestor '08e1a8575e5ed20f00b1d9700517fee2ee17facd' '2c8a0530d5e2323c284e98ebe90c38cb6bb9b131' && git status --short && git rev-parse HEAD\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-2-worker\",\"yield_time_ms\":10000,\"max_output_tokens\":3000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788193547.706752, "turn_id": "01a058a1-fda1-74a3-a24e-fe414546e3ee"}, "name": "exec", "st…
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
@@ -470,7 +470,7 @@
 
 ### response_item
 
-{"ordinal": 167, "payload": {"call_id": "call_85QAKpbMrPAizoNc5548cXFQ", "id": "ctc_074da79a2ca67666016a95ab1c2e9887d294ebe24c836f035b", "input": "const r = await tools.exec_command({\"cmd\":\"tmux-bridge read %5 30\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack\",\"yield_time_ms\":10000,\"max_output_tokens\":5000});\ntext(r.output);", "internal_chat_message_metadata_passthrough": {"create_time": 1788193559.576801, "turn_id": "01a058a1-fda1-74a3-a24e-fe414546e3ee"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T16:26:04.700Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
