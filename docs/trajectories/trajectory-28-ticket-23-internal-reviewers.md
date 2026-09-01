@@ -3,7 +3,7 @@
 - Role: Internal review
 - Scope: Ticket 23
 - Pane: Worker subagents
-- Source digest: `94c2cd65aa9d17c5e45a631dcf16331e0261fee76e95fc7e65c259a7704af1a2`
+- Source digest: `d671d49dc969be2f7d62a6f0d2c63d83a71163eabdd0af4306a371aeacd10176`
 - Supporting raw-event excerpt: [`raw/trajectory-28-ticket-23-internal-reviewers.jsonl`](raw/trajectory-28-ticket-23-internal-reviewers.jsonl)
 
 ## Event excerpt
@@ -78,7 +78,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:28:57.899Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:29:02.363Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:29:10.301Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:29:16.292Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -174,7 +174,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 41, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:29:20.381Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -198,7 +198,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 47, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:29:24.029Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -222,7 +222,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 53, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:29:28.884Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -246,11 +246,47 @@
 
 ### event_msg
 
+{"ordinal": 59, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:29:34.551Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 381, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9628132c7c87d2a72eeb2668a65863", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a8b-2a11-7741-91ca-fcb82fb6cfae"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:19:16.271Z", "type": "response_item"}
+
+### response_item
+
 <REDACTED_PRIVATE_EVENT>
 
 ### response_item
 
-{"ordinal": 61, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961c705f8087d291c6e19c9acf908a", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:29:37.313Z", "type": "response_item"}
+{"ordinal": 384, "payload": {"call_id": "call_LIF53aundKKYWbY1KpVbY4Qd", "id": "ctco_01a05a8c-9a3f-76f2-8d4f-457bc9e664a9", "internal_chat_message_metadata_passthrough": {"create_time": 1788225559.103545, "turn_id": "01a05a8b-2a11-7741-91ca-fcb82fb6cfae"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "tests/test_submission.py:152:        digest = entry[\"sha256\"]\ntests/test_submission.py:159:        assert hashlib.sha256((project_root / relative_path).read_bytes()).hexdigest() == digest\ntests/test_submission.py:172:def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_path: Path) -> None:\nscripts/export_trajectories.py:1:\"\"\"Export readable, redacted agent trajectories from the EdgeQueue source led…
+
+### response_item
+
+{"ordinal": 387, "payload": {"id": "rs_0e3f2c85d3dbdf65016a962818a29087d2889039d2dc03ef12", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a8b-2a11-7741-91ca-fcb82fb6cfae"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:19:29.862Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 388, "payload": {"completed_at_ms": 1788225579259, "item": {"content": [{"text": "PASS — no in-scope Critical or Major finding before SHA A2.\n\nThe A2 delta correctly replaces the duplicate Ticket 22 exports with exactly one Worker source and two distinct Internal review sources:\n\n- Worker `01a05a02-6804-72e0-8900-cb4fbe409741`\n- Lovelace `/root/standards_review`, `01a05a13-d6b6-7c23-97ba-ea1d33aea81b`\n- Hume `/root/specification_review`, `01a05a13-ebec-7413-be03-045d237c3486`\n\nThe manifest has 29 records, all referenced raw/readable files exist, their event counts match, and Ticket 22 has one Worker plus two Internal-review records ([report:57-67](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qual…
+
+### response_item
+
+{"ordinal": 389, "payload": {"content": [{"text": "PASS — no in-scope Critical or Major finding before SHA A2.\n\nThe A2 delta correctly replaces the duplicate Ticket 22 exports with exactly one Worker source and two distinct Internal review sources:\n\n- Worker `01a05a02-6804-72e0-8900-cb4fbe409741`\n- Lovelace `/root/standards_review`, `01a05a13-d6b6-7c23-97ba-ea1d33aea81b`\n- Hume `/root/specification_review`, `01a05a13-ebec-7413-be03-045d237c3486`\n\nThe manifest has 29 records, all referenced raw/readable files exist, their event counts match, and Ticket 22 has one Worker plus two Internal-review records ([report:57-67](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L57); [manifest:374](file://<U…
+
+### event_msg
+
+{"ordinal": 391, "payload": {"completed_at": 1788225579, "duration_ms": 114381, "last_agent_message": "PASS — no in-scope Critical or Major finding before SHA A2.\n\nThe A2 delta correctly replaces the duplicate Ticket 22 exports with exactly one Worker source and two distinct Internal review sources:\n\n- Worker `01a05a02-6804-72e0-8900-cb4fbe409741`\n- Lovelace `/root/standards_review`, `01a05a13-d6b6-7c23-97ba-ea1d33aea81b`\n- Hume `/root/specification_review`, `01a05a13-ebec-7413-be03-045d237c3486`\n\nThe manifest has 29 records, all referenced raw/readable files exist, their event counts match, and Ticket 22 has one Worker plus two Internal-review records ([report:57-67](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-rel…
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 397, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9628540b4087d28797415834fed7e4", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a8d-7d3a-78e2-b183-824795b4bbcd"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:20:20.274Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 399, "payload": {"content": [{"text": "I will verify the single post-review line and confirm the pending archive boundary remains unchanged.", "type": "output_text"}], "id": "msg_0e3f2c85d3dbdf65016a962854468c87d29fec387b0f44f5d6", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788225617.956738, "turn_id": "01a05a8d-7d3a-78e2-b183-824795b4bbcd"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T01:20:20.696Z", "type": "response_item"}
 
 ### response_item
 
@@ -258,232 +294,196 @@
 
 ### event_msg
 
-{"ordinal": 63, "payload": {"completed_at_ms": 1788222580344, "item": {"aggregated_output": "CONTROLLER_WORKFLOW.md-697-P0 contains the complete reproducible submission path and all required submission artifacts.\nCONTROLLER_WORKFLOW.md-698-\nCONTROLLER_WORKFLOW.md-699-P1 contains optional presentation polish and additional diagnostics.\nCONTROLLER_WORKFLOW.md-700-\nCONTROLLER_WORKFLOW.md-701-Do not start P1 before P0 passes and its evidence is recorded.\nCONTROLLER_WORKFLOW.md-702-\nCONTROLLER_WORKFLOW.md-703-Capture proof artifacts when each vertical slice first passes.\nCONTROLLER_WORKFLOW.md-704-\nCONTROLLER_WORKFLOW.md-705-Generate public claims only from verified artifacts.\nCONTROLLER_WORKFLOW.md-706-\nCONTROLLER_WORKFLOW.md-707-## Final release set\nCONTROLLER_WORKFLOW.md-708-\nCON…
+{"ordinal": 401, "payload": {"completed_at_ms": 1788225622891, "item": {"aggregated_output": "diff --git a/docs/evidence/ticket-23/pre-release-qualification.md b/docs/evidence/ticket-23/pre-release-qualification.md\nindex 4a4cfa2..61d507f 100644\n--- a/docs/evidence/ticket-23/pre-release-qualification.md\n+++ b/docs/evidence/ticket-23/pre-release-qualification.md\n@@ -1,15 +1,16 @@\n # Ticket 23 pre-release qualification\n \n-Status: clean-room qualification and the Controller archive checkpoint passed. The public Video URL is the only unresolved external input.\n+Status: clean-room qualification passed. The replacement Controller archive checkpoint is pending. The public Video URL is the only unresolved external input.\n \n ## Candidate boundary\n \n - Base SHA: `ac1cc7b5f8d1ae445365454d2…
 
 ### response_item
 
-{"ordinal": 64, "payload": {"call_id": "call_0PdUXrJmyDfWMXBlnxh81uJO", "id": "ctco_01a05a5f-2682-7900-99a1-c4610d4d90af", "internal_chat_message_metadata_passthrough": {"create_time": 1788222580.354114, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 13974)\nTotal output lines: 1248\n\nCONTROLLER_WORKFLOW.md-697-P0 contains the complete reproducible submission path and all required submission artifacts.\nCONTROLLER_WORKFLOW.md-698-\nCONTROLLER_WORKFLOW.md-699-P1 contains optional presentation polish and additional diagnostics.\nCONTROLLER_WORKFLOW.md-700-\nCONTROLLER_WORKFLOW.md-701-Do not start P1 before P0 passes and its evidence…
+{"ordinal": 402, "payload": {"call_id": "call_fM1uX05Su1I31W5cuEjrjXV2", "id": "ctco_01a05a8d-9371-7371-ba3e-79db03e0126c", "internal_chat_message_metadata_passthrough": {"create_time": 1788225622.89735, "turn_id": "01a05a8d-7d3a-78e2-b183-824795b4bbcd"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "diff --git a/docs/evidence/ticket-23/pre-release-qualification.md b/docs/evidence/ticket-23/pre-release-qualification.md\nindex 4a4cfa2..61d507f 100644\n--- a/docs/evidence/ticket-23/pre-release-qualification.md\n+++ b/docs/evidence/ticket-23/pre-release-qualification.md\n@@ -1,15 +1,16 @@\n # Ticket 23 pre-release qualification\n \n-Status: clean-room qualification and the Controller archive checkpoint passed. The public Video URL i…
 
 ### response_item
 
-{"ordinal": 67, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961c75c7fc87d298fa93a775c2ac36", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:29:42.064Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 70, "payload": {"call_id": "call_3u0MSirqtGy3w7M0lg2nXQrv", "id": "ctco_01a05a5f-3611-7161-abf7-711f52d2e2f5", "internal_chat_message_metadata_passthrough": {"create_time": 1788222584.337476, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "## Active Wave 5\n\n- Ticket: `23 — Verify the final submission from a clean environment`.\n- Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.\n- Worker: `worker-lane-3`.\n- Gate: `gate-lane-3`.\n- Branch: `ticket/23-verify-final-submission-clean-room`.\n- Worktree: `.worktrees/edgequeue/lane-3-worker`.\n- Ticket 23 owns clean-room verification, trajectory completion, final qualification evidence, and release inputs.\n- The Cont…
-
-### response_item
-
-{"ordinal": 73, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961c79b70c87d287c6e8450d56e9c9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:29:46.376Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 76, "payload": {"call_id": "call_g4ujxPWClyQqTQFfIK4U8dTC", "id": "ctco_01a05a5f-4c99-77b0-8631-53a6e7c234af", "internal_chat_message_metadata_passthrough": {"create_time": 1788222590.105915, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "find: docs/evidence/ticket-23: No such file or directory\ndiff --git a/docs/trajectories/trace-manifest.json b/docs/trajectories/trace-manifest.json\nindex bada6a4..e460097 100644\n--- a/docs/trajectories/trace-manifest.json\n+++ b/docs/trajectories/trace-manifest.json\n@@ -1,5 +1,5 @@\n {\n-  \"ledger_digest\": \"5bcd9ce6a7455d4ed9283a69f7f1716d76ba2e9f26b5b999e04e53909caf2ead\",\n+  \"ledger_digest\": \"10d26d7325f346ab59d7f49bd5cf…
-
-### response_item
-
-{"ordinal": 79, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961c80432887d2b470c7575d7abff7", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:29:52.956Z", "type": "response_item"}
+{"ordinal": 405, "payload": {"id": "rs_0e3f2c85d3dbdf65016a962858ffe087d2a16860891e612e96", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a8d-7d3a-78e2-b183-824795b4bbcd"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:20:25.586Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 81, "payload": {"completed_at_ms": 1788222598279, "item": {"aggregated_output": "# Ticket 23 pre-release qualification\n\nStatus: checkpoint qualification complete, except Controller archive measurements and the external human inputs.\n\n## Candidate boundary\n\n- Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.\n- Branch: `ticket/23-verify-final-submission-clean-room`.\n- Checkpoint snapshot SHA A: recorded in the Controller checkpoint handoff after this report is committed.\n- Final Gate candidate SHA B: pending the Controller archive checkpoint.\n- Archive input: exact checkpoint SHA A.\n- Archive command: `uv run python scripts/build_release.py --sha <SHA-A> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>`.\n- Release owner: the Controller. Ticket 23 archives are…
+{"ordinal": 406, "payload": {"completed_at_ms": 1788225628254, "item": {"content": [{"text": "PASS — no Critical or Major Specification issue.\n\nThe new line accurately records both replacement reviews as passed ([pre-release-qualification.md:134](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L134)). Archive measurements remain expressly pending for A2 and old values are correctly superseded ([138-144](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L138)). `git diff --check` passes.", "type": "Text"}], "id": "msg_0e3f2c85d3dbdf65016a962859afac87d2aa7ea554b0fa7586", "phase": "final_answer", "type": "AgentMessage…
 
 ### response_item
 
-{"ordinal": 82, "payload": {"call_id": "call_bMfxyqh9fjeqj4FZpeFswtB7", "id": "ctco_01a05a5f-6c95-7870-a9dd-8c6d2e524814", "internal_chat_message_metadata_passthrough": {"create_time": 1788222598.293889, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 60028)\nTotal output lines: 1842\n\nWarning: truncated output (original token count: 77574)\nTotal output lines: 2339\n\n# Ticket 23 pre-release qualification\n\nStatus: checkpoint qualification complete, except Controller archive measurements and the external human inputs.\n\n## Candidate boundary\n\n- Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.\n- Branch: `ticket/23-verify-…
-
-### response_item
-
-{"ordinal": 85, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961c8812a887d299d6954f1a3ec0f3", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:30:06.897Z", "type": "response_item"}
+{"ordinal": 407, "payload": {"content": [{"text": "PASS — no Critical or Major Specification issue.\n\nThe new line accurately records both replacement reviews as passed ([pre-release-qualification.md:134](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L134)). Archive measurements remain expressly pending for A2 and old values are correctly superseded ([138-144](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L138)). `git diff --check` passes.", "type": "output_text"}], "id": "msg_0e3f2c85d3dbdf65016a962859afac87d2aa7ea554b0fa7586", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], …
 
 ### event_msg
 
-{"ordinal": 86, "payload": {"completed_at_ms": 1788222607691, "item": {"content": [{"text": "The worktree is still an uncommitted checkpoint, not an exact candidate SHA. I am validating its evidence records and deterministic checks so the worker can resolve blockers before handoff.", "type": "Text"}], "id": "msg_0e3f2c85d3dbdf65016a961c8efa8487d2815d2790a1c246ff", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788222606899, "thread_id": "01a05a5e-5848-7ec2-802e-80326069d05e", "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97", "type": "item_completed"}, "timestamp": "2026-09-01T00:30:07.691Z", "type": "event_msg"}
+{"ordinal": 409, "payload": {"completed_at": 1788225628, "duration_ms": 11079, "last_agent_message": "PASS — no Critical or Major Specification issue.\n\nThe new line accurately records both replacement reviews as passed ([pre-release-qualification.md:134](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L134)). Archive measurements remain expressly pending for A2 and old values are correctly superseded ([138-144](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L138)). `git diff --check` passes.", "started_at": 1788225617, "time_to_first_token_ms": 3066, "turn_id": "01a05a8d-7d3a-78e2-b183-824795b4bbcd", "type": "ta…
 
 ### response_item
 
-{"ordinal": 87, "payload": {"content": [{"text": "The worktree is still an uncommitted checkpoint, not an exact candidate SHA. I am validating its evidence records and deterministic checks so the worker can resolve blockers before handoff.", "type": "output_text"}], "id": "msg_0e3f2c85d3dbdf65016a961c8efa8487d2815d2790a1c246ff", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788222599.131755, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:30:07.693Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 415, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9629b65e6887d2b72ad1a29d248ab8", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:26:14.705Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 417, "payload": {"content": [{"text": "I will verify the report-only scope, exact A2 archive measurements, and that the retained machine record is clearly pre-archive.", "type": "output_text"}], "id": "msg_0e3f2c85d3dbdf65016a9629b6ce4c87d2bc9486293389873e", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788225973.374522, "turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T01:26:15.397Z", "type": "response_item"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
-{"ordinal": 89, "payload": {"completed_at_ms": 1788222612051, "item": {"aggregated_output": "sed: .scratch/edgequeue/agent-trajectory-ledger.md: No such file or directory\n     1\t# Ticket 23 pre-release qualification\n     2\t\n     3\tStatus: checkpoint qualification complete, except Controller archive measurements and the external human inputs.\n     4\t\n     5\t## Candidate boundary\n     6\t\n     7\t- Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.\n     8\t- Branch: `ticket/23-verify-final-submission-clean-room`.\n     9\t- Checkpoint snapshot SHA A: recorded in the Controller checkpoint handoff after this report is committed.\n    10\t- Final Gate candidate SHA B: pending the Controller archive checkpoint.\n    11\t- Archive input: exact checkpoint SHA A.\n    12\t- Archive …
+{"ordinal": 419, "payload": {"completed_at_ms": 1788225978683, "item": {"aggregated_output": " M docs/evidence/ticket-23/pre-release-qualification.md\n5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5\n5b4ee4b Correct Ticket 22 trajectory provenance\n89fa6a4 Confirm Ticket 23 eligibility status\n3d9eb72 Record Ticket 23 archive checkpoint\n9b98f1d Verify final submission clean-room checkpoint\ndocs/evidence/ticket-23/pre-release-qualification.md\ndiff --git a/docs/evidence/ticket-23/pre-release-qualification.md b/docs/evidence/ticket-23/pre-release-qualification.md\nindex 61d507f..dad7b0e 100644\n--- a/docs/evidence/ticket-23/pre-release-qualification.md\n+++ b/docs/evidence/ticket-23/pre-release-qualification.md\n@@ -1,16 +1,16 @@\n # Ticket 23 pre-release qualification\n \n-Status: clean-room qua…
 
 ### response_item
 
-{"ordinal": 90, "payload": {"call_id": "call_BXKx59qFhQgMq0hZnaBQSo2y", "id": "ctco_01a05a5f-a256-7910-b15c-0b266b691e3d", "internal_chat_message_metadata_passthrough": {"create_time": 1788222612.054448, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10385)\nTotal output lines: 793\n\nsed: .scratch/edgequeue/agent-trajectory-ledger.md: No such file or directory\n     1\t# Ticket 23 pre-release qualification\n     2\t\n     3\tStatus: checkpoint qualification complete, except Controller archive measurements and the external human inputs.\n     4\t\n     5\t## Candidate boundary\n     6\t\n     7\t- Base SHA: `ac1cc7b5f8d1ae445365454…
+{"ordinal": 420, "payload": {"call_id": "call_pn3JeUMwnFzKv5NRmpHWP53I", "id": "ctco_01a05a93-0140-7371-8043-a9263f6826fc", "internal_chat_message_metadata_passthrough": {"create_time": 1788225978.688211, "turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": " M docs/evidence/ticket-23/pre-release-qualification.md\n5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5\n5b4ee4b Correct Ticket 22 trajectory provenance\n89fa6a4 Confirm Ticket 23 eligibility status\n3d9eb72 Record Ticket 23 archive checkpoint\n9b98f1d Verify final submission clean-room checkpoint\ndocs/evidence/ticket-23/pre-release-qualification.md\ndiff --git a/docs/evidence/ticket-23/pre-release-qualification.md b/docs/evidence/ticket…
 
 ### response_item
 
-{"ordinal": 93, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961c95775087d28b3d781eb7b13fd1", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:30:18.126Z", "type": "response_item"}
+{"ordinal": 423, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9629bcc54487d29aed96b003047a7c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:26:21.400Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 95, "payload": {"call_id": "call_cIxhfKy4Tl6GcRvAPn0Cl2cy", "id": "ctco_01a05a60-3e5a-7302-95b4-d99372e4dff6", "internal_chat_message_metadata_passthrough": {"create_time": 1788222651.994255, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 30.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: general-review-protocol\ndescription: Use when reviewing code changes, validating an implementation summary, checking whether a patch is correct or ready to merge, or when another agent reports a fix as complete and the result still needs independent verification. Also use when the user asks for a code review, a second opinion on a patch, or whether a change introduced regressions.\n---\n\n# General Review Protocol\n\n## …
-
-### response_item
-
-{"ordinal": 98, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961cbd64c487d284a005f2adc393ba", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:30:55.747Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 101, "payload": {"call_id": "call_tsHSxTlfN8DGAxRCAzSWBxli", "id": "ctco_01a05a60-620a-7103-8d8c-6055295b3a84", "internal_chat_message_metadata_passthrough": {"create_time": 1788222661.130101, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "60291 /bin/zsh -lc sed -n '1,260p' <USER_HOME>/.agents/skills/general-review-protocol/SKILL.md; sed -n '1,260p' <USER_HOME>/.agents/skills/review-verification-protocol/SKILL.md; git status --short; git diff --check; UV_OFFLINE=1 uv run pytest -q tests/test_submission.py; UV_OFFLINE=1 uv run pytest -q; UV_OFFLINE=1 uv lock --check; UV_OFFLINE=1 uv run python -m compileall -q src tests scripts; UV_OFFLINE=1 uv run python scripts/verif…
-
-### response_item
-
-{"ordinal": 104, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961cc6684087d2a45a18ef6c193cb2", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:31:03.147Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 108, "payload": {"call_id": "call_dB1IedCpiXCrZ6w4KmAsH60S", "id": "ctco_01a05a60-8573-72a1-9e98-5a114f149851", "internal_chat_message_metadata_passthrough": {"create_time": 1788222670.195847, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 5.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "full-suite-completed\n M docs/trajectories/trace-manifest.json\n M docs/trajectories/trajectory-13-ticket-18-gate-01a05887-eeb4-7c21-a929-b508182465d9.md\n M docs/trajectories/trajectory-15-ticket-19-gate-01a05887-f137-7f62-a33f-2a4fad7da5ef.md\n?? docs/evidence/ticket-23/\n?? docs/trajectories/raw/trajectory-21-ticket-22-gate-01a05a02-6795-7610-b948-236031e4ae15.jsonl\n?? docs/trajectories/raw/trajectory-22-ticket-22-worker-session…
-
-### response_item
-
-{"ordinal": 111, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961ccf89ec87d2875d589b7d2f95f5", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:31:12.416Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 112, "payload": {"call_id": "call_lnc8eWznO2HlfnKpDA0IFs88", "id": "ctc_0e3f2c85d3dbdf65016a961cd0816c87d298ab324c861e28db", "input": "const r = await tools.exec_command({\"cmd\":\"pgrep -fl 'pytest|uv run|compileall|verify_submission' || true; UV_OFFLINE=1 uv run python - <<'PY'\\nimport hashlib,json\\nfrom pathlib import Path\\nroot=Path('docs/trajectories')\\nman=json.loads((root/'trace-manifest.json').read_text())\\nerrors=[]\\nfor record in man['records']:\\n  raw=root/record['raw_excerpt_path']\\n  found=hashlib.sha256(raw.read_bytes()).hexdigest()\\n  if found != record['source_digest']:\\n    errors.append((str(raw),found,record['source_digest']))\\nprint(f'digest_mismatches={len(errors)}')\\nfor error in errors: print(*error,sep='\\\\t')\\nPY\\nUV_OFFLINE=1 uv run pyth…
-
-### response_item
-
-{"ordinal": 114, "payload": {"call_id": "call_lnc8eWznO2HlfnKpDA0IFs88", "id": "ctco_01a05a60-a5bc-7b03-9df5-123c220a72b2", "internal_chat_message_metadata_passthrough": {"create_time": 1788222678.460384, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 1.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "digest_mismatches=29\ndocs/trajectories/raw/trajectory-01-controller-session-01a0573d-46fc-7781-b1c0-cecd238ecef2.jsonl\te8c854e3eefd29340bd3154ff23a3a5a68bef32e55510ff9dcadae15ef7f50a2\ta9e74847e3f111d081332aa78c854a7ed7bd3a7b20da6872882c772f10c80c62\ndocs/trajectories/raw/trajectory-02-ticket-14-worker-session-01a0575a-8ed6-7f11-9b58-f246e77edfdb.jsonl\t7ed8ab4c81226553c4b6e2adce75f073e44d103c55d60e34efd059ce698d24e8\tf250ca4cde49…
-
-### response_item
-
-{"ordinal": 117, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961cd7bb1887d2b37e682fa4f322d5", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:31:23.927Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 119, "payload": {"call_id": "call_kxIWrXVMw2dF8JbeIL5NQmMk", "id": "ctco_01a05a61-361b-7c20-ab0a-20123d000967", "internal_chat_message_metadata_passthrough": {"create_time": 1788222715.41935, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 30.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "........................................................................ [ 41%]\n........................................................................ [ 83%]\n..........", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-09-01T00:31:55.419Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 122, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961cfca51c87d2b453fe9dd01bdfab", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:31:56.968Z", "type": "response_item"}
+{"ordinal": 424, "payload": {"call_id": "call_zSCMbfxQyPAoSHHDFig9b3E5", "id": "ctc_0e3f2c85d3dbdf65016a9629bd7ccc87d2900928cdce2cccda", "input": "const r = await tools.exec_command({\"cmd\":\"checkpoint_dir=<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/release/ticket-23-verification-5b4ee4b; archive_file=\\\"$checkpoint_dir/edgequeue-5b4ee4b51b6e-source.zip\\\"; test -f \\\"$archive_file\\\" && test \\\"$(stat -f %z \\\"$archive_file\\\")\\\" = 2317410 && test \\\"$(shasum -a 256 \\\"$archive_file\\\" | awk '{print $1}')\\\" = 58ee91e28d69b5841594327ebe83d3c509cfaa4efd7ac54a04bef8a3f2d0ba4e && jq -e '.source_tree == \\\"cd26759e85c687da547876df468e2dcea0b8fadc\\\" and .source_identity == \\\"01c43b7926fdec5a894e8b61ca3f02ea31d8aa9c6cc44bb25aec03b5005e5665\\\" and .tracked_f…
 
 ### event_msg
 
-{"ordinal": 123, "payload": {"completed_at_ms": 1788222717232, "item": {"aggregated_output": "........................................................................ [ 41%]\n........................................................................ [ 83%]\n............................                                             [100%]\n172 passed in 31.35s\n", "command": ["/bin/zsh", "-lc", "UV_OFFLINE=1 uv run pytest -q"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker", "duration": {"nanos": 817014875, "secs": 31}, "exit_code": 0, "formatted_output": "........................................................................ [ 41%]\n........................................................................ [ 83%]\n............................      …
+{"ordinal": 425, "payload": {"completed_at_ms": 1788225991375, "item": {"aggregated_output": "jq: error: Could not open file <USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/release/ticket-23-verification-5b4ee4b/RELEASE_MANIFEST.json: No such file or directory\n258:- The User supplies the final personal eligibility confirmation.\n267:The approved wave list records dependency eligibility. Revalidate file ownership before each parallel dispatch.\n472:- The Video URL remains an external submission requirement.\n518:- Preserve every A4 measurement and the external Video URL dependency.\n533:- The Video URL remains the only external submission input.\n547:- Final acceptance still requires the user-provided public Video URL.\n567:- Participant eligibility status: confirmed by the us…
+
+### response_item
+
+{"ordinal": 426, "payload": {"call_id": "call_zSCMbfxQyPAoSHHDFig9b3E5", "id": "ctco_01a05a93-32d2-7ba3-b549-e1b3ac81ed9f", "internal_chat_message_metadata_passthrough": {"create_time": 1788225991.378722, "turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "jq: error: Could not open file <USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/release/ticket-23-verification-5b4ee4b/RELEASE_MANIFEST.json: No such file or directory\n258:- The User supplies the final personal eligibility confirmation.\n267:The approved wave list records dependency eligibility. Revalidate file ownership before each parallel dispatch.\n472:- The Video URL remains an external submission requirement.\n518…
+
+### response_item
+
+{"ordinal": 429, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9629ca016c87d2a9637a70c0e386eb", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:26:35.540Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 430, "payload": {"call_id": "call_kjrAG6CkgrFopwnKbskyxK1Y", "id": "ctc_0e3f2c85d3dbdf65016a9629cba44087d2bde3569907a49983", "input": "const r = await tools.exec_command({\"cmd\":\"checkpoint_dir=<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/release/ticket-23-verification-5b4ee4b; ls -la \\\"$checkpoint_dir\\\"; archive_file=\\\"$checkpoint_dir/edgequeue-5b4ee4b51b6e-source.zip\\\"; stat -f '%N %z bytes' \\\"$archive_file\\\"; shasum -a 256 \\\"$archive_file\\\"; unzip -p \\\"$archive_file\\\" RELEASE_MANIFEST.json | jq '{source_sha,source_tree,source_identity,tracked_file_count:(.files|length)}'; sed -n '588,616p' <USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/controller-handoff.md\",\"workdir\":\"<USER_HOME>/Projects/personal/micro1-hack/.worktree…
+
+### response_item
+
+{"ordinal": 432, "payload": {"call_id": "call_kjrAG6CkgrFopwnKbskyxK1Y", "id": "ctco_01a05a93-539f-7b81-86ca-ec382b9446d8", "internal_chat_message_metadata_passthrough": {"create_time": 1788225999.775667, "turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "total 4536\ndrwxr-xr-x@  4 degencodebeast  staff      128 Sep  1 02:23 .\ndrwxr-xr-x@ 10 degencodebeast  staff      320 Sep  1 02:23 ..\n-rw-r--r--@  1 degencodebeast  staff  2317410 Sep  1 02:23 edgequeue-5b4ee4b51b6e-source.zip\n-rw-r--r--@  1 degencodebeast  staff      100 Sep  1 02:23 edgequeue-5b4ee4b51b6e-source.zip.sha256\n<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/release/ticket-23-verification-5b4ee4b/edge…
+
+### response_item
+
+{"ordinal": 435, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9629d1296887d280da260a156dcbde", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:26:41.778Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 437, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9629d1e21887d28291dfd2aca1c62c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:26:42.522Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 440, "payload": {"call_id": "call_LF6AFXnBa3wbezBNXN7Q2iPG", "id": "ctco_01a05a93-6f4d-7121-94ac-067a856dbeb7", "internal_chat_message_metadata_passthrough": {"create_time": 1788226006.861139, "turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "tests/test_submission.py:74:        assert \"RELEASE_MANIFEST.json\" in names\ntests/test_submission.py:82:        manifest = json.loads(archive.read(\"RELEASE_MANIFEST.json\"))\ntests/test_submission.py:108:    assert evaluation_run[\"git_tree\"] == manifest[\"source_tree\"]\ntests/test_submission.py:111:    manifest_path = extracted / \"RELEASE_MANIFEST.json\"\ntests/test_submission.py:112:    for field in (\"source_sha\", \"sourc…
+
+### response_item
+
+{"ordinal": 443, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9629d92edc87d2bbfe0da805746e97", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:26:49.652Z", "type": "response_item"}
 
 ### response_item
 
 <REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 126, "payload": {"call_id": "call_J4rzqJlfvdzS8c5bLg7Wi3w3", "id": "ctco_01a05a61-43df-7612-bf0c-070046939a65", "internal_chat_message_metadata_passthrough": {"create_time": 1788222718.943345, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "done\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-09-01T00:31:58.943Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 129, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961d00f07087d294f65c2c5c4a0f8a", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:32:10.180Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 131, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961d0a413c87d2bd84f751382e5e4f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:32:15.111Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 134, "payload": {"call_id": "call_kdXKdpTu9E5Qp3wYB2LlxQYK", "id": "ctco_01a05a61-90a5-7230-9bf3-92ab2a34919a", "internal_chat_message_metadata_passthrough": {"create_time": 1788222738.597775, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "     1\t\"\"\"Validate public claims and required Ticket 22 submission artifacts.\"\"\"\n     2\t\n     3\tfrom __future__ import annotations\n     4\t\n     5\timport argparse\n     6\timport json\n     7\timport re\n     8\tfrom pathlib import Path\n     9\t\n    10\t\n    11\tSTALE_CLAIMS = (\"Recall@8 was 0.80\", \"Recall at 8: 0.80\", \"Recall@8 = 0.80\")\n    12\tREQUIRED_PATHS = (\n    13\t    \"README.md\",\n    14\t    \"IM…
-
-### response_item
-
-{"ordinal": 137, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961d142f5487d2a7770a207070bb0d", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:32:24.022Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 143, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961d220e2487d28718642e6db88f01", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:32:37.288Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 148, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961d28981487d2bd7d9985546c3973", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:32:46.336Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 151, "payload": {"call_id": "call_cVXNKN6uPathpqlVhKyroka6", "id": "ctco_01a05a62-0d4f-7e32-aa35-b0808b27cc96", "internal_chat_message_metadata_passthrough": {"create_time": 1788222770.511904, "turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "    90\t            sources.append(\n    91\t                LedgerSource(\n    92\t                    agent=agent.strip(\"`\"), role=role.strip(\"`\"), scope=scope.strip(\"`\"), pane=pane.strip(\"`\"), source=source\n    93\t                )\n    94\t            )\n    95\t            for session_id in SESSION_ID_PATTERN.findall(source_text):\n    96\t                source_by_session[session_id] = source\n    97\t    for agent, …
-
-### response_item
-
-{"ordinal": 154, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961d33dee487d28f4542133d6fb5b0", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a5e-5878-7062-8b30-cbfc29280e97"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:32:55.506Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 155, "payload": {"completed_at_ms": 1788222789717, "item": {"content": [{"text": "Specification review: **MAJOR blockers; not ready for candidate handoff.**\n\n1. **No exact reviewed SHA binds the clean-room result or archive.** The report leaves checkpoint SHA A and final candidate SHA B pending, then uses placeholder archive input. Therefore no command output, Proof Bundle digest, or archive test is bound to one candidate. [pre-release-qualification.md:9](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md:9>), [pre-release-qualification.md:103](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md:103>), [checks.json:2](<…
+{"ordinal": 445, "payload": {"completed_at_ms": 1788226013448, "item": {"aggregated_output": "archive-identity=pass\n M docs/evidence/ticket-23/pre-release-qualification.md\n", "command": ["/bin/zsh", "-c", "archive_file=<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/release/ticket-23-verification-5b4ee4b/edgequeue-5b4ee4b51b6e-source.zip; test \"$(unzip -p \"$archive_file\" RELEASE_MANIFEST.json | jq -r .source_identity_binding)\" = 01c43b7926fdec5a894e8b61ca3f02ea31d8aa9c6cc44bb25aec03b5005e5665 && echo archive-identity=pass; git status --short; git diff --check"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker", "duration": {"nanos": 3292, "secs": 0}, "exit_code": 0, "formatted_output": "archive-identity=pass\n M docs/evidence/t…
 
 ### response_item
 
-{"ordinal": 156, "payload": {"content": [{"text": "Specification review: **MAJOR blockers; not ready for candidate handoff.**\n\n1. **No exact reviewed SHA binds the clean-room result or archive.** The report leaves checkpoint SHA A and final candidate SHA B pending, then uses placeholder archive input. Therefore no command output, Proof Bundle digest, or archive test is bound to one candidate. [pre-release-qualification.md:9](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md:9>), [pre-release-qualification.md:103](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md:103>), [checks.json:2](<<USER_HOME>/Projects/personal/micro1-hack/.…
+{"ordinal": 446, "payload": {"call_id": "call_VRePIWTeprZuZiSBdj2EodcJ", "id": "ctco_01a05a93-890b-7693-9447-d6421bdf98b1", "internal_chat_message_metadata_passthrough": {"create_time": 1788226013.451464, "turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "archive-identity=pass\n M docs/evidence/ticket-23/pre-release-qualification.md\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-09-01T01:26:53.451Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 449, "payload": {"id": "rs_0e3f2c85d3dbdf65016a9629dfc36c87d28459731ed876f49c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a92-e517-71b3-accb-c3ef57109710"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:26:56.349Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 158, "payload": {"completed_at": 1788222789, "duration_ms": 262164, "last_agent_message": "Specification review: **MAJOR blockers; not ready for candidate handoff.**\n\n1. **No exact reviewed SHA binds the clean-room result or archive.** The report leaves checkpoint SHA A and final candidate SHA B pending, then uses placeholder archive input. Therefore no command output, Proof Bundle digest, or archive test is bound to one candidate. [pre-release-qualification.md:9](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md:9>), [pre-release-qualification.md:103](<<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md:103>), [checks.…
+{"ordinal": 450, "payload": {"completed_at_ms": 1788226022542, "item": {"content": [{"text": "PASS — no in-scope Critical or Major finding.\n\nThe only working-tree change is the authorized qualification report; `git diff --check` passes. It identifies exact A2 `5b4ee4…`, Controller-owned archive scope, and the public Video URL as the sole external blocker ([report:3-14](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L3)).\n\nThe preserved archive directly matches every required Controller fact: byte-identical build, name, 2,317,410 bytes, SHA-256, source-tree digest, identity binding, 1,269 files, clean extraction results, zero-cost replay, Proof Bundle digest, tamper result, and required checks ([14…
+
+### response_item
+
+{"ordinal": 451, "payload": {"content": [{"text": "PASS — no in-scope Critical or Major finding.\n\nThe only working-tree change is the authorized qualification report; `git diff --check` passes. It identifies exact A2 `5b4ee4…`, Controller-owned archive scope, and the public Video URL as the sole external blocker ([report:3-14](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L3)).\n\nThe preserved archive directly matches every required Controller fact: byte-identical build, name, 2,317,410 bytes, SHA-256, source-tree digest, identity binding, 1,269 files, clean extraction results, zero-cost replay, Proof Bundle digest, tamper result, and required checks ([140-158](file://<USER_HOME>/Projects/personal…
+
+### event_msg
+
+{"ordinal": 452, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T01:27:02.573Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 453, "payload": {"completed_at": 1788226022, "duration_ms": 51094, "last_agent_message": "PASS — no in-scope Critical or Major finding.\n\nThe only working-tree change is the authorized qualification report; `git diff --check` passes. It identifies exact A2 `5b4ee4…`, Controller-owned archive scope, and the public Video URL as the sole external blocker ([report:3-14](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L3)).\n\nThe preserved archive directly matches every required Controller fact: byte-identical build, name, 2,317,410 bytes, SHA-256, source-tree digest, identity binding, 1,269 files, clean extraction results, zero-cost replay, Proof Bundle digest, tamper result, and required che…
+
+### event_msg
+
+{"ordinal": 454, "payload": {"collaboration_mode_kind": "default", "started_at": 1788226190, "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf", "type": "task_started"}, "timestamp": "2026-09-01T01:29:50.684Z", "type": "event_msg"}
+
+### turn_context
+
+<REDACTED_PRIVATE_EVENT>
+
+### inter_agent_communication_metadata
+
+{"ordinal": 456, "payload": {"trigger_turn": true}, "timestamp": "2026-09-01T01:29:50.701Z", "type": "inter_agent_communication_metadata"}
 
 ### response_item
 
 <REDACTED_PRIVATE_EVENT>
 
+### event_msg
+
+{"ordinal": 458, "payload": {"completed_at_ms": 1788226193236, "item": {"id": "rs_0e3f2c85d3dbdf65016a962a9125e887d291cd93ca72f8fb00", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788226193055, "thread_id": "01a05a5e-5848-7ec2-802e-80326069d05e", "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf", "type": "item_completed"}, "timestamp": "2026-09-01T01:29:53.236Z", "type": "event_msg"}
+
 ### response_item
 
-{"ordinal": 164, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961e18311887d293cccd830127aada", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:36:40.516Z", "type": "response_item"}
+{"ordinal": 459, "payload": {"id": "rs_0e3f2c85d3dbdf65016a962a9125e887d291cd93ca72f8fb00", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:29:53.238Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 165, "payload": {"completed_at_ms": 1788223001166, "item": {"content": [{"text": "I will recheck the updated checkpoint evidence, treating the stated SHA-A archive step and human inputs as intentional pending items.", "type": "Text"}], "id": "msg_0e3f2c85d3dbdf65016a961e189b3087d2a3fcc3a58f56625a", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788223000517, "thread_id": "01a05a5e-5848-7ec2-802e-80326069d05e", "turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82", "type": "item_completed"}, "timestamp": "2026-09-01T00:36:41.166Z", "type": "event_msg"}
+{"ordinal": 460, "payload": {"completed_at_ms": 1788226193659, "item": {"content": [{"text": "I will check the final review-status line and formatting integrity.", "type": "Text"}], "id": "msg_0e3f2c85d3dbdf65016a962a91579087d2ad4464b5153834b4", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788226193240, "thread_id": "01a05a5e-5848-7ec2-802e-80326069d05e", "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf", "type": "item_completed"}, "timestamp": "2026-09-01T01:29:53.659Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 166, "payload": {"content": [{"text": "I will recheck the updated checkpoint evidence, treating the stated SHA-A archive step and human inputs as intentional pending items.", "type": "output_text"}], "id": "msg_0e3f2c85d3dbdf65016a961e189b3087d2a3fcc3a58f56625a", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788222998.515989, "turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:36:41.167Z", "type": "response_item"}
+{"ordinal": 461, "payload": {"content": [{"text": "I will check the final review-status line and formatting integrity.", "type": "output_text"}], "id": "msg_0e3f2c85d3dbdf65016a962a91579087d2ad4464b5153834b4", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788226191.406624, "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T01:29:53.667Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 169, "payload": {"call_id": "call_T6PV9BvfvjQzZr2jsGWYcyb1", "id": "ctco_01a05a65-a331-74c3-862f-b9f5265f99c3", "internal_chat_message_metadata_passthrough": {"create_time": 1788223005.489696, "turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "output": [{"text": "Script completed\nWall time 0.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 50028)\nTotal output lines: 369\n\nWarning: truncated output (original token count: 241391)\nTotal output lines: 651\n\n M docs/trajectories/raw/trajectory-01-controller-session-01a0573d-46fc-7781-b1c0-cecd238ecef2.jsonl\n M docs/trajectories/raw/trajectory-02-ticket-14-worker-session-01a0575a-8ed6-7f11-9b58-f246e77edfdb.jsonl\n M docs/trajectories/raw/trajectory-03-ticket-14-gate-ses…
-
-### response_item
-
-{"ordinal": 172, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961e1eb7d487d2829e2cbf220b59b4", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:36:49.972Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 173, "payload": {"call_id": "call_lFbMGmssgGJAT2kz6HiV4Pnp", "id": "ctc_0e3f2c85d3dbdf65016a961e2212c887d2b25773d886240f4c", "input": "const r = await tools.exec_command({\"cmd\":\"set -e\\njq -e . docs/trajectories/trace-manifest.json >/dev/null\\njq -e . docs/evidence/ticket-23/checks.json >/dev/null\\nfor field in 'claims.claims_manifests_match == true' 'claims.production_generality_claim == false' 'proof.valid == true' 'proof.checked_in_files_changed == false' 'trajectories.privacy_scan == \\\"pass\\\"' 'required_checks.full_suite == \\\"172 passed in 31.17s\\\"' 'video.duration_seconds == 260'; do jq -e \\\".$field\\\" docs/evidence/ticket-23/checks.json >/dev/null; done\\nfor f in $(jq -r '.records[] | .readable_path, .raw_excerpt_path' docs/trajectories/trace-manifest.js…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
-{"ordinal": 174, "payload": {"completed_at_ms": 1788223018637, "item": {"aggregated_output": "manifest-and-records=pass\ndocs/evidence/ticket-23/pre-release-qualification.md:52:Public submission text does not state the superseded four-AH Judge Fixture claim. Historical `0.80` text appears only as an explicitly removed experiment.\nsubmission-check: pass\nProof Bundle valid\n1:# Ticket 23 internal reviewers\n14:Both reviewers used `gpt-5.6-terra` with high reasoning. Both were read-only.\n       7 docs/trajectories/raw/trajectory-29-ticket-23-internal-reviewers.jsonl\n", "command": ["/bin/zsh", "-lc", "set -e\njq -e . docs/trajectories/trace-manifest.json >/dev/null\njq -e . docs/evidence/ticket-23/checks.json >/dev/null\nfor field in 'claims.claims_manifests_match == true' 'claims.producti…
+{"ordinal": 463, "payload": {"completed_at_ms": 1788226195822, "item": {"aggregated_output": "-- Final Gate candidate: pending the replacement Controller archive checkpoint.\n-- Archive input: exact checkpoint SHA A2.\n-- Archive command: `uv run python scripts/build_release.py --sha <SHA-A2> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>`.\n+- Replacement checkpoint SHA A2: `5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5`.\n+- Final Gate candidate: assigned after this report update is committed.\n+- Archive input: exact checkpoint SHA A2 `5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5`.\n+- Archive command: `uv run python scripts/build_release.py --sha 5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5 --output-dir /tmp/edgequeue-ticket-23-sha-a2`.\n - Release owner: the Controller. Ticket 23 archives a…
 
 ### response_item
 
-{"ordinal": 175, "payload": {"call_id": "call_lFbMGmssgGJAT2kz6HiV4Pnp", "id": "ctco_01a05a65-d68f-78d1-958a-6e2c6201bd49", "internal_chat_message_metadata_passthrough": {"create_time": 1788223018.639606, "turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "output": [{"text": "Script completed\nWall time 0.9 seconds\nOutput:\n", "type": "input_text"}, {"text": "manifest-and-records=pass\ndocs/evidence/ticket-23/pre-release-qualification.md:52:Public submission text does not state the superseded four-AH Judge Fixture claim. Historical `0.80` text appears only as an explicitly removed experiment.\nsubmission-check: pass\nProof Bundle valid\n1:# Ticket 23 internal reviewers\n14:Both reviewers used `gpt-5.6-terra` with high reasoning. Both were read-only.\n       7 docs/trajectories/raw/trajec…
+{"ordinal": 464, "payload": {"call_id": "call_0hgyUccU93H1D8mTBFee9PDb", "id": "ctco_01a05a96-5175-7840-be09-9632c022e458", "internal_chat_message_metadata_passthrough": {"create_time": 1788226195.829586, "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "-- Final Gate candidate: pending the replacement Controller archive checkpoint.\n-- Archive input: exact checkpoint SHA A2.\n-- Archive command: `uv run python scripts/build_release.py --sha <SHA-A2> --output-dir <CONTROLLER-OWNED-DIRECTORY-OUTSIDE-GIT>`.\n+- Replacement checkpoint SHA A2: `5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5`.\n+- Final Gate candidate: assigned after this report update is committed.\n+- Archive input: exact ch…
+
+### event_msg
+
+{"ordinal": 465, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T01:29:55.830Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 466, "payload": {"completed_at_ms": 1788226197147, "item": {"id": "rs_0e3f2c85d3dbdf65016a962a950a2887d2ade988225fe0c1b8", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788226196933, "thread_id": "01a05a5e-5848-7ec2-802e-80326069d05e", "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf", "type": "item_completed"}, "timestamp": "2026-09-01T01:29:57.147Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 178, "payload": {"id": "rs_0e3f2c85d3dbdf65016a961e2c59e487d28cfad84718b253aa", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a65-7ed4-7023-884f-7bb96e296f82"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:37:00.870Z", "type": "response_item"}
+{"ordinal": 467, "payload": {"id": "rs_0e3f2c85d3dbdf65016a962a950a2887d2ade988225fe0c1b8", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T01:29:57.148Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 468, "payload": {"completed_at_ms": 1788226198745, "item": {"content": [{"text": "PASS — the updated status accurately records both pre- and post-A2 reviews. It introduces no Critical or Major Specification issue ([pre-release-qualification.md:134](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L134)). `git diff --check` passes.", "type": "Text"}], "id": "msg_0e3f2c85d3dbdf65016a962a95414487d29eb7b7f8be01c2de", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788226197149, "thread_id": "01a05a5e-5848-7ec2-802e-80326069d05e", "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf", "type": "item_completed"}, "timestamp": "2026-09-01T01:29:58.745Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 469, "payload": {"content": [{"text": "PASS — the updated status accurately records both pre- and post-A2 reviews. It introduces no Critical or Major Specification issue ([pre-release-qualification.md:134](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L134)). `git diff --check` passes.", "type": "output_text"}], "id": "msg_0e3f2c85d3dbdf65016a962a95414487d29eb7b7f8be01c2de", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788226196.412778, "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T01:29:58.751Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 470, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T01:29:58.776Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 471, "payload": {"completed_at": 1788226198, "duration_ms": 8099, "last_agent_message": "PASS — the updated status accurately records both pre- and post-A2 reviews. It introduces no Critical or Major Specification issue ([pre-release-qualification.md:134](file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker/docs/evidence/ticket-23/pre-release-qualification.md#L134)). `git diff --check` passes.", "started_at": 1788226190, "time_to_first_token_ms": 2564, "turn_id": "01a05a96-3d56-7f33-a8b0-13f933ee5caf", "type": "task_complete"}, "timestamp": "2026-09-01T01:29:58.784Z", "type": "event_msg"}

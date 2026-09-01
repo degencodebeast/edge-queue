@@ -78,7 +78,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:05.062Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:15.908Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:22.420Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:26.047Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -174,7 +174,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 41, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:32.210Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -198,7 +198,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 47, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:39.818Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -222,7 +222,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 53, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:44.929Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -246,19 +246,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 61, "payload": {"id": "rs_0977bd9a6133572a016a959635d63c87d2bb629724bbf5920c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:56:54.413Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 65, "payload": {"call_id": "call_QeC6Tz9KP6Sfi8R1YXhgBI9J", "id": "ctco_01a05852-d12c-7143-be7f-71ea5d865b87", "internal_chat_message_metadata_passthrough": {"create_time": 1788188217.64496, "turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "  │ degencodebeast/.codex/sessions/2026/08/31/*.jsonl | tail -n 5; rg -l 'You\n  │ are the EdgeQueue Worker for Ticket 17' <USER_HOME>/.codex/\n  │ … +7 lines\n  └ <USER_HOME>/.codex/sessions/2026/08/31/\n    rollout-2026-08-31T11-00-04-01a05743-02e6-7042-a9f8-1a67901d3437.jsonl\n    … +2 lines (ctrl + t to view transcript)\n    ## ticket/16-rank-and-explain-review-batch\n    ## ticket/17-verify-proof-bundle-and-tamper\n\n• Ran for p …
-
-### response_item
-
-{"ordinal": 68, "payload": {"id": "rs_0977bd9a6133572a016a95963c650887d29bb8a565818ea091", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:57:01.421Z", "type": "response_item"}
+{"ordinal": 59, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:56:51.810Z", "type": "event_msg"}
 
 ### response_item
 
@@ -266,11 +254,147 @@
 
 ### response_item
 
-{"ordinal": 71, "payload": {"call_id": "call_EzsL56G5nJB7s8ubrJlqPMhV", "id": "ctco_01a05852-e843-71b0-b4cb-123a51503b5d", "internal_chat_message_metadata_passthrough": {"create_time": 1788188223.555502, "turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "# EdgeQueue Controller Workflow\n\nStatus: active\n\nThis file defines the implementation, review, and integration process for EdgeQueue.\n\n## Repository layout\n\nThe planning root is `<USER_HOME>/Projects/personal/micro1-hack`.\n\nThe Git integration repository is `edge-queue/` under the planning root.\n\nCreate every branch and worktree from the `edge-queue` repository.\n\nStore persistent Worker worktrees under `.worktrees/edgeq…
+{"ordinal": 292, "payload": {"id": "rs_0977bd9a6133572a016a95a0a24c8c87d2b60949a979d59931", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:41:22.759Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 294, "payload": {"completed_at_ms": 1788190889557, "item": {"aggregated_output": "\n===== src/edgequeue/allocation.py =====\n\"\"\"Run isolated Case Assessments for one frozen Review Batch.\"\"\"\n\nfrom __future__ import annotations\n\nfrom collections.abc import Callable, Mapping, Sequence\nfrom copy import deepcopy\nfrom dataclasses import dataclass\nfrom typing import Any, Literal\n\nfrom edgequeue.contracts import (\n    ContractValidationError,\n    content_digest,\n    digest_contract,\n    validate_allocation_receipt,\n    validate_case_assessment,\n    validate_contract,\n)\nfrom edgequeue.ranking import CaseAssessment, create_review_queue\n\n\nAllocator = Callable[[Mapping[str, Any]], Mapping[str, Any]]\n\n\nclass AssessmentValidationError(ValueError):\n    \"\"\"An a…
 
 ### response_item
 
-{"ordinal": 74, "payload": {"id": "rs_0977bd9a6133572a016a9596414ad087d2b204a54e561ebe2e", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:57:05.584Z", "type": "response_item"}
+{"ordinal": 295, "payload": {"call_id": "call_wTj1a3u0ZcTg7IEyZ3babmPD", "id": "ctco_01a0587b-9659-7f82-947e-7708997a6eb2", "internal_chat_message_metadata_passthrough": {"create_time": 1788190889.561464, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 24283)\nTotal output lines: 2356\n\n\n===== src/edgequeue/allocation.py =====\n\"\"\"Run isolated Case Assessments for one frozen Review Batch.\"\"\"\n\nfrom __future__ import annotations\n\nfrom collections.abc import Callable, Mapping, Sequence\nfrom copy import deepcopy\nfrom dataclasses import dataclass\nfrom typing import Any, Literal\n\nfrom edgequeue.contracts import (\n    Con…
+
+### response_item
+
+{"ordinal": 298, "payload": {"id": "rs_0977bd9a6133572a016a95a0ab0b3c87d29b403a3090c073ea", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:41:41.117Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 301, "payload": {"call_id": "call_IlxH77niwTktSpwCmsYHwTp8", "id": "ctco_01a0587b-d37d-7ba0-b756-0ea643e8eb3f", "internal_chat_message_metadata_passthrough": {"create_time": 1788190905.213047, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "== companion evidence ==\n{\n  \"allocation_receipt_digest\": \"6b697941b8a069475e5e5b20ca0c200ddf0fde046cc9dccca926b083c11d753d\",\n  \"content_digest\": \"ebf411f1a30abc5f5b85a1d69163cb4f45acf45ded71b72f88131bd943bb0b5b\",\n  \"evaluation_run_id\": \"ticket-16-fixed-batch\",\n  \"runner_outcomes\": [\n    {\n      \"attempts\": [{\"attempt\": 1, \"outcome\": \"accepted\", \"schema_version\": \"1.0\"}],\n      \"case_id\": \"EQ-F01…
+
+### response_item
+
+{"ordinal": 303, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Start Ticket 16 Gate cycle 2/3 on exact replacement SHA e7a8f12f13428e7d480439954756ab838232ee0d. Verify clean paused Worker, exact HEAD, ancestry from blocked SHA 7f222f771163ab4ccaa710fba831c4862dd3b1b0, and owned surfaces. Review the two cycle-1 blockers: content-bound Allocation Run Evidence must bind the exact receipt digest and evaluation_run_id; preserve exact runner outcomes and every selected-case boundary explanation; compute content_digest from every other companion field; and recompute to exact equality from the tracked fixture. Keep frozen v1 schemas and contracts unchanged. Run focused and full required checks. Return exact-SHA PASS …
+
+### event_msg
+
+{"ordinal": 304, "payload": {"completed_at_ms": 1788190905215, "item": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Start Ticket 16 Gate cycle 2/3 on exact replacement SHA e7a8f12f13428e7d480439954756ab838232ee0d. Verify clean paused Worker, exact HEAD, ancestry from blocked SHA 7f222f771163ab4ccaa710fba831c4862dd3b1b0, and owned surfaces. Review the two cycle-1 blockers: content-bound Allocation Run Evidence must bind the exact receipt digest and evaluation_run_id; preserve exact runner outcomes and every selected-case boundary explanation; compute content_digest from every other companion field; and recompute to exact equality from the tracked fixture. Keep frozen v1 schemas and contracts unchanged. Run focused and f…
+
+### response_item
+
+{"ordinal": 306, "payload": {"id": "rs_0977bd9a6133572a016a95a0bae12887d28f910742bf054549", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:41:56.780Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 307, "payload": {"completed_at_ms": 1788190917332, "item": {"content": [{"text": "The cycle 2/3 preflight passed. The companion artifact is within Ticket 16 surfaces and leaves the frozen contracts unchanged. I am now independently recomputing its bindings and testing tamper rejection.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a95a0c4baa887d28c724fe19adeda32", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788190916782, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4", "type": "item_completed"}, "timestamp": "2026-08-31T15:41:57.332Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 308, "payload": {"content": [{"text": "The cycle 2/3 preflight passed. The companion artifact is within Ticket 16 surfaces and leaves the frozen contracts unchanged. I am now independently recomputing its bindings and testing tamper rejection.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a0c4baa887d28c724fe19adeda32", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788190906.059567, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:41:57.334Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 309, "payload": {"call_id": "call_mj6pzlaplLBTwSPWlKKWMmxJ", "id": "ctc_0977bd9a6133572a016a95a0c56bf487d281c670dda8d022d6", "input": "const r = await tools.exec_command({\"cmd\":\"printf '%s\\\\n' '== focused checks =='\\nuv run pytest -q tests/test_ranking.py tests/test_baselines.py tests/test_scoring.py\\nprintf '%s\\\\n' '== full suite =='\\nuv run pytest -q\\nprintf '%s\\\\n' '== independent companion evidence recomputation =='\\nuv run python - <<'PY'\\nimport json\\nfrom pathlib import Path\\nfrom edgequeue.allocation import assess_review_batch, allocate_review_queue, create_allocation_run_evidence, validate_allocation_run_evidence, AssessmentValidationError\\nfrom edgequeue.contracts import canonical_json, content_digest, digest_contract, validate_allocation_receipt\\n\…
+
+### event_msg
+
+{"ordinal": 310, "payload": {"completed_at_ms": 1788190942143, "item": {"aggregated_output": "== focused checks ==\n.....................                                                    [100%]\n21 passed in 0.06s\n== full suite ==\n........................................................................ [ 67%]\n..................................                                       [100%]\n106 passed in 2.38s\n== independent companion evidence recomputation ==\nreceipt_exact= True\nreceipt_valid= True\nevidence_exact= True\nself_digest= True\nreceipt_digest= True\nevaluation_run= True\nrunner_outcomes= [{'case_id': 'EQ-F01-DEV-01', 'attempts': [{'schema_version': '1.0', 'attempt': 1, 'outcome': 'accepted'}]}, {'case_id': 'EQ-F01-DEV-02', 'attempts': [{'schema_version': '1.0', 'attempt'…
+
+### response_item
+
+{"ordinal": 311, "payload": {"call_id": "call_mj6pzlaplLBTwSPWlKKWMmxJ", "id": "ctco_01a0587c-63c2-7181-a7be-7db1e39a2125", "internal_chat_message_metadata_passthrough": {"create_time": 1788190942.146175, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "output": [{"text": "Script completed\nWall time 3.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "== focused checks ==\n.....................                                                    [100%]\n21 passed in 0.06s\n== full suite ==\n........................................................................ [ 67%]\n..................................                                       [100%]\n106 passed in 2.38s\n== independent companion evidence recomputation ==\nreceipt_exact= True\nreceipt_valid= True\nevidence_exact= Tr…
+
+### response_item
+
+{"ordinal": 314, "payload": {"id": "rs_0977bd9a6133572a016a95a0dfaf9887d283181a16049703da", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:42:36.237Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 315, "payload": {"completed_at_ms": 1788190957118, "item": {"content": [{"text": "Cycle 2/3 passes all specified checks. The companion evidence exactly recomputes from the tracked fixture, rejects receipt and run-ID tampering, and keeps frozen contracts unchanged.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a95a0ec49cc87d28b8be32773b126b0", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788190956238, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4", "type": "item_completed"}, "timestamp": "2026-08-31T15:42:37.119Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 316, "payload": {"content": [{"text": "Cycle 2/3 passes all specified checks. The companion evidence exactly recomputes from the tracked fixture, rejects receipt and run-ID tampering, and keeps frozen contracts unchanged.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a0ec49cc87d28b8be32773b126b0", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788190942.812694, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:42:37.121Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 317, "payload": {"call_id": "call_MzdbRRzwxMznMOZyInxvB4A1", "id": "ctc_0977bd9a6133572a016a95a0ed33e487d2adf8e58d3a65ef4d", "input": "const r1 = await tools.exec_command({\"cmd\":\"sed -n '1,$p' <USER_HOME>/.agents/skills/smux/SKILL.md >/dev/null\\ntmux-bridge read controller 12\\ntmux-bridge message controller 'PASS — Ticket 16 Gate cycle 2/3 approves exact SHA e7a8f12f13428e7d480439954756ab838232ee0d.\\n\\nPreflight passed: clean paused lane, exact HEAD, ancestry from base f9b3d0c2ec6eb78b54d82bbeec3cb0da743f034b and blocked SHA 7f222f771163ab4ccaa710fba831c4862dd3b1b0. The replacement changes only Ticket 16 owned allocation, tests, fixture, and evidence surfaces. Frozen v1 contracts remain unchanged.\\n\\nChecks passed: `uv run pytest -q tests/test_ranking.py tests/test_bas…
+
+### event_msg
+
+{"ordinal": 318, "payload": {"completed_at_ms": 1788190962054, "item": {"aggregated_output": "  Standards PASS; final Specification PASS; no Critical/Major. Risks:\n  companion is non-authoritative and depends on frozen v1 receipt plus valid\n  AssessmentBatchRun; retry failures remain outside Case Assessment. Proposed\n  changelog: Add source-bound Allocation Run Evidence with canonical digest,\n  exact retry outcomes, and selected-boundary explanations. Gate cycle 2/3\n  requested. Worker paused; no merge.\n\n\n• Ticket 16 has a clean replacement candidate with both closure reviews\n  passing. I’m opening Gate cycle 2 on the exact SHA and recording the\n  candidate in the durable handoff.\n\n• Ran 4 commands · ctrl + t to view transcript\n\n• Edited 3 files (+11 -6)\n  └ .scratch/edgeque…
+
+### event_msg
+
+{"ordinal": 319, "payload": {"completed_at_ms": 1788190962132, "item": {"aggregated_output": "• Ran 4 commands · ctrl + t to view transcript\n\n• Edited 3 files (+11 -6)\n  └ .scratch/edgequeue/controller-handoff.md (+7 -4)\n     78  - Ticket 17: `worker-lane-3`, `gate-lane-3`, branch `ticket/17-verify-\n         proof-bundle-and-tamper`, worktree `.worktrees/edgequeue/lane-3-worker\n         `.\n     79 -- Status: Tickets 15 and 17 are integrated. Ticket 16 repairs Gate cyc\n         le 1 blockers.\n     79 +- Status: Tickets 15 and 17 are integrated. Ticket 16 is in Gate cycle\n          2.\n     80  - Agent configuration: Codex CLI `0.151.0`; Workers use `gpt-5.6-terra\n         ` with high reasoning; Gates use `gpt-5.6-terra` with high reasoning.\n        ⋮\n    107  - Ticket 16 replac…
+
+### response_item
+
+{"ordinal": 320, "payload": {"call_id": "call_MzdbRRzwxMznMOZyInxvB4A1", "id": "ctco_01a0587c-b1d8-7121-bb92-31d7ffb50b1e", "internal_chat_message_metadata_passthrough": {"create_time": 1788190962.136178, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "  Standards PASS; final Specification PASS; no Critical/Major. Risks:\n  companion is non-authoritative and depends on frozen v1 receipt plus valid\n  AssessmentBatchRun; retry failures remain outside Case Assessment. Proposed\n  changelog: Add source-bound Allocation Run Evidence with canonical digest,\n  exact retry outcomes, and selected-boundary explanations. Gate cycle 2/3\n  requested. Worker paused; no merge.\n\n\n• Ticket 16…
+
+### response_item
+
+{"ordinal": 323, "payload": {"id": "rs_0977bd9a6133572a016a95a0f3dab087d2aa6cc1b8e935d9c5", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:42:44.124Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 324, "payload": {"completed_at_ms": 1788190965520, "item": {"content": [{"text": "PASS — Ticket 16 cycle 2/3 approved at `e7a8f12f13428e7d480439954756ab838232ee0d`.\n\nVerified clean exact checkout, ancestry, owned surfaces, exact companion replay, self-digest, receipt/run-ID tamper rejection, 21 focused tests, and 106 full-suite tests.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a95a0f435dc87d2a6237d55f6646c61", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788190964125, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4", "type": "item_completed"}, "timestamp": "2026-08-31T15:42:45.520Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 325, "payload": {"content": [{"text": "PASS — Ticket 16 cycle 2/3 approved at `e7a8f12f13428e7d480439954756ab838232ee0d`.\n\nVerified clean exact checkout, ancestry, owned surfaces, exact companion replay, self-digest, receipt/run-ID tamper rejection, 21 focused tests, and 106 full-suite tests.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a0f435dc87d2a6237d55f6646c61", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788190962.821677, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:42:45.522Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 327, "payload": {"completed_at": 1788190965, "duration_ms": 101201, "last_agent_message": "PASS — Ticket 16 cycle 2/3 approved at `e7a8f12f13428e7d480439954756ab838232ee0d`.\n\nVerified clean exact checkout, ancestry, owned surfaces, exact companion replay, self-digest, receipt/run-ID tamper rejection, 21 focused tests, and 106 full-suite tests.", "started_at": 1788190864, "time_to_first_token_ms": 5289, "turn_id": "01a0587b-340d-7852-8833-a2748173e4d4", "type": "task_complete"}, "timestamp": "2026-08-31T15:42:45.618Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 331, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Ticket 16 needs one focused post-integration Gate cycle 3/3. Integration SHA df85d5ebfa368e496d7724da18b8c6c57d366eb3 combines approved Tickets 15, 16, and 17 but exposes two stale Ticket 16 test literals: frozen deterministic_score is 55, while tests expect 72. Worker lane is now branch repair/16-wave1-corpus-integration at that SHA. Remain read-only and wait for one exact repair candidate. Review only the test-only delta, exact HEAD/ancestry/clean status, the two failing tests, Ticket 16 focused tests, and full suite. Reject any production, fixture, evidence, corpus, schema, contract, configuration, or unrelated-test edit. Return exact-SHA PASS …
+
+### response_item
+
+{"ordinal": 334, "payload": {"id": "rs_0977bd9a6133572a016a95a183a97487d2b7d13e4ca2641338", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0587e-e3cf-7212-a092-437ed5511df3"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:45:08.437Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 336, "payload": {"content": [{"text": "I will remain read-only and wait for the exact post-integration repair candidate. I will limit cycle 3/3 to the two stale Ticket 16 test literals and required checks.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a18485a887d291ac403a49aaea5a", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788191106.934803, "turn_id": "01a0587e-e3cf-7212-a092-437ed5511df3"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:45:09.341Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 338, "payload": {"completed_at_ms": 1788191114385, "item": {"aggregated_output": "  Checks passed: `uv run pytest -q tests/test_ranking.py tests/\n  test_baselines.py tests/test_scoring.py` — 21 passed. `uv run pytest -q` —\n  106 passed. Independent recomputation from the tracked fixture reproduced\n  the exact receipt and Allocation Run Evidence. It verified the canonical\n  self-digest, exact receipt digest, EvaluationRun ID, all runner outcomes,\n  and selected-case boundary explanation. Receipt-digest and EvaluationRun-ID\n  tampering both failed validation.\n\n\n• Ticket 16 passed Gate cycle 2 on the exact replacement SHA. I’ll verify its\n  candidate boundary, merge it into integration, run the full Wave 1 checks,\n  then fast-forward and push main if all checks pass.\n\…
+
+### event_msg
+
+{"ordinal": 339, "payload": {"completed_at_ms": 1788191114467, "item": {"aggregated_output": "  Checks passed: `uv run pytest -q tests/test_ranking.py tests/\n  test_baselines.py tests/test_scoring.py` — 21 passed. `uv run pytest -q` —\n  106 passed. Independent recomputation from the tracked fixture reproduced\n  the exact receipt and Allocation Run Evidence. It verified the canonical\n  self-digest, exact receipt digest, EvaluationRun ID, all runner outcomes,\n  and selected-case boundary explanation. Receipt-digest and EvaluationRun-ID\n  tampering both failed validation.\n\n\n• Ticket 16 passed Gate cycle 2 on the exact replacement SHA. I’ll verify its\n  candidate boundary, merge it into integration, run the full Wave 1 checks,\n  then fast-forward and push main if all checks pass.\n\…
+
+### response_item
+
+{"ordinal": 340, "payload": {"call_id": "call_N4aDv5nTEX7jOpzgduUyYkDY", "id": "ctco_01a0587f-04e5-7d31-a816-a1058669670f", "internal_chat_message_metadata_passthrough": {"create_time": 1788191114.469442, "turn_id": "01a0587e-e3cf-7212-a092-437ed5511df3"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "  Checks passed: `uv run pytest -q tests/test_ranking.py tests/\n  test_baselines.py tests/test_scoring.py` — 21 passed. `uv run pytest -q` —\n  106 passed. Independent recomputation from the tracked fixture reproduced\n  the exact receipt and Allocation Run Evidence. It verified the canonical\n  self-digest, exact receipt digest, EvaluationRun ID, all runner outcomes,\n  and selected-case boundary explanation. Receipt-digest and Ev…
+
+### response_item
+
+{"ordinal": 343, "payload": {"id": "rs_0977bd9a6133572a016a95a18d5a5087d2868f2136ea7783e9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0587e-e3cf-7212-a092-437ed5511df3"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:45:17.428Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 345, "payload": {"content": [{"text": "Awaiting the exact cycle 3/3 repair SHA.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a18d828087d2a9cba1e7786c45a6", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788191115.173242, "turn_id": "01a0587e-e3cf-7212-a092-437ed5511df3"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:45:17.757Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 351, "payload": {"content": [{"text": "[tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux skill to reply] Ticket 16 post-integration candidate: 08e1a8575e5ed20f00b1d9700517fee2ee17facd, clean direct child of df85d5ebfa368e496d7724da18b8c6c57d366eb3. Scope: tests/test_ranking.py only; score expectations now derive from frozen RankerCases. RED: two named tests failed with 55 vs stale 72. GREEN: two tests 2 passed in 1.06s; Ticket 16 focused 21 passed in 3.44s; full uv run pytest -q 132 passed in 16.92s. Reviews: Standards PASS; Specification PASS. No final failures, live calls, cost, or material risks. Proposed changelog: Derive Ticket 16 score expectations from frozen RankerCases. Please review this exact SHA; no merge performed.", "type": "input_text"}…
+
+### event_msg
+
+{"ordinal": 352, "payload": {"completed_at_ms": 1788191207432, "item": {"content": [{"text": "[tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux skill to reply] Ticket 16 post-integration candidate: 08e1a8575e5ed20f00b1d9700517fee2ee17facd, clean direct child of df85d5ebfa368e496d7724da18b8c6c57d366eb3. Scope: tests/test_ranking.py only; score expectations now derive from frozen RankerCases. RED: two named tests failed with 55 vs stale 72. GREEN: two tests 2 passed in 1.06s; Ticket 16 focused 21 passed in 3.44s; full uv run pytest -q 132 passed in 16.92s. Reviews: Standards PASS; Specification PASS. No final failures, live calls, cost, or material risks. Proposed changelog: Derive Ticket 16 score expectations from frozen RankerCases. Please review this exact SHA; …
+
+### response_item
+
+{"ordinal": 354, "payload": {"id": "rs_0977bd9a6133572a016a95a1e8ea3087d29378f10336aab2c7", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:46:49.892Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 356, "payload": {"content": [{"text": "I received post-integration candidate `08e1a8575e5ed20f00b1d9700517fee2ee17facd`. I am verifying its clean exact checkout, direct ancestry, test-only scope, and the two repaired assertions.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a1e9f9d087d2a8ffbbc03e0453f9", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788191208.239671, "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:46:51.074Z", "type": "response_item"}
 
 ### response_item
 
@@ -278,212 +402,88 @@
 
 ### response_item
 
-{"ordinal": 77, "payload": {"call_id": "call_ostJAtNk0wb3U6Meu3Ac8LNn", "id": "ctco_01a05852-f533-79f0-ad14-4ed2b849456d", "internal_chat_message_metadata_passthrough": {"create_time": 1788188226.867197, "turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "# EdgeQueue Proof-First Wayfinder Map\n\nLabel: `wayfinder:map`\n\n## Destination\n\nProduce a cleared decision map that either validates through a frozen prototype that EdgeQueue's fixed-budget ranking beats fair baselines and resolves every decision required to build a qualification-complete, top-three-capable submission, or rejects or narrows the headline claim before full implementation if that prototype fails.\n\n## Notes\n\n- C…
-
-### response_item
-
-{"ordinal": 80, "payload": {"id": "rs_0977bd9a6133572a016a95964441bc87d2a562abb99c25fd25", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:57:11.478Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 82, "payload": {"content": [{"text": "Ticket 16 Gate is ready and remains read-only. I will begin review after worker-lane-2 sends one exact candidate SHA.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95964792e487d2b1919a7df287f528", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788188227.575532, "turn_id": "01a05851-dde4-7f62-83e5-391517b02c9a"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T14:57:11.961Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 88, "payload": {"content": [{"text": "[tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux skill to reply] Candidate ready for Ticket 16: SHA 7f222f771163ab4ccaa710fba831c4862dd3b1b0. Lane is clean and descends from f9b3d0c2ec6eb78b54d82bbeec3cb0da743f034b. Evidence: docs/evidence/ticket-16/fixed-batch-allocation.md and fixed-batch-allocation-receipt.json; tracked source: tests/fixtures/ticket-16/fixed-batch-input.json. Checks: focused 20 passed in 0.06s; full uv run pytest -q 105 passed in 2.23s. RED records are in evidence. Live calls: 0. Request/token count: 0. Available cost: 0. Internal Standards and Specification reviews: PASS, no Critical or Major findings. Risk: frozen Case Assessment v1 cannot retain execution-failure retries; allocation preserv…
+{"ordinal": 362, "payload": {"id": "rs_0977bd9a6133572a016a95a1f7f82487d2825e9a7d6092bc21", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:47:06.515Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 89, "payload": {"completed_at_ms": 1788189474248, "item": {"content": [{"text": "[tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux skill to reply] Candidate ready for Ticket 16: SHA 7f222f771163ab4ccaa710fba831c4862dd3b1b0. Lane is clean and descends from f9b3d0c2ec6eb78b54d82bbeec3cb0da743f034b. Evidence: docs/evidence/ticket-16/fixed-batch-allocation.md and fixed-batch-allocation-receipt.json; tracked source: tests/fixtures/ticket-16/fixed-batch-input.json. Checks: focused 20 passed in 0.06s; full uv run pytest -q 105 passed in 2.23s. RED records are in evidence. Live calls: 0. Request/token count: 0. Available cost: 0. Internal Standards and Specification reviews: PASS, no Critical or Major findings. Risk: frozen Case Assessment v1 cannot retain ex…
+{"ordinal": 363, "payload": {"completed_at_ms": 1788191227257, "item": {"content": [{"text": "The preflight passed. The candidate changes only `tests/test_ranking.py`, and both stale constants now derive from the frozen RankerCases. I am running the named repairs, focused Ticket 16 checks, and full suite.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a95a1fa98a887d2b4aed9d1bcd15536", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788191226517, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867", "type": "item_completed"}, "timestamp": "2026-08-31T15:47:07.257Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 91, "payload": {"id": "rs_0977bd9a6133572a016a959b25928487d28ef6123a8e11c40f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:17:59.407Z", "type": "response_item"}
+{"ordinal": 364, "payload": {"content": [{"text": "The preflight passed. The candidate changes only `tests/test_ranking.py`, and both stale constants now derive from the frozen RankerCases. I am running the named repairs, focused Ticket 16 checks, and full suite.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a1fa98a887d2b4aed9d1bcd15536", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788191223.219093, "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:47:07.259Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 93, "payload": {"content": [{"text": "I received candidate `7f222f771163ab4ccaa710fba831c4862dd3b1b0`. I am now verifying the clean exact checkout, ancestry, and Ticket 16 scope.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a959b27738887d291645f8a0b8c16e1", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788189476.565713, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:18:00.419Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 96, "payload": {"call_id": "call_XLfquhMWSljmaLsF0DG4V5ku", "id": "ctco_01a05866-341d-7932-9f24-946732de505e", "internal_chat_message_metadata_passthrough": {"create_time": 1788189488.157031, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\": …
-
-### response_item
-
-{"ordinal": 99, "payload": {"id": "rs_0977bd9a6133572a016a959b31530087d2ad83becb458d2d3c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:18:11.028Z", "type": "response_item"}
+{"ordinal": 365, "payload": {"call_id": "call_soc6byfQgi2lCqw3JsuOJzyD", "id": "ctc_0977bd9a6133572a016a95a1fb582087d28ac1b27280441609", "input": "const r = await tools.exec_command({\"cmd\":\"printf '%s\\\\n' '== named post-integration repairs =='\\nuv run pytest -q \\\\\\n  tests/test_ranking.py::test_retries_one_identical_execution_failure_then_invalidates_second \\\\\\n  tests/test_ranking.py::test_binds_all_assessments_and_explains_the_first_excluded_case\\nprintf '%s\\\\n' '== frozen source values =='\\nuv run python - <<'PY'\\nfrom dataclasses import asdict\\nfrom edgequeue.corpus import build_development_cases\\ncases=[asdict(item.ranker_case) for item in build_development_cases()[:2]]\\nprint([(case['case_id'], case['deterministic_score']) for case in cases])\\nPY\\nprintf '%s\\\\…
 
 ### event_msg
 
-{"ordinal": 101, "payload": {"completed_at_ms": 1788189496841, "item": {"aggregated_output": "\n===== src/edgequeue/allocation.py =====\n\"\"\"Run isolated Case Assessments for one frozen Review Batch.\"\"\"\n\nfrom __future__ import annotations\n\nfrom collections.abc import Callable, Mapping, Sequence\nfrom copy import deepcopy\nfrom dataclasses import dataclass\nfrom typing import Any, Literal\n\nfrom edgequeue.contracts import (\n    ContractValidationError,\n    digest_contract,\n    validate_allocation_receipt,\n    validate_case_assessment,\n    validate_contract,\n)\nfrom edgequeue.ranking import CaseAssessment, create_review_queue\n\n\nAllocator = Callable[[Mapping[str, Any]], Mapping[str, Any]]\n\n\nclass AssessmentValidationError(ValueError):\n    \"\"\"An allocator output canno…
+{"ordinal": 366, "payload": {"completed_at_ms": 1788191258329, "item": {"aggregated_output": "== named post-integration repairs ==\n..                                                                       [100%]\n2 passed in 1.01s\n== frozen source values ==\n[('EQ-F01-DEV-01', 55), ('EQ-F01-DEV-02', 35)]\n== Ticket 16 focused ==\n.....................                                                    [100%]\n21 passed in 3.65s\n== full suite ==\n........................................................................ [ 54%]\n............................................................             [100%]\n132 passed in 17.30s\n== candidate guards ==\n", "command": ["/bin/zsh", "-lc", "printf '%s\\n' '== named post-integration repairs =='\nuv run pytest -q \\\n  tests/test_ranking.py::test…
 
 ### response_item
 
-{"ordinal": 102, "payload": {"call_id": "call_8a8F77PqXLl2wHTTRHJAz3Wc", "id": "ctco_01a05866-560a-7df2-874e-0258dd720b06", "internal_chat_message_metadata_passthrough": {"create_time": 1788189496.842923, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "\n===== src/edgequeue/allocation.py =====\n\"\"\"Run isolated Case Assessments for one frozen Review Batch.\"\"\"\n\nfrom __future__ import annotations\n\nfrom collections.abc import Callable, Mapping, Sequence\nfrom copy import deepcopy\nfrom dataclasses import dataclass\nfrom typing import Any, Literal\n\nfrom edgequeue.contracts import (\n    ContractValidationError,\n    digest_contract,\n    validate_allocation_receipt,\n    va…
-
-### response_item
-
-{"ordinal": 105, "payload": {"id": "rs_0977bd9a6133572a016a959b3a9d3087d2bc3fabd1ae03b68e", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:18:21.467Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 108, "payload": {"call_id": "call_wFZ4ZKntFBOBWMggsKG8f74d", "id": "ctco_01a05866-802a-7342-96b8-fea2832213ef", "internal_chat_message_metadata_passthrough": {"create_time": 1788189507.626522, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 35379)\nTotal output lines: 3795\n\n\n===== src/edgequeue/contracts.py =====\n\"\"\"Versioned, fail-closed contracts shared by EdgeQueue slices.\n\nThe module owns three cross-cutting rules:\n\n* authoritative records include an explicit schema version;\n* unknown fields fail before a record is serialized or hashed;\n* canonical JSON uses UTF-8, sorted keys, compact separators, and no…
-
-### response_item
-
-{"ordinal": 111, "payload": {"id": "rs_0977bd9a6133572a016a959b44b4ec87d2bedca45e2bae66aa", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:18:29.195Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 114, "payload": {"call_id": "call_ySgQD7I3dGVKOlDJ5ls5sa0d", "id": "ctco_01a05866-9bf0-70c2-ae19-fa573fe156d3", "internal_chat_message_metadata_passthrough": {"create_time": 1788189514.736446, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "280-        \"feature_version\": _CONTENT_REFERENCE,\n281-        \"ranking_policy\": _CONTENT_REFERENCE,\n282-        \"evaluation_config\": _CONTENT_REFERENCE,\n283-        \"scorer_reference_manifest\": _CONTENT_REFERENCE,\n284-        \"canonical_scorer\": _CONTENT_REFERENCE,\n285-        \"runtime_dependency_manifest\": _CONTENT_REFERENCE,\n286-        \"risk_findings\": _CONTENT_REFERENCE,\n287-        \"review_queue\": _CONTE…
-
-### response_item
-
-{"ordinal": 117, "payload": {"id": "rs_0977bd9a6133572a016a959b4be3d887d2bd9d6d5ad111c6af", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:18:36.387Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 120, "payload": {"call_id": "call_RnIJxLSWZ6KRuCkwAqzMTC9M", "id": "ctco_01a05866-b846-7b11-b53d-0e032247f91a", "internal_chat_message_metadata_passthrough": {"create_time": 1788189521.990234, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "    \"allocation_receipt\": _object(\n        {\n            \"schema_version\": _STRING,\n            \"receipt_id\": _STRING,\n            \"evaluation_run_id\": _STRING,\n            \"corpus_digest\": _DIGEST,\n            \"split_digest\": _DIGEST,\n            \"allocator_config_digest\": _DIGEST,\n            \"review_budget\": {\"type\": \"integer\", \"minimum\": 1},\n            \"assessments\": {\"type\": \"array\", \"item…
-
-### response_item
-
-{"ordinal": 123, "payload": {"id": "rs_0977bd9a6133572a016a959b53e3bc87d2838bfb5420779b36", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:18:48.563Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 125, "payload": {"id": "rs_0977bd9a6133572a016a959b589db087d2ae2d239b5c57a2d1", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:18:50.277Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 126, "payload": {"call_id": "call_vpBHAqKy3mHYc3WZDHE2KWGI", "id": "ctc_0977bd9a6133572a016a959b5a508887d2b6f8daddddf9647f", "input": "const r = await tools.exec_command({\"cmd\":\"EDGEQUEUE_REVIEW_WORKTREE='<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-2-worker'\\nsed -n '1900,1960p' \\\"$EDGEQUEUE_REVIEW_WORKTREE/src/edgequeue/contracts.py\\\"\\nprintf '\\\\n== focused suite ==\\\\n'\\nuv run pytest -q tests/test_ranking.py tests/test_baselines.py tests/test_scoring.py\\nprintf '\\\\n== full suite ==\\\\n'\\nuv run pytest -q\\nprintf '\\\\n== independent adversarial assertions ==\\\\n'\\nuv run python - <<'PY'\\nfrom dataclasses import asdict\\nfrom edgequeue.allocation import AssessmentValidationError, allocate_review_queue, assess_review_batch\\nfrom e…
+{"ordinal": 367, "payload": {"call_id": "call_soc6byfQgi2lCqw3JsuOJzyD", "id": "ctco_01a05881-36df-7e51-bdd0-ec57de54094d", "internal_chat_message_metadata_passthrough": {"create_time": 1788191258.335014, "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "output": [{"text": "Script completed\nWall time 23.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "== named post-integration repairs ==\n..                                                                       [100%]\n2 passed in 1.01s\n== frozen source values ==\n[('EQ-F01-DEV-01', 55), ('EQ-F01-DEV-02', 35)]\n== Ticket 16 focused ==\n.....................                                                    [100%]\n21 passed in 3.65s\n== full suite ==\n........................................................................ [ 54…
 
 ### event_msg
 
-{"ordinal": 127, "payload": {"completed_at_ms": 1788189549455, "item": {"aggregated_output": "        raise ContractValidationError(\n            \"Allocation Receipt review queue exceeds the review budget\",\n            code=\"budget_violation\",\n        )\n    if any(case_id not in assessment_ids for case_id in queue):\n        raise ContractValidationError(\n            \"Allocation Receipt review queue contains an unknown case identifier\",\n            code=\"case_not_in_split\",\n        )\n    ranker_by_id: dict[str, Mapping[str, Any]] = {}\n    for ranker_case in ranker_cases:\n        validate_contract(\"ranker_case\", ranker_case)\n    ranker_by_id = {ranker_case[\"case_id\"]: ranker_case for ranker_case in ranker_cases}\n    if len(ranker_by_id) != len(ranker_cases) or set(ran…
+{"ordinal": 368, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:47:38.335Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 128, "payload": {"call_id": "call_vpBHAqKy3mHYc3WZDHE2KWGI", "id": "ctco_01a05867-2391-7fb0-8b23-49af00acaa0f", "internal_chat_message_metadata_passthrough": {"create_time": 1788189549.457889, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 3.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "        raise ContractValidationError(\n            \"Allocation Receipt review queue exceeds the review budget\",\n            code=\"budget_violation\",\n        )\n    if any(case_id not in assessment_ids for case_id in queue):\n        raise ContractValidationError(\n            \"Allocation Receipt review queue contains an unknown case identifier\",\n            code=\"case_not_in_split\",\n        )\n    ranker_by_id: dict[str…
-
-### response_item
-
-{"ordinal": 131, "payload": {"id": "rs_0977bd9a6133572a016a959b6ebb8487d2a514263f50cbf6d1", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:19:20.022Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 133, "payload": {"id": "rs_0977bd9a6133572a016a959b78134487d2b60ef4a522f1a6b7", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:19:22.406Z", "type": "response_item"}
+{"ordinal": 369, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Start the focused Ticket 16 post-integration Gate cycle 3/3 on exact SHA 08e1a8575e5ed20f00b1d9700517fee2ee17facd. Verify it is a clean direct child of df85d5ebfa368e496d7724da18b8c6c57d366eb3 and changes only tests/test_ranking.py. Confirm both stale-score tests derive expectations from frozen RankerCases. Run the two named tests, Ticket 16 focused suite, and full suite. Return exact-SHA PASS or the remaining blocker. Remain read-only.", "type": "input_text"}], "id": "msg_01a05881-36e1-7e23-a841-43617a4138ef", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788191258.337767, "turn_id": "01a05880…
 
 ### event_msg
 
-{"ordinal": 134, "payload": {"completed_at_ms": 1788189563596, "item": {"content": [{"text": "The checkout is clean, at the supplied SHA, and descends from the base. The owned-surface diff is valid. Focused checks and the full suite pass. I am completing adversarial validation of malformed agent output, queue guards, metrics, and receipt bindings.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a959b7a76d887d291a3e2b0c35aaef6", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788189562408, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561", "type": "item_completed"}, "timestamp": "2026-08-31T15:19:23.596Z", "type": "event_msg"}
-
-### response_item
-
-{"ordinal": 135, "payload": {"content": [{"text": "The checkout is clean, at the supplied SHA, and descends from the base. The owned-surface diff is valid. Focused checks and the full suite pass. I am completing adversarial validation of malformed agent output, queue guards, metrics, and receipt bindings.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a959b7a76d887d291a3e2b0c35aaef6", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788189550.118137, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:19:23.599Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 136, "payload": {"call_id": "call_2sgr1s42Itk4ISsjy4rirKch", "id": "ctc_0977bd9a6133572a016a959b7ba5a087d2965287c9c5c24541", "input": "const r = await tools.exec_command({\"cmd\":\"uv run python - <<'PY'\\nfrom dataclasses import asdict\\nfrom edgequeue.allocation import AssessmentValidationError, assess_review_batch, allocate_review_queue\\nfrom edgequeue.contracts import content_digest, digest_contract, validate_allocation_receipt\\nfrom edgequeue.corpus import build_development_cases\\nfrom edgequeue.scoring import score_review_queue\\nfrom edgequeue.baselines import allocate_fair_baselines, InvalidBaselineInput\\n\\ncase_one, case_two = [asdict(item.ranker_case) for item in build_development_cases()[:2]]\\n\\ndef assessment(case, score=50):\\n    case_id = case['case_id']\\…
+{"ordinal": 370, "payload": {"completed_at_ms": 1788191258338, "item": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Start the focused Ticket 16 post-integration Gate cycle 3/3 on exact SHA 08e1a8575e5ed20f00b1d9700517fee2ee17facd. Verify it is a clean direct child of df85d5ebfa368e496d7724da18b8c6c57d366eb3 and changes only tests/test_ranking.py. Confirm both stale-score tests derive expectations from frozen RankerCases. Run the two named tests, Ticket 16 focused suite, and full suite. Return exact-SHA PASS or the remaining blocker. Remain read-only.", "text_elements": [], "type": "text"}], "id": "01a05881-36e2-7f21-ba81-e32005010c51", "type": "UserMessage"}, "started_at_ms": 1788191258338, "thread_id": "01a05851-28ec-…
 
 ### event_msg
 
-{"ordinal": 137, "payload": {"completed_at_ms": 1788189584296, "item": {"aggregated_output": "NoneType result valid {'EQ-F01-DEV-01': ('schema_failure', 'accepted')}\nlist result valid {'EQ-F01-DEV-01': ('schema_failure', 'accepted')}\nstr result valid {'EQ-F01-DEV-01': ('schema_failure', 'accepted')}\ntampered_receipt=REJECTED ContractValidationError invalid_allocation\ntampered_receipt=REJECTED ContractValidationError invalid_allocation\ntampered_receipt=REJECTED ContractValidationError invalid_allocation\nmetrics_error= ZeroDivisionError division by zero\nmetrics= AllocationMetrics(recall_at_k=0.5, precision_at_k=1.0, false_negative_ids=('b',), oracle_regret=0)\nmismatched_baselines=REJECTED Baseline inputs must use the same non-empty case identifiers\n\n== receipt verification tail ==\…
+{"ordinal": 371, "payload": {"completed_at_ms": 1788191260366, "item": {"id": "rs_0977bd9a6133572a016a95a21c21fc87d28080d8a768ba4acd", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788191260133, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867", "type": "item_completed"}, "timestamp": "2026-08-31T15:47:40.366Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 138, "payload": {"call_id": "call_2sgr1s42Itk4ISsjy4rirKch", "id": "ctco_01a05867-aba9-7411-b8d2-d12e56cc7809", "internal_chat_message_metadata_passthrough": {"create_time": 1788189584.297515, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "NoneType result valid {'EQ-F01-DEV-01': ('schema_failure', 'accepted')}\nlist result valid {'EQ-F01-DEV-01': ('schema_failure', 'accepted')}\nstr result valid {'EQ-F01-DEV-01': ('schema_failure', 'accepted')}\ntampered_receipt=REJECTED ContractValidationError invalid_allocation\ntampered_receipt=REJECTED ContractValidationError invalid_allocation\ntampered_receipt=REJECTED ContractValidationError invalid_allocation\nmetrics_error= Z…
-
-### response_item
-
-{"ordinal": 141, "payload": {"id": "rs_0977bd9a6133572a016a959b918b1c87d2beaea61a3d4d8bda", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:19:54.823Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 143, "payload": {"id": "rs_0977bd9a6133572a016a959b9ae13487d2bdbc4a587ea2f8e9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:20:04.134Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 145, "payload": {"id": "rs_0977bd9a6133572a016a959ba4311087d2815b3111b12ac348", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:20:13.057Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 148, "payload": {"call_id": "call_i7alQO9TLfSDDoQtSdAHYIuC", "id": "ctco_01a05868-511e-78d3-a8b0-52b1c882e937", "internal_chat_message_metadata_passthrough": {"create_time": 1788189626.654619, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "    30\t\n    31\t    valid: bool\n    32\t    disposition: Literal[\"valid\", \"invalid\"]\n    33\t    assessments: tuple[Mapping[str, Any], ...]\n    34\t    attempts_by_case: Mapping[str, tuple[str, ...]]\n    35\t    invalid_case_id: str | None\n    36\t    unprocessed_case_ids: tuple[str, ...]\n    37\t\n    38\t\n    39\t@dataclass(frozen=True)\n    40\tclass SelectionExplanation:\n    41\t    \"\"\"The exact ordering values …
-
-### response_item
-
-{"ordinal": 151, "payload": {"id": "rs_0977bd9a6133572a016a959bbca87087d2a40e5b8f21cd03c9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:20:35.485Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 154, "payload": {"call_id": "call_PNucjGLEEdrxDodcsrNpHTHd", "id": "ctco_01a05868-aeb9-72d3-9dc9-908279bd226a", "internal_chat_message_metadata_passthrough": {"create_time": 1788189650.61738, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "runner_outcomes= ('schema_failure', 'accepted')\npersisted_assessment_attempts= [{'schema_version': '1.0', 'attempt': 1, 'outcome': 'accepted'}]\n\n== source ownership and working-tree candidate guards ==\n\n== candidate scan for forbidden corpus artifacts ==\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:20:50.617Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 157, "payload": {"id": "rs_0977bd9a6133572a016a959bd4097c87d2b002ff8e334bd721", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:21:01.303Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 159, "payload": {"id": "rs_0977bd9a6133572a016a959bdd5d0087d2a436bdb4ab99325e", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:21:07.181Z", "type": "response_item"}
+{"ordinal": 372, "payload": {"id": "rs_0977bd9a6133572a016a95a21c21fc87d28080d8a768ba4acd", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:47:40.371Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 160, "payload": {"completed_at_ms": 1788189667519, "item": {"content": [{"text": "The independent replay reproduces the queue and receipt exactly. I found two confirmed High blockers in the persisted receipt and retry record. I am sending one consolidated cycle 1/3 report now.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a959be33e0c87d2bcbcfbc5f27ced04", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788189667183, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561", "type": "item_completed"}, "timestamp": "2026-08-31T15:21:07.519Z", "type": "event_msg"}
+{"ordinal": 373, "payload": {"completed_at_ms": 1788191261114, "item": {"content": [{"text": "Cycle 3/3 passes. The two repaired tests derive expectations from the frozen values `55` and `35`, and all required checks pass.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a95a21c739c87d2beb2956fd754f642", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788191260372, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867", "type": "item_completed"}, "timestamp": "2026-08-31T15:47:41.114Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 161, "payload": {"content": [{"text": "The independent replay reproduces the queue and receipt exactly. I found two confirmed High blockers in the persisted receipt and retry record. I am sending one consolidated cycle 1/3 report now.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a959be33e0c87d2bcbcfbc5f27ced04", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788189651.386672, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:21:07.520Z", "type": "response_item"}
+{"ordinal": 374, "payload": {"content": [{"text": "Cycle 3/3 passes. The two repaired tests derive expectations from the frozen values `55` and `35`, and all required checks pass.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a21c739c87d2beb2956fd754f642", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788191259.320623, "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:47:41.119Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 164, "payload": {"call_id": "call_SQITBcEy2PEHZnsfER01Gthq", "id": "ctco_01a05869-148b-7933-b414-5d81aaf2213d", "internal_chat_message_metadata_passthrough": {"create_time": 1788189676.683531, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "› [tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill\n  to reply] Controller decision: fix the remaining Ticket 16 Major. Replace all\n  placeholder receipt digests in tests and evidence with canonical digests derived\n  from the actual frozen fixture inputs: corpus, split, allocator configuration, and\n  every Case Assessment. Validate the produced Allocation Receipt through the\n  existing Ticket 1…
-
-### response_item
-
-{"ordinal": 167, "payload": {"id": "rs_0977bd9a6133572a016a959beea0f487d2ae150c9ac0a5f620", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:21:21.083Z", "type": "response_item"}
+{"ordinal": 375, "payload": {"call_id": "call_lxcAyTACQ5xvzJ7AaoVIeTTF", "id": "ctc_0977bd9a6133572a016a95a21d32f087d2ae46a757a69ce532", "input": "const r1 = await tools.exec_command({\"cmd\":\"sed -n '1,$p' <USER_HOME>/.agents/skills/smux/SKILL.md >/dev/null\\ntmux-bridge read controller 10\\ntmux-bridge message controller 'PASS — Ticket 16 focused post-integration Gate cycle 3/3 approves exact SHA 08e1a8575e5ed20f00b1d9700517fee2ee17facd.\\n\\nPreflight passed: clean lane, exact HEAD, direct parent df85d5ebfa368e496d7724da18b8c6c57d366eb3, and only `tests/test_ranking.py` changed. The repaired assertions derive their deterministic-score expectations from frozen RankerCases. Independent inspection confirmed values `EQ-F01-DEV-01=55` and `EQ-F01-DEV-02=35`.\\n\\nChecks passed: two named st…
 
 ### event_msg
 
-{"ordinal": 168, "payload": {"completed_at_ms": 1788189681951, "item": {"content": [{"text": "Cycle 1/3 report sent to worker-lane-2.\n\nBlocked on:\n- Persisting selected-versus-first-excluded explanations in the Allocation Receipt.\n- Binding retry outcomes into the receipt’s Case Assessment digests.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a959bf1240487d29ba957be747eb24a", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788189681086, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561", "type": "item_completed"}, "timestamp": "2026-08-31T15:21:21.951Z", "type": "event_msg"}
-
-### response_item
-
-{"ordinal": 169, "payload": {"content": [{"text": "Cycle 1/3 report sent to worker-lane-2.\n\nBlocked on:\n- Persisting selected-versus-first-excluded explanations in the Allocation Receipt.\n- Binding retry outcomes into the receipt’s Case Assessment digests.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a959bf1240487d29ba957be747eb24a", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788189677.313483, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:21:21.955Z", "type": "response_item"}
+{"ordinal": 376, "payload": {"completed_at_ms": 1788191267740, "item": {"aggregated_output": "  expectations derive from frozen RankerCases. RED: two named tests failed\n  with 55 vs stale 72. GREEN: two tests 2 passed in 1.06s; focused 21 passed\n  in 3.44s; full uv run pytest -q 132 passed in 16.92s. Reviews: Standards\n  PASS; Specification PASS. No final failures, live calls, cost, or material\n  risks. Proposed changelog: Derive Ticket 16 score expectations from frozen\n  RankerCases. Gate cycle 3/3 requested. No merge performed; worker paused.\n\n\n• The integration repair is clean and test-only. I’m opening the final focused\n  Gate cycle on exact SHA 08e1a857….\n\n• Ran 4 commands · ctrl + t to view transcript\n\n• Edited 2 files (+8 -4)\n  └ .scratch/edgequeue/controller-handoff.m…
 
 ### event_msg
 
-{"ordinal": 171, "payload": {"completed_at": 1788189682, "duration_ms": 207965, "last_agent_message": "Cycle 1/3 report sent to worker-lane-2.\n\nBlocked on:\n- Persisting selected-versus-first-excluded explanations in the Allocation Receipt.\n- Binding retry outcomes into the receipt’s Case Assessment digests.", "started_at": 1788189474, "time_to_first_token_ms": 5317, "turn_id": "01a05865-fd21-7290-b0f6-2c39be45c561", "type": "task_complete"}, "timestamp": "2026-08-31T15:21:22.059Z", "type": "event_msg"}
+{"ordinal": 377, "payload": {"completed_at_ms": 1788191267815, "item": {"aggregated_output": "• The integration repair is clean and test-only. I’m opening the final focused\n  Gate cycle on exact SHA 08e1a857….\n\n• Ran 4 commands · ctrl + t to view transcript\n\n• Edited 2 files (+8 -4)\n  └ .scratch/edgequeue/controller-handoff.md (+5 -3)\n    117  - Ticket 16 repair boundary: `tests/test_ranking.py` only; derive expe\n         ctations from the frozen RankerCase.\n    118 -- Ticket 16 Worker state: active on the focused integration repair.\n    119 -- Ticket 16 Gate state: waits for one exact repair SHA for focused cyc\n         le 3.\n    118 +- Ticket 16 repair candidate: `08e1a8575e5ed20f00b1d9700517fee2ee17fac\n         d`.\n    119 +- Ticket 16 repair checks: two named tests `2 pas…
 
 ### response_item
 
-{"ordinal": 175, "payload": {"content": [{"text": "[tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux skill to reply] Acknowledged. I will not change the frozen Allocation Receipt contract without Controller authority. I am requesting the contract decision now. After authority, I will add receipt-only and retry-attempt adversarial tests, implement the approved repair, rerun checks, and send a replacement SHA.", "type": "input_text"}], "id": "msg_01a05869-45de-7c22-95a1-1fed20b3e900", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788189689.310761, "turn_id": "01a05869-4561-7950-bdb8-054c859489f3"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T15:21:29.310Z", "type": "response_item"}
+{"ordinal": 378, "payload": {"call_id": "call_lxcAyTACQ5xvzJ7AaoVIeTTF", "id": "ctco_01a05881-5be9-7903-8527-76a9913335e6", "internal_chat_message_metadata_passthrough": {"create_time": 1788191267.817852, "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "  expectations derive from frozen RankerCases. RED: two named tests failed\n  with 55 vs stale 72. GREEN: two tests 2 passed in 1.06s; focused 21 passed\n  in 3.44s; full uv run pytest -q 132 passed in 16.92s. Reviews: Standards\n  PASS; Specification PASS. No final failures, live calls, cost, or material\n  risks. Proposed changelog: Derive Ticket 16 score expectations from frozen\n  RankerCases. Gate cycle 3/3 requested. No merge …
 
 ### event_msg
 
-{"ordinal": 176, "payload": {"completed_at_ms": 1788189689311, "item": {"content": [{"text": "[tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux skill to reply] Acknowledged. I will not change the frozen Allocation Receipt contract without Controller authority. I am requesting the contract decision now. After authority, I will add receipt-only and retry-attempt adversarial tests, implement the approved repair, rerun checks, and send a replacement SHA.", "text_elements": [], "type": "text"}], "id": "01a05869-45df-7960-a25b-16d5cbbdc3aa", "type": "UserMessage"}, "started_at_ms": 1788189689311, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05869-4561-7950-bdb8-054c859489f3", "type": "item_completed"}, "timestamp": "2026-08-31T15:21:29.311Z", "ty…
-
-### response_item
-
-{"ordinal": 178, "payload": {"id": "rs_0977bd9a6133572a016a959bfacfd887d2862ea870af3bb3df", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05869-4561-7950-bdb8-054c859489f3"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:21:31.947Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 180, "payload": {"content": [{"text": "I acknowledge the worker’s contract-decision request. I will remain read-only and wait for the approved replacement candidate SHA.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a959bfbff5c87d29cc2385a928a8e0f", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788189690.159765, "turn_id": "01a05869-4561-7950-bdb8-054c859489f3"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:21:32.587Z", "type": "response_item"}
+{"ordinal": 379, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:47:47.818Z", "type": "event_msg"}
 
 ### event_msg
 
-{"ordinal": 183, "payload": {"completed_at_ms": 1788189696762, "item": {"aggregated_output": "  digested by the receipt. In a schema-failure then accepted run,\n  `AssessmentBatchRun.attempts_by_case` is (`schema_failure`, `accepted`)\n  (allocation.py:77-89), but the accepted assessment still stores only its allocator-\n  provided `attempts` list, such as `[{attempt: 1, outcome: accepted}]`. My\n  independent replay confirmed this mismatch. The contract requires Case Assessment\n  attempt records. Merge or validate runner-owned attempt records into the persisted\n  assessment, with exact attempts and failure information. Bind them through the\n  receipt assessment digest. Add an adversarial test.\n\n  Focused suite and full suite pass. Receipt recomputation, same-case evidence\n  rejectio…
+{"ordinal": 380, "payload": {"completed_at_ms": 1788191271450, "item": {"content": [{"text": "PASS — Ticket 16 post-integration cycle 3/3 approved at `08e1a8575e5ed20f00b1d9700517fee2ee17facd`.\n\nOnly `tests/test_ranking.py` changed. The named tests, Ticket 16 focused suite, and full suite passed: 2, 21, and 132 tests.", "type": "Text"}], "id": "msg_0977bd9a6133572a016a95a2260e9887d29236db7975327d32", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788191269973, "thread_id": "01a05851-28ec-7c03-884d-44a90bf9e79c", "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867", "type": "item_completed"}, "timestamp": "2026-08-31T15:47:51.450Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 184, "payload": {"call_id": "call_rhOsIEODwKs2QRpYaFHGzCPL", "id": "ctco_01a05869-62fc-7780-a5ab-1dfe63cf8394", "internal_chat_message_metadata_passthrough": {"create_time": 1788189696.764564, "turn_id": "01a05869-4561-7950-bdb8-054c859489f3"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "  receipt-only test.\n\n  HIGH 2 — Retried failures are not preserved in the Case Assessment stored and\n  digested by the receipt. In a schema-failure then accepted run,\n  `AssessmentBatchRun.attempts_by_case` is (`schema_failure`, `accepted`)\n  (allocation.py:77-89), but the accepted assessment still stores only its allocator-\n  provided `attempts` list, such as `[{attempt: 1, outcome: accepted}]`. My\n  independent replay conf…
+{"ordinal": 381, "payload": {"content": [{"text": "PASS — Ticket 16 post-integration cycle 3/3 approved at `08e1a8575e5ed20f00b1d9700517fee2ee17facd`.\n\nOnly `tests/test_ranking.py` changed. The named tests, Ticket 16 focused suite, and full suite passed: 2, 21, and 132 tests.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a95a2260e9887d29236db7975327d32", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788191268.951341, "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:47:51.456Z", "type": "response_item"}
 
-### response_item
+### event_msg
 
-{"ordinal": 187, "payload": {"content": [{"text": "Awaiting Controller authority and the cycle 2/3 replacement SHA.", "type": "output_text"}], "id": "msg_0977bd9a6133572a016a959c023d8c87d2b3465e76ccdd9a8f", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788189697.501561, "turn_id": "01a05869-4561-7950-bdb8-054c859489f3"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T15:21:38.507Z", "type": "response_item"}
+{"ordinal": 382, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:47:51.536Z", "type": "event_msg"}
 
-### response_item
+### event_msg
 
-{"ordinal": 193, "payload": {"content": [{"text": "[tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux skill to reply] Acknowledged. The lane remains unchanged. I will send one replacement SHA with focused and full results after Controller authority and the approved repair.", "type": "input_text"}], "id": "msg_01a05869-7f7b-7fb1-8c22-9df93f7a8da7", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788189704.059256, "turn_id": "01a05869-7f0b-7c91-af39-ff8bcf3de41a"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T15:21:44.059Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 196, "payload": {"id": "rs_0977bd9a6133572a016a959c0a96a887d2bb446eadda3d5cd4", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05869-7f0b-7c91-af39-ff8bcf3de41a"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:21:46.974Z", "type": "response_item"}
+{"ordinal": 383, "payload": {"completed_at": 1788191271, "duration_ms": 65495, "last_agent_message": "PASS — Ticket 16 post-integration cycle 3/3 approved at `08e1a8575e5ed20f00b1d9700517fee2ee17facd`.\n\nOnly `tests/test_ranking.py` changed. The named tests, Ticket 16 focused suite, and full suite passed: 2, 21, and 132 tests.", "started_at": 1788191206, "time_to_first_token_ms": 3860, "turn_id": "01a05880-6a9d-76e3-b934-2f998d3cd867", "type": "task_complete"}, "timestamp": "2026-08-31T15:47:51.546Z", "type": "event_msg"}

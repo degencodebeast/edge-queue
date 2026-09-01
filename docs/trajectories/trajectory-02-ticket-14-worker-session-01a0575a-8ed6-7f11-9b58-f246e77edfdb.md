@@ -66,7 +66,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 14, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:00.675Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -90,7 +90,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 20, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:09.772Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -114,7 +114,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 26, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:17.901Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -138,7 +138,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 32, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:24.319Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -162,7 +162,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 38, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:32.371Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -182,7 +182,7 @@
 
 ### event_msg
 
-{"ordinal": 43, "payload": {"completed_at_ms": 1788172062768, "item": {"aggregated_output": "**Test fails?** Fix code, not test.\n\n**Other tests fail?** Fix now.\n\n### REFACTOR - Clean Up\n\nAfter green only:\n- Remove duplication\n- Improve names\n- Extract helpers\n\nKeep tests green. Don't add behavior.\n\n### Repeat\n\nNext failing test for next feature.\n\n## Good Tests\n\n| Quality | Good | Bad |\n|---------|------|-----|\n| **Minimal** | One thing. \"and\" in name? Split it. | `test('validates email and domain and whitespace')` |\n| **Clear** | Name describes behavior | `test('test1')` |\n| **Shows intent** | Demonstrates desired API | Obscures what code should do |\n\nWhen writing or changing any test, read [writing-good-tests.md](writing-good-tests.md) for the rules that keep te…
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
@@ -198,7 +198,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 47, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:43.233Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -222,7 +222,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 53, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:50.069Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -246,87 +246,23 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 59, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T10:27:58.742Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 61, "payload": {"id": "rs_03f0afe3fb20798b016a95572f932487d2938913dbe377a66c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:00.893Z", "type": "response_item"}
+{"ordinal": 4610, "payload": {"call_id": "call_GqwPpqzPBUD0s1yyuu3UF5I6", "id": "ctc_03f0afe3fb20798b016a9590b7443087d2a4bd4b217158af32", "input": "const patch = \"*** Begin Patch\\n*** Update File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/tests/test_contracts.py\\n@@\\n-    with pytest.raises(ContractValidationError, match=\\\"one accepted candidate\\\"):\\n+    with pytest.raises(ContractValidationError, match=\\\"follow an accepted candidate\\\"):\\n         validate_contract(\\\"authoring_ledger\\\", ledger)\\n*** End Patch\";\nconst r = await tools.apply_patch(patch);\ntext(typeof r === \"string\" ? r : JSON.stringify(r));\n", "internal_chat_message_metadata_passthrough": {"create_time": 1788186799.667591, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f…
+
+### event_msg
+
+{"ordinal": 4611, "payload": {"completed_at_ms": 1788186807184, "item": {"changes": {"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/tests/test_contracts.py": {"move_path": null, "type": "update", "unified_diff": "@@ -235,3 +235,3 @@\n \n-    with pytest.raises(ContractValidationError, match=\"one accepted candidate\"):\n+    with pytest.raises(ContractValidationError, match=\"follow an accepted candidate\"):\n         validate_contract(\"authoring_ledger\", ledger)\n"}}, "id": "exec-6c0d00d2-dc6f-4dff-af2b-db8894614641", "status": "completed", "stderr": "", "stdout": "Success. Updated the following files:\nM <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/tests/test_contracts.py\n", "type": "FileChange"}, "started_at_ms": 17…
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 4612, "payload": {"call_id": "call_GqwPpqzPBUD0s1yyuu3UF5I6", "id": "ctco_01a0583d-4c3e-7c23-a3aa-be5d6feadbf0", "internal_chat_message_metadata_passthrough": {"create_time": 1788186807.358427, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T14:33:27.358Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 64, "payload": {"call_id": "call_GH8SZrVQJBR7zZiEkwiwi6Hr", "id": "ctco_01a0575c-a5b2-7492-870c-6d0c76daba59", "internal_chat_message_metadata_passthrough": {"create_time": 1788172084.658063, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "# Project agent instructions\n\n## Current documentation\n\nUse Context7 MCP to fetch current documentation when the user asks about a library, framework, SDK, API, CLI tool, or cloud service.\n\nStart with `resolve-library-id` unless the user supplies an exact library ID in `/org/project` format.\n\nSelect the best exact match with a reliable source and strong documentation coverage.\n\nUse `query-docs` with the selected library ID …
-
-### response_item
-
-{"ordinal": 67, "payload": {"id": "rs_03f0afe3fb20798b016a9557357c7487d2b9cb5c396897450a", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:05.939Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 70, "payload": {"call_id": "call_Iu5T2OCflHwPCDJPDLI8cYzC", "id": "ctco_01a0575c-b543-7873-bb60-51df5f5d94c1", "internal_chat_message_metadata_passthrough": {"create_time": 1788172088.643316, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "For a Codex Worker, use two read-only `gpt-5.6-terra` subagents in parallel.\n\nGive both reviewers the exact base SHA and candidate diff.\n\nGive the Standards reviewer the project standards and applicable ADRs.\n\nGive the Specification reviewer the ticket, specification, and applicable ADRs.\n\nReviewers must not edit files.\n\nThe Worker fixes every in-scope Critical and Major finding.\n\nRepeat both review axes after any impleme…
-
-### response_item
-
-{"ordinal": 73, "payload": {"id": "rs_03f0afe3fb20798b016a955739797087d2adcb31a512f829ec", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:09.710Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 75, "payload": {"content": [{"text": "I verified the worktree, branch, and base SHA. I am loading the tmux bridge instructions now so I can send the candidate handoff through the required lane.", "type": "output_text"}], "id": "msg_03f0afe3fb20798b016a955739bd9887d29a9f63282d7ee0b2", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788172089.20789, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T10:28:10.544Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 78, "payload": {"call_id": "call_pfQru1eHuog2b57UWSS5kwup", "id": "ctco_01a0575c-c4a4-77a2-ae0f-1ab7d4b3fcc0", "internal_chat_message_metadata_passthrough": {"create_time": 1788172092.580152, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\": …
-
-### response_item
-
-{"ordinal": 81, "payload": {"id": "rs_03f0afe3fb20798b016a95573d747487d2a985a8c3babaa115", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:13.821Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 84, "payload": {"call_id": "call_o91UndATKz1hmbFfmqF2TODK", "id": "ctco_01a0575c-d8db-7100-aaae-62a5c0181330", "internal_chat_message_metadata_passthrough": {"create_time": 1788172097.755535, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10585)\nTotal output lines: 1237\n\ndocs/ENGINEERING_WORKFLOW.md\nschemas/case-assessment.schema.json\nsrc/edgequeue/__init__.py\nsrc/edgequeue/baselines.py\nsrc/edgequeue/corpus.py\nsrc/edgequeue/digests.py\nsrc/edgequeue/experiment.py\nsrc/edgequeue/integrity.py\nsrc/edgequeue/prompting.py\nsrc/edgequeue/ranking.py\nsrc/edgequeue/results.py\nsrc/edgequeue/scoring.py\nsrc/edgequeue/tr…
-
-### response_item
-
-{"ordinal": 87, "payload": {"id": "rs_03f0afe3fb20798b016a955742fe4c87d2a31278623598441b", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:20.146Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 90, "payload": {"call_id": "call_ATto7DOVyupHsZsp8Pv9Sfur", "id": "ctco_01a0575c-f018-72e3-9e7e-510ecf2f0663", "internal_chat_message_metadata_passthrough": {"create_time": 1788172103.704129, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "3ad1b0f (HEAD -> ticket/14-shared-contract-spine, main, integration/edgequeue-mvp) chore: establish EdgeQueue prototype baseline\n--- schema\n{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"$id\": \"https://edgequeue.local/schemas/case-assessment.schema.json\",\n  \"title\": \"Case Assessment\",\n  \"type\": \"object\",\n  \"additionalProperties\": false,\n  \"required\": [\n    \"case_id\",\n    \"status\",\…
-
-### response_item
-
-{"ordinal": 93, "payload": {"id": "rs_03f0afe3fb20798b016a955748855487d289314a0bf3600be9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:25.306Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 96, "payload": {"call_id": "call_amd0NpQpL466YuUML9p0wptb", "id": "ctco_01a0575d-0127-7983-ba4d-126650de9a3d", "internal_chat_message_metadata_passthrough": {"create_time": 1788172108.071446, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "xargs: command line cannot be assembled, too long\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T10:28:28.071Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 99, "payload": {"id": "rs_03f0afe3fb20798b016a95574d507c87d2a2c8a4b456df6238", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:29.571Z", "type": "response_item"}
+{"ordinal": 4615, "payload": {"id": "rs_03f0afe3fb20798b016a9590baa85887d2ac3295d2c793353b", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:33:37.412Z", "type": "response_item"}
 
 ### response_item
 
@@ -334,71 +270,23 @@
 
 ### event_msg
 
-{"ordinal": 101, "payload": {"completed_at_ms": 1788172112592, "item": {"aggregated_output": "--- 01-freeze-ranking-evaluation-protocol.md\n15:- Accepted round 1: Development Split is `N=20, K=4`; Allocation Holdout is `N=40, K=8`; Post-Calibration Holdout is `N=20, K=4`, keeping the review budget at 20%.\n16:- Accepted round 1: a simple general-purpose evaluator creates frozen initial verdict/rationale/confidence records; every allocator starts from the same frozen Review Batch and `K`; EdgeQueue's additional permitted semantic evidence and all resource differences are disclosed; no allocator can access Reference Verdicts.\n18:- Accepted round 2: use an intentionally enriched 25% Label Error prevalence: `5/20` Development, `10/40` Allocation Holdout, and `5/20` Post-Calibration Holdout. T…
+{"ordinal": 4617, "payload": {"completed_at_ms": 1788186817954, "item": {"aggregated_output": ".......                                                                  [100%]\n7 passed in 0.03s\n", "command": ["/bin/zsh", "-lc", "uv run pytest -q tests/test_contracts.py::test_authoring_ledger_rejects_row_binding_probes tests/test_contracts.py::test_authoring_ledger_rejects_multiple_accepted_candidates_for_one_row tests/test_contracts.py::test_authoring_ledger_rejects_retry_after_execution_failure"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker", "duration": {"nanos": 364835916, "secs": 0}, "exit_code": 0, "formatted_output": ".......                                                                  [100%]\n7 passed in 0.03s\n", "id": "exec-3…
 
 ### response_item
 
-{"ordinal": 102, "payload": {"call_id": "call_rS9koozUoTymdZyNqC60XLWB", "id": "ctco_01a0575d-12d1-7c01-a0e8-ecbaaae7665a", "internal_chat_message_metadata_passthrough": {"create_time": 1788172112.593965, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "--- 01-freeze-ranking-evaluation-protocol.md\n15:- Accepted round 1: Development Split is `N=20, K=4`; Allocation Holdout is `N=40, K=8`; Post-Calibration Holdout is `N=20, K=4`, keeping the review budget at 20%.\n16:- Accepted round 1: a simple general-purpose evaluator creates frozen initial verdict/rationale/confidence records; every allocator starts from the same frozen Review Batch and `K`; EdgeQueue's additional permitted sema…
+{"ordinal": 4618, "payload": {"call_id": "call_5qriDRgzzgqJ8cHQCMorVsnL", "id": "ctco_01a0583d-75a4-79d0-b857-b12e54c224f4", "internal_chat_message_metadata_passthrough": {"create_time": 1788186817.956424, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.5 seconds\nOutput:\n", "type": "input_text"}, {"text": ".......                                                                  [100%]\n7 passed in 0.03s\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T14:33:37.956Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 105, "payload": {"id": "rs_03f0afe3fb20798b016a955751bf8887d2a9949a903f1b6274", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:34.734Z", "type": "response_item"}
+{"ordinal": 4621, "payload": {"id": "rs_03f0afe3fb20798b016a9590c533bc87d297b5e142c3a6c9cf", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:33:41.347Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 4622, "payload": {"completed_at_ms": 1788186821869, "item": {"content": [{"text": "The compatibility assertion is aligned with the new terminal-state error. All focused Ledger probes now pass.", "type": "Text"}], "id": "msg_03f0afe3fb20798b016a9590c579ec87d2a205d2e5b4222f71", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788186821348, "thread_id": "01a0575a-8ed6-7f11-9b58-f246e77edfdb", "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa", "type": "item_completed"}, "timestamp": "2026-08-31T14:33:41.869Z", "type": "event_msg"}
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 108, "payload": {"call_id": "call_tHczVEs0kzlr1arOU54Nw5br", "id": "ctco_01a0575d-24ee-73c1-be38-ab998c409113", "internal_chat_message_metadata_passthrough": {"create_time": 1788172117.230894, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/authoring-ledger-contract.md\n<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/calibration-ci-contract.md\n<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/corpus-schema-authority.md\n<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/evaluator-manifest-contract.md\n<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/evaluator-smo…
-
-### response_item
-
-{"ordinal": 111, "payload": {"id": "rs_03f0afe3fb20798b016a955756385087d2b812e6abcf38b585", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:38.511Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 114, "payload": {"call_id": "call_irPFiz0RmPjywkAUw3hveJyc", "id": "ctco_01a0575d-3d86-7a93-9a2c-0374bfe3cec8", "internal_chat_message_metadata_passthrough": {"create_time": 1788172123.526455, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "--- corpus-schema-authority.md\n# EdgeQueue Corpus Schema Authority\n\nStatus: accepted contract\n\nUse versioned JSON Schema files as the only authority for corpus record fields and types.\n\n## Required schemas\n\n```text\nschemas/corpus/v1/\n  case-specification.schema.json\n  trajectory-event.schema.json\n  frozen-initial-evaluation.schema.json\n  shadow-evaluation.schema.json\n  ranker-case.schema.json\n  scorer-case.schema.jso…
-
-### response_item
-
-{"ordinal": 117, "payload": {"id": "rs_03f0afe3fb20798b016a95575c6c4887d28e3388ba9768e0c0", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:28:48.170Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 120, "payload": {"call_id": "call_ZsaDNd2MQYqVlkgResoXbvPR", "id": "ctco_01a0575d-5f43-7092-9314-26c5321058fa", "internal_chat_message_metadata_passthrough": {"create_time": 1788172132.163342, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 1.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10740)\nTotal output lines: 750\n\nUsing CPython 3.14.4\nCreating virtual environment at: .venv\n   Building edgequeue @ file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\n      Built edgequeue @ file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\nInstalled 6 packages in 8ms\njsonschema False\npydantic False\ntyp…
-
-### response_item
-
-{"ordinal": 123, "payload": {"id": "rs_03f0afe3fb20798b016a9557651ce887d28214ec09c613c49d", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:29:02.463Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 125, "payload": {"id": "rs_03f0afe3fb20798b016a95576e71d887d2b5767049ad81b753", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:29:11.834Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 127, "payload": {"id": "rs_03f0afe3fb20798b016a955777dd0487d2846af72d3766740c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:29:15.062Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 129, "payload": {"content": [{"text": "The baseline has only a Case Assessment schema and prototype helpers. I will add a versioned contract module, schema files, and a dependency-free CLI seam. I am starting with public-behavior tests.", "type": "output_text"}], "id": "msg_03f0afe3fb20798b016a95577b198887d2b6e275d11c6519b0", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788172132.824102, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T10:29:16.011Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 130, "payload": {"call_id": "call_F2AQWRf8DdPk0KcLxGcAmxh4", "id": "ctc_03f0afe3fb20798b016a95577c0c5087d282e8c7d8bba17506", "input": "const patch = \"*** Begin Patch\\n*** Add File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/tests/test_contracts.py\\n+import hashlib\\n+import json\\n+\\n+import pytest\\n+\\n+from edgequeue.contracts import (\\n+    ContractValidationError,\\n+    canonical_json,\\n+    content_digest,\\n+    validate_contract,\\n+)\\n+\\n+\\n+def _assessment() -> dict[str, object]:\\n+    return {\\n+        \\\"schema_version\\\": \\\"1.0\\\",\\n+        \\\"case_id\\\": \\\"case-a\\\",\\n+        \\\"status\\\": \\\"risk_finding\\\",\\n+        \\\"risk_score\\\": 82,\\n+        \\\"reason_codes\\\": [\\\"missing_check\\\…
-
-### response_item
-
-{"ordinal": 132, "payload": {"call_id": "call_F2AQWRf8DdPk0KcLxGcAmxh4", "id": "ctco_01a0575e-1387-71d0-b8d0-2aaecb745f30", "internal_chat_message_metadata_passthrough": {"create_time": 1788172178.311248, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T10:29:38.311Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 135, "payload": {"id": "rs_03f0afe3fb20798b016a955793383c87d2b144de419f826ef8", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:29:39.446Z", "type": "response_item"}
+{"ordinal": 4623, "payload": {"content": [{"text": "The compatibility assertion is aligned with the new terminal-state error. All focused Ledger probes now pass.", "type": "output_text"}], "id": "msg_03f0afe3fb20798b016a9590c579ec87d2a205d2e5b4222f71", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788186819.072203, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T14:33:41.873Z", "type": "response_item"}
 
 ### response_item
 
@@ -406,31 +294,135 @@
 
 ### event_msg
 
-{"ordinal": 137, "payload": {"completed_at_ms": 1788172182136, "item": {"aggregated_output": "\n==================================== ERRORS ====================================\n___________________ ERROR collecting tests/test_contracts.py ___________________\nImportError while importing test module '<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/tests/test_contracts.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n../../../../../../.local/share/uv/python/cpython-3.14.4-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_contracts.py:6: in <module>\n    fro…
+{"ordinal": 4625, "payload": {"completed_at_ms": 1788186826748, "item": {"aggregated_output": "........................................................................ [ 76%]\n......................                                                   [100%]\n94 passed in 2.17s\nResolved 7 packages in 2ms\n", "command": ["/bin/zsh", "-lc", "uv run pytest -q && uv lock --check && uv run edgequeue judge --help >/dev/null && uv run edgequeue adjudicate --help >/dev/null && uv run edgequeue verify --help >/dev/null && git diff --check"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker", "duration": {"nanos": 592518791, "secs": 2}, "exit_code": 0, "formatted_output": "........................................................................ [ 76%]\n...…
 
 ### response_item
 
-{"ordinal": 138, "payload": {"call_id": "call_bwdcpI4IBErjz9YXzMKPcrUI", "id": "ctco_01a0575e-227a-7d11-a213-7d4d4e5edb63", "internal_chat_message_metadata_passthrough": {"create_time": 1788172182.138519, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 1.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "\n==================================== ERRORS ====================================\n___________________ ERROR collecting tests/test_contracts.py ___________________\nImportError while importing test module '<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/tests/test_contracts.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n../../../../../../.local/share/uv/python/…
+{"ordinal": 4626, "payload": {"call_id": "call_QGMdsl6R6jta48GcaAjlZUQZ", "id": "ctco_01a0583d-97fe-7410-8a3b-374d98e664dc", "internal_chat_message_metadata_passthrough": {"create_time": 1788186826.750664, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 2.8 seconds\nOutput:\n", "type": "input_text"}, {"text": "........................................................................ [ 76%]\n......................                                                   [100%]\n94 passed in 2.17s\nResolved 7 packages in 2ms\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T14:33:46.750Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 141, "payload": {"id": "rs_03f0afe3fb20798b016a955797016087d2be8656ef5e1cecea", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:29:52.301Z", "type": "response_item"}
+{"ordinal": 4629, "payload": {"id": "rs_03f0afe3fb20798b016a9590cca77087d2bf99080c17bf8b5b", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:33:48.910Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 143, "payload": {"id": "rs_03f0afe3fb20798b016a9557a054ac87d2a3c0e7911a177951", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:30:01.642Z", "type": "response_item"}
+{"ordinal": 4630, "payload": {"call_id": "call_96tejNr2uggUcDAXtc6tcbtU", "id": "ctc_03f0afe3fb20798b016a9590cd0f7087d295503c520c999558", "input": "const patch = \"*** Begin Patch\\n*** Update File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/docs/evidence/ticket-14/contract-validation.md\\n@@\\n-- Full suite: `uv run pytest -q` returned `89 passed`.\\n+- Full suite: `uv run pytest -q` returned `94 passed`.\\n*** Update File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/IMPROVEMENT_CHANGELOG.md\\n@@\\n-**Evidence.** `docs/evidence/ticket-14/contract-validation.md` records RED-GREEN commands, the independent digest vector, 25 versioned schema files, packaged-schema wheel verification, CLI help checks, and the full `89 pa…
+
+### event_msg
+
+{"ordinal": 4631, "payload": {"completed_at_ms": 1788186833933, "item": {"changes": {"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/IMPROVEMENT_CHANGELOG.md": {"move_path": null, "type": "update", "unified_diff": "@@ -10,3 +10,3 @@\n \n-**Evidence.** `docs/evidence/ticket-14/contract-validation.md` records RED-GREEN commands, the independent digest vector, 25 versioned schema files, packaged-schema wheel verification, CLI help checks, and the full `89 passed` suite.\n+**Evidence.** `docs/evidence/ticket-14/contract-validation.md` records RED-GREEN commands, the independent digest vector, 25 versioned schema files, packaged-schema wheel verification, CLI help checks, and the full `94 passed` suite.\n \n"}, "<USER_HOME>/Projects/personal/micro1-hack/.worktre…
 
 ### response_item
 
-{"ordinal": 145, "payload": {"id": "rs_03f0afe3fb20798b016a9557a9abb087d2b70193a315eb38a0", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:30:09.150Z", "type": "response_item"}
+{"ordinal": 4632, "payload": {"call_id": "call_96tejNr2uggUcDAXtc6tcbtU", "id": "ctco_01a0583d-b4cd-7a31-b5b4-08d4897bfaa3", "internal_chat_message_metadata_passthrough": {"create_time": 1788186834.125399, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T14:33:54.125Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 148, "payload": {"call_id": "call_STYMVaU5mTI6NdgY0Dpjgk4U", "id": "ctco_01a05760-f634-7341-8674-cc1eca6a70e2", "internal_chat_message_metadata_passthrough": {"create_time": 1788172367.412799, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T10:32:47.412Z", "type": "response_item"}
+{"ordinal": 4635, "payload": {"id": "rs_03f0afe3fb20798b016a9590d5121487d2bf8f13cfc4314187", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:33:57.780Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 4636, "payload": {"completed_at_ms": 1788186838602, "item": {"content": [{"text": "The required full suite passes with 94 tests. I am staging this focused delta and running the two required closure reviews only against the five Gate probes and regressions.", "type": "Text"}], "id": "msg_03f0afe3fb20798b016a9590d5ef7087d288ad0f868c5962de", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788186837782, "thread_id": "01a0575a-8ed6-7f11-9b58-f246e77edfdb", "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa", "type": "item_completed"}, "timestamp": "2026-08-31T14:33:58.602Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 151, "payload": {"id": "rs_03f0afe3fb20798b016a95585201a487d2925f036af43a8b21", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:32:50.727Z", "type": "response_item"}
+{"ordinal": 4637, "payload": {"content": [{"text": "The required full suite passes with 94 tests. I am staging this focused delta and running the two required closure reviews only against the five Gate probes and regressions.", "type": "output_text"}], "id": "msg_03f0afe3fb20798b016a9590d5ef7087d288ad0f868c5962de", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788186836.013416, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T14:33:58.607Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 4639, "payload": {"completed_at_ms": 1788186842201, "item": {"agents_states": {"01a0582f-e898-7540-b0ff-02a26be622d6": {"completed": "**Minor** — Retry closure is correct: Ledger retries allow only timeout, malformed, or schema failure; `execution_failure` is rejected. [contracts.py](<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/src/edgequeue/contracts.py:1439)\n\nLedger gate rules pass: three-candidate bound, unique ordered splits, exact DEV/AH/PCH binding, and supplied Ledger digest binding are enforced.\n\nRemaining minor: `schema_versions` accepts arbitrary keys and version strings, so the root manifest does not fully freeze its declared schema-version set. [corpus-manifest.schema.json](<USER_HOME>/Projects/personal/micro1-hack/.worktrees/e…
+
+### event_msg
+
+{"ordinal": 4640, "payload": {"completed_at_ms": 1788186842217, "item": {"agents_states": {"01a0582f-e83a-7d12-8a74-634b0667fff1": {"completed": "Pass — no Critical, Major, or Minor findings.\n\nCycle-3 fix is correct: `execution_failure` cannot retry. Only `timeout`, `malformed`, and `schema_failure` permit one retry, for Case Assessments and Ledger evaluator attempts.\n\nLedger policy holds: three candidates maximum per row, exactly one accepted candidate, freeze blocks after three failures, and root binding requires DEV, AH, PCH manifests plus the supplied Ledger digest.\n\nVerification passed: 5 focused closure tests, full suite (`89 passed`), and cached diff whitespace check. No edits made."}}, "id": "exec-9d7aaa46-13a4-4920-b0f3-90ce8c8f2d65", "receiver_agents": [{"agent_nickname": "…
+
+### response_item
+
+{"ordinal": 4642, "payload": {"call_id": "call_FEXxr3NPT2yeykPZBbXKOt4t", "id": "ctco_01a0583d-d5a9-70f1-a68c-2560994cd9f7", "internal_chat_message_metadata_passthrough": {"create_time": 1788186842.53774, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "{\"closed\":[{\"previous_status\":{\"completed\":\"Pass — no Critical, Major, or Minor findings.\\n\\nCycle-3 fix is correct: `execution_failure` cannot retry. Only `timeout`, `malformed`, and `schema_failure` permit one retry, for Case Assessments and Ledger evaluator attempts.\\n\\nLedger policy holds: three candidates maximum per row, exactly one accepted candidate, freeze blocks after three failures, and root binding requires DE…
+
+### response_item
+
+{"ordinal": 4646, "payload": {"id": "rs_03f0afe3fb20798b016a9590dc927c87d2af45eb74a8fd19a0", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:34:04.688Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 4650, "payload": {"call_id": "call_Nz6RsiFpEBVbiqLrne9Kt9er", "id": "ctco_01a0583d-f5cc-7830-9153-bd48659a0574", "internal_chat_message_metadata_passthrough": {"create_time": 1788186850.764727, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "[{\"agent_id\":\"01a0583d-f2d4-7dd2-b3c6-ade3f4e9acac\",\"nickname\":\"Popper\"},{\"agent_id\":\"01a0583d-f270-7171-b4d1-5dfd5bc26bd4\",\"nickname\":\"Laplace\"}]", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T14:34:10.764Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 4659, "payload": {"id": "rs_03f0afe3fb20798b016a95911fcf8487d29e0f5f54c306582f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:35:16.670Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 4661, "payload": {"content": [{"text": "I’m completing the required closure reviews and candidate handoff.", "type": "output_text"}], "id": "msg_03f0afe3fb20798b016a959124d2d087d28317394fdab80342", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788186911.17581, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T14:35:17.107Z", "type": "response_item"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 4664, "payload": {"call_id": "call_a5NLPcholeI58U7QjimeedrF", "id": "ctco_01a0583f-032c-7951-8ce4-52add092c8f3", "internal_chat_message_metadata_passthrough": {"create_time": 1788186919.724687, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "<USER_HOME>/Projects/personal/micro1-hack\n---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control…
+
+### response_item
+
+{"ordinal": 4666, "payload": {"content": [{"text": "<subagent_notification>\n{\"agent_path\":\"01a0583d-f270-7171-b4d1-5dfd5bc26bd4\",\"status\":{\"completed\":\"Critical: None.\\n\\nMajor: None.\\n\\nMinor: None.\\n\\nPass: No Ledger-seam regression found. Validation fixes target Verdict, Evaluator Manifest digest, and Case Blueprint version per allocation row; rejects all candidates following acceptance; and rejects every accepted evaluator outcome with a null Verdict. The staged public row-binding probe passed: 5 passed. No files edited.\"}}\n</subagent_notification>", "type": "input_text"}], "id": "msg_01a0583f-032f-7e10-a9d6-018e2480c3be", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["multi_agent.subagent_notification"], "create_time": 1788186919.72747, "turn_…
+
+### response_item
+
+{"ordinal": 4667, "payload": {"content": [{"text": "<subagent_notification>\n{\"agent_path\":\"01a0583d-f2d4-7dd2-b3c6-ade3f4e9acac\",\"status\":{\"completed\":\"Pass\\n\\n- Critical: none.\\n- Major: none.\\n- Minor: none.\\n\\nThe staged Ledger validator preserves all three row bindings, rejects any candidate after acceptance, and rejects accepted evaluator attempts with a null Verdict. Verified at `contracts.py:1425`, `1488-1525`, with focused probes passing: 7 passed. No edits made.\"}}\n</subagent_notification>", "type": "input_text"}], "id": "msg_01a0583f-032f-7e10-a9d6-01983a539a53", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["multi_agent.subagent_notification"], "create_time": 1788186919.727908, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "role": …
+
+### response_item
+
+{"ordinal": 4669, "payload": {"id": "rs_03f0afe3fb20798b016a95912994a487d2a2d722fe69a1f6a7", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:35:22.920Z", "type": "response_item"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 4672, "payload": {"call_id": "call_gCASaJsaTOAGMJj6Il9be7u6", "id": "ctco_01a0583f-15c6-7db2-b3c5-700d2d3d2856", "internal_chat_message_metadata_passthrough": {"create_time": 1788186924.486404, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "M  IMPROVEMENT_CHANGELOG.md\nM  docs/evidence/ticket-14/contract-validation.md\nM  src/edgequeue/contracts.py\nM  tests/test_contracts.py\n IMPROVEMENT_CHANGELOG.md                       |  2 +-\n docs/evidence/ticket-14/contract-validation.md |  3 ++-\n src/edgequeue/contracts.py                     | 36 ++++++++++++++++----------\n tests/test_contracts.py                        | 36 +++++++++++++++++++++++++-\n 4 files changed, 6…
+
+### response_item
+
+{"ordinal": 4675, "payload": {"id": "rs_03f0afe3fb20798b016a95912e16b487d293c3ba94ad31a803", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:35:29.496Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 4676, "payload": {"call_id": "call_p82MFrLlvxPY1XXcjvlkHsau", "id": "ctc_03f0afe3fb20798b016a959131a09c87d2a0aca567c8f2a3e3", "input": "const patch = \"*** Begin Patch\\n*** Update File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/docs/evidence/ticket-14/contract-validation.md\\n@@\\n-- Focused Gate replacement tests: `9 passed`.\\n+- Focused Ledger closure tests: `7 passed`.\\n*** End Patch\";\nconst r = await tools.apply_patch(patch);\ntext(typeof r === \"string\" ? r : JSON.stringify(r));", "internal_chat_message_metadata_passthrough": {"create_time": 1788186925.4081, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "name": "exec", "status": "completed", "type": "custom_tool_call"}, "timestamp": "2026-08-31T14:35:31.495Z", "type": "resp…
+
+### event_msg
+
+{"ordinal": 4677, "payload": {"completed_at_ms": 1788186931522, "item": {"changes": {"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/docs/evidence/ticket-14/contract-validation.md": {"move_path": null, "type": "update", "unified_diff": "@@ -52,3 +52,3 @@\n \n-- Focused Gate replacement tests: `9 passed`.\n+- Focused Ledger closure tests: `7 passed`.\n - Full suite: `uv run pytest -q` returned `94 passed`.\n"}}, "id": "exec-d734b556-7949-4847-85ff-791f8e60b638", "status": "completed", "stderr": "", "stdout": "Success. Updated the following files:\nM <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/docs/evidence/ticket-14/contract-validation.md\n", "type": "FileChange"}, "started_at_ms": 1788186931521, "thread_id": "01a0575a-8ed…
+
+### response_item
+
+{"ordinal": 4678, "payload": {"call_id": "call_p82MFrLlvxPY1XXcjvlkHsau", "id": "ctco_01a0583f-317d-73e1-b65c-0a3d6951045c", "internal_chat_message_metadata_passthrough": {"create_time": 1788186931.581616, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T14:35:31.581Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 4681, "payload": {"id": "rs_03f0afe3fb20798b016a959135544887d2a24aa6b51bcf0205", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:35:35.842Z", "type": "response_item"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### response_item
+
+{"ordinal": 4684, "payload": {"call_id": "call_lTRsighOIq6llW84Ap7sGcP6", "id": "ctco_01a0583f-4b6d-70e1-90de-cdfaa617a7b0", "internal_chat_message_metadata_passthrough": {"create_time": 1788186938.221887, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "[ticket/14-shared-contract-spine f9b3d0c] fix: bind authoring ledger row invariants\n 4 files changed, 62 insertions(+), 17 deletions(-)\nf9b3d0c2ec6eb78b54d82bbeec3cb0da743f034b\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T14:35:38.221Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 4685, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:35:38.222Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 4686, "payload": {"completed_at_ms": 1788186941876, "item": {"id": "rs_03f0afe3fb20798b016a95913c1a7087d2858ddc01fa042382", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788186939943, "thread_id": "01a0575a-8ed6-7f11-9b58-f246e77edfdb", "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa", "type": "item_completed"}, "timestamp": "2026-08-31T14:35:41.876Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 4687, "payload": {"id": "rs_03f0afe3fb20798b016a95913c1a7087d2858ddc01fa042382", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:35:41.881Z", "type": "response_item"}
 
 ### response_item
 
@@ -438,52 +430,60 @@
 
 ### event_msg
 
-{"ordinal": 153, "payload": {"completed_at_ms": 1788172373110, "item": {"aggregated_output": "   Building edgequeue @ file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\n      Built edgequeue @ file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\nUninstalled 1 package in 1ms\nInstalled 1 package in 1ms\n.........                                                                [100%]\n9 passed in 0.11s\n", "command": ["/bin/zsh", "-lc", "uv run pytest -q tests/test_contracts.py tests/test_cli_contracts.py"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker", "duration": {"nanos": 650521750, "secs": 0}, "exit_code": 0, "formatted_output": "   Building edgequeue @ file://<USER_H…
+{"ordinal": 4689, "payload": {"completed_at_ms": 1788186944644, "item": {"aggregated_output": "    ✔ Inspect the full base diff and cycle-3 delta\n    ✔ Verify Ledger policy closure and all Ticket 14 acceptance\n      criteria\n    ✔ Run focused, full, CLI, packaging, leakage, digest, and report\n      checks\n    ✔ Send exact-SHA PASS or unresolved 3/3 report to Controller\n\n───────────────────────────────────────────────────────────────────────\n\n• Cycle 3/3 is BLOCKED on SHA c5174b29c4a84f3677ef10e07b7a5c8e3309e6e3.\n\n  The consolidated unresolved High blocker and dependency risks were\n  sent to the Controller. Authoring Ledger validation still accepts\n  fixed-row provenance changes and incomplete evaluator outputs.\n\n  All required automated checks otherwise passed, including 89 …
 
 ### response_item
 
-{"ordinal": 154, "payload": {"call_id": "call_Kxud4EVsXIxfjpmJ2c2UMiZ1", "id": "ctco_01a05761-0c78-7002-8e9b-806dbac458b3", "internal_chat_message_metadata_passthrough": {"create_time": 1788172373.112509, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.8 seconds\nOutput:\n", "type": "input_text"}, {"text": "   Building edgequeue @ file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\n      Built edgequeue @ file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker\nUninstalled 1 package in 1ms\nInstalled 1 package in 1ms\n.........                                                                [100%]\n9 passed in 0.11s\n", "type": "input_text"}], "type": "custom_tool_call_o…
+{"ordinal": 4690, "payload": {"call_id": "call_wjpocLrEE37Ap85EBQDarpTy", "id": "ctco_01a0583f-6485-7631-8824-e08ec7c1406e", "internal_chat_message_metadata_passthrough": {"create_time": 1788186944.645008, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "    ✔ Inspect the full base diff and cycle-3 delta\n    ✔ Verify Ledger policy closure and all Ticket 14 acceptance\n      criteria\n    ✔ Run focused, full, CLI, packaging, leakage, digest, and report\n      checks\n    ✔ Send exact-SHA PASS or unresolved 3/3 report to Controller\n\n───────────────────────────────────────────────────────────────────────\n\n• Cycle 3/3 is BLOCKED on SHA c5174b29c4a84f3677ef10e07b7a5c8e3309e6e3.\n\n…
+
+### event_msg
+
+{"ordinal": 4691, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:35:44.646Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 4692, "payload": {"completed_at_ms": 1788186946448, "item": {"id": "rs_03f0afe3fb20798b016a959142244c87d295485bf8992a2780", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788186945986, "thread_id": "01a0575a-8ed6-7f11-9b58-f246e77edfdb", "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa", "type": "item_completed"}, "timestamp": "2026-08-31T14:35:46.448Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 157, "payload": {"id": "rs_03f0afe3fb20798b016a955855fd7487d288e45834b55996da", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:32:54.789Z", "type": "response_item"}
+{"ordinal": 4693, "payload": {"id": "rs_03f0afe3fb20798b016a959142244c87d295485bf8992a2780", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:35:46.451Z", "type": "response_item"}
 
 ### response_item
 
 <REDACTED_PRIVATE_EVENT>
 
-### response_item
+### event_msg
 
-{"ordinal": 160, "payload": {"call_id": "call_knooCkt6ht4zfnoma4pa7yvi", "id": "ctco_01a05761-1a7f-7161-983f-7597eeb0b984", "internal_chat_message_metadata_passthrough": {"create_time": 1788172376.70388, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "F                                                                        [100%]\n=================================== FAILURES ===================================\n________ test_digest_normalizes_order_line_endings_and_excluded_fields _________\n\n    def test_digest_normalizes_order_line_endings_and_excluded_fields() -> None:\n        first = {\n            \"text\": \"line1\\r\\nline2\",\n            \"created_at\": \"2026-08-31T01:…
-
-### response_item
-
-{"ordinal": 163, "payload": {"id": "rs_03f0afe3fb20798b016a955859a74c87d2aeb400d33e54d7d9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:33:01.975Z", "type": "response_item"}
+{"ordinal": 4695, "payload": {"completed_at_ms": 1788186949199, "item": {"aggregated_output": "  └ .scratch/edgequeue/controller-handoff.md (+28 -8)\n     59  - Gate pane: `gate-lane-1`\n     60 -- Gate worktree: `.worktrees/edgequeue/lane-1-gate`, detached at `c517\n         4b29c4a84f3677ef10e07b7a5c8e3309e6e3`.\n     61 -- Gate cycle: Candidate cycle `3/3` authorized.\n     60 +- Gate worktree: The detached cycle `3/3` checkout remains transitiona\n         l. The focused repair Gate uses the paused Worker worktree.\n     61 +- Gate cycle: Cycle `3/3` BLOCK. The Controller authorized one focused\n          post-cycle repair.\n     62  - Previous candidate SHA: `775290a0d7fcc3fdc7ce1ec97a2997a7106958f2`.\n     63  - Candidate SHA: `c5174b29c4a84f3677ef10e07b7a5c8e3309e6e3`.\n     64 -- B…
 
 ### response_item
 
-{"ordinal": 164, "payload": {"call_id": "call_gGETLQoDMVdc8k0EfQJl5Iq2", "id": "ctc_03f0afe3fb20798b016a95585e012c87d2b092a54755827978", "input": "const patch = \"*** Begin Patch\\n*** Update File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/src/edgequeue/digests.py\\n@@\\n-from edgequeue.contracts import canonical_json, content_digest\\n+from edgequeue.contracts import canonical_json, content_digest as _content_digest\\n@@\\n-    return content_digest(payload, excluded_keys=excluded_keys)\\n+    return _content_digest(payload, excluded_keys=excluded_keys)\\n*** End Patch\";\ntext(await tools.apply_patch(patch));\n", "internal_chat_message_metadata_passthrough": {"create_time": 1788172377.302761, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "name"…
-
-### response_item
-
-{"ordinal": 166, "payload": {"call_id": "call_gGETLQoDMVdc8k0EfQJl5Iq2", "id": "ctco_01a05761-382d-7432-9fa5-6a122cbe10ea", "internal_chat_message_metadata_passthrough": {"create_time": 1788172384.301267, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T10:33:04.301Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 169, "payload": {"id": "rs_03f0afe3fb20798b016a95586159bc87d2942e196bfddee29e", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:33:11.314Z", "type": "response_item"}
+{"ordinal": 4696, "payload": {"call_id": "call_mFDcSwcoHy86G66p5fmvhojI", "id": "ctco_01a0583f-7651-7a20-a75b-0056b00e19d7", "internal_chat_message_metadata_passthrough": {"create_time": 1788186949.201891, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "  └ .scratch/edgequeue/controller-handoff.md (+28 -8)\n     59  - Gate pane: `gate-lane-1`\n     60 -- Gate worktree: `.worktrees/edgequeue/lane-1-gate`, detached at `c517\n         4b29c4a84f3677ef10e07b7a5c8e3309e6e3`.\n     61 -- Gate cycle: Candidate cycle `3/3` authorized.\n     60 +- Gate worktree: The detached cycle `3/3` checkout remains transitiona\n         l. The focused repair Gate uses the paused Worker worktree.\n    …
 
 ### event_msg
 
-{"ordinal": 170, "payload": {"completed_at_ms": 1788172392250, "item": {"content": [{"text": "The first RED run failed at the missing contract import, then the minimal implementation passed the focused contract and CLI tests. A baseline digest test exposed a recursion regression, which I fixed while preserving its vector.", "type": "Text"}], "id": "msg_03f0afe3fb20798b016a955867577087d2802ce88e6fa42caf", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788172391315, "thread_id": "01a0575a-8ed6-7f11-9b58-f246e77edfdb", "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90", "type": "item_completed"}, "timestamp": "2026-08-31T10:33:12.250Z", "type": "event_msg"}
+{"ordinal": 4697, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:35:49.202Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 4698, "payload": {"completed_at_ms": 1788186954106, "item": {"id": "rs_03f0afe3fb20798b016a959146c04487d2b091935eae28c95e", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788186950683, "thread_id": "01a0575a-8ed6-7f11-9b58-f246e77edfdb", "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa", "type": "item_completed"}, "timestamp": "2026-08-31T14:35:54.106Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 171, "payload": {"content": [{"text": "The first RED run failed at the missing contract import, then the minimal implementation passed the focused contract and CLI tests. A baseline digest test exposed a recursion regression, which I fixed while preserving its vector.", "type": "output_text"}], "id": "msg_03f0afe3fb20798b016a955867577087d2802ce88e6fa42caf", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788172385.04213, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T10:33:12.253Z", "type": "response_item"}
+{"ordinal": 4699, "payload": {"id": "rs_03f0afe3fb20798b016a959146c04487d2b091935eae28c95e", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:35:54.114Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 4700, "payload": {"completed_at_ms": 1788186956646, "item": {"content": [{"text": "Candidate SHA: `f9b3d0c2ec6eb78b54d82bbeec3cb0da743f034b`\n\nSent to Gate and Controller. Worker paused.\n\n- Changed: Ledger validation, public contract tests, evidence report, changelog.\n- RED: five row-binding probes failed as expected.\n- GREEN: focused tests `7 passed`; full suite `94 passed`.\n- Internal reviews: Standards PASS; Specification PASS.\n- Evidence: [contract-validation.md](<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/docs/evidence/ticket-14/contract-validation.md)\n", "type": "Text"}], "id": "msg_03f0afe3fb20798b016a95914a3ba887d2a800c47dcba932fc", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788186954115, "thread_id": …
 
 ### response_item
 
-{"ordinal": 174, "payload": {"call_id": "call_zDDOvrGzU2pNCyCunpgIyA4o", "id": "ctco_01a05762-d7d2-7e32-a2c4-4e14834d9e0a", "internal_chat_message_metadata_passthrough": {"create_time": 1788172490.706335, "turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T10:34:50.706Z", "type": "response_item"}
+{"ordinal": 4701, "payload": {"content": [{"text": "Candidate SHA: `f9b3d0c2ec6eb78b54d82bbeec3cb0da743f034b`\n\nSent to Gate and Controller. Worker paused.\n\n- Changed: Ledger validation, public contract tests, evidence report, changelog.\n- RED: five row-binding probes failed as expected.\n- GREEN: focused tests `7 passed`; full suite `94 passed`.\n- Internal reviews: Standards PASS; Specification PASS.\n- Evidence: [contract-validation.md](<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/docs/evidence/ticket-14/contract-validation.md)\n", "type": "output_text"}], "id": "msg_03f0afe3fb20798b016a95914a3ba887d2a800c47dcba932fc", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788186949.939991, "turn_id": "01a…
 
-### response_item
+### event_msg
 
-{"ordinal": 177, "payload": {"id": "rs_03f0afe3fb20798b016a9558cd08c087d2b9e573d9e5382fb2", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0575b-95c8-7ca1-8e91-42bad4314e90"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T10:35:01.420Z", "type": "response_item"}
+{"ordinal": 4702, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:35:56.678Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 4703, "payload": {"completed_at": 1788186956, "duration_ms": 253052, "last_agent_message": "Candidate SHA: `f9b3d0c2ec6eb78b54d82bbeec3cb0da743f034b`\n\nSent to Gate and Controller. Worker paused.\n\n- Changed: Ledger validation, public contract tests, evidence report, changelog.\n- RED: five row-binding probes failed as expected.\n- GREEN: focused tests `7 passed`; full suite `94 passed`.\n- Internal reviews: Standards PASS; Specification PASS.\n- Evidence: [contract-validation.md](<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/ticket-14-worker/docs/evidence/ticket-14/contract-validation.md)\n", "started_at": 1788186703, "time_to_first_token_ms": 12651, "turn_id": "01a0583b-b712-7ef3-a43d-8b9f382395fa", "type": "task_complete"}, "timestamp": "2026-08-31T14:35:5…

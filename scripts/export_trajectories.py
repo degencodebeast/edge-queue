@@ -136,13 +136,19 @@ def event_summary(event: dict[str, Any]) -> str:
 
 def select_events(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Keep setup, action, feedback, retry, and completion evidence in a bounded excerpt."""
-    if len(events) <= 80:
+    if len(events) <= 120:
         return events
-    selected_indices = set(range(60)) | set(range(max(60, len(events) - 20), len(events)))
-    for index, event in enumerate(events):
-        if any(word in event_summary(event).lower() for word in SIGNAL_WORDS):
-            selected_indices.add(index)
-    return [events[index] for index in sorted(selected_indices)[:120]]
+    selected_indices = set(range(60)) | set(range(len(events) - 20, len(events)))
+    signal_indices = [
+        index
+        for index, event in enumerate(events)
+        if any(word in event_summary(event).lower() for word in SIGNAL_WORDS)
+    ]
+    for index in reversed(signal_indices):
+        if len(selected_indices) >= 120:
+            break
+        selected_indices.add(index)
+    return [events[index] for index in sorted(selected_indices)]
 
 
 def slug(value: str) -> str:

@@ -78,7 +78,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:57:55.296Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:06.681Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -122,11 +122,11 @@
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 28, "payload": {"call_id": "call_CA0CyNqEXVKyIhUCRnvoZwlo", "id": "ctco_01a0588a-ea32-7760-8b68-1c9dfba7d653", "internal_chat_message_metadata_passthrough": {"create_time": 1788191894.066049, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "{\"chunk_id\":\"3b509f\",\"wall_time_seconds\":0.106566125,\"exit_code\":0,\"original_token_count\":0,\"output\":\"\"}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:58:14.066Z", "type": "response_item"}
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:14.066Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -146,11 +146,11 @@
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 34, "payload": {"call_id": "call_bpTM3FLTGmke2Df2TOUdwSMk", "id": "ctco_01a0588b-15fe-70c3-8c50-6641f9cc16fe", "internal_chat_message_metadata_passthrough": {"create_time": 1788191905.278948, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "{\"chunk_id\":\"85849f\",\"wall_time_seconds\":0.125223625,\"exit_code\":0,\"original_token_count\":4,\"output\":\"preflight: PASS\\n\"}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:58:25.278Z", "type": "response_item"}
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:25.279Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -182,7 +182,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 43, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:33.174Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -206,7 +206,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 49, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:39.664Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -230,7 +230,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 55, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T15:58:47.104Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -250,11 +250,7 @@
 
 ### response_item
 
-{"ordinal": 60, "payload": {"call_id": "call_1fEVaCakh0lYtDwAp57uI6gG", "id": "ctco_01a0588b-87d6-7d11-bd2d-fd4d14e56a36", "internal_chat_message_metadata_passthrough": {"create_time": 1788191934.422665, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "tests/test_verification.py:45:def test_rejects_missing_unlisted_and_digest_mismatched_files(tmp_path: Path) -> None:\ntests/test_verification.py:62:        (\"allocation-receipt.json\", lambda value: value.update({\"corpus_digest\": \"b\" * 64}), \"corpus_digest_mismatch\"),\ntests/test_verification.py:63:        (\"edgequeue-ranking.json\", lambda value: value.update({\"review_queue\": []}), \"budget_violation\"),\ntests/test_verifi…
-
-### response_item
-
-{"ordinal": 63, "payload": {"id": "rs_091e905370d12abc016a95a4c0627087d2a8ad457b2b9635f4", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:58:58.481Z", "type": "response_item"}
+{"ordinal": 852, "payload": {"call_id": "call_OS60bcoYYA2GmpoJ17x6u6Js", "id": "ctco_01a058a9-3e38-7170-b55f-330f41ff0bd7", "internal_chat_message_metadata_passthrough": {"create_time": 1788193881.656996, "turn_id": "01a058a7-9302-7651-be78-261c96d70088"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:31:21.657Z", "type": "response_item"}
 
 ### response_item
 
@@ -262,19 +258,11 @@
 
 ### event_msg
 
-{"ordinal": 65, "payload": {"completed_at_ms": 1788191941268, "item": {"aggregated_output": "        \"offline\": False,\n        \"read_only\": True,\n    }\n\n    with pytest.raises(ContractValidationError, match=\"must equal True\"):\n        validate_contract(\"verification_result\", payload)\n\n\ndef test_nested_records_use_the_frozen_schema_version() -> None:\n    payload = _assessment()\n    payload[\"evidence_references\"] = [\n        {\n            \"case_id\": \"case-a\",\n            \"event_id\": \"E1\",\n            \"relation\": \"contradicts_current\",\n            \"claim\": \"claim\",\n            \"status\": \"verified\",\n        }\n    ]\n    payload[\"attempts\"] = [{\"attempt\": 1, \"outcome\": \"accepted\", \"schema_version\": \"9.9\"}]\n\n    with pytest.raises(Con…
+{"ordinal": 855, "payload": {"completed_at_ms": 1788193885341, "item": {"aggregated_output": "  Gate’s own exact-SHA verdict. I’m requesting that direct confirmation before\n  integration.\n\n• Ran 4 commands · ctrl + t to view transcript\n\n───────────────────────────────────────────────────────────────────────────────\n\n• Ticket 19 is not merged yet. The Gate completed a PASS review but its first\n  Controller notification failed the tmux read guard. I requested the direct\n  exact-SHA verdict again; integration will begin only after it arrives.\n\n───────────────────────────────────────────────────────────────────────────────\n\n\n› [tmux-bridge from:gate-lane-2 pane:%4 at:micro1-lane-2:0.0 — load the smux\n  skill to reply] Ticket 19 Gate cycle 2/3 PASS — exact SHA\n  d15fdcb9b2c8523a…
 
 ### response_item
 
-{"ordinal": 66, "payload": {"call_id": "call_CMqOFjacPhHpQgvXGyUe7Lam", "id": "ctco_01a0588b-a2bd-7253-b24a-4d0b1dff9b49", "internal_chat_message_metadata_passthrough": {"create_time": 1788191941.30944, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "        \"offline\": False,\n        \"read_only\": True,\n    }\n\n    with pytest.raises(ContractValidationError, match=\"must equal True\"):\n        validate_contract(\"verification_result\", payload)\n\n\ndef test_nested_records_use_the_frozen_schema_version() -> None:\n    payload = _assessment()\n    payload[\"evidence_references\"] = [\n        {\n            \"case_id\": \"case-a\",\n            \"event_id\": \"E1\",\n       …
-
-### response_item
-
-{"ordinal": 69, "payload": {"id": "rs_091e905370d12abc016a95a4c72ef887d2b2a3e4c57ddc26fa", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:59:12.663Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 71, "payload": {"id": "rs_091e905370d12abc016a95a4d084b887d2a4e831020725644a", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:59:17.492Z", "type": "response_item"}
+{"ordinal": 856, "payload": {"call_id": "call_G3DvX92OhaaGQUMUsOxF3zoP", "id": "ctco_01a058a9-4ca0-7c21-83d4-46dff3aeaea9", "internal_chat_message_metadata_passthrough": {"create_time": 1788193885.343999, "turn_id": "01a058a7-9302-7651-be78-261c96d70088"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "  Gate’s own exact-SHA verdict. I’m requesting that direct confirmation before\n  integration.\n\n• Ran 4 commands · ctrl + t to view transcript\n\n───────────────────────────────────────────────────────────────────────────────\n\n• Ticket 19 is not merged yet. The Gate completed a PASS review but its first\n  Controller notification failed the tmux read guard. I requested the direct\n  exact-SHA verdict again; integration will begi…
 
 ### response_item
 
@@ -282,43 +270,39 @@
 
 ### response_item
 
-{"ordinal": 74, "payload": {"call_id": "call_pLTVeJH2K75A8sn7lmmmzdV2", "id": "ctco_01a0588b-e61c-7b43-afdf-24e0d339e8ed", "internal_chat_message_metadata_passthrough": {"create_time": 1788191958.555999, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "paths inspected: new review packet files\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:59:18.556Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 78, "payload": {"call_id": "call_LaeqaKWxhP9QXLrau6Yg0Ag5", "id": "ctco_01a0588c-1743-7413-91f6-bf19c2caed0f", "internal_chat_message_metadata_passthrough": {"create_time": 1788191971.13923, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:59:31.139Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 80, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Corrected Ticket 18 preflight. Before any write, first run: cd <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker. Then run these checks from that directory: test \"<USER_HOME>/Projects/personal/micro1-hack\" = \"\"; test \"\" = ticket/18-review-and-correct-selected-case; test \"\" = 08e1a8575e5ed20f00b1d9700517fee2ee17facd; test -z \"\". The earlier packet omitted the explicit cd. Treat that failed planning-root check as a Controller packet error, not a lane failure. If all corrected checks pass, continue the existing task packet. Do not expand scope.", "type": "input_text"}], "id": "msg_01a0588c-1748-7682-bdca-5cba82af85…
+{"ordinal": 860, "payload": {"call_id": "call_lW18twsUXnO4pkL0gY0cScVX", "id": "ctco_01a058a9-656d-7693-982c-4397fc67f7f2", "internal_chat_message_metadata_passthrough": {"create_time": 1788193891.693219, "turn_id": "01a058a7-9302-7651-be78-261c96d70088"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:31:31.693Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 81, "payload": {"completed_at_ms": 1788191971144, "item": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Corrected Ticket 18 preflight. Before any write, first run: cd <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker. Then run these checks from that directory: test \"<USER_HOME>/Projects/personal/micro1-hack\" = \"\"; test \"\" = ticket/18-review-and-correct-selected-case; test \"\" = 08e1a8575e5ed20f00b1d9700517fee2ee17facd; test -z \"\". The earlier packet omitted the explicit cd. Treat that failed planning-root check as a Controller packet error, not a lane failure. If all corrected checks pass, continue the existing task packet. Do not expand scope.", "text_elements": [], "type…
+{"ordinal": 862, "payload": {"completed_at_ms": 1788193894973, "item": {"content": [{"text": "Gate blockers fixed in replacement `3e73b78f1bde4dbc97384a602342a83509b4f053`.\n\n- Added fail-closed validation for missing verified events.\n- Prevented competing resolution records.\n- Focused: 14 passed; full suite: 145 passed.\n- Gate and Controller notified.", "type": "Text"}], "id": "msg_091e905370d12abc016a95ac6590e087d2a95b7f21e5bba9ee", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788193893406, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a058a7-9302-7651-be78-261c96d70088", "type": "item_completed"}, "timestamp": "2026-08-31T16:31:34.973Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 83, "payload": {"id": "rs_091e905370d12abc016a95a4e56c7487d2ad1eb02698d23f39", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:59:38.001Z", "type": "response_item"}
+{"ordinal": 863, "payload": {"content": [{"text": "Gate blockers fixed in replacement `3e73b78f1bde4dbc97384a602342a83509b4f053`.\n\n- Added fail-closed validation for missing verified events.\n- Prevented competing resolution records.\n- Focused: 14 passed; full suite: 145 passed.\n- Gate and Controller notified.", "type": "output_text"}], "id": "msg_091e905370d12abc016a95ac6590e087d2a95b7f21e5bba9ee", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788193892.484561, "turn_id": "01a058a7-9302-7651-be78-261c96d70088"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T16:31:34.981Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 865, "payload": {"completed_at": 1788193895, "duration_ms": 122891, "last_agent_message": "Gate blockers fixed in replacement `3e73b78f1bde4dbc97384a602342a83509b4f053`.\n\n- Added fail-closed validation for missing verified events.\n- Prevented competing resolution records.\n- Focused: 14 passed; full suite: 145 passed.\n- Gate and Controller notified.", "started_at": 1788193772, "time_to_first_token_ms": 6229, "turn_id": "01a058a7-9302-7651-be78-261c96d70088", "type": "task_complete"}, "timestamp": "2026-08-31T16:31:35.187Z", "type": "event_msg"}
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 869, "payload": {"content": [{"text": "[tmux-bridge from:gate-lane-1 pane:%2 at:micro1-lane-1:0.0 — load the smux skill to reply] Ticket 18 Gate cycle 2/3 PASS: reviewed exact candidate 3e73b78f1bde4dbc97384a602342a83509b4f053. Clean status, exact HEAD, ancestry from e6b9b0db18664a24a68bfce8cbed88eb3e06397b and base, owned surfaces, diff check, cycle-1 authority fixes, HTML evidence semantics, adjudicate CLI, evidence bindings, focused tests (16 passed), and full uv run pytest -q (145 passed) all passed.", "type": "input_text"}], "id": "msg_01a058aa-d428-7dc0-a6ce-28b32ba7fcbc", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788193985.57663, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "role": "user", "type": "message"…
+
+### event_msg
+
+{"ordinal": 870, "payload": {"completed_at_ms": 1788193985577, "item": {"content": [{"text": "[tmux-bridge from:gate-lane-1 pane:%2 at:micro1-lane-1:0.0 — load the smux skill to reply] Ticket 18 Gate cycle 2/3 PASS: reviewed exact candidate 3e73b78f1bde4dbc97384a602342a83509b4f053. Clean status, exact HEAD, ancestry from e6b9b0db18664a24a68bfce8cbed88eb3e06397b and base, owned surfaces, diff check, cycle-1 authority fixes, HTML evidence semantics, adjudicate CLI, evidence bindings, focused tests (16 passed), and full uv run pytest -q (145 passed) all passed.", "text_elements": [], "type": "text"}], "id": "01a058aa-d429-74b1-9385-14bf316b15e5", "type": "UserMessage"}, "started_at_ms": 1788193985577, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a058aa-d386-7020-89e6-b11…
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 872, "payload": {"id": "rs_091e905370d12abc016a95acc37d8887d2908ce25471115ca0", "internal_chat_message_metadata_passthrough": {"turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:33:07.875Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 873, "payload": {"completed_at_ms": 1788193988483, "item": {"content": [{"text": "Gate cycle 2 passed the replacement SHA. I’m forwarding the exact verdict to the Controller and remain paused.", "type": "Text"}], "id": "msg_091e905370d12abc016a95acc4082c87d2a6e4bd10fc3efde6", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788193987877, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d", "type": "item_completed"}, "timestamp": "2026-08-31T16:33:08.483Z", "type": "event_msg"}
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 90, "payload": {"call_id": "call_zkZyy1XQPoO3z0Skpl5C8lWN", "id": "ctco_01a0588c-4b73-7243-8997-5de34d91097a", "internal_chat_message_metadata_passthrough": {"create_time": 1788191984.499759, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "  and source documents. I will not inspect the Worker lane until worker-lane-1\n  sends one exact candidate SHA.\n\n\n• Ran 2 commands · ctrl + t to view transcript\n\n• Ran rg -o -m1 'Wave 2 (Gate standby|Worker activation) — Ticket (18|19|20)' /\n  │ Users/degencodebeast/.codex/sessions/2026/08/31/\n  │ rollout-2026-08-31T16-5*.jsonl\n  └ <USER_HOME>/.codex/sessions/2026/08/31/\n    rollout-2026-08-31T16-54-59-01a05887-f354-7342-bc…
-
-### response_item
-
-{"ordinal": 93, "payload": {"id": "rs_091e905370d12abc016a95a4f1cef487d2a81a5d6d8f72a552", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:59:47.379Z", "type": "response_item"}
+{"ordinal": 874, "payload": {"content": [{"text": "Gate cycle 2 passed the replacement SHA. I’m forwarding the exact verdict to the Controller and remain paused.", "type": "output_text"}], "id": "msg_091e905370d12abc016a95acc4082c87d2a6e4bd10fc3efde6", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788193986.526814, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T16:33:08.484Z", "type": "response_item"}
 
 ### response_item
 
@@ -326,39 +310,11 @@
 
 ### event_msg
 
-{"ordinal": 95, "payload": {"completed_at_ms": 1788191991793, "item": {"aggregated_output": "", "command": ["/bin/zsh", "-lc", "tmux-bridge message controller 'Lane 1: AGENTS.md preflight passed with assigned worktree, branch, and base. The corrected literal check sequence returned shell status 0 but predicates 1–3 remain empty-template comparisons. I will continue only under the passed assigned-lane preflight and current ticket boundary.'"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker", "duration": {"nanos": 137009958, "secs": 0}, "exit_code": 0, "formatted_output": "", "id": "exec-5f018d0b-a16a-4bf2-9dab-ad527eabebe3", "parsed_cmd": [{"cmd": "tmux-bridge message controller 'Lane 1: AGENTS.md preflight passed with assigned worktree, branch, …
+{"ordinal": 876, "payload": {"completed_at_ms": 1788193990101, "item": {"aggregated_output": "\n\n› [tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux\n  skill to reply] Acknowledged. Ticket 19 is integrated. Lane 2 is clean and\n  will remain paused with no branch or file changes until Wave 2 turnover.\n\n\n• Ticket 19 is integrated at d15fdcb… with 139 tests passing.\n\n  Ticket 18 replacement 3e73b78… is in Gate cycle 2/3, closing:\n\n  - missing same-case verified-evidence enforcement;\n  - competing Resolution Adjudication handling.\n\n─ Worked for 2m 18s ───────────────────────────────────────────────────────────\n\n\n› [tmux-bridge from:gate-lane-2 pane:%4 at:micro1-lane-2:0.0 — load the smux\n  skill to reply] Acknowledged. Ticket 19 is integrated. Gate-la…
 
 ### response_item
 
-{"ordinal": 96, "payload": {"call_id": "call_CEnXZPJBOPlzO6zyLl7uWLss", "id": "ctco_01a0588c-67f3-79a2-95da-1b29374dc94a", "internal_chat_message_metadata_passthrough": {"create_time": 1788191991.795596, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:59:51.795Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### event_msg
-
-{"ordinal": 99, "payload": {"completed_at_ms": 1788191994866, "item": {"aggregated_output": "\n\n› [tmux-bridge from:worker-lane-3 pane:%7 at:micro1-lane-3:0.1 — load the smux\n  skill to reply] Ticket 20 is blocked before writes. I ran the supplied\n  preflight exactly: first check failed (planning root compared to empty\n  string); second check failed (empty value compared to base SHA); third\n  passed. The assigned lane itself is on ticket/20-generate-evaluation-run-\n  and-claims at 08e1a8575e5ed20f00b1d9700517fee2ee17facd. AGENTS.md requires\n  workers to stop when a preflight check fails. Please resend a corrected task\n  packet/preflight.\n\n\n• The Worker preflight correctly stopped because my packet omitted the explicit\n  cd command. I’m correcting all three Worker packets now, b…
-
-### response_item
-
-{"ordinal": 100, "payload": {"call_id": "call_rICuKiELVISGxi4nWUcugxsM", "id": "ctco_01a0588c-73f4-73b2-a47f-cfd9d1d834b7", "internal_chat_message_metadata_passthrough": {"create_time": 1788191994.868157, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "\n\n› [tmux-bridge from:worker-lane-3 pane:%7 at:micro1-lane-3:0.1 — load the smux\n  skill to reply] Ticket 20 is blocked before writes. I ran the supplied\n  preflight exactly: first check failed (planning root compared to empty\n  string); second check failed (empty value compared to base SHA); third\n  passed. The assigned lane itself is on ticket/20-generate-evaluation-run-\n  and-claims at 08e1a8575e5ed20f00b1d9700517fee2ee17f…
-
-### response_item
-
-{"ordinal": 103, "payload": {"id": "rs_091e905370d12abc016a95a4fc52fc87d2a5a44751c679c0b3", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T15:59:56.684Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 106, "payload": {"call_id": "call_r7LL66BxLnpO85kgVhw2bCNx", "id": "ctco_01a0588c-831d-7b50-af57-9f4432b12cc0", "internal_chat_message_metadata_passthrough": {"create_time": 1788191998.749573, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T15:59:58.749Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 109, "payload": {"id": "rs_091e905370d12abc016a95a50055d087d29b51091dc507fc2c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:00:00.550Z", "type": "response_item"}
+{"ordinal": 877, "payload": {"call_id": "call_EkE8tN1WeVfRa9URCzLZaNRQ", "id": "ctco_01a058aa-e5d6-7f32-be9d-61d527372bfa", "internal_chat_message_metadata_passthrough": {"create_time": 1788193990.102986, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "\n\n› [tmux-bridge from:worker-lane-2 pane:%5 at:micro1-lane-2:0.1 — load the smux\n  skill to reply] Acknowledged. Ticket 19 is integrated. Lane 2 is clean and\n  will remain paused with no branch or file changes until Wave 2 turnover.\n\n\n• Ticket 19 is integrated at d15fdcb… with 139 tests passing.\n\n  Ticket 18 replacement 3e73b78… is in Gate cycle 2/3, closing:\n\n  - missing same-case verified-evidence enforcement;\n  - comp…
 
 ### response_item
 
@@ -366,27 +322,11 @@
 
 ### event_msg
 
-{"ordinal": 111, "payload": {"completed_at_ms": 1788192002719, "item": {"aggregated_output": "ERROR: found no collectors for <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/tests/test_review_packet.py::test_renders_selected_case_with_risk_finding_and_selection_boundary\n\n\n==================================== ERRORS ====================================\n_________________ ERROR collecting tests/test_review_packet.py _________________\nImportError while importing test module '<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/tests/test_review_packet.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n../../../../../../.local/share/uv/python/cpython-3.14.4-macos-aarch64-none/lib/python3.14/importlib/__…
+{"ordinal": 880, "payload": {"completed_at_ms": 1788193997030, "item": {"aggregated_output": "", "command": ["/bin/zsh", "-lc", "tmux-bridge message controller 'Ticket 18 Gate cycle 2/3 PASS — exact SHA 3e73b78f1bde4dbc97384a602342a83509b4f053. Gate verified clean exact HEAD, ancestry from e6b9b0d and base, owned surfaces, diff check, authority and conflict fixes, HTML semantics, CLI, evidence bindings, focused tests 16 passed, and full suite 145 passed. Worker lane is clean and paused.'"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker", "duration": {"nanos": 118414584, "secs": 0}, "exit_code": 0, "formatted_output": "", "id": "exec-3c23e605-1e2a-4082-ae70-23129a500f31", "parsed_cmd": [{"cmd": "tmux-bridge message controller 'Ticket 18 Gate cyc…
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 117, "payload": {"id": "rs_091e905370d12abc016a95a50467f087d294d093b520b0e98e", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:00:07.826Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 118, "payload": {"call_id": "call_jGKRHRKQRvlZtbNhjE69ix3B", "id": "ctc_091e905370d12abc016a95a507e4fc87d28c4eb155a4319577", "input": "const patch = \"*** Begin Patch\\n*** Add File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/src/edgequeue/review_packet.py\\n+\\\"\\\"\\\"Render readable, non-authoritative Review Packets for selected cases.\\\"\\\"\\\"\\n+\\n+from __future__ import annotations\\n+\\n+from collections.abc import Mapping, Sequence\\n+from html import escape\\n+from typing import Any\\n+\\n+\\n+class ReviewPacketError(ValueError):\\n+    \\\"\\\"\\\"A Review Packet input cannot describe the selected Review Queue.\\\"\\\"\\\"\\n+\\n+\\n+def render_review_packet(\\n+    allocation_receipt: Mapping[str, Any],\\n+    assessments: Seque…
-
-### event_msg
-
-{"ordinal": 119, "payload": {"completed_at_ms": 1788192041406, "item": {"changes": {"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/src/edgequeue/review_packet.py": {"content": "\"\"\"Render readable, non-authoritative Review Packets for selected cases.\"\"\"\n\nfrom __future__ import annotations\n\nfrom collections.abc import Mapping, Sequence\nfrom html import escape\nfrom typing import Any\n\n\nclass ReviewPacketError(ValueError):\n    \"\"\"A Review Packet input cannot describe the selected Review Queue.\"\"\"\n\n\ndef render_review_packet(\n    allocation_receipt: Mapping[str, Any],\n    assessments: Sequence[Mapping[str, Any]],\n    ranker_cases: Sequence[Mapping[str, Any]],\n) -> str:\n    \"\"\"Return an HTML Review Packet without granting any decision…
-
-### response_item
-
-{"ordinal": 120, "payload": {"call_id": "call_jGKRHRKQRvlZtbNhjE69ix3B", "id": "ctco_01a0588d-2a6f-7420-a9a4-cc42f4520687", "internal_chat_message_metadata_passthrough": {"create_time": 1788192041.583147, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:00:41.583Z", "type": "response_item"}
+{"ordinal": 881, "payload": {"call_id": "call_ubtsKQhs6GGnbA4pDZbaLQDL", "id": "ctco_01a058ab-00e9-77d2-8027-3646452a8f96", "internal_chat_message_metadata_passthrough": {"create_time": 1788193997.033346, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:33:17.033Z", "type": "response_item"}
 
 ### response_item
 
@@ -394,7 +334,15 @@
 
 ### event_msg
 
-{"ordinal": 123, "payload": {"completed_at_ms": 1788192046415, "item": {"aggregated_output": ".                                                                        [100%]\n1 passed in 0.01s\n", "command": ["/bin/zsh", "-lc", "uv run pytest -q tests/test_review_packet.py::test_renders_selected_case_with_risk_finding_and_selection_boundary"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker", "duration": {"nanos": 373279083, "secs": 0}, "exit_code": 0, "formatted_output": ".                                                                        [100%]\n1 passed in 0.01s\n", "id": "exec-29dbb7c8-3014-4be0-b248-300aa48d007d", "parsed_cmd": [{"cmd": "uv run pytest -q tests/test_review_packet.py::test_renders_selected_case_with_risk_finding_and_selec…
+{"ordinal": 884, "payload": {"completed_at_ms": 1788194000932, "item": {"aggregated_output": "  - missing same-case verified-evidence enforcement;\n  - competing Resolution Adjudication handling.\n\n─ Worked for 2m 18s ───────────────────────────────────────────────────────────\n\n\n› [tmux-bridge from:gate-lane-2 pane:%4 at:micro1-lane-2:0.0 — load the smux\n  skill to reply] Acknowledged. Ticket 19 is integrated. Gate-lane-2 remains\n  read-only and idle until the Wave 2 turnover.\n\n\n• Lane 2 is correctly idle and read-only. Wave 2 continues with Tickets 18 and\n  20.\n\n\n› [tmux-bridge from:gate-lane-1 pane:%2 at:micro1-lane-1:0.0 — load the smux\n  skill to reply] Ticket 18 Gate PASS — exact SHA\n  3e73b78f1bde4dbc97384a602342a83509b4f053. Clean exact HEAD and ancestry from\n  e6b9b…
+
+### response_item
+
+{"ordinal": 885, "payload": {"call_id": "call_xwNKKsEewkRAESul4WnhgnCA", "id": "ctco_01a058ab-1025-71d2-8040-a8a8d48035d8", "internal_chat_message_metadata_passthrough": {"create_time": 1788194000.933917, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "  - missing same-case verified-evidence enforcement;\n  - competing Resolution Adjudication handling.\n\n─ Worked for 2m 18s ───────────────────────────────────────────────────────────\n\n\n› [tmux-bridge from:gate-lane-2 pane:%4 at:micro1-lane-2:0.0 — load the smux\n  skill to reply] Acknowledged. Ticket 19 is integrated. Gate-lane-2 remains\n  read-only and idle until the Wave 2 turnover.\n\n\n• Lane 2 is correctly idle and read-o…
+
+### response_item
+
+{"ordinal": 888, "payload": {"id": "rs_091e905370d12abc016a95acd3081c87d28c8c6e32ba991294", "internal_chat_message_metadata_passthrough": {"turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:33:23.376Z", "type": "response_item"}
 
 ### response_item
 
@@ -402,63 +350,35 @@
 
 ### response_item
 
-{"ordinal": 127, "payload": {"id": "rs_091e905370d12abc016a95a531c8a887d2bc6f51de3d670a0d", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:00:59.058Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 129, "payload": {"id": "rs_091e905370d12abc016a95a53b195487d2b503049bf8910f9b", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:01:08.719Z", "type": "response_item"}
+{"ordinal": 891, "payload": {"call_id": "call_Rw5fDOVIwyIajAIpllQ0WwSo", "id": "ctco_01a058ab-1f8e-7622-abb6-af3f37013fd8", "internal_chat_message_metadata_passthrough": {"create_time": 1788194004.878893, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:33:24.878Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 130, "payload": {"completed_at_ms": 1788192068906, "item": {"content": [{"text": "The first vertical slice is green: the packet renders the selected case, evidence, clauses, and selection boundary. I’m moving to append-only human authority next.", "type": "Text"}], "id": "msg_091e905370d12abc016a95a544c44887d2895e8f5b97f271a0", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788192068721, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2", "type": "item_completed"}, "timestamp": "2026-08-31T16:01:08.906Z", "type": "event_msg"}
+{"ordinal": 893, "payload": {"completed_at_ms": 1788194007358, "item": {"content": [{"text": "Gate cycle 2 passed candidate `3e73b78f1bde4dbc97384a602342a83509b4f053`. Controller notified; lane remains clean and paused.", "type": "Text"}], "id": "msg_091e905370d12abc016a95acd6952887d2bf3057c084a961dd", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788194006488, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d", "type": "item_completed"}, "timestamp": "2026-08-31T16:33:27.359Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 131, "payload": {"content": [{"text": "The first vertical slice is green: the packet renders the selected case, evidence, clauses, and selection boundary. I’m moving to append-only human authority next.", "type": "output_text"}], "id": "msg_091e905370d12abc016a95a544c44887d2895e8f5b97f271a0", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788192048.579782, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T16:01:08.908Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 134, "payload": {"call_id": "call_lyPk1NZzBABU6XpWxkxSNGzH", "id": "ctco_01a0588d-97d7-75b2-b12d-d4cf4e803b24", "internal_chat_message_metadata_passthrough": {"create_time": 1788192069.591583, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "paths inspected: new adjudication files\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:01:09.591Z", "type": "response_item"}
+{"ordinal": 894, "payload": {"content": [{"text": "Gate cycle 2 passed candidate `3e73b78f1bde4dbc97384a602342a83509b4f053`. Controller notified; lane remains clean and paused.", "type": "output_text"}], "id": "msg_091e905370d12abc016a95acd6952887d2bf3057c084a961dd", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788194005.555019, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T16:33:27.362Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 137, "payload": {"completed_at_ms": 1788192086464, "item": {"changes": {"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/tests/test_adjudication.py": {"content": "import json\n\nfrom edgequeue.adjudication import append_adjudication, create_adjudication\nfrom edgequeue.contracts import content_digest\n\n\ndef _digest(name: str) -> str:\n    return content_digest({\"ticket\": \"18\", \"name\": name})\n\n\ndef _manifest() -> dict[str, object]:\n    manifest = {\n        \"schema_version\": \"1.0\",\n        \"manifest_id\": \"ticket-18-reviewers\",\n        \"version\": \"1.0\",\n        \"reviewers\": [\n            {\n                \"reviewer_id\": \"human-1\",\n                \"roles\": [\"reviewer\", \"conflict_resolver\"],\n                \"c…
+{"ordinal": 896, "payload": {"completed_at": 1788194007, "duration_ms": 22224, "last_agent_message": "Gate cycle 2 passed candidate `3e73b78f1bde4dbc97384a602342a83509b4f053`. Controller notified; lane remains clean and paused.", "started_at": 1788193985, "time_to_first_token_ms": 2473, "turn_id": "01a058aa-d386-7020-89e6-b11a61ca8a0d", "type": "task_complete"}, "timestamp": "2026-08-31T16:33:27.712Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 138, "payload": {"call_id": "call_IFZ5KrFIGLOsyJu1HUiEUxXk", "id": "ctco_01a0588d-da04-7523-b666-e773729704cc", "internal_chat_message_metadata_passthrough": {"create_time": 1788192086.532308, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:01:26.532Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 900, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Ticket 18 exact Gate-approved SHA 3e73b78f1bde4dbc97384a602342a83509b4f053 is integrated in merge commit a0178c539ecd7cad1dc6553ba0b570229bb884e3. Post-integration checks passed: combined focused 23, full 152, lock, compile, and diff checks. Keep Lane 1 clean and paused until Wave 2 turnover.", "type": "input_text"}], "id": "msg_01a058ac-662d-7b82-b781-695cfb775588", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788194088.493244, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T16:34:48.493Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 141, "payload": {"completed_at_ms": 1788192090361, "item": {"aggregated_output": "ERROR: found no collectors for <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/tests/test_adjudication.py::test_appends_an_authorized_correction_bound_to_manifest_and_prior\n\n\n==================================== ERRORS ====================================\n_________________ ERROR collecting tests/test_adjudication.py __________________\nImportError while importing test module '<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/tests/test_adjudication.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n../../../../../../.local/share/uv/python/cpython-3.14.4-macos-aarch64-none/lib/python3.14/importlib/__init…
+{"ordinal": 901, "payload": {"completed_at_ms": 1788194088493, "item": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Ticket 18 exact Gate-approved SHA 3e73b78f1bde4dbc97384a602342a83509b4f053 is integrated in merge commit a0178c539ecd7cad1dc6553ba0b570229bb884e3. Post-integration checks passed: combined focused 23, full 152, lock, compile, and diff checks. Keep Lane 1 clean and paused until Wave 2 turnover.", "text_elements": [], "type": "text"}], "id": "01a058ac-662d-7b82-b781-6962bbc0bb1e", "type": "UserMessage"}, "started_at_ms": 1788194088493, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59", "type": "item_completed"}, "timestamp": "2026-08-31T16:34:48.493Z", "ty…
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 903, "payload": {"id": "rs_091e905370d12abc016a95ad2bcb0487d28e3497b263aaad53", "internal_chat_message_metadata_passthrough": {"turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:34:52.022Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 145, "payload": {"id": "rs_091e905370d12abc016a95a55c084487d2bd402571f5e16834", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:01:39.000Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 146, "payload": {"call_id": "call_K5KeESNP9qLa6rvXdLIICcEF", "id": "ctc_091e905370d12abc016a95a563122087d2ad5e0ccd8042a3d5", "input": "const patch = \"*** Begin Patch\\n*** Add File: <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/src/edgequeue/adjudication.py\\n+\\\"\\\"\\\"Append-only human Adjudications and conflict-safe canonical authority.\\\"\\\"\\\"\\n+\\n+from __future__ import annotations\\n+\\n+import json\\n+from collections.abc import Mapping, Sequence\\n+from pathlib import Path\\n+from typing import Any, Literal\\n+\\n+from edgequeue.contracts import (\\n+    ContractValidationError,\\n+    canonical_json,\\n+    digest_contract,\\n+    validate_adjudication_authority,\\n+    validate_resolution_adjudication,\\n+)\\n+\\n+\\n+Decision =…
-
-### event_msg
-
-{"ordinal": 147, "payload": {"completed_at_ms": 1788192135822, "item": {"changes": {"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/src/edgequeue/adjudication.py": {"content": "\"\"\"Append-only human Adjudications and conflict-safe canonical authority.\"\"\"\n\nfrom __future__ import annotations\n\nimport json\nfrom collections.abc import Mapping, Sequence\nfrom pathlib import Path\nfrom typing import Any, Literal\n\nfrom edgequeue.contracts import (\n    ContractValidationError,\n    canonical_json,\n    digest_contract,\n    validate_adjudication_authority,\n    validate_resolution_adjudication,\n)\n\n\nDecision = Literal[\"preserve\", \"correct\", \"abstain\"]\n\n\nclass AdjudicationError(ValueError):\n    \"\"\"An Adjudication cannot enter the append-only…
-
-### response_item
-
-{"ordinal": 148, "payload": {"call_id": "call_K5KeESNP9qLa6rvXdLIICcEF", "id": "ctco_01a0588e-9abc-7112-ab37-e8599c36a206", "internal_chat_message_metadata_passthrough": {"create_time": 1788192135.868861, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:02:15.868Z", "type": "response_item"}
+{"ordinal": 905, "payload": {"content": [{"text": "Acknowledged. Lane 1 will remain clean and paused until Wave 2 turnover.", "type": "output_text"}], "id": "msg_091e905370d12abc016a95ad2c1b0c87d284651ee9e01ef0ae", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788194089.54613, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T16:34:52.495Z", "type": "response_item"}
 
 ### response_item
 
@@ -466,24 +386,104 @@
 
 ### event_msg
 
-{"ordinal": 151, "payload": {"completed_at_ms": 1788192139510, "item": {"aggregated_output": ".                                                                        [100%]\n1 passed in 0.01s\n", "command": ["/bin/zsh", "-lc", "uv run pytest -q tests/test_adjudication.py::test_appends_an_authorized_correction_bound_to_manifest_and_prior"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker", "duration": {"nanos": 359904292, "secs": 0}, "exit_code": 0, "formatted_output": ".                                                                        [100%]\n1 passed in 0.01s\n", "id": "exec-db8abb78-c346-4c7b-889f-0a36854587da", "parsed_cmd": [{"cmd": "uv run pytest -q tests/test_adjudication.py::test_appends_an_authorized_correction_bound_to_manifest_an…
+{"ordinal": 907, "payload": {"completed_at_ms": 1788194094083, "item": {"aggregated_output": "\n\n• Edited 2 files (+23 -17)\n  └ .scratch/edgequeue/controller-handoff.md (+5 -2)\n      9  - Integration branch: `integration/edgequeue-mvp`\n     10 -- Current integration SHA: `d15fdcb9b2c8523aefec4fad219e56278def4e6e`\n     10 +- Current integration SHA: `a0178c539ecd7cad1dc6553ba0b570229bb884e3`\n     11  - Integration worktree: `.worktrees/edgequeue/integration`\n     12 -- Baseline verification: Ticket 19 focused tests returned `7 passed`;\n         full suite returned `139 passed`.\n     12 +- Baseline verification: combined Ticket 18 and 19 focused tests retur\n         ned `23 passed`; full suite returned `152 passed`.\n     13  - Root Verification Command: Not available before Ticket…
+
+### response_item
+
+{"ordinal": 908, "payload": {"call_id": "call_mHUFEA0Lj3vGSMY2QVGCs3Og", "id": "ctco_01a058ac-7c76-7242-ba2c-f3522ec927c9", "internal_chat_message_metadata_passthrough": {"create_time": 1788194094.198388, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "\n\n• Edited 2 files (+23 -17)\n  └ .scratch/edgequeue/controller-handoff.md (+5 -2)\n      9  - Integration branch: `integration/edgequeue-mvp`\n     10 -- Current integration SHA: `d15fdcb9b2c8523aefec4fad219e56278def4e6e`\n     10 +- Current integration SHA: `a0178c539ecd7cad1dc6553ba0b570229bb884e3`\n     11  - Integration worktree: `.worktrees/edgequeue/integration`\n     12 -- Baseline verification: Ticket 19 focused tests ret…
 
 ### response_item
 
 <REDACTED_PRIVATE_EVENT>
 
+### event_msg
+
+{"ordinal": 911, "payload": {"completed_at_ms": 1788194099260, "item": {"aggregated_output": "error: must read the pane before interacting. Run: tmux-bridge read %9\n", "command": ["/bin/zsh", "-lc", "tmux-bridge message controller 'Acknowledged. Lane 1 remains clean and paused until Wave 2 turnover.'"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker", "duration": {"nanos": 114857667, "secs": 0}, "exit_code": 1, "formatted_output": "error: must read the pane before interacting. Run: tmux-bridge read %9\n", "id": "exec-53d1b9ec-2597-4959-b3ff-d452e1c5f5c3", "parsed_cmd": [{"cmd": "tmux-bridge message controller 'Acknowledged. Lane 1 remains clean and paused until Wave 2 turnover.'", "type": "unknown"}], "process_id": "21717", "source": "unified_e…
+
 ### response_item
 
-{"ordinal": 155, "payload": {"id": "rs_091e905370d12abc016a95a58cf9f887d2b50a6e57413e3c95", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:02:30.166Z", "type": "response_item"}
+{"ordinal": 912, "payload": {"call_id": "call_cCQmnKeA2GpqmQhTx6Nby9MR", "id": "ctco_01a058ac-90d2-7fe1-b45e-312faa49209b", "internal_chat_message_metadata_passthrough": {"create_time": 1788194099.410143, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "error: must read the pane before interacting. Run: tmux-bridge read %9\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:34:59.410Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 915, "payload": {"id": "rs_091e905370d12abc016a95ad352b9c87d28538d9e4ccc9853b", "internal_chat_message_metadata_passthrough": {"turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:35:01.874Z", "type": "response_item"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
-{"ordinal": 157, "payload": {"completed_at_ms": 1788192163572, "item": {"changes": {"<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker/tests/test_cli_contracts.py": {"move_path": null, "type": "update", "unified_diff": "@@ -2,3 +2,5 @@\n import sys\n+import json\n \n+from edgequeue.contracts import content_digest\n from edgequeue.proof_bundle import build_proof_bundle\n@@ -58 +60,29 @@\n     assert '\"valid\":true' in result.stdout\n+\n+\n+def test_adjudicate_appends_one_local_authorized_record(tmp_path) -> None:\n+    digest = lambda name: content_digest({\"ticket\": \"18\", \"name\": name})\n+    manifest = {\n+        \"schema_version\": \"1.0\", \"manifest_id\": \"reviewers-v1\", \"version\": \"1.0\",\n+        \"reviewers\": [{\"reviewer_id\": \"human-1\", \…
+{"ordinal": 917, "payload": {"completed_at_ms": 1788194103476, "item": {"aggregated_output": "     12 +- Baseline verification: combined Ticket 18 and 19 focused tests retur\n         ned `23 passed`; full suite returned `152 passed`.\n     13  - Root Verification Command: Not available before Ticket 21.\n        ⋮\n    143  - Ticket 18 Gate state: cycle 2 active on the exact replacement SHA.\n    144 +- Ticket 18 Gate state: cycle 2 PASS; exact replacement integrated.\n\n  └ .scratch/edgequeue/issues/18-review-and-correct-selected-case.md (+18 -15)\n  … Diff preview limited (ctrl + t to view transcript).\n\n• Ran 8 commands · ctrl + t to view transcript\n\n───────────────────────────────────────────────────────────────────────────────\n\n• Ticket 18 is integrated in a0178c5….\n\n  Current…
 
 ### response_item
 
-{"ordinal": 158, "payload": {"call_id": "call_s5PhI9DcEf3OXMPez02HvKxj", "id": "ctco_01a0588f-0713-7312-926a-1fb84a680357", "internal_chat_message_metadata_passthrough": {"create_time": 1788192163.603052, "turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "output": [{"text": "Script completed\nWall time 0.0 seconds\nOutput:\n", "type": "input_text"}, {"text": "{}", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:02:43.603Z", "type": "response_item"}
+{"ordinal": 918, "payload": {"call_id": "call_jzAq4ahMtCVHejuvkXSU2PWU", "id": "ctco_01a058ac-a0e3-7040-8865-5c482e4e64e4", "internal_chat_message_metadata_passthrough": {"create_time": 1788194103.523456, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "     12 +- Baseline verification: combined Ticket 18 and 19 focused tests retur\n         ned `23 passed`; full suite returned `152 passed`.\n     13  - Root Verification Command: Not available before Ticket 21.\n        ⋮\n    143  - Ticket 18 Gate state: cycle 2 active on the exact replacement SHA.\n    144 +- Ticket 18 Gate state: cycle 2 PASS; exact replacement integrated.\n\n  └ .scratch/edgequeue/issues/18-review-and-correct-s…
+
+### event_msg
+
+{"ordinal": 919, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T16:35:03.523Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 161, "payload": {"id": "rs_091e905370d12abc016a95a5a5ee1c87d2addc00618a328f76", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0588a-813d-76a3-b836-d0f4427ce1e2"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T16:02:46.399Z", "type": "response_item"}
+<REDACTED_PRIVATE_EVENT>
+
+### event_msg
+
+{"ordinal": 921, "payload": {"completed_at_ms": 1788194107803, "item": {"aggregated_output": "", "command": ["/bin/zsh", "-lc", "tmux-bridge message %9 'Acknowledged. Lane 1 remains clean and paused until Wave 2 turnover.'"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker", "duration": {"nanos": 115907375, "secs": 0}, "exit_code": 0, "formatted_output": "", "id": "exec-eed7affd-0ec6-44d1-9263-892e8a0a8d2b", "parsed_cmd": [{"cmd": "tmux-bridge message %9 'Acknowledged. Lane 1 remains clean and paused until Wave 2 turnover.'", "type": "unknown"}], "process_id": "89972", "source": "unified_exec_startup", "status": "completed", "stderr": "", "stdout": "", "type": "CommandExecution"}, "started_at_ms": 1788194107687, "thread_id": "01a05887-eff2-7133-9…
+
+### response_item
+
+{"ordinal": 922, "payload": {"call_id": "call_n0uMum0IXHZZZ8myYDWg5T66", "id": "ctco_01a058ac-b19e-75f3-a7c3-00a53ef0741b", "internal_chat_message_metadata_passthrough": {"create_time": 1788194107.806016, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:35:07.806Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 923, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T16:35:07.806Z", "type": "event_msg"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### event_msg
+
+{"ordinal": 925, "payload": {"completed_at_ms": 1788194111355, "item": {"aggregated_output": "    143  - Ticket 18 Gate state: cycle 2 active on the exact replacement SHA.\n    144 +- Ticket 18 Gate state: cycle 2 PASS; exact replacement integrated.\n\n  └ .scratch/edgequeue/issues/18-review-and-correct-selected-case.md (+18 -15)\n  … Diff preview limited (ctrl + t to view transcript).\n\n• Ran 8 commands · ctrl + t to view transcript\n\n───────────────────────────────────────────────────────────────────────────────\n\n• Ticket 18 is integrated in a0178c5….\n\n  Current Wave 2 integration:\n\n  - Ticket 18: integrated\n  - Ticket 19: integrated\n  - Ticket 20: final evidence repair active\n  - Combined suite: 152 passed\n\n  main remains at the Wave 1 SHA until Ticket 20 passes.\n\n─ Worke…
+
+### response_item
+
+{"ordinal": 926, "payload": {"call_id": "call_t3pF5SeR4MLzQ1jJi4KLFrPy", "id": "ctco_01a058ac-bf7d-7941-a389-0fd30f9e71b0", "internal_chat_message_metadata_passthrough": {"create_time": 1788194111.357497, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "    143  - Ticket 18 Gate state: cycle 2 active on the exact replacement SHA.\n    144 +- Ticket 18 Gate state: cycle 2 PASS; exact replacement integrated.\n\n  └ .scratch/edgequeue/issues/18-review-and-correct-selected-case.md (+18 -15)\n  … Diff preview limited (ctrl + t to view transcript).\n\n• Ran 8 commands · ctrl + t to view transcript\n\n───────────────────────────────────────────────────────────────────────────────\n\n• Tic…
+
+### event_msg
+
+{"ordinal": 927, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T16:35:11.357Z", "type": "event_msg"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### event_msg
+
+{"ordinal": 929, "payload": {"completed_at_ms": 1788194115691, "item": {"aggregated_output": "", "command": ["/bin/zsh", "-lc", "tmux-bridge keys %9 Enter"], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-1-worker", "duration": {"nanos": 118502375, "secs": 0}, "exit_code": 0, "formatted_output": "", "id": "exec-c76c5786-1aa0-444b-bbe7-3f05e0ad7f7c", "parsed_cmd": [{"cmd": "tmux-bridge keys %9 Enter", "type": "unknown"}], "process_id": "18892", "source": "unified_exec_startup", "status": "completed", "stderr": "", "stdout": "", "type": "CommandExecution"}, "started_at_ms": 1788194115572, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59", "type": "item_completed"}, "timestamp": "2026-08-31T16:35:15.691Z"…
+
+### response_item
+
+{"ordinal": 930, "payload": {"call_id": "call_BJ0c3DPdDLAG6euFlULY4awY", "id": "ctco_01a058ac-d06f-7f32-a514-70bf52f3c53b", "internal_chat_message_metadata_passthrough": {"create_time": 1788194115.695209, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T16:35:15.695Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 931, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T16:35:15.695Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 932, "payload": {"completed_at_ms": 1788194118404, "item": {"content": [{"text": "Acknowledged. Lane 1 is clean and paused.", "type": "Text"}], "id": "msg_091e905370d12abc016a95ad462fc087d2a163b59b4b199f13", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788194118093, "thread_id": "01a05887-eff2-7133-9d31-e1d9b7bf06f8", "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59", "type": "item_completed"}, "timestamp": "2026-08-31T16:35:18.404Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 933, "payload": {"content": [{"text": "Acknowledged. Lane 1 is clean and paused.", "type": "output_text"}], "id": "msg_091e905370d12abc016a95ad462fc087d2a163b59b4b199f13", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788194116.439986, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T16:35:18.407Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 934, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T16:35:18.673Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 935, "payload": {"completed_at": 1788194118, "duration_ms": 31449, "last_agent_message": "Acknowledged. Lane 1 is clean and paused.", "started_at": 1788194087, "time_to_first_token_ms": 4784, "turn_id": "01a058ac-6141-78b2-a9d9-e14e3f0caa59", "type": "task_complete"}, "timestamp": "2026-08-31T16:35:18.688Z", "type": "event_msg"}

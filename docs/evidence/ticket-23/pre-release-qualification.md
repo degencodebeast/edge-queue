@@ -1,16 +1,16 @@
 # Ticket 23 pre-release qualification
 
-Status: clean-room qualification and the replacement Controller archive checkpoint passed. The public Video URL is the only unresolved external input.
+Status: the replacement clean-room checks passed. Controller archive qualification for checkpoint SHA A3 is pending. The public Video URL is the only unresolved external input.
 
 ## Candidate boundary
 
 - Base SHA: `ac1cc7b5f8d1ae445365454d2d1f5dc75dd42473`.
 - Branch: `ticket/23-verify-final-submission-clean-room`.
-- Superseded release-measurement range: `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc` through `89fa6a4228a2965f9a43941de2924b95a7cbf31d`.
-- Replacement checkpoint SHA A2: `5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5`.
-- Final Gate candidate: assigned after this report update is committed.
-- Archive input: exact checkpoint SHA A2 `5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5`.
-- Archive command: `uv run python scripts/build_release.py --sha 5b4ee4b51b6ecb9b5f0ff63431dc6e45cf6e2ab5 --output-dir /tmp/edgequeue-ticket-23-sha-a2`.
+- Superseded release-measurement range: `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc` through `8e96cccb487c36dffa896be712864e48cbb7ed8f`.
+- Replacement checkpoint SHA A3: assigned when this clean verification snapshot is committed.
+- Final Gate candidate: assigned only after the Controller qualifies the SHA A3 archive and the report records those measurements.
+- Archive input: exact checkpoint SHA A3, assigned after this report is committed.
+- Archive command: `uv run python scripts/build_release.py --sha <SHA-A3> --output-dir /tmp/edgequeue-ticket-23-sha-a3`.
 - Release owner: the Controller. Ticket 23 archives are verification artifacts, not the final release set.
 
 ## Clean-room result
@@ -28,11 +28,11 @@ env -u OPENAI_API_KEY -u ANTHROPIC_API_KEY -u GOOGLE_API_KEY \
 UV_OFFLINE=1 uv run edgequeue verify <TEMPORARY-DIRECTORY>/judge/proof-bundle
 ```
 
-The replay completed in `0.080` seconds. The timed command took `0.25` seconds of wall time.
+The replay completed in `0.065` seconds. The timed command took `0.25` seconds of wall time.
 
 The replay made `0` requests. It used `0` tokens. Its model cost was `$0.00`.
 
-The generated Proof Bundle was valid. Its bundle digest was `92395675367fcef7dc6b333bf021c152856741535fa9e4d9a9e769b65e03b467`.
+The generated Proof Bundle was valid. Its bundle digest was `2a98ca565bc4b14452b9034c4b892451b095261c198fd0f440c0c95981543f75`.
 
 The checked-in Ticket 21 Proof Bundle was valid. Its bundle digest was `3eca0104f3393533806ef0f71aff167c3a4adeef4b3c76853fbb48e23c24f70d`.
 
@@ -64,11 +64,15 @@ No Ticket 22 Internal review record duplicates the Ticket 22 Worker source.
 
 Each manifest record names one readable trajectory and one supporting raw-event excerpt.
 
+The bounded export preserves the first `60` events and final `20` events. It fills the remaining `40` slots with the most recent signal events.
+
+The Ticket 23 Gate and Worker readable and raw records now retain late blocker, feedback, repair, retry, checkpoint, and completion evidence.
+
 The final export scan passed. It found no user-home path, private local path, credential, email address, rate-limit data, token-usage data, encrypted content, or private account data.
 
 ## Submission and provenance
 
-The submission validator passed. The final full suite passed: `172 passed in 30.73s`.
+The submission validator passed. The final full suite passed: `173 passed in 32.12s`.
 
 `uv lock --check`, compileall, and `git diff --check` passed.
 
@@ -107,6 +111,12 @@ The focused submission test first found a ledger binding gap. The RED result was
 
 After the Controller added exact internal-review source IDs, the focused test was GREEN: `5 passed`.
 
+Gate cycle 2 found that the bounded exporter discarded final events after it sorted an oversized signal set.
+
+The authorized CLI-seam regression was RED because the export lost the late blocker, checkpoint, and completion tail: `1 failed`.
+
+After the bounded selection repair, the same regression was GREEN: `1 passed`. The final focused submission suite was GREEN: `6 passed in 12.84s`.
+
 Full-suite results are recorded in `checks.json`. Archive-checkpoint results are recorded below and in the Controller checkpoint handoff.
 
 ## Internal reviews
@@ -131,13 +141,21 @@ The Controller corrected the authoritative ledger. The replacement export binds 
 
 The Gate BLOCK is the RED evidence for this provenance gap. The focused submission tests remained GREEN, so no speculative or protected-surface test was added.
 
-The replacement Standards and Specification reviews passed before SHA A2 and after the archive checkpoint. No in-scope Critical or Major finding remains before the final Gate candidate.
+The replacement Standards and Specification reviews passed before SHA A2 and after the archive checkpoint.
+
+Gate cycle 2 then found that the Ticket 23 excerpts omitted late feedback, repair, and completion events. This finding superseded SHA A2 and `8e96cccb487c36dffa896be712864e48cbb7ed8f` for release measurement.
+
+The Controller authorized one CLI-seam regression and the narrow `select_events` repair. The regenerated Gate and Worker artifacts retain the cycle-1 provenance blocker and the repair/checkpoint evidence.
+
+The SHA A3 Standards and Specification reviews passed. No in-scope Critical or Major finding remains.
+
+No Gate candidate will be sent before the Controller qualifies the replacement archive.
 
 ## Controller archive checkpoint
 
-The archive measurements for `9b98f1d315cc01ba8b2fc4eddc2dc8f7014c38fc` are superseded. They do not qualify the corrected trajectory corpus.
+The archive measurements for SHA A, SHA A2, and all descendants through `8e96cccb487c36dffa896be712864e48cbb7ed8f` are superseded. They do not qualify the corrected completion-aware trajectory corpus.
 
-The Controller built twice from exact checkpoint SHA A2 outside Git. The two archives were byte-identical.
+The Controller built twice from exact checkpoint SHA A2 outside Git. Those two archives were byte-identical, but Gate cycle 2 later found incomplete trajectory excerpts.
 
 - Archive name: `edgequeue-5b4ee4b51b6e-source.zip`.
 - Archive size: `2,317,410` bytes.
@@ -157,4 +175,6 @@ The extracted Proof Bundle digest was `588c96c03572ab5fabdfd74b8fa30421c1d481270
 
 Proof immutability, lock validation, compileall, the submission validator, and checked-in Proof Bundle verification passed in the extracted checkpoint.
 
-`checks.json` preserves the pre-archive A2 checkpoint state. This section records the later Controller-owned archive qualification.
+The Controller must build and verify a new archive twice from exact checkpoint SHA A3 outside Git. The new measurements are pending.
+
+`checks.json` preserves the pre-archive SHA A3 checkpoint state. The Controller owns the replacement archive qualification.

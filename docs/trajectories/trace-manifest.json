@@ -212,7 +212,7 @@
     },
     {
       "agent": "Ticket 15 aborted activation `01a0584c-d316-7222-aa4a-94b0d74bd826",
-      "event_count": 88,
+      "event_count": 95,
       "pane": "worker-lane-1",
       "raw_excerpt_path": "raw/trajectory-06-ticket-15-aborted-activation-01a0584c-d316-7222-aa4a-94b0d74bd826.jsonl",
       "readable_path": "trajectory-06-ticket-15-aborted-activation-01a0584c-d316-7222-aa4a-94b0d74bd826.md",
@@ -408,7 +408,7 @@
       "readable_path": "trajectory-25-ticket-23-gate-01a05a54-5908-7543-aec5-33cacac70d5a.md",
       "role": "Gate",
       "scope": "Ticket 23 final clean-room verification",
-      "source_digest": "1fe14153fb5fd009eb5a7db518d43f4575791a967ed217b2d2b041bbbbbcedd8"
+      "source_digest": "79102a87ea2427580638000f743b0d3d31109dba72006edfaada8d2ec576e633"
     },
     {
       "agent": "Ticket 23 Worker `01a05a54-8d19-7f62-b14c-a9472cb568c8",
@@ -418,7 +418,7 @@
       "readable_path": "trajectory-26-ticket-23-worker-01a05a54-8d19-7f62-b14c-a9472cb568c8.md",
       "role": "Worker",
       "scope": "Ticket 23 final clean-room verification",
-      "source_digest": "3b26c00fbcd974afd07676a99c850ce7b2af0ec38dca3103a7cde460cce12207"
+      "source_digest": "b2f34775e3eb7d4e80542db93908f169ecc011e6965806ea3d4d23c12cce8f43"
     },
     {
       "agent": "Ticket 23 internal reviewers",
@@ -428,7 +428,7 @@
       "readable_path": "trajectory-27-ticket-23-internal-reviewers.md",
       "role": "Internal review",
       "scope": "Ticket 23",
-      "source_digest": "6187a746795218ea408cf1bff36657d255214a7d101e854815fff3000d8d9636"
+      "source_digest": "9ce3e5be6c74ecd07dbf36c3f39a396aa91ba74d82647201d38b574fe5a859d3"
     },
     {
       "agent": "Ticket 23 internal reviewers",
@@ -438,7 +438,7 @@
       "readable_path": "trajectory-28-ticket-23-internal-reviewers.md",
       "role": "Internal review",
       "scope": "Ticket 23",
-      "source_digest": "94c2cd65aa9d17c5e45a631dcf16331e0261fee76e95fc7e65c259a7704af1a2"
+      "source_digest": "d671d49dc969be2f7d62a6f0d2c63d83a71163eabdd0af4306a371aeacd10176"
     },
     {
       "agent": "Ticket 21 internal reviewers",

@@ -122,7 +122,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 28, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T23:07:39.610Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -146,7 +146,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 34, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T23:07:47.123Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -170,7 +170,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 40, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T23:07:53.194Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -194,7 +194,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 46, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T23:07:58.513Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -218,7 +218,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 52, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T23:08:03.986Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -242,7 +242,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 58, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T23:08:09.407Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -250,51 +250,15 @@
 
 ### response_item
 
-{"ordinal": 60, "payload": {"id": "rs_07731fc4864f6c81016a96095a956887d29bfa78f84a88bfb7", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:08:14.266Z", "type": "response_item"}
-
-### event_msg
-
-{"ordinal": 62, "payload": {"completed_at_ms": 1788217714036, "item": {"aggregated_output": "....                                                                     [100%]\n4 passed in 10.57s\nsubmission-check: pass\nstatus=0\ntrajectory-export: pass manifest=/tmp/trajectory-review/trace-manifest.json\nzsh:3: command not found: python\nzsh:10: =docs/evidence/ticket-20/claims.json not found\n", "command": ["/bin/zsh", "-lc", "uv run pytest -q tests/test_submission.py && uv run python scripts/verify_submission.py --project-root .; echo status=$?\nuv run python scripts/export_trajectories.py --ledger <USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/agent-trajectory-ledger.md --output-dir /tmp/trajectory-review && rg -l '<USER_HOME> docs/trajectories || true\npython - <<'PY'\nimpo…
+{"ordinal": 263, "payload": {"content": [{"text": "Reviewing the post-Gate-fix candidate and its archive regression coverage.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a9614f00b0c87d2b7d921c4a03a605c", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788220654.872173, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:57:36.508Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 63, "payload": {"call_id": "call_vezTuQvPV5bs8VQAPQg7lTpX", "id": "ctco_01a05a14-e579-7d70-b8ad-6281dc90a659", "internal_chat_message_metadata_passthrough": {"create_time": 1788217714.041114, "turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "output": [{"text": "Script completed\nWall time 14.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "....                                                                     [100%]\n4 passed in 10.57s\nsubmission-check: pass\nstatus=0\ntrajectory-export: pass manifest=/tmp/trajectory-review/trace-manifest.json\nzsh:3: command not found: python\nzsh:10: =docs/evidence/ticket-20/claims.json not found\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T23:08:34.041Z", "type": "response_item"}
+{"ordinal": 266, "payload": {"call_id": "call_YWQvOxGjgQWxEedvXYrwSiKc", "id": "ctco_01a05a42-1e74-72f2-956c-d85778465682", "internal_chat_message_metadata_passthrough": {"create_time": 1788220677.748812, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "output": [{"text": "Script completed\nWall time 14.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "6917a14 Bind release identity and redact private paths\n3374769 Cover manifest identity and private path rejection\ndiff --git a/scripts/build_release.py b/scripts/build_release.py\nindex 19a5319..ef2f067 100644\n--- a/scripts/build_release.py\n+++ b/scripts/build_release.py\n@@ -86,6 +86,12 @@ def canonical_json(value: object) -> bytes:\n     return (json.dumps(value, sort_keys=True, separators=(\",\", \":\")) + \"\\n\").encode(\"…
 
 ### response_item
 
-{"ordinal": 66, "payload": {"id": "rs_07731fc4864f6c81016a96097317dc87d2b0793fd9a52c849f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:08:44.379Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 68, "payload": {"id": "rs_07731fc4864f6c81016a96097c6a9487d2989235897fe4b04c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:08:48.571Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 71, "payload": {"call_id": "call_tnECaSTsiYS6OjK3Xc0YxNP8", "id": "ctco_01a05a15-364d-7140-8bd9-6c99d2aa5d41", "internal_chat_message_metadata_passthrough": {"create_time": 1788217734.733121, "turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10218)\nTotal output lines: 192\n\n<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/agent-trajectory-ledger.md:1:# EdgeQueue coding-agent trajectory ledger\n<USER_HOME>/Projects/personal/micro1-hack/.scratch/edgequeue/agent-trajectory-ledger.md:5:This ledger preserves the source of each coding-agent trajectory before a pane receives `/clear`.\n<USER_HOME>/Projects/personal/…
-
-### response_item
-
-{"ordinal": 74, "payload": {"id": "rs_07731fc4864f6c81016a96098845b887d2ae40b3f85adb2d74", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:09:05.576Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 76, "payload": {"id": "rs_07731fc4864f6c81016a9609919bbc87d2940a46ae5dfbddbc", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:09:14.893Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 78, "payload": {"id": "rs_07731fc4864f6c81016a96099aecdc87d2a1316fe8c03ae4de", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:09:19.187Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 81, "payload": {"call_id": "call_Id0BU6CDEPkQUAu9Hg4xXv0F", "id": "ctco_01a05a15-b107-7633-91e1-57c79b689add", "internal_chat_message_metadata_passthrough": {"create_time": 1788217766.151513, "turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "docs/evidence/ticket-20/README.md\ndocs/evidence/ticket-20/allocation-receipts/attempt-01.json\ndocs/evidence/ticket-20/allocation-receipts/attempt-02.json\ndocs/evidence/ticket-20/allocation-receipts/attempt-03.json\ndocs/evidence/ticket-20/claims-manifest.json\ndocs/evidence/ticket-20/claims.json\ndocs/evidence/ticket-20/development-allocation-receipt.json\ndocs/evidence/ticket-20/development-traces/EQ-F01-DEV-01/attempt-01/events.…
-
-### response_item
-
-{"ordinal": 84, "payload": {"id": "rs_07731fc4864f6c81016a9609a7cd0487d2bf7e050909826b09", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:09:37.080Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 86, "payload": {"id": "rs_07731fc4864f6c81016a9609b11e3c87d293ecec58c8ad149f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a13-ebfd-7200-90ca-a6a2f8c83910"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:09:45.800Z", "type": "response_item"}
+{"ordinal": 269, "payload": {"id": "rs_07731fc4864f6c81016a961507083c87d295c4d9d110e7f044", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:57:59.579Z", "type": "response_item"}
 
 ### response_item
 
@@ -302,43 +266,7 @@
 
 ### response_item
 
-{"ordinal": 96, "payload": {"id": "rs_07731fc4864f6c81016a960a46974c87d28c5d292eb809e33d", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:12:08.028Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 98, "payload": {"content": [{"text": "Rechecking the revised package against the Ticket 22 submission contract.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960a480dc087d284f42d40551b26d8", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788217925.963757, "turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:12:08.457Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 101, "payload": {"call_id": "call_ypP7N2kRrbpaKmO8p1MFjzoH", "id": "ctco_01a05a18-3afb-7db2-b32f-27293a5383f5", "internal_chat_message_metadata_passthrough": {"create_time": 1788217932.539863, "turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 50030)\nTotal output lines: 749\n\nWarning: truncated output (original token count: 582202)\n... 1280229 bytes omitted ...\n\n M IMPROVEMENT_CHANGELOG.md\n M README.md\n?? .env.example\n?? PREEXISTING.md\n?? REPRODUCTION.md\n?? docs/evidence/ticket-22/\n?? docs/submission/\n?? docs/trajectories/\n?? scripts/build_release.py\n?? scripts/export_trajectories.py\n?? scripts/verify_submiss…
-
-### response_item
-
-{"ordinal": 104, "payload": {"id": "rs_07731fc4864f6c81016a960a4e933487d2a71f08c5eaf9597e", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:12:15.523Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 107, "payload": {"call_id": "call_4Da4gfXlQgj9WUfQwy9Lt7LP", "id": "ctco_01a05a18-a210-79a3-a191-1e4f924a8067", "internal_chat_message_metadata_passthrough": {"create_time": 1788217958.928006, "turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31"}, "output": [{"text": "Script completed\nWall time 17.5 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 20754)\nTotal output lines: 780\n\ntests/test_submission.py:45:def test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) -> None:\ntests/test_submission.py:46:    \"\"\"The public archive CLI reads one commit and excludes repository metadata.\"\"\"\ntests/test_submission.py:62:    first_archive = next(first.glob(\"*.zip\"))\ntests/test_submission.py:63:    second_…
-
-### response_item
-
-{"ordinal": 110, "payload": {"id": "rs_07731fc4864f6c81016a960a686f4c87d28afead4dce176ee8", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:12:49.765Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 112, "payload": {"id": "rs_07731fc4864f6c81016a960a71c4f087d2948ed259a59971b4", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:12:50.374Z", "type": "response_item"}
-
-### event_msg
-
-{"ordinal": 113, "payload": {"completed_at_ms": 1788217972503, "item": {"content": [{"text": "## Major\n\n- `scripts/verify_submission.py:68-88`: Trajectory validation still does not bind the checked-in manifest to the ledger. It accepts any nonempty record list with the four generic roles and existing files, so deleting the new `Ticket 21 internal reviewers` manifest record and its files would still pass. This does not adequately enforce the required public “trajectory coverage” seam.\n\nThe export itself now emits the indirect Ticket 21 internal-review record. The archive test now checks both approved exclusions and confirms retained proof.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a960a72635487d2a982541c01b1a25a", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms"…
-
-### response_item
-
-{"ordinal": 114, "payload": {"content": [{"text": "## Major\n\n- `scripts/verify_submission.py:68-88`: Trajectory validation still does not bind the checked-in manifest to the ledger. It accepts any nonempty record list with the four generic roles and existing files, so deleting the new `Ticket 21 internal reviewers` manifest record and its files would still pass. This does not adequately enforce the required public “trajectory coverage” seam.\n\nThe export itself now emits the indirect Ticket 21 internal-review record. The archive test now checks both approved exclusions and confirms retained proof.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960a72635487d2a982541c01b1a25a", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788…
-
-### event_msg
-
-{"ordinal": 116, "payload": {"completed_at": 1788217972, "duration_ms": 47210, "last_agent_message": "## Major\n\n- `scripts/verify_submission.py:68-88`: Trajectory validation still does not bind the checked-in manifest to the ledger. It accepts any nonempty record list with the four generic roles and existing files, so deleting the new `Ticket 21 internal reviewers` manifest record and its files would still pass. This does not adequately enforce the required public “trajectory coverage” seam.\n\nThe export itself now emits the indirect Ticket 21 internal-review record. The archive test now checks both approved exclusions and confirms retained proof.", "started_at": 1788217925, "time_to_first_token_ms": 2839, "turn_id": "01a05a18-1eaa-7442-a7a3-e6d20324fc31", "type": "task_complete"}, "tim…
+{"ordinal": 275, "payload": {"id": "rs_07731fc4864f6c81016a96152bb39887d283bf42fdbf31ae5a", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:58:42.756Z", "type": "response_item"}
 
 ### response_item
 
@@ -346,43 +274,67 @@
 
 ### response_item
 
-{"ordinal": 122, "payload": {"id": "rs_07731fc4864f6c81016a960aff5ddc87d2b115ebc83a97c80d", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:15:11.530Z", "type": "response_item"}
+{"ordinal": 277, "payload": {"call_id": "call_10ziV0jw6OgpYTwEoFdC7oqb", "id": "ctco_01a05a43-504c-7291-aeee-1578e02733f3", "internal_chat_message_metadata_passthrough": {"create_time": 1788220756.044576, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "output": [{"text": "Script completed\nWall time 30.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "........................................................................ [ 41%]\n........................................................................ [ 83%]\n..........", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T23:59:16.044Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 124, "payload": {"content": [{"text": "I’m validating the final ledger-binding and package checks.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960aff8aa887d286f64aa5369b9537", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788218110.530888, "turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:15:11.941Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 127, "payload": {"call_id": "call_FwwVMwgO1ksH9HZM8QdxTPbo", "id": "ctco_01a05a1b-3971-7fc1-9dac-7bed68713a1b", "internal_chat_message_metadata_passthrough": {"create_time": 1788218128.753289, "turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee"}, "output": [{"text": "Script completed\nWall time 12.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 29977)\nTotal output lines: 791\n\n M IMPROVEMENT_CHANGELOG.md\n M README.md\n?? .env.example\n?? PREEXISTING.md\n?? REPRODUCTION.md\n?? docs/evidence/ticket-22/\n?? docs/submission/\n?? docs/trajectories/\n?? scripts/build_release.py\n?? scripts/export_trajectories.py\n?? scripts/verify_submission.py\n?? tests/test_submission.py\n\"\"\"Validate public claims and required Ticket 22 s…
-
-### response_item
-
-{"ordinal": 130, "payload": {"id": "rs_07731fc4864f6c81016a960b12188c87d288b8dad8fc7335b9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:15:31.933Z", "type": "response_item"}
+{"ordinal": 280, "payload": {"id": "rs_07731fc4864f6c81016a961555340c87d29c2860c037fbd04d", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:59:18.671Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 132, "payload": {"completed_at_ms": 1788218136620, "item": {"aggregated_output": "    35\t\n    36\t\n    37\tdef test_submission_validator_accepts_the_complete_package() -> None:\n    38\t    \"\"\"The public validator accepts the checked-in qualification package.\"\"\"\n    39\t    result = run_script(\"verify_submission.py\", \"--project-root\", str(PROJECT_ROOT))\n    40\t\n    41\t    assert result.returncode == 0, result.stdout + result.stderr\n    42\t    assert \"submission-check: pass\" in result.stdout\n    43\t\n    44\t\n    45\tdef test_release_builder_creates_identical_sha_bound_archives(tmp_path: Path) -> None:\n    46\t    \"\"\"The public archive CLI reads one commit and excludes repository metadata.\"\"\"\n    47\t    source_sha = subprocess.check_output(\n   …
-
-### response_item
-
-{"ordinal": 133, "payload": {"call_id": "call_6DSyjo5vJGsweUp9ffl99NuI", "id": "ctco_01a05a1b-582e-7ac0-93fb-ab1d0371c119", "internal_chat_message_metadata_passthrough": {"create_time": 1788218136.622662, "turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "    35\t\n    36\t\n    37\tdef test_submission_validator_accepts_the_complete_package() -> None:\n    38\t    \"\"\"The public validator accepts the checked-in qualification package.\"\"\"\n    39\t    result = run_script(\"verify_submission.py\", \"--project-root\", str(PROJECT_ROOT))\n    40\t\n    41\t    assert result.returncode == 0, result.stdout + result.stderr\n    42\t    assert \"submission-check: pass\" in result.stdout\…
-
-### response_item
-
-{"ordinal": 136, "payload": {"id": "rs_07731fc4864f6c81016a960b1a9a6c87d2b64158be97dbed44", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:15:40.081Z", "type": "response_item"}
+{"ordinal": 282, "payload": {"completed_at_ms": 1788220763628, "item": {"aggregated_output": "........................................................................ [ 41%]\n........................................................................ [ 83%]\n............................                                             [100%]\n172 passed in 31.13s\nrelease-build: pass source_sha=6917a143336edd0328cbae94a32b7580b559455e\narchive=<PRIVATE_PATH> bytes=2216244\nchecksum=a101553be99732b8e7a180a62992a780862fed9ffe4f845e5677a95d0d4e9daa sidecar=<PRIVATE_PATH>\n{\n  \"source_sha\": \"6917a143336edd0328cbae94a32b7580b559455e\",\n  \"source_tree\": \"279122a741a0e989855239083fba3fbb06c9cc51\",\n  \"source_identity_binding\": \"a9c8aa3d50bf8b2ebc42946044d034a707c7836375036bcbdc50689b43bb8647\…
 
 ### event_msg
 
-{"ordinal": 137, "payload": {"completed_at_ms": 1788218140290, "item": {"content": [{"text": "PASS — no remaining Critical or Major findings.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a960b1c19b087d2beb02653c532441e", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788218140082, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee", "type": "item_completed"}, "timestamp": "2026-08-31T23:15:40.290Z", "type": "event_msg"}
+{"ordinal": 283, "payload": {"completed_at_ms": 1788220768169, "item": {"aggregated_output": "47469 /bin/zsh -lc git status --short\nUV_OFFLINE=1 uv run pytest -q\nUV_OFFLINE=1 uv run python scripts/build_release.py --sha 6917a143336edd0328cbae94a32b7580b559455e --output-dir /tmp/edgequeue-post-gate-review\nunzip -p /tmp/edgequeue-post-gate-review/*.zip RELEASE_MANIFEST.json | jq '{source_sha,source_tree,source_identity_binding,tracked_file_count,entries:(.files|length)}'\n50259 uv run python scripts/build_release.py --sha 6917a143336edd0328cbae94a32b7580b559455e --output-dir /tmp/edgequeue-post-gate-review\nrelease-build: pass source_sha=6917a143336edd0328cbae94a32b7580b559455e\narchive=<PRIVATE_PATH> bytes=2216244\nchecksum=a101553be99732b8e7a180a62992a780862fed9ffe4f845e5677a95d0d4e9daa…
 
 ### response_item
 
-{"ordinal": 138, "payload": {"content": [{"text": "PASS — no remaining Critical or Major findings.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960b1c19b087d2beb02653c532441e", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788218137.168232, "turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:15:40.292Z", "type": "response_item"}
+{"ordinal": 284, "payload": {"call_id": "call_NFSFGY1EnCHO8t6Tv5UWzFxN", "id": "ctco_01a05a43-7fad-72d1-9533-582941764868", "internal_chat_message_metadata_passthrough": {"create_time": 1788220768.173323, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "output": [{"text": "Script completed\nWall time 5.9 seconds\nOutput:\n", "type": "input_text"}, {"text": "47469 /bin/zsh -lc git status --short\nUV_OFFLINE=1 uv run pytest -q\nUV_OFFLINE=1 uv run python scripts/build_release.py --sha 6917a143336edd0328cbae94a32b7580b559455e --output-dir /tmp/edgequeue-post-gate-review\nunzip -p /tmp/edgequeue-post-gate-review/*.zip RELEASE_MANIFEST.json | jq '{source_sha,source_tree,source_identity_binding,tracked_file_count,entries:(.files|length)}'\n50259 uv run python scripts/build_release.py --sha 6…
+
+### response_item
+
+{"ordinal": 287, "payload": {"id": "rs_07731fc4864f6c81016a96156172a887d2854dde1971e6ce7a", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:59:30.313Z", "type": "response_item"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
 
 ### event_msg
 
-{"ordinal": 140, "payload": {"completed_at": 1788218140, "duration_ms": 30502, "last_agent_message": "PASS — no remaining Critical or Major findings.", "started_at": 1788218109, "time_to_first_token_ms": 1691, "turn_id": "01a05a1a-ef8a-7252-a658-d211133c42ee", "type": "task_complete"}, "timestamp": "2026-08-31T23:15:40.343Z", "type": "event_msg"}
+{"ordinal": 289, "payload": {"completed_at_ms": 1788220786242, "item": {"aggregated_output": ".....                                                                    [100%]\n5 passed in 13.02s\nsubmission-check: pass\n", "command": ["/bin/zsh", "-lc", "pgrep -fl 'pytest' || true\ngit status --short\nUV_OFFLINE=1 uv run pytest -q tests/test_submission.py\nUV_OFFLINE=1 uv run python scripts/verify_submission.py --project-root ."], "cwd": "file://<USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker", "duration": {"nanos": 733422666, "secs": 13}, "exit_code": 0, "formatted_output": ".....                                                                    [100%]\n5 passed in 13.02s\nsubmission-check: pass\n", "id": "exec-c1ffae79-64ae-4280-8019-9c865e071448", "parsed_cm…
+
+### response_item
+
+{"ordinal": 290, "payload": {"call_id": "call_PrcllbE60se4oUpro2D90oNR", "id": "ctco_01a05a43-c64b-7340-9524-9dcca591b1ec", "internal_chat_message_metadata_passthrough": {"create_time": 1788220786.251649, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "output": [{"text": "Script completed\nWall time 13.9 seconds\nOutput:\n", "type": "input_text"}, {"text": ".....                                                                    [100%]\n5 passed in 13.02s\nsubmission-check: pass\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-08-31T23:59:46.251Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 293, "payload": {"id": "rs_07731fc4864f6c81016a96157369b887d288f791e106a730c5", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:59:48.485Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 295, "payload": {"completed_at_ms": 1788220802288, "item": {"aggregated_output": "release-build: pass source_sha=6917a143336edd0328cbae94a32b7580b559455e\narchive=<PRIVATE_PATH> bytes=2216244\nchecksum=a101553be99732b8e7a180a62992a780862fed9ffe4f845e5677a95d0d4e9daa sidecar=<PRIVATE_PATH>\nUsing CPython 3.14.4\nCreating virtual environment at: .venv\n   Building edgequeue @ file://<PRIVATE_PATH>\n      Built edgequeue @ file://<PRIVATE_PATH>\nInstalled 6 packages in 6ms\n.....                                                                    [100%]\n5 passed in 0.79s\nEdgeQueue Judge Fixture (Offline Replay)\nBaseline deterministic_only: EQ-F02-DEV-01\nEdgeQueue: EQ-F01-DEV-01\nPrimary Recall@1: baseline=0.00 EdgeQueue=1.00\nCorrection: authorized human correction replayed\nCa…
+
+### response_item
+
+{"ordinal": 296, "payload": {"call_id": "call_12qsJ36DNI61Fpgp4GG9ZPV8", "id": "ctco_01a05a44-04f5-7883-b9b0-7442a6f7d8f3", "internal_chat_message_metadata_passthrough": {"create_time": 1788220802.293949, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "output": [{"text": "Script completed\nWall time 9.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "release-build: pass source_sha=6917a143336edd0328cbae94a32b7580b559455e\narchive=<PRIVATE_PATH> bytes=2216244\nchecksum=a101553be99732b8e7a180a62992a780862fed9ffe4f845e5677a95d0d4e9daa sidecar=<PRIVATE_PATH>\nUsing CPython 3.14.4\nCreating virtual environment at: .venv\n   Building edgequeue @ file://<PRIVATE_PATH>\n      Built edgequeue @ file://<PRIVATE_PATH>\nInstalled 6 packages in 6ms\n.....                                     …
+
+### response_item
+
+{"ordinal": 299, "payload": {"id": "rs_07731fc4864f6c81016a961583550487d287616cdcf882eb4c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:00:03.587Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 300, "payload": {"completed_at_ms": 1788220804407, "item": {"content": [{"text": "PASS — both Gate fixes and independent regression coverage pass, including no-Git archive validation and extracted offline judge behavior.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a9615838c5087d2996bab77c4453976", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788220803588, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a41-bead-7421-a613-d4143d059da0", "type": "item_completed"}, "timestamp": "2026-09-01T00:00:04.407Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 301, "payload": {"content": [{"text": "PASS — both Gate fixes and independent regression coverage pass, including no-Git archive validation and extracted offline judge behavior.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a9615838c5087d2996bab77c4453976", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788220802.767037, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:00:04.409Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 303, "payload": {"completed_at": 1788220804, "duration_ms": 151218, "last_agent_message": "PASS — both Gate fixes and independent regression coverage pass, including no-Git archive validation and extracted offline judge behavior.", "started_at": 1788220653, "time_to_first_token_ms": 2785, "turn_id": "01a05a41-bead-7421-a613-d4143d059da0", "type": "task_complete"}, "timestamp": "2026-09-01T00:00:04.469Z", "type": "event_msg"}
 
 ### response_item
 
@@ -390,31 +342,31 @@
 
 ### response_item
 
-{"ordinal": 146, "payload": {"id": "rs_07731fc4864f6c81016a960d3537c087d2ab7e88099a82a631", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a23-92a3-7a51-950a-9305906a9174"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:24:37.765Z", "type": "response_item"}
+{"ordinal": 309, "payload": {"id": "rs_07731fc4864f6c81016a9615d50fd887d2b1c5f37f3854ef20", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a45-42f2-7d62-91f5-fc78e1114de4"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:01:25.231Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 148, "payload": {"content": [{"text": "Reviewing the exact draft candidate against the Ticket 22 contract.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960d35c88487d2a5a1252d85582f03", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788218676.543104, "turn_id": "01a05a23-92a3-7a51-950a-9305906a9174"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:24:38.208Z", "type": "response_item"}
+{"ordinal": 311, "payload": {"content": [{"text": "Reviewing the fixture-only cleanup candidate.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a9615d53d3087d28d0dfae748f6f216", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788220884.333072, "turn_id": "01a05a45-42f2-7d62-91f5-fc78e1114de4"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:01:25.595Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 151, "payload": {"call_id": "call_3o3lvmKoWZJmOIMqUnjBO25v", "id": "ctco_01a05a23-f066-73d3-9dfd-c0fb2ddfd2bf", "internal_chat_message_metadata_passthrough": {"create_time": 1788218699.878206, "turn_id": "01a05a23-92a3-7a51-950a-9305906a9174"}, "output": [{"text": "Script completed\nWall time 15.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "A\t.env.example\nM\tIMPROVEMENT_CHANGELOG.md\nA\tPREEXISTING.md\nM\tREADME.md\nA\tREPRODUCTION.md\nA\tdocs/evidence/ticket-22/submission-readiness.md\nA\tdocs/submission/submission.html\nA\tdocs/submission/submission.md\nA\tdocs/submission/video-production.md\nA\tdocs/trajectories/raw/trajectory-01-controller-session-01a0573d-46fc-7781-b1c0-cecd238ecef2.jsonl\nA\tdocs/trajectories/raw/trajectory-02-ticket-14-worker-session-01a0575a…
+{"ordinal": 314, "payload": {"call_id": "call_GzmnyiZhIXb13Gc6GqXaY2E4", "id": "ctco_01a05a45-a2fd-7dd3-8fea-9b5191399579", "internal_chat_message_metadata_passthrough": {"create_time": 1788220908.285068, "turn_id": "01a05a45-42f2-7d62-91f5-fc78e1114de4"}, "output": [{"text": "Script completed\nWall time 15.9 seconds\nOutput:\n", "type": "input_text"}, {"text": "a5ff413 Keep private path fixture runtime-only\ndiff --git a/tests/test_submission.py b/tests/test_submission.py\nindex 17bd92d..931a248 100644\n--- a/tests/test_submission.py\n+++ b/tests/test_submission.py\n@@ -173,7 +173,7 @@ def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_\n     \"\"\"The public exporter keeps meaningful events while removing private strings.\"\"\"\n     raw_events = tmp_path / \…
 
 ### response_item
 
-{"ordinal": 154, "payload": {"id": "rs_07731fc4864f6c81016a960d4d03e887d295de1e5fd78db568", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a23-92a3-7a51-950a-9305906a9174"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:25:03.209Z", "type": "response_item"}
+{"ordinal": 317, "payload": {"id": "rs_07731fc4864f6c81016a9615ed74a087d28e11333d61c8bc89", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a45-42f2-7d62-91f5-fc78e1114de4"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:01:50.217Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 155, "payload": {"completed_at_ms": 1788218704829, "item": {"content": [{"text": "## Major\n\n- `99543415e202ccc30b5d1b14f3a118a9f09c20e0` fails the required `git diff --check`. `scripts/export_trajectories.py:169` has trailing whitespace, and all generated readable trajectory Markdown files contain an extra blank line at EOF. The draft candidate cannot pass the mandatory pre-handoff checks until this is corrected.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a960d4f3b2c87d289abe5b3c7e1964c", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788218703211, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a23-92a3-7a51-950a-9305906a9174", "type": "item_completed"}, "timestamp": "2026-08-31T23:25:04.829Z", "type": "event_msg"}
+{"ordinal": 318, "payload": {"completed_at_ms": 1788220910575, "item": {"content": [{"text": "PASS — the fixture-only cleanup preserves both Gate fixes, no-Git archive behavior, public regression coverage, and Ticket 22 validation.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a9615ee146487d293a1750fa3212333", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788220910217, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a45-42f2-7d62-91f5-fc78e1114de4", "type": "item_completed"}, "timestamp": "2026-09-01T00:01:50.575Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 156, "payload": {"content": [{"text": "## Major\n\n- `99543415e202ccc30b5d1b14f3a118a9f09c20e0` fails the required `git diff --check`. `scripts/export_trajectories.py:169` has trailing whitespace, and all generated readable trajectory Markdown files contain an extra blank line at EOF. The draft candidate cannot pass the mandatory pre-handoff checks until this is corrected.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960d4f3b2c87d289abe5b3c7e1964c", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788218700.431486, "turn_id": "01a05a23-92a3-7a51-950a-9305906a9174"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:25:04.832Z", "type": "response_item"}
+{"ordinal": 319, "payload": {"content": [{"text": "PASS — the fixture-only cleanup preserves both Gate fixes, no-Git archive behavior, public regression coverage, and Ticket 22 validation.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a9615ee146487d293a1750fa3212333", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788220908.776891, "turn_id": "01a05a45-42f2-7d62-91f5-fc78e1114de4"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:01:50.577Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 158, "payload": {"completed_at": 1788218704, "duration_ms": 28990, "last_agent_message": "## Major\n\n- `99543415e202ccc30b5d1b14f3a118a9f09c20e0` fails the required `git diff --check`. `scripts/export_trajectories.py:169` has trailing whitespace, and all generated readable trajectory Markdown files contain an extra blank line at EOF. The draft candidate cannot pass the mandatory pre-handoff checks until this is corrected.", "started_at": 1788218675, "time_to_first_token_ms": 1889, "turn_id": "01a05a23-92a3-7a51-950a-9305906a9174", "type": "task_complete"}, "timestamp": "2026-08-31T23:25:04.871Z", "type": "event_msg"}
+{"ordinal": 321, "payload": {"completed_at": 1788220910, "duration_ms": 26891, "last_agent_message": "PASS — the fixture-only cleanup preserves both Gate fixes, no-Git archive behavior, public regression coverage, and Ticket 22 validation.", "started_at": 1788220883, "time_to_first_token_ms": 1536, "turn_id": "01a05a45-42f2-7d62-91f5-fc78e1114de4", "type": "task_complete"}, "timestamp": "2026-09-01T00:01:50.594Z", "type": "event_msg"}
 
 ### response_item
 
@@ -422,68 +374,116 @@
 
 ### response_item
 
-{"ordinal": 164, "payload": {"id": "rs_07731fc4864f6c81016a960db1a5c887d29728617dedfe1350", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a25-78bc-76c0-abcf-50aa7fc10acb"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:26:41.836Z", "type": "response_item"}
+{"ordinal": 327, "payload": {"id": "rs_07731fc4864f6c81016a961775ce0087d29085e92fe04742ce", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:08:21.974Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 166, "payload": {"content": [{"text": "Checking the corrected draft candidate.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960db1dbb487d28d0211fb2d473a83", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788218801.04096, "turn_id": "01a05a25-78bc-76c0-abcf-50aa7fc10acb"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:26:42.184Z", "type": "response_item"}
+{"ordinal": 329, "payload": {"content": [{"text": "Verifying the cycle 3 candidate’s A4 readiness evidence and submission status.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a961775fcb487d2828e4ff6d2439caa", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788221300.8443, "turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:08:22.479Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 332, "payload": {"call_id": "call_suRAUGlM4wdWcY4RNHUKoe6z", "id": "ctco_01a05a4b-f914-7493-b749-bafde3f91ade", "internal_chat_message_metadata_passthrough": {"create_time": 1788221323.540385, "turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5"}, "output": [{"text": "Script completed\nWall time 14.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "da8cf4d Record Gate verified archive A4\n# Ticket 22 submission-readiness report\n\n## Draft package\n\n- Base SHA: `673e5ec25fcea40ad80316434f2cfb2b5f2568bb`.\n- Candidate SHA: pending final Ticket 22 commit.\n- Public broad claim: frozen-synthetic Allocation Holdout Recall@8 `0.30` from `docs/evidence/ticket-20/claims.json`.\n- Illustrative claim: four-case Development Judge Fixture Recall@1 `1.00` versus deterministic baseline `…
+
+### response_item
+
+{"ordinal": 335, "payload": {"id": "rs_07731fc4864f6c81016a96178cb1a087d280843796555aa5c3", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:08:45.460Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 168, "payload": {"completed_at_ms": 1788218821127, "item": {"aggregated_output": "....                                                                     [100%]\n4 passed in 12.95s\nsubmission-check: pass\nA\tdocs/trajectories/trajectory-18-ticket-20-worker-01a05887-f86d-7043-b62c-525554cd727d.md\nA\tdocs/trajectories/trajectory-19-ticket-21-gate-01a059dc-476d-7912-b0bb-85529a82149d.md\nA\tdocs/trajectories/trajectory-20-ticket-21-worker-01a059dc-4821-7ba1-b22c-886b3214961e.md\nA\tdocs/trajectories/trajectory-21-ticket-21-internal-reviewers.md\nA\tscripts/build_release.py\nA\tscripts/export_trajectories.py\nA\tscripts/verify_submission.py\nA\ttests/test_submission.py\n", "command": ["/bin/zsh", "-lc", "test -z \"$(git status --porcelain)\" && test \"$(git rev-parse HEAD)\" = c…
+{"ordinal": 337, "payload": {"completed_at_ms": 1788221335625, "item": {"aggregated_output": "release-build: pass source_sha=a5ff413585ef1687f66b21aaa4b7a63c7cc66781\narchive=<PRIVATE_PATH> bytes=2216245\nchecksum=9d8880db4a03f6d9eae311e075bcb7c83b303d54c2c794076d5fc5d4e23e6e4e sidecar=<PRIVATE_PATH>\nd6b2385ffffa6b23b3998c82b6d14583416f61657c16f2005068be401054f353\n", "command": ["/bin/zsh", "-lc", "test \"$(git rev-parse a5ff413585ef1687f66b21aaa4b7a63c7cc66781^{tree})\" = 8b3e746062753a04176732e4923a8644a39f9ecb\nUV_OFFLINE=1 uv run python scripts/build_release.py --sha a5ff413585ef1687f66b21aaa4b7a63c7cc66781 --output-dir /tmp/edgequeue-a4-review\nunzip -p /tmp/edgequeue-a4-review/*.zip RELEASE_MANIFEST.json | jq -r '.source_identity_binding' | grep -Fx d6b2385ffffa6b23b3998c82b6d14583…
 
 ### response_item
 
-{"ordinal": 169, "payload": {"call_id": "call_LCttOsa9FHkCKnPYRaGRvUZW", "id": "ctco_01a05a25-ca0b-79a2-9f7a-2423f24c2848", "internal_chat_message_metadata_passthrough": {"create_time": 1788218821.131121, "turn_id": "01a05a25-78bc-76c0-abcf-50aa7fc10acb"}, "output": [{"text": "Script completed\nWall time 13.6 seconds\nOutput:\n", "type": "input_text"}, {"text": "....                                                                     [100%]\n4 passed in 12.95s\nsubmission-check: pass\nA\tdocs/trajectories/trajectory-18-ticket-20-worker-01a05887-f86d-7043-b62c-525554cd727d.md\nA\tdocs/trajectories/trajectory-19-ticket-21-gate-01a059dc-476d-7912-b0bb-85529a82149d.md\nA\tdocs/trajectories/trajectory-20-ticket-21-worker-01a059dc-4821-7ba1-b22c-886b3214961e.md\nA\tdocs/trajectories/trajectory-2…
+{"ordinal": 338, "payload": {"call_id": "call_1ZsLYmmpEI8ZyKBmNrzecjiQ", "id": "ctco_01a05a4c-284d-7481-b119-f9fddf35afd7", "internal_chat_message_metadata_passthrough": {"create_time": 1788221335.629192, "turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5"}, "output": [{"text": "Script completed\nWall time 5.7 seconds\nOutput:\n", "type": "input_text"}, {"text": "release-build: pass source_sha=a5ff413585ef1687f66b21aaa4b7a63c7cc66781\narchive=<PRIVATE_PATH> bytes=2216245\nchecksum=9d8880db4a03f6d9eae311e075bcb7c83b303d54c2c794076d5fc5d4e23e6e4e sidecar=<PRIVATE_PATH>\nd6b2385ffffa6b23b3998c82b6d14583416f61657c16f2005068be401054f353\n", "type": "input_text"}], "type": "custom_tool_call_output"}, "timestamp": "2026-09-01T00:08:55.629Z", "type": "response_item"}
 
 ### response_item
 
-{"ordinal": 172, "payload": {"id": "rs_07731fc4864f6c81016a960dc6412887d293e8336724d1a70d", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a25-78bc-76c0-abcf-50aa7fc10acb"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:27:02.385Z", "type": "response_item"}
+{"ordinal": 341, "payload": {"id": "rs_07731fc4864f6c81016a961798e55487d297c0785f0b857b43", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:08:56.999Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 173, "payload": {"completed_at_ms": 1788218823194, "item": {"content": [{"text": "PASS — `git diff --check`, focused submission tests, and submission validation pass for `cff8faeb855682719f6c747c4dbcb9b386cd4b88`.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a960dc666a487d2a524a99484dba62e", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788218822387, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a25-78bc-76c0-abcf-50aa7fc10acb", "type": "item_completed"}, "timestamp": "2026-08-31T23:27:03.194Z", "type": "event_msg"}
+{"ordinal": 342, "payload": {"completed_at_ms": 1788221337621, "item": {"content": [{"text": "PASS — A4 facts match a rebuilt archive, validation passes, and the external Video URL remains correctly stated as the sole user-supplied blocker.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a96179901cc87d28fc75ca2bb75d6bf", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788221337000, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5", "type": "item_completed"}, "timestamp": "2026-09-01T00:08:57.621Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 174, "payload": {"content": [{"text": "PASS — `git diff --check`, focused submission tests, and submission validation pass for `cff8faeb855682719f6c747c4dbcb9b386cd4b88`.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960dc666a487d2a524a99484dba62e", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788218821.62525, "turn_id": "01a05a25-78bc-76c0-abcf-50aa7fc10acb"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:27:03.196Z", "type": "response_item"}
+{"ordinal": 343, "payload": {"content": [{"text": "PASS — A4 facts match a rebuilt archive, validation passes, and the external Video URL remains correctly stated as the sole user-supplied blocker.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a96179901cc87d28fc75ca2bb75d6bf", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788221336.23034, "turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:08:57.624Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 176, "payload": {"completed_at": 1788218823, "duration_ms": 22916, "last_agent_message": "PASS — `git diff --check`, focused submission tests, and submission validation pass for `cff8faeb855682719f6c747c4dbcb9b386cd4b88`.", "started_at": 1788218800, "time_to_first_token_ms": 1523, "turn_id": "01a05a25-78bc-76c0-abcf-50aa7fc10acb", "type": "task_complete"}, "timestamp": "2026-08-31T23:27:03.243Z", "type": "event_msg"}
+{"ordinal": 344, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:08:57.664Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 345, "payload": {"completed_at": 1788221337, "duration_ms": 40157, "last_agent_message": "PASS — A4 facts match a rebuilt archive, validation passes, and the external Video URL remains correctly stated as the sole user-supplied blocker.", "started_at": 1788221297, "time_to_first_token_ms": 4476, "turn_id": "01a05a4b-936e-7490-8057-f622d937b3f5", "type": "task_complete"}, "timestamp": "2026-09-01T00:08:57.680Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 346, "payload": {"collaboration_mode_kind": "default", "started_at": 1788221479, "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad", "type": "task_started"}, "timestamp": "2026-09-01T00:11:19.102Z", "type": "event_msg"}
+
+### turn_context
+
+<REDACTED_PRIVATE_EVENT>
+
+### inter_agent_communication_metadata
+
+{"ordinal": 348, "payload": {"trigger_turn": true}, "timestamp": "2026-09-01T00:11:20.110Z", "type": "inter_agent_communication_metadata"}
 
 ### response_item
 
 <REDACTED_PRIVATE_EVENT>
 
+### event_msg
+
+{"ordinal": 350, "payload": {"completed_at_ms": 1788221482127, "item": {"id": "rs_07731fc4864f6c81016a961829f5d487d2be72a83b7e58aecd", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788221481943, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad", "type": "item_completed"}, "timestamp": "2026-09-01T00:11:22.127Z", "type": "event_msg"}
+
 ### response_item
 
-{"ordinal": 182, "payload": {"id": "rs_07731fc4864f6c81016a960fd6992887d28473c4b84e285334", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:35:50.875Z", "type": "response_item"}
+{"ordinal": 351, "payload": {"id": "rs_07731fc4864f6c81016a961829f5d487d2be72a83b7e58aecd", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:11:22.129Z", "type": "response_item"}
 
 ### event_msg
 
-{"ordinal": 183, "payload": {"completed_at_ms": 1788219351351, "item": {"content": [{"text": "Reviewing the archive-blocker fix and submission contract on the exact candidate.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a960fd6e19887d2a34fc76911d86442", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788219350876, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5", "type": "item_completed"}, "timestamp": "2026-08-31T23:35:51.351Z", "type": "event_msg"}
+{"ordinal": 352, "payload": {"completed_at_ms": 1788221482497, "item": {"content": [{"text": "Reviewing the readiness-report provenance-only update.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a96182a244887d29cc5a9b0cd12010a", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788221482130, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad", "type": "item_completed"}, "timestamp": "2026-09-01T00:11:22.497Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 184, "payload": {"content": [{"text": "Reviewing the archive-blocker fix and submission contract on the exact candidate.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a960fd6e19887d2a34fc76911d86442", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788219349.457663, "turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T23:35:51.353Z", "type": "response_item"}
+{"ordinal": 353, "payload": {"content": [{"text": "Reviewing the readiness-report provenance-only update.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a96182a244887d29cc5a9b0cd12010a", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788221480.74013, "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:11:22.499Z", "type": "response_item"}
 
 ### response_item
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 354, "payload": {"call_id": "call_O885ka98MHD6PypamMqLYj6j", "id": "ctc_07731fc4864f6c81016a96182a833887d2a03180e7849d600a", "input": "const r = await tools.exec_command({\"cmd\":\"test -z \\\"$(git status --porcelain)\\\" && test \\\"$(git rev-parse HEAD)\\\" = 9418000c55ea18c5a8ec4a3fd82c83339e69023b && git merge-base --is-ancestor da8cf4d7b38a7c06bc1a22bfb20883401a02a29a 9418000c55ea18c5a8ec4a3fd82c83339e69023b\\ngit diff --check da8cf4d7b38a7c06bc1a22bfb20883401a02a29a...9418000c55ea18c5a8ec4a3fd82c83339e69023b\\ngit diff -- da8cf4d7b38a7c06bc1a22bfb20883401a02a29a...9418000c55ea18c5a8ec4a3fd82c83339e69023b -- docs/evidence/ticket-22/submission-readiness.md\\nsed -n '15,65p' docs/evidence/ticket-22/submission-readiness.md\\nrg -n 'Video URL|runs/\\\\*\\\\*|ticket-20/traces|…
+
+### event_msg
+
+{"ordinal": 355, "payload": {"completed_at_ms": 1788221489738, "item": {"aggregated_output": "- `docs/submission/` contains copy-ready Markdown, local HTML, video script, timed shots, capture commands, and asset list.\n- `docs/trajectories/trace-manifest.json` records 21 redacted ledger sources, including Controller, Worker, Gate, and internal-review roles.\n\n## Draft archive measurement\n\nThe Controller created and preserved the approved A4 draft archive outside Git. The Gate independently rebuilt and verified A4.\n\n- Draft snapshot SHA A4: `a5ff413585ef1687f66b21aaa4b7a63c7cc66781`.\n- Draft archive: `edgequeue-a5ff413585ef-source.zip`, `2,216,245` bytes.\n- Draft archive SHA-256, both runs: `9d8880db4a03f6d9eae311e075bcb7c83b303d54c2c794076d5fc5d4e23e6e4e`.\n- Source tree: `8b3e74606…
 
 ### response_item
 
-{"ordinal": 190, "payload": {"id": "rs_07731fc4864f6c81016a960fed47d487d2af4b6ab1d8ba5db8", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:36:14.799Z", "type": "response_item"}
+{"ordinal": 356, "payload": {"call_id": "call_O885ka98MHD6PypamMqLYj6j", "id": "ctco_01a05a4e-8250-76f1-a87f-72325fdba0be", "internal_chat_message_metadata_passthrough": {"create_time": 1788221489.744652, "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "- `docs/submission/` contains copy-ready Markdown, local HTML, video script, timed shots, capture commands, and asset list.\n- `docs/trajectories/trace-manifest.json` records 21 redacted ledger sources, including Controller, Worker, Gate, and internal-review roles.\n\n## Draft archive measurement\n\nThe Controller created and preserved the approved A4 draft archive outside Git. The Gate independently rebuilt and verified A4.\n\n- Dr…
+
+### event_msg
+
+{"ordinal": 357, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:11:29.745Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 358, "payload": {"completed_at_ms": 1788221491340, "item": {"id": "rs_07731fc4864f6c81016a961832ff6c87d2af59c162c532f856", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788221490979, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad", "type": "item_completed"}, "timestamp": "2026-09-01T00:11:31.340Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 193, "payload": {"call_id": "call_KGXve3pJn6oJo5jJAXXCJ4wk", "id": "ctco_01a05a2e-970c-78c0-9d72-cf0c24458148", "internal_chat_message_metadata_passthrough": {"create_time": 1788219397.900735, "turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5"}, "output": [{"text": "Script completed\nWall time 17.9 seconds\nOutput:\n", "type": "input_text"}, {"text": "diff --git a/src/edgequeue/judge.py b/src/edgequeue/judge.py\nindex 0476ae0..dec0bcc 100644\n--- a/src/edgequeue/judge.py\n+++ b/src/edgequeue/judge.py\n@@ -9,7 +9,7 @@ import subprocess\n import time\n from collections.abc import Mapping, Sequence\n from dataclasses import dataclass\n-from pathlib import Path\n+from pathlib import Path, PurePosixPath\n from typing import Any\n \n from edgequeue.adjudication import (\n@@ -551,6 +55…
+{"ordinal": 359, "payload": {"id": "rs_07731fc4864f6c81016a961832ff6c87d2af59c162c532f856", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-09-01T00:11:31.342Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 360, "payload": {"completed_at_ms": 1788221491928, "item": {"content": [{"text": "PASS — Controller/Gate attribution, A4 values, archive command, exclusions, proof paths, and the external Video URL blocker are all correct.", "type": "Text"}], "id": "msg_07731fc4864f6c81016a9618335ad087d2944a254fcf060dda", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788221491344, "thread_id": "01a05a13-ebec-7413-be03-045d237c3486", "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad", "type": "item_completed"}, "timestamp": "2026-09-01T00:11:31.929Z", "type": "event_msg"}
 
 ### response_item
 
-{"ordinal": 196, "payload": {"id": "rs_07731fc4864f6c81016a96100737ac87d295dc6e3825ccc3ac", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:36:39.826Z", "type": "response_item"}
+{"ordinal": 361, "payload": {"content": [{"text": "PASS — Controller/Gate attribution, A4 values, archive command, exclusions, proof paths, and the external Video URL blocker are all correct.", "type": "output_text"}], "id": "msg_07731fc4864f6c81016a9618335ad087d2944a254fcf060dda", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788221490.231332, "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-09-01T00:11:31.933Z", "type": "response_item"}
 
-### response_item
+### event_msg
 
-{"ordinal": 198, "payload": {"id": "rs_07731fc4864f6c81016a961007d51c87d2b1619fecd758db4f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a05a2d-d6ca-75c2-b60b-907d8eaafba5"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T23:36:49.132Z", "type": "response_item"}
+{"ordinal": 362, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-09-01T00:11:31.997Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 363, "payload": {"completed_at": 1788221492, "duration_ms": 12901, "last_agent_message": "PASS — Controller/Gate attribution, A4 values, archive command, exclusions, proof paths, and the external Video URL blocker are all correct.", "started_at": 1788221479, "time_to_first_token_ms": 3035, "turn_id": "01a05a4e-58b9-77d2-b26e-2d190cc790ad", "type": "task_complete"}, "timestamp": "2026-09-01T00:11:32.003Z", "type": "event_msg"}

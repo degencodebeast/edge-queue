@@ -220,6 +220,77 @@ def test_trajectory_export_covers_ledger_sources_and_redacts_private_values(tmp_
     assert synthetic_jwt not in exported
 
 
+def test_trajectory_export_retains_late_signals_and_completion(tmp_path: Path) -> None:
+    """The bounded CLI export keeps late feedback and completion evidence."""
+    source_id = "01a00000-0000-0000-0000-000000000001"
+    raw_events = tmp_path / f"rollout-{source_id}.jsonl"
+    events = []
+    for ordinal in range(180):
+        text = f"setup event {ordinal}"
+        if 60 <= ordinal < 160:
+            text = f"pass event {ordinal}"
+        if ordinal == 120:
+            text = "Gate cycle 1 provenance blocker"
+        if ordinal == 140:
+            text = "checkpoint A2 repair complete"
+        if ordinal >= 160:
+            text = f"completion event {ordinal}"
+        events.append(
+            {
+                "ordinal": ordinal,
+                "type": "response_item",
+                "payload": {"text": text},
+            }
+        )
+    raw_events.write_text(
+        "\n".join(json.dumps(event) for event in events) + "\n",
+        encoding="utf-8",
+    )
+
+    ledger = tmp_path / "ledger.md"
+    ledger.write_text(
+        "\n".join(
+            [
+                "| Agent | Role | Scope | Pane | Source | Export status |",
+                "| --- | --- | --- | --- | --- | --- |",
+                (
+                    f"| Worker session `{source_id}` | Worker | Fixture | `worker` | "
+                    f"`{raw_events}` | pending |"
+                ),
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    output_dir = tmp_path / "trajectories"
+
+    result = run_script(
+        "export_trajectories.py",
+        "--ledger",
+        str(ledger),
+        "--output-dir",
+        str(output_dir),
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    manifest = json.loads((output_dir / "trace-manifest.json").read_text(encoding="utf-8"))
+    raw_path = output_dir / manifest["records"][0]["raw_excerpt_path"]
+    exported_events = [
+        json.loads(line) for line in raw_path.read_text(encoding="utf-8").splitlines()
+    ]
+    exported_text = raw_path.read_text(encoding="utf-8")
+    ordinals = [event["ordinal"] for event in exported_events]
+
+    assert len(exported_events) == 120
+    assert "Gate cycle 1 provenance blocker" in exported_text
+    assert "checkpoint A2 repair complete" in exported_text
+    assert "completion event 179" in exported_text
+    assert ordinals == sorted(ordinals)
+    assert ordinals[:60] == list(range(60))
+    assert ordinals[60:100] == list(range(120, 160))
+    assert ordinals[-20:] == list(range(160, 180))
+
+
 def test_submission_validator_rejects_private_local_paths(tmp_path: Path) -> None:
     """The public validator rejects a private local path in a copied package."""
     copied_project = tmp_path / "package"

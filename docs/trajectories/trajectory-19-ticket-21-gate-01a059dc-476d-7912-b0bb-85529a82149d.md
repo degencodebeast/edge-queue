@@ -78,7 +78,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:28.260Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:38.453Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:43.676Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:49.309Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -174,7 +174,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 41, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:08:56.691Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -198,7 +198,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 47, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:09:02.180Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -222,7 +222,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 53, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:09:09.414Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -246,227 +246,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 61, "payload": {"id": "rs_046a77e031452bec016a95fb8c293887d29795c54850eaa6a6", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059dd-be02-7113-be6b-da6595eefb05"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:09:21.954Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 63, "payload": {"content": [{"text": "The review criteria and authoritative four-case contract are loaded. I am standing by for the clean candidate SHA; no Worker worktree inspection has occurred.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95fb91fe7087d28806da763bf871c7", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788214155.203451, "turn_id": "01a059dd-be02-7113-be6b-da6595eefb05"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:09:22.563Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 65, "payload": {"content": [{"text": "Standing by for the Worker’s exact candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95fb929bfc87d2a8ee154a86d8569b", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788214155.203451, "turn_id": "01a059dd-be02-7113-be6b-da6595eefb05"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:09:22.897Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 71, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Acknowledged. Remain read-only and do not inspect or poll the Worker lane before candidate delivery. Start cycle 1 only after worker-lane-3 sends one exact clean candidate SHA.", "type": "input_text"}], "id": "msg_01a059df-1873-7453-8665-a17d3ce39578", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788214188.147579, "turn_id": "01a059df-180a-71a3-9fa5-b94cff8ac7fb"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T22:09:48.147Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 74, "payload": {"id": "rs_046a77e031452bec016a95fbadc55487d2a3e9145fe07d1b56", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059df-180a-71a3-9fa5-b94cff8ac7fb"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:09:50.887Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 76, "payload": {"content": [{"text": "Acknowledged. I remain read-only and will start cycle 1 only after the Worker sends its exact candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95fbaeee8487d29e67166cc1764a32", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788214188.870503, "turn_id": "01a059df-180a-71a3-9fa5-b94cff8ac7fb"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:09:51.532Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 79, "payload": {"call_id": "call_l5Fkz9jxcYL2EWppcx5Vuo9Y", "id": "ctco_01a059df-3050-72c2-9021-3c76b3ee2c41", "internal_chat_message_metadata_passthrough": {"create_time": 1788214194.256659, "turn_id": "01a059df-180a-71a3-9fa5-b94cff8ac7fb"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\": …
-
-### response_item
-
-{"ordinal": 82, "payload": {"id": "rs_046a77e031452bec016a95fbb4537087d2b918a91efa13c026", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059df-180a-71a3-9fa5-b94cff8ac7fb"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:09:56.453Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 84, "payload": {"content": [{"text": "Acknowledged. Standing by for the exact clean candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95fbb47fa487d2af76f58d0eba4418", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788214194.808791, "turn_id": "01a059df-180a-71a3-9fa5-b94cff8ac7fb"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:09:56.738Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 93, "payload": {"id": "rs_046a77e031452bec016a95fdd361ac87d28fa1ab61fa269399", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059e7-7c13-7af3-8fa2-0a26284b506a"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:18:59.744Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 95, "payload": {"content": [{"text": "The scope update is recorded. I will allow only the narrow fixture-payload correction in `corpus.py` and its public-seam regression test.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95fdd3c86887d282d3ab4ea35f60c4", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788214738.773066, "turn_id": "01a059e7-7c13-7af3-8fa2-0a26284b506a"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:19:00.520Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 98, "payload": {"call_id": "call_0BW2LFFEw2dpGbYDW5feFb6I", "id": "ctco_01a059e7-9332-7101-8ee2-b1fa3f34c894", "internal_chat_message_metadata_passthrough": {"create_time": 1788214743.858151, "turn_id": "01a059e7-7c13-7af3-8fa2-0a26284b506a"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\": …
-
-### response_item
-
-{"ordinal": 101, "payload": {"id": "rs_046a77e031452bec016a95fdd91ee487d2b231f92a2feec459", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059e7-7c13-7af3-8fa2-0a26284b506a"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:19:05.977Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 103, "payload": {"content": [{"text": "Acknowledged. I remain on standby for the candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95fdda039087d2a32e98ff7949d93e", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788214744.405557, "turn_id": "01a059e7-7c13-7af3-8fa2-0a26284b506a"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:19:06.262Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 112, "payload": {"id": "rs_046a77e031452bec016a95ff085b4487d28065e19f2b36cba9", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ec-328f-7843-9d57-87c34bfe2dab"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:24:08.645Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 114, "payload": {"content": [{"text": "The evidence boundary is recorded. I will preserve Ticket 15 evidence and verify the Ticket 21 note and digest-bound four-case video data asset.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff08b51087d280c61cdd4dd5578b", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215047.649138, "turn_id": "01a059ec-328f-7843-9d57-87c34bfe2dab"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:24:09.382Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 117, "payload": {"call_id": "call_uDm073PSQW3gxjE08t0IP4VS", "id": "ctco_01a059ec-4a00-7c63-8fe2-28b2c2595d2e", "internal_chat_message_metadata_passthrough": {"create_time": 1788215052.80056, "turn_id": "01a059ec-328f-7843-9d57-87c34bfe2dab"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\": …
-
-### response_item
-
-{"ordinal": 120, "payload": {"id": "rs_046a77e031452bec016a95ff0e03cc87d296582ddd0cd19d32", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ec-328f-7843-9d57-87c34bfe2dab"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:24:14.071Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 122, "payload": {"content": [{"text": "Acknowledged. I remain on standby for the candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff0e20c087d28903e7fb35434ef9", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215053.399977, "turn_id": "01a059ec-328f-7843-9d57-87c34bfe2dab"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:24:14.348Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 128, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Calibration review boundary: the accepted contract permits Development plus exposed Allocation Holdout comparisons before promotion. If Ticket 21 records authorized human promotion, require exactly one untouched Post-Calibration Holdout run and preserve it. Reject any calibration-improvement claim based only on DEV/AH. If the flow only shows a candidate gate, require explicit no-promotion and no-improvement wording. Verify fixed model, corpus, scorer, K=4 calibration budget, metrics, and PCH.", "type": "input_text"}], "id": "msg_01a059ed-1d0e-7c50-b562-2578dac856fe", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"…
-
-### event_msg
-
-{"ordinal": 129, "payload": {"completed_at_ms": 1788215106831, "item": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Calibration review boundary: the accepted contract permits Development plus exposed Allocation Holdout comparisons before promotion. If Ticket 21 records authorized human promotion, require exactly one untouched Post-Calibration Holdout run and preserve it. Reject any calibration-improvement claim based only on DEV/AH. If the flow only shows a candidate gate, require explicit no-promotion and no-improvement wording. Verify fixed model, corpus, scorer, K=4 calibration budget, metrics, and PCH.", "text_elements": [], "type": "text"}], "id": "01a059ed-1d0f-7c30-a03b-40b41a89ef9a", "type": "UserMessage"}, "st…
-
-### response_item
-
-{"ordinal": 131, "payload": {"id": "rs_046a77e031452bec016a95ff44328c87d2b2aabfa216a49a25", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ed-1c87-7c01-a73b-058ce239be9e"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:25:08.311Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 133, "payload": {"content": [{"text": "The calibration boundary is recorded. I will distinguish a candidate gate from a promotion and reject any unsupported calibration-improvement claim.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff445ed887d28305d6d46a550cb2", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215107.607905, "turn_id": "01a059ed-1c87-7c01-a73b-058ce239be9e"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:25:08.956Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 136, "payload": {"call_id": "call_UQyJepy0TxB58uZEbD91UpRL", "id": "ctco_01a059ed-33a8-7233-b33c-4fdc181b8cec", "internal_chat_message_metadata_passthrough": {"create_time": 1788215112.616614, "turn_id": "01a059ed-1c87-7c01-a73b-058ce239be9e"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\":…
-
-### response_item
-
-{"ordinal": 139, "payload": {"id": "rs_046a77e031452bec016a95ff49bf2c87d29068f2c948e2f2d6", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ed-1c87-7c01-a73b-058ce239be9e"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:25:13.835Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 141, "payload": {"content": [{"text": "Acknowledged. Standing by for the candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff49e5f487d29dc2319168ac3021", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215113.192099, "turn_id": "01a059ed-1c87-7c01-a73b-058ce239be9e"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:25:14.104Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 147, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Acknowledged. Apply that exact calibration boundary when the candidate arrives. Remain read-only until the Worker sends one clean SHA.", "type": "input_text"}], "id": "msg_01a059ed-576c-7901-9a8a-bb2282d55362", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788215121.772919, "turn_id": "01a059ed-5700-7320-a463-87c0ad49bcac"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T22:25:21.772Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 150, "payload": {"id": "rs_046a77e031452bec016a95ff53651c87d2ae743dc4ca503a46", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ed-5700-7320-a463-87c0ad49bcac"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:25:23.626Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 152, "payload": {"content": [{"text": "Acknowledged. I will apply the calibration boundary during candidate review and remain read-only until the clean SHA arrives.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff53a52c87d29bb3f63bf4996aba", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215122.449475, "turn_id": "01a059ed-5700-7320-a463-87c0ad49bcac"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:25:24.179Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 155, "payload": {"call_id": "call_VioO3aFxOB2ZhuNZfYc3uEx5", "id": "ctco_01a059ed-6bac-7971-ae49-912c11852327", "internal_chat_message_metadata_passthrough": {"create_time": 1788215126.95688, "turn_id": "01a059ed-5700-7320-a463-87c0ad49bcac"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\": …
-
-### response_item
-
-{"ordinal": 158, "payload": {"id": "rs_046a77e031452bec016a95ff59251487d29742d31a05607c33", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ed-5700-7320-a463-87c0ad49bcac"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:25:29.243Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 160, "payload": {"content": [{"text": "Acknowledged. I remain read-only pending the candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff594d9887d2a5d02bd4d7050350", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215127.73881, "turn_id": "01a059ed-5700-7320-a463-87c0ad49bcac"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:25:29.555Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 166, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Confirmed. Keep the recorded calibration and evidence boundaries unchanged. Remain read-only and start review only after worker-lane-3 sends one exact clean candidate SHA.", "type": "input_text"}], "id": "msg_01a059ed-a0b5-77b3-8937-8c9a6b9375da", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788215140.53384, "turn_id": "01a059ed-9b21-78c3-aaec-c9f8236be6ef"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T22:25:40.533Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 169, "payload": {"id": "rs_046a77e031452bec016a95ff65cdc887d28a138abe99452991", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ed-9b21-78c3-aaec-c9f8236be6ef"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:25:42.095Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 171, "payload": {"content": [{"text": "Confirmed. The recorded boundaries remain unchanged. I will start only after the Worker’s exact clean candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff6627b887d2af1c4fd8b1a9faaf", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215141.170771, "turn_id": "01a059ed-9b21-78c3-aaec-c9f8236be6ef"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:25:42.693Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 174, "payload": {"call_id": "call_lg041eZA5Fi2UsYoFo2fb56X", "id": "ctco_01a059ed-b3e7-7271-aba9-c40946289ccc", "internal_chat_message_metadata_passthrough": {"create_time": 1788215145.447436, "turn_id": "01a059ed-9b21-78c3-aaec-c9f8236be6ef"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\":…
-
-### response_item
-
-{"ordinal": 177, "payload": {"id": "rs_046a77e031452bec016a95ff6b7c5887d29389075bc7718c34", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ed-9b21-78c3-aaec-c9f8236be6ef"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:25:47.583Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 179, "payload": {"content": [{"text": "Confirmed. Standing by for the exact clean candidate SHA.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff6ba43487d2b799ad2bb355a6fe", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215145.996988, "turn_id": "01a059ed-9b21-78c3-aaec-c9f8236be6ef"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:25:47.857Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 185, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Standby is complete. Send no further acknowledgement messages. Remain read-only. Contact the Controller only after an exact candidate review produces PASS, or at cycle 3 with unresolved blockers. Send cycle 1 or 2 blockers only to worker-lane-3.", "type": "input_text"}], "id": "msg_01a059ed-f1ae-7860-8cb6-23d1f76e25ca", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["user.text"], "create_time": 1788215161.2627, "turn_id": "01a059ed-f137-7532-bc63-d6a4217d916b"}, "role": "user", "type": "message"}, "timestamp": "2026-08-31T22:26:01.262Z", "type": "response_item"}
-
-### event_msg
-
-{"ordinal": 186, "payload": {"completed_at_ms": 1788215161263, "item": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Standby is complete. Send no further acknowledgement messages. Remain read-only. Contact the Controller only after an exact candidate review produces PASS, or at cycle 3 with unresolved blockers. Send cycle 1 or 2 blockers only to worker-lane-3.", "text_elements": [], "type": "text"}], "id": "01a059ed-f1af-78f1-8322-da95613bc42d", "type": "UserMessage"}, "started_at_ms": 1788215161263, "thread_id": "01a059dc-476d-7912-b0bb-85529a82149d", "turn_id": "01a059ed-f137-7532-bc63-d6a4217d916b", "type": "item_completed"}, "timestamp": "2026-08-31T22:26:01.263Z", "type": "event_msg"}
-
-### response_item
-
-{"ordinal": 188, "payload": {"id": "rs_046a77e031452bec016a95ff7aae4c87d2aa4ff508f0e536f7", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059ed-f137-7532-bc63-d6a4217d916b"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:26:05.139Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 190, "payload": {"content": [{"text": "Standing by.", "type": "output_text"}], "id": "msg_046a77e031452bec016a95ff7d331087d28d8d881b6b0aaabb", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215161.948634, "turn_id": "01a059ed-f137-7532-bc63-d6a4217d916b"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:26:05.296Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 196, "payload": {"content": [{"text": "[tmux-bridge from:worker-lane-3 pane:%7 at:micro1-lane-3:0.1 — load the smux skill to reply] Ticket 21 candidate ready for review. SHA: d8598abdecbdffe545e64b270d6d6c9599a10333. Base: 3f337a4de214bfee705655ace1391df68e6c4010. Worker worktree is clean and candidate descends from base. RED evidence: missing Judge Fixture module; obsolete AH fixture emitted by public freeze; missing video asset; output rerun duplicate Adjudication; scorer-derived calibration selection; placeholder controls/source state; unavailable live route. GREEN: focused 22 passed; full uv run pytest -q: 167 passed; uv lock --check; compileall; diff check; Judge Fixture valid proof and repaired-digest rejection. Evidence: docs/evidence/ticket-21/README.md, artifacts/judge…
-
-### event_msg
-
-{"ordinal": 197, "payload": {"completed_at_ms": 1788215934311, "item": {"content": [{"text": "[tmux-bridge from:worker-lane-3 pane:%7 at:micro1-lane-3:0.1 — load the smux skill to reply] Ticket 21 candidate ready for review. SHA: d8598abdecbdffe545e64b270d6d6c9599a10333. Base: 3f337a4de214bfee705655ace1391df68e6c4010. Worker worktree is clean and candidate descends from base. RED evidence: missing Judge Fixture module; obsolete AH fixture emitted by public freeze; missing video asset; output rerun duplicate Adjudication; scorer-derived calibration selection; placeholder controls/source state; unavailable live route. GREEN: focused 22 passed; full uv run pytest -q: 167 passed; uv lock --check; compileall; diff check; Judge Fixture valid proof and repaired-digest rejection. Evidence: docs/ev…
-
-### response_item
-
-{"ordinal": 199, "payload": {"id": "rs_046a77e031452bec016a96027f97cc87d28f6b7b315c558fc0", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:39:04.914Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 201, "payload": {"content": [{"text": "Candidate `d8598abdecbdffe545e64b270d6d6c9599a10333` is received. I am starting cycle 1 with the required clean-SHA preflight and independent verification.", "type": "output_text"}], "id": "msg_046a77e031452bec016a960288f14c87d28fca6691b8ebacb5", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215934.982972, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:39:05.966Z", "type": "response_item"}
-
-### response_item
-
-<REDACTED_PRIVATE_EVENT>
-
-### response_item
-
-{"ordinal": 204, "payload": {"call_id": "call_bPT2SdJmD8mtuw5uv28HlnEQ", "id": "ctco_01a059f9-fb4b-7fc3-a4c5-3ea8d8eb315a", "internal_chat_message_metadata_passthrough": {"create_time": 1788215950.155232, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.1 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10272)\nTotal output lines: 1330\n\n---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw…
-
-### response_item
-
-{"ordinal": 207, "payload": {"id": "rs_046a77e031452bec016a96028f8e8c87d2848f852c30908f16", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:39:12.142Z", "type": "response_item"}
-
-### response_item
-
-{"ordinal": 208, "payload": {"call_id": "call_vvZoKWmmHBIC405KoIznDH9p", "id": "ctc_046a77e031452bec016a9602902b9487d290aa2edfd6c9985c", "input": "const r = await tools.exec_command({\"cmd\":\"test -z \\\"$(git -C <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker status --porcelain)\\\"\\ntest \\\"$(git -C <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker rev-parse HEAD)\\\" = 'd8598abdecbdffe545e64b270d6d6c9599a10333'\\ngit -C <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker merge-base --is-ancestor '3f337a4de214bfee705655ace1391df68e6c4010' 'd8598abdecbdffe545e64b270d6d6c9599a10333'\\nprintf 'preflight=pass\\\\n'\\ngit -C <USER_HOME>/Projects/personal/micro1-hack/.worktrees/edgequeue/lane-3-worker diff --na…
-
-### event_msg
-
-{"ordinal": 209, "payload": {"completed_at_ms": 1788215961577, "item": {"aggregated_output": "preflight=pass\nM\tcorpus/fixtures/judge-fixture-v1.json\nA\tdocs/evidence/ticket-21/README.md\nA\tdocs/evidence/ticket-21/artifacts/adjudications-reviewer-manifests.jsonl\nA\tdocs/evidence/ticket-21/artifacts/adjudications.jsonl\nA\tdocs/evidence/ticket-21/artifacts/allocation-receipt.json\nA\tdocs/evidence/ticket-21/artifacts/allocation-run-evidence.json\nA\tdocs/evidence/ticket-21/artifacts/calibration.json\nA\tdocs/evidence/ticket-21/artifacts/command-output.txt\nA\tdocs/evidence/ticket-21/artifacts/fixture.json\nA\tdocs/evidence/ticket-21/artifacts/proof-bundle/adjudications.jsonl\nA\tdocs/evidence/ticket-21/artifacts/proof-bundle/allocation-receipt.json\nA\tdocs/evidence/ticket-21/artifacts/…
-
-### response_item
-
-{"ordinal": 210, "payload": {"call_id": "call_vvZoKWmmHBIC405KoIznDH9p", "id": "ctco_01a059fa-27ed-7132-a4cf-0a850e86cc9c", "internal_chat_message_metadata_passthrough": {"create_time": 1788215961.581027, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "preflight=pass\nM\tcorpus/fixtures/judge-fixture-v1.json\nA\tdocs/evidence/ticket-21/README.md\nA\tdocs/evidence/ticket-21/artifacts/adjudications-reviewer-manifests.jsonl\nA\tdocs/evidence/ticket-21/artifacts/adjudications.jsonl\nA\tdocs/evidence/ticket-21/artifacts/allocation-receipt.json\nA\tdocs/evidence/ticket-21/artifacts/allocation-run-evidence.json\nA\tdocs/evidence/ticket-21/artifacts/calibration.json\nA\tdocs/evidence/tick…
+{"ordinal": 59, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:09:14.566Z", "type": "event_msg"}
 
 ### response_item
 
@@ -487,3 +267,223 @@
 ### response_item
 
 {"ordinal": 222, "payload": {"call_id": "call_aizvZiMnbvYymaNLx5M4QsxK", "id": "ctco_01a059fa-58ec-7c21-b327-41b89c5bc453", "internal_chat_message_metadata_passthrough": {"create_time": 1788215974.124005, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10762)\nTotal output lines: 755\n\n\"\"\"Offline orchestration for the four-case EdgeQueue Judge Fixture.\"\"\"\n\nfrom __future__ import annotations\n\nimport hashlib\nimport json\nimport shutil\nimport subprocess\nimport time\nfrom collections.abc import Mapping, Sequence\nfrom dataclasses import dataclass\nfrom pathlib import Path\nfrom typing import Any\n\nfrom edgequeue.adjudicat…
+
+### response_item
+
+{"ordinal": 225, "payload": {"id": "rs_046a77e031452bec016a9602a7db0087d2beb8a8a7288c39aa", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:39:36.401Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 228, "payload": {"call_id": "call_egq3IuTKtUvEzM4BcV57jrh3", "id": "ctco_01a059fa-78a3-72f0-a9e3-502d8d4b418f", "internal_chat_message_metadata_passthrough": {"create_time": 1788215982.24392, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 14133)\nTotal output lines: 1144\n\n   120\t        split=\"DEV\",\n   121\t        review_budget=1,\n   122\t        case_ids=tuple(roles_by_case),\n   123\t        roles_by_case=roles_by_case,\n   124\t    )\n   125\t\n   126\t\n   127\tdef run_judge_fixture(fixture_path: Path, output_dir: Path) -> JudgeResult:\n   128\t    \"\"\"Run FREEZE -> RANK -> REVIEW -> CORRECT -> REPLAY -> P…
+
+### response_item
+
+{"ordinal": 231, "payload": {"id": "rs_046a77e031452bec016a9602af91c887d299749fb8529183f4", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:39:49.706Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 233, "payload": {"completed_at_ms": 1788215993877, "item": {"aggregated_output": "   430\t    return record\n   431\t\n   432\t\n   433\tdef _case_id_for_role(fixture: JudgeFixture, role: str) -> str:\n   434\t    return next(case_id for case_id, candidate_role in fixture.roles_by_case.items() if candidate_role == role)\n   435\t\n   436\t\n   437\tdef _reviewer_manifest() -> dict[str, Any]:\n   438\t    record = {\n   439\t        \"schema_version\": \"1.0\", \"manifest_id\": \"judge-fixture-reviewers-v1\", \"version\": \"1.0\",\n   440\t        \"reviewers\": [\n   441\t            {\"reviewer_id\": \"human-reviewer\", \"roles\": [\"reviewer\"], \"can_adjudicate\": True, \"can_resolve_conflicts\": False, \"can_promote_calibration\": False},\n   442\t            {\"reviewer_id…
+
+### response_item
+
+{"ordinal": 234, "payload": {"call_id": "call_i9UFsrZ82iuiZijApGq4JXgU", "id": "ctco_01a059fa-a616-7c51-85a1-2c6d64de3067", "internal_chat_message_metadata_passthrough": {"create_time": 1788215993.878685, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "   430\t    return record\n   431\t\n   432\t\n   433\tdef _case_id_for_role(fixture: JudgeFixture, role: str) -> str:\n   434\t    return next(case_id for case_id, candidate_role in fixture.roles_by_case.items() if candidate_role == role)\n   435\t\n   436\t\n   437\tdef _reviewer_manifest() -> dict[str, Any]:\n   438\t    record = {\n   439\t        \"schema_version\": \"1.0\", \"manifest_id\": \"judge-fixture-reviewers-v1\", \"ve…
+
+### response_item
+
+{"ordinal": 237, "payload": {"id": "rs_046a77e031452bec016a9602bc2ebc87d2964ea50a637423d7", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:40:05.571Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 239, "payload": {"id": "rs_046a77e031452bec016a9602c5819c87d28e461f458355302b", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:40:10.824Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 240, "payload": {"completed_at_ms": 1788216011661, "item": {"content": [{"text": "The candidate passes clean-SHA, ancestry, and owned-surface preflight. I am now running the fixture from a new external output directory with offline and credential-free controls.", "type": "Text"}], "id": "msg_046a77e031452bec016a9602cad8f087d2a377fd366abf7cd5", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788216010825, "thread_id": "01a059dc-476d-7912-b0bb-85529a82149d", "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce", "type": "item_completed"}, "timestamp": "2026-08-31T22:40:11.661Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 241, "payload": {"content": [{"text": "The candidate passes clean-SHA, ancestry, and owned-surface preflight. I am now running the fixture from a new external output directory with offline and credential-free controls.", "type": "output_text"}], "id": "msg_046a77e031452bec016a9602cad8f087d2a377fd366abf7cd5", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788215994.409095, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:40:11.663Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 243, "payload": {"completed_at_ms": 1788216018564, "item": {"aggregated_output": "EdgeQueue Judge Fixture (Offline Replay)\nBaseline deterministic_only: EQ-F02-DEV-01\nEdgeQueue: EQ-F01-DEV-01\nPrimary Recall@1: baseline=0.00 EdgeQueue=1.00\nCorrection: authorized human correction replayed\nCalibration Candidate: accepted; not promoted; no PCH claim\nProof Bundle: valid\nTamper result: metric_recomputation_mismatch\nOffline Replay: 0.072s, requests=0, tokens=0, model_cost=$0.00\nArtifacts: /tmp/edgequeue-ticket21-gate.717tiH\n\n--- verification ---\n{\"bundle_digest\":\"f40a9c8e3bfd4e2d9bd8832a09bb3568bdfc085ed4f726a91bccfbe49f7e1a85\",\"checked_files\":[\"adjudications.jsonl\",\"allocation-receipt.json\",\"baseline-rankings.json\",\"claims-manifest.json\",\"claims.json\",\"edg…
+
+### response_item
+
+{"ordinal": 244, "payload": {"call_id": "call_B9pVyFno7VCSRtyKI08z08MZ", "id": "ctco_01a059fb-0685-7982-9629-c3b421d7d860", "internal_chat_message_metadata_passthrough": {"create_time": 1788216018.565291, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.7 seconds\nOutput:\n", "type": "input_text"}, {"text": "EdgeQueue Judge Fixture (Offline Replay)\nBaseline deterministic_only: EQ-F02-DEV-01\nEdgeQueue: EQ-F01-DEV-01\nPrimary Recall@1: baseline=0.00 EdgeQueue=1.00\nCorrection: authorized human correction replayed\nCalibration Candidate: accepted; not promoted; no PCH claim\nProof Bundle: valid\nTamper result: metric_recomputation_mismatch\nOffline Replay: 0.072s, requests=0, tokens=0, model_cost=$0.00\nArtifacts: /tmp/edgequeue-ticket21…
+
+### response_item
+
+{"ordinal": 246, "payload": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Open Ticket 21 Gate cycle 1/3 on exact candidate SHA d8598abdecbdffe545e64b270d6d6c9599a10333. Base is 3f337a4de214bfee705655ace1391df68e6c4010. Controller preflight passed: Worker lane is clean at exact HEAD, candidate descends from base, and changed files stay within authorized Ticket 21 surfaces including the narrow corpus.py fixture-payload alignment. Worker reports focused 22 passed, full 167 passed, lock, compile, diff, valid proof, and repaired-digest rejection. Offline Replay reports 0.026 seconds, zero requests, zero tokens, and zero model cost. Evidence is under docs/evidence/ticket-21/. Calibration is an accepted candidate gate only: no…
+
+### event_msg
+
+{"ordinal": 247, "payload": {"completed_at_ms": 1788216018568, "item": {"content": [{"text": "[tmux-bridge from:controller pane:%9 at:micro1-controller:0.0 — load the smux skill to reply] Open Ticket 21 Gate cycle 1/3 on exact candidate SHA d8598abdecbdffe545e64b270d6d6c9599a10333. Base is 3f337a4de214bfee705655ace1391df68e6c4010. Controller preflight passed: Worker lane is clean at exact HEAD, candidate descends from base, and changed files stay within authorized Ticket 21 surfaces including the narrow corpus.py fixture-payload alignment. Worker reports focused 22 passed, full 167 passed, lock, compile, diff, valid proof, and repaired-digest rejection. Offline Replay reports 0.026 seconds, zero requests, zero tokens, and zero model cost. Evidence is under docs/evidence/ticket-21/. Calibra…
+
+### response_item
+
+{"ordinal": 249, "payload": {"id": "rs_046a77e031452bec016a9602d4230087d29ddde90db9bff0f4", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:40:29.437Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 251, "payload": {"id": "rs_046a77e031452bec016a9602dd758487d294933280efddf5b1", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:40:35.576Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 254, "payload": {"call_id": "call_vfYaSTe1mWxLkeLEMLeQ0Ikg", "id": "ctco_01a059fb-75e9-7353-8700-aefe1385d681", "internal_chat_message_metadata_passthrough": {"create_time": 1788216047.08182, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "\"\"\"Build canonical, manifest-bound Proof Bundles.\"\"\"\n\nfrom __future__ import annotations\n\nimport hashlib\nimport json\nfrom collections.abc import Mapping\nfrom pathlib import Path\nfrom typing import Any, Final\n\nfrom edgequeue.contracts import (\n    PROOF_BUNDLE_REQUIRED_PATHS,\n    canonical_json,\n    content_digest,\n    digest_contract,\n)\n\n\nMANIFEST_PATH: Final[str] = \"manifest.json\"\n_RAW_PATHS: Final[tuple[s…
+
+### response_item
+
+{"ordinal": 257, "payload": {"id": "rs_046a77e031452bec016a960327ae9487d2ac0d435e032a5254", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:41:48.910Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 259, "payload": {"id": "rs_046a77e031452bec016a96032ceec887d28ef65a98af3db55c", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:41:50.076Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 261, "payload": {"content": [{"text": "The fresh offline run reproduced the selection, valid proof, and repaired-digest rejection with no credentials. I am completing the full suite and source/artifact integrity checks.", "type": "output_text"}], "id": "msg_046a77e031452bec016a96032e19d887d28147bb856d01ad0b", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788216047.719518, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:41:50.465Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 263, "payload": {"completed_at_ms": 1788216133431, "item": {"aggregated_output": ".....                                                                    [100%]\n5 passed in 0.64s\n........................................................................ [ 43%]\n........................................................................ [ 86%]\n.......................                                                  [100%]\n167 passed in 18.24s\nResolved 7 packages in 2ms\nTraceback (most recent call last):\n  File \"<stdin>\", line 24, in <module>\nAssertionError: ('manifest.json', 'f40a9c8e3bfd4e2d9bd8832a09bb3568bdfc085ed4f726a91bccfbe49f7e1a85', '10516df9e08d2e5b7de286973dcbcf0590605986cfb4df2bea5501eccb837719')\n\n--- exact head and clean source state ---\nclean_exact_head=pa…
+
+### response_item
+
+{"ordinal": 264, "payload": {"call_id": "call_wVVwoXs7GAFV1TwoAVHWerJL", "id": "ctco_01a059fc-c73b-7922-b38f-f723adebc358", "internal_chat_message_metadata_passthrough": {"create_time": 1788216133.435251, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 19.9 seconds\nOutput:\n", "type": "input_text"}, {"text": ".....                                                                    [100%]\n5 passed in 0.64s\n........................................................................ [ 43%]\n........................................................................ [ 86%]\n.......................                                                  [100%]\n167 passed in 18.24s\nResolved 7 packages in 2ms\nTraceback (most recent call last):\n  File…
+
+### response_item
+
+{"ordinal": 267, "payload": {"id": "rs_046a77e031452bec016a9603491c8487d29207a63bd567b8d0", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:42:24.596Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 269, "payload": {"completed_at_ms": 1788216166386, "item": {"aggregated_output": "independent_fixture_video_and_manifest_digest_recomputation=pass\n/tmp/edgequeue-ticket21-independent-tamper.mTto4f\n\n--- independently repaired digest tamper verification ---\n{\"bundle_digest\":\"afbbe143e96be2fd87ac49c0cd8dd6014cb3df30f30603d2cf4d993d6008a19a\",\"checked_files\":[\"adjudications.jsonl\",\"allocation-receipt.json\",\"baseline-rankings.json\",\"claims-manifest.json\",\"claims.json\",\"edgequeue-ranking.json\",\"evaluation-configuration.json\",\"evaluation-run.json\",\"metrics.json\",\"ranker-cases.jsonl\",\"reviewer-manifest.json\",\"scorer-cases.jsonl\"],\"failures\":[{\"artifact\":\"metrics.json\",\"code\":\"metric_recomputation_mismatch\",\"expected\":1.0,\"message\":\"recall…
+
+### response_item
+
+{"ordinal": 270, "payload": {"call_id": "call_lkD4isFUICEup6fiJbkAYJYA", "id": "ctco_01a059fd-4800-78e0-8833-dce1d52812b4", "internal_chat_message_metadata_passthrough": {"create_time": 1788216166.400149, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.6 seconds\nOutput:\n", "type": "input_text"}, {"text": "independent_fixture_video_and_manifest_digest_recomputation=pass\n/tmp/edgequeue-ticket21-independent-tamper.mTto4f\n\n--- independently repaired digest tamper verification ---\n{\"bundle_digest\":\"afbbe143e96be2fd87ac49c0cd8dd6014cb3df30f30603d2cf4d993d6008a19a\",\"checked_files\":[\"adjudications.jsonl\",\"allocation-receipt.json\",\"baseline-rankings.json\",\"claims-manifest.json\",\"claims.json\",\"edgequeue-ranking.json\",\"ev…
+
+### response_item
+
+{"ordinal": 273, "payload": {"id": "rs_046a77e031452bec016a960371c3e887d2a4861d0733b32fe5", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:43:07.064Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 275, "payload": {"id": "rs_046a77e031452bec016a96037b14c087d2b2709657a1352d24", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:43:14.120Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 277, "payload": {"completed_at_ms": 1788216207910, "item": {"aggregated_output": "fresh code_commit= d8598abdecbdffe545e64b270d6d6c9599a10333 dirty_state= False\nfresh disposition= valid review_budget= 1 queue= ['EQ-F01-DEV-01']\nchecked_in code_commit= 3f337a4de214bfee705655ace1391df68e6c4010 dirty_state= True\nchecked_in disposition= valid review_budget= 1 queue= ['EQ-F01-DEV-01']\n\n--- fixture role and freeze equivalence ---\nfresh_freeze_matches_checked_in_fixture=pass\n\n--- tracked diff scope assertions ---\nowned_surface_scope=pass\n", "command": ["/bin/zsh", "-lc", "GATE_OUT=$(cat /tmp/edgequeue-ticket21-gate-output-path)\nuv run python - \"$GATE_OUT\" <<'PY'\nimport hashlib\nimport json\nimport sys\nfrom pathlib import Path\nfor label, run_path in {\n    'fresh': Path…
+
+### response_item
+
+{"ordinal": 278, "payload": {"call_id": "call_AJW94QVwaelfzcm2NSVZ7CE6", "id": "ctco_01a059fd-ea2a-78e3-be28-13eebfe59ed6", "internal_chat_message_metadata_passthrough": {"create_time": 1788216207.914295, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.9 seconds\nOutput:\n", "type": "input_text"}, {"text": "fresh code_commit= d8598abdecbdffe545e64b270d6d6c9599a10333 dirty_state= False\nfresh disposition= valid review_budget= 1 queue= ['EQ-F01-DEV-01']\nchecked_in code_commit= 3f337a4de214bfee705655ace1391df68e6c4010 dirty_state= True\nchecked_in disposition= valid review_budget= 1 queue= ['EQ-F01-DEV-01']\n\n--- fixture role and freeze equivalence ---\nfresh_freeze_matches_checked_in_fixture=pass\n\n--- tracked diff scope assertions --…
+
+### response_item
+
+{"ordinal": 281, "payload": {"id": "rs_046a77e031452bec016a9603b49fa887d2b0598290bc3389cc", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:44:10.450Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 283, "payload": {"id": "rs_046a77e031452bec016a9603ba77c087d2bbf6e77239f2208a", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:44:17.603Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 286, "payload": {"call_id": "call_UdFkbRs390lrOdZkXVqxCm9k", "id": "ctco_01a059fe-bc21-7e82-b6bd-64baca871d18", "internal_chat_message_metadata_passthrough": {"create_time": 1788216261.665471, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 35184)\nTotal output lines: 602\n\ncorpus/manifests/allocation-holdout.json:1:{\"case_digests\":[{\"case_id\":\"EQ-F01-AH-01\",\"ranker_digest\":\"4c0282cec60e61a22e940b98b75cac44d64933277d109d9bf6e80e0eac3459d4\",\"scorer_digest\":\"587388bccfd127791cf9847fce83780ed19c5983a12eb71f8b067cbe4edddf81\"},{\"case_id\":\"EQ-F01-AH-02\",\"ranker_digest\":\"821755b5fae1a0940ab17c0c7fe51fb875e…
+
+### response_item
+
+{"ordinal": 289, "payload": {"id": "rs_046a77e031452bec016a9603c8068487d2b6ae78c59540b249", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:44:33.329Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 291, "payload": {"id": "rs_046a77e031452bec016a9603d158a087d2b67eb41040c22bbf", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:44:34.890Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 292, "payload": {"call_id": "call_NG4FOdmTGLz1d586OfQ6k6XH", "id": "ctc_046a77e031452bec016a9603d2e6e087d2ae128f1c0e1ad369", "input": "const r = await tools.exec_command({\"cmd\":\"rg -n -i -C 2 'judge fixture|judge-fixture-v1|EQ-F01-AH-01|N.?=.?6|K.?=.?2|six.case' README.md docs src tests corpus . --glob '!docs/evidence/ticket-15/corpus-freeze.md' --glob '!docs/evidence/ticket-21/artifacts/**' --glob '!docs/evidence/ticket-21/judge-output.txt' | head -500\\nprintf '\\\\n--- static Ticket 21 evidence checks ---\\\\n'\\nrg -n -i -C 1 'four.case|DEV|K.?=?1|hard.control|label.error|not.promoted|PCH|improvement|supersed|digest|baseline|proof|tamper|Offline Replay' docs/evidence/ticket-21 | head -500\\nprintf '\\\\n--- no Ticket 15 evidence modifications ---\\\\n'\\ngit diff --name-…
+
+### response_item
+
+{"ordinal": 294, "payload": {"call_id": "call_NG4FOdmTGLz1d586OfQ6k6XH", "id": "ctco_01a059ff-0fe3-70d1-817d-6979d537306a", "internal_chat_message_metadata_passthrough": {"create_time": 1788216283.10772, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.4 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 30028)\nTotal output lines: 337\n\nWarning: truncated output (original token count: 49584)\nTotal output lines: 626\n\ncorpus/manifests/allocation-holdout.json:1:{\"case_digests\":[{\"case_id\":\"EQ-F01-AH-01\",\"ranker_digest\":\"4c0282cec60e61a22e940b98b75cac44d64933277d109d9bf6e80e0eac3459d4\",\"scorer_digest\":\"587388bccfd127791cf9847fce83780ed19c5983a12eb71f8b067cbe4edddf81\"},{\…
+
+### event_msg
+
+{"ordinal": 296, "payload": {"completed_at_ms": 1788216290915, "item": {"id": "rs_046a77e031452bec016a9603def03487d2ae68e19fcd58c10f", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788216286922, "thread_id": "01a059dc-476d-7912-b0bb-85529a82149d", "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce", "type": "item_completed"}, "timestamp": "2026-08-31T22:44:50.915Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 297, "payload": {"id": "rs_046a77e031452bec016a9603def03487d2ae68e19fcd58c10f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:44:50.923Z", "type": "response_item"}
+
+### response_item
+
+<REDACTED_PRIVATE_EVENT>
+
+### event_msg
+
+{"ordinal": 299, "payload": {"completed_at_ms": 1788216299227, "item": {"aggregated_output": "Live Run: unavailable (No live provider is configured; Offline Replay proof was not run.)\nArtifacts: /tmp/edgequeue-ticket21-live.qMmIDU\nseparate_live_route=pass\n\n--- candidate static proof verify ---\n{\"bundle_digest\":\"3eca0104f3393533806ef0f71aff167c3a4adeef4b3c76853fbb48e23c24f70d\",\"checked_files\":[\"adjudications.jsonl\",\"allocation-receipt.json\",\"baseline-rankings.json\",\"claims-manifest.json\",\"claims.json\",\"edgequeue-ranking.json\",\"evaluation-configuration.json\",\"evaluation-run.json\",\"metrics.json\",\"ranker-cases.jsonl\",\"reviewer-manifest.json\",\"scorer-cases.jsonl\"],\"failures\":[],\"offline\":true,\"read_only\":true,\"schema_version\":\"1.0\",\"valid\":true}\n\…
+
+### response_item
+
+{"ordinal": 300, "payload": {"call_id": "call_jTpjYxa5Tkf33p0cs9MlMogQ", "id": "ctco_01a059ff-4edc-7a82-912e-6406e57271f3", "internal_chat_message_metadata_passthrough": {"create_time": 1788216299.22816, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.6 seconds\nOutput:\n", "type": "input_text"}, {"text": "Live Run: unavailable (No live provider is configured; Offline Replay proof was not run.)\nArtifacts: /tmp/edgequeue-ticket21-live.qMmIDU\nseparate_live_route=pass\n\n--- candidate static proof verify ---\n{\"bundle_digest\":\"3eca0104f3393533806ef0f71aff167c3a4adeef4b3c76853fbb48e23c24f70d\",\"checked_files\":[\"adjudications.jsonl\",\"allocation-receipt.json\",\"baseline-rankings.json\",\"claims-manifest.json\",\"claims.json\",\"ed…
+
+### event_msg
+
+{"ordinal": 301, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:44:59.229Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 302, "payload": {"completed_at_ms": 1788216306253, "item": {"id": "rs_046a77e031452bec016a9603ee1e1087d29570288f54abe25f", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788216302091, "thread_id": "01a059dc-476d-7912-b0bb-85529a82149d", "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce", "type": "item_completed"}, "timestamp": "2026-08-31T22:45:06.253Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 303, "payload": {"id": "rs_046a77e031452bec016a9603ee1e1087d29570288f54abe25f", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:45:06.274Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 304, "payload": {"completed_at_ms": 1788216306995, "item": {"content": [{"text": "Cycle 1 is complete. All required checks pass, including a fresh offline replay, independent digest recomputation, and an independently repaired tamper rejection.", "type": "Text"}], "id": "msg_046a77e031452bec016a9603f2468087d2ae4bc708dc4bf3f4", "phase": "commentary", "type": "AgentMessage"}, "started_at_ms": 1788216306292, "thread_id": "01a059dc-476d-7912-b0bb-85529a82149d", "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce", "type": "item_completed"}, "timestamp": "2026-08-31T22:45:06.996Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 305, "payload": {"content": [{"text": "Cycle 1 is complete. All required checks pass, including a fresh offline replay, independent digest recomputation, and an independently repaired tamper rejection.", "type": "output_text"}], "id": "msg_046a77e031452bec016a9603f2468087d2ae4bc708dc4bf3f4", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788216299.734839, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "phase": "commentary", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:45:07.001Z", "type": "response_item"}
+
+### response_item
+
+{"ordinal": 306, "payload": {"call_id": "call_qqYSZMvzHQE1NOZyhWf0vaw4", "id": "ctc_046a77e031452bec016a9603f3054c87d2bdb5b3cb9338945e", "input": "const r = await tools.exec_command({\"cmd\":\"sed -n '1,260p' <USER_HOME>/.agents/skills/smux/SKILL.md\\ntmux-bridge read controller 20 && tmux-bridge message controller 'PASS Ticket 21 cycle 1/3. Reviewed SHA d8598abdecbdffe545e64b270d6d6c9599a10333 against base 3f337a4de214bfee705655ace1391df68e6c4010. Clean exact HEAD, base ancestry, and authorized surfaces passed. Focused tests: 5 passed. Full suite: 167 passed. uv lock --check, compileall, and git diff --check passed. Fresh UV_OFFLINE credential-free judge run passed: baseline selected EQ-F02-DEV-01, EdgeQueue selected EQ-F01-DEV-01, Recall@1 0.00 vs 1.00, authorized correction replayed, ac…
+
+### event_msg
+
+{"ordinal": 307, "payload": {"completed_at_ms": 1788216313376, "item": {"aggregated_output": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\": \"🖥️\", \"os\": [\"darwin\", \"linux\"], \"requires\": { \"bins\": [\"tmux\", \"tmux-bridge\"] } } }\n---\n\n# smux\n\nTmux pane control and cross-pane agent communication. Use `tmux-bridge` (the high-level CLI) for all cross-pane interactions. Fall back to raw tmux co…
+
+### response_item
+
+{"ordinal": 308, "payload": {"call_id": "call_qqYSZMvzHQE1NOZyhWf0vaw4", "id": "ctco_01a059ff-8625-7bd1-a60c-bd2857d1951b", "internal_chat_message_metadata_passthrough": {"create_time": 1788216313.381811, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "output": [{"text": "Script completed\nWall time 0.2 seconds\nOutput:\n", "type": "input_text"}, {"text": "---\nname: smux\ndescription: Control tmux panes and communicate between AI agents. Use this skill whenever the user mentions tmux panes, cross-pane communication, sending messages to other agents, reading other panes, managing tmux sessions, or interacting with processes running in tmux. Includes tmux-bridge CLI for agent-to-agent messaging and raw tmux commands for direct session control.\nmetadata:\n  { \"openclaw\": { \"emoji\":…
+
+### event_msg
+
+{"ordinal": 309, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:45:13.382Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 310, "payload": {"completed_at_ms": 1788216315090, "item": {"id": "rs_046a77e031452bec016a9603faee5087d29dd696cf97b08f08", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788216314903, "thread_id": "01a059dc-476d-7912-b0bb-85529a82149d", "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce", "type": "item_completed"}, "timestamp": "2026-08-31T22:45:15.091Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 311, "payload": {"id": "rs_046a77e031452bec016a9603faee5087d29dd696cf97b08f08", "internal_chat_message_metadata_passthrough": {"turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T22:45:15.092Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 312, "payload": {"completed_at_ms": 1788216315841, "item": {"content": [{"text": "PASS — Ticket 21 cycle 1 approved at `d8598abdecbdffe545e64b270d6d6c9599a10333`.", "type": "Text"}], "id": "msg_046a77e031452bec016a9603fb1e5887d28afc4021fc338902", "phase": "final_answer", "type": "AgentMessage"}, "started_at_ms": 1788216315093, "thread_id": "01a059dc-476d-7912-b0bb-85529a82149d", "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce", "type": "item_completed"}, "timestamp": "2026-08-31T22:45:15.841Z", "type": "event_msg"}
+
+### response_item
+
+{"ordinal": 313, "payload": {"content": [{"text": "PASS — Ticket 21 cycle 1 approved at `d8598abdecbdffe545e64b270d6d6c9599a10333`.", "type": "output_text"}], "id": "msg_046a77e031452bec016a9603fb1e5887d28afc4021fc338902", "internal_chat_message_metadata_passthrough": {"content_item_kinds": ["unknown"], "create_time": 1788216314.123693, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce"}, "phase": "final_answer", "role": "assistant", "type": "message"}, "timestamp": "2026-08-31T22:45:15.846Z", "type": "response_item"}
+
+### event_msg
+
+{"ordinal": 314, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T22:45:15.893Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 315, "payload": {"completed_at": 1788216315, "duration_ms": 383143, "last_agent_message": "PASS — Ticket 21 cycle 1 approved at `d8598abdecbdffe545e64b270d6d6c9599a10333`.", "started_at": 1788215932, "time_to_first_token_ms": 12176, "turn_id": "01a059f9-b73a-7662-9e00-49eca5111cce", "type": "task_complete"}, "timestamp": "2026-08-31T22:45:15.902Z", "type": "event_msg"}

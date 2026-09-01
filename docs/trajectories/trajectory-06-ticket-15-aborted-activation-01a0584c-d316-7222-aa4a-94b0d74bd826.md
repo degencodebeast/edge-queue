@@ -78,7 +78,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 17, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:51:51.298Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -102,7 +102,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 23, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:00.828Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:04.739Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:11.924Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -174,7 +174,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 41, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:17.366Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -198,7 +198,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 47, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:25.039Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -222,7 +222,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 53, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:33.256Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -252,6 +252,14 @@
 
 {"ordinal": 60, "payload": {"call_id": "call_wijxvTJCGvCvfAUt7yA7Xvm1", "id": "ctco_01a0584e-e44a-7073-ad90-7af05369a88c", "internal_chat_message_metadata_passthrough": {"create_time": 1788187960.39419, "turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 11271)\nTotal output lines: 991\n\n\"\"\"Synthetic corpus records for the EdgeQueue falsification prototype.\"\"\"\n\nfrom __future__ import annotations\n\nfrom dataclasses import asdict, dataclass\n\nfrom edgequeue.contracts import SCHEMA_VERSION, content_digest, validate_contract\n\n\n@dataclass(frozen=True)\nclass RubricClause:\n    clause_id: str\n    text: str\n    schema_version: …
 
+### event_msg
+
+{"ordinal": 61, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:40.394Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 62, "payload": {"completed_at_ms": 1788187962321, "item": {"id": "rs_00b36ed769f32e29016a959539e7b887d2960491be1ae8b5ec", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788187961808, "thread_id": "01a0584c-d316-7222-aa4a-94b0d74bd826", "turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404", "type": "item_completed"}, "timestamp": "2026-08-31T14:52:42.321Z", "type": "event_msg"}
+
 ### response_item
 
 {"ordinal": 63, "payload": {"id": "rs_00b36ed769f32e29016a959539e7b887d2960491be1ae8b5ec", "internal_chat_message_metadata_passthrough": {"turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404"}, "summary": [], "type": "reasoning"}, "timestamp": "2026-08-31T14:52:42.323Z", "type": "response_item"}
@@ -260,9 +268,21 @@
 
 <REDACTED_PRIVATE_EVENT>
 
+### event_msg
+
+{"ordinal": 65, "payload": {"completed_at_ms": 1788187965648, "item": {"aggregated_output": "     1\t\"\"\"Synthetic corpus records for the EdgeQueue falsification prototype.\"\"\"\n     2\t\n     3\tfrom __future__ import annotations\n     4\t\n     5\tfrom dataclasses import asdict, dataclass\n     6\t\n     7\tfrom edgequeue.contracts import SCHEMA_VERSION, content_digest, validate_contract\n     8\t\n     9\t\n    10\t@dataclass(frozen=True)\n    11\tclass RubricClause:\n    12\t    clause_id: str\n    13\t    text: str\n    14\t    schema_version: str = SCHEMA_VERSION\n    15\t\n    16\t\n    17\t@dataclass(frozen=True)\n    18\tclass TrajectoryEvent:\n    19\t    event_id: str\n    20\t    event_type: str\n    21\t    content: str\n    22\t    schema_version: str = SCHEMA_VERSION\n  …
+
 ### response_item
 
 {"ordinal": 66, "payload": {"call_id": "call_5tfSPSLHO2frByk9cyFdViqL", "id": "ctco_01a0584e-f8d4-7a31-8f50-5a20157fb4f4", "internal_chat_message_metadata_passthrough": {"create_time": 1788187965.652095, "turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 13976)\nTotal output lines: 822\n\n     1\t\"\"\"Synthetic corpus records for the EdgeQueue falsification prototype.\"\"\"\n     2\t\n     3\tfrom __future__ import annotations\n     4\t\n     5\tfrom dataclasses import asdict, dataclass\n     6\t\n     7\tfrom edgequeue.contracts import SCHEMA_VERSION, content_digest, validate_contract\n     8\t\n     9\t\n    10\t@dataclass(frozen=Tr…
+
+### event_msg
+
+{"ordinal": 67, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:45.652Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 68, "payload": {"completed_at_ms": 1788187967414, "item": {"id": "rs_00b36ed769f32e29016a95953f1d4487d2a27f3edad46f9bd3", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788187967016, "thread_id": "01a0584c-d316-7222-aa4a-94b0d74bd826", "turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404", "type": "item_completed"}, "timestamp": "2026-08-31T14:52:47.414Z", "type": "event_msg"}
 
 ### response_item
 
@@ -279,6 +299,14 @@
 ### response_item
 
 {"ordinal": 72, "payload": {"call_id": "call_oZd7EyvJCelcUefGl1BzgHle", "id": "ctco_01a0584f-0f9b-71f0-9869-71394b572139", "internal_chat_message_metadata_passthrough": {"create_time": 1788187971.483065, "turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404"}, "output": [{"text": "Script completed\nWall time 0.3 seconds\nOutput:\n", "type": "input_text"}, {"text": "Warning: truncated output (original token count: 10893)\nTotal output lines: 840\n\n   350\t        ),\n   351\t    )\n   352\t\n   353\t\n   354\t@dataclass(frozen=True)\n   355\tclass HoldoutRow:\n   356\t    case_id: str\n   357\t    defect_family: str\n   358\t    kind: str\n   359\t    difficulty: str\n   360\t    current_verdict: str\n   361\t    reference_verdict: str\n   362\t    signal_profile: str\n   363\t\n   364\t\n   36…
+
+### event_msg
+
+{"ordinal": 73, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:51.483Z", "type": "event_msg"}
+
+### event_msg
+
+{"ordinal": 74, "payload": {"completed_at_ms": 1788187973317, "item": {"id": "rs_00b36ed769f32e29016a959544c9d487d2ac42a098c8c7227d", "summary_text": [], "type": "Reasoning"}, "started_at_ms": 1788187972690, "thread_id": "01a0584c-d316-7222-aa4a-94b0d74bd826", "turn_id": "01a0584d-f86c-7472-bec7-5d52da09f404", "type": "item_completed"}, "timestamp": "2026-08-31T14:52:53.317Z", "type": "event_msg"}
 
 ### response_item
 
@@ -298,7 +326,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 79, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:52:56.798Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -322,7 +350,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 85, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:53:04.664Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -346,11 +374,11 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 91, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:53:09.917Z", "type": "event_msg"}
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 92, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:53:17.163Z", "type": "event_msg"}
 
 ### response_item
 

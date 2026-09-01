@@ -70,7 +70,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 15, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:19.392Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -94,7 +94,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 21, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:29.701Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -126,7 +126,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 29, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:39.586Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -150,7 +150,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 35, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:45.679Z", "type": "event_msg"}
 
 ### event_msg
 
@@ -170,7 +170,7 @@
 
 ### event_msg
 
-<REDACTED_PRIVATE_EVENT>
+{"ordinal": 40, "payload": {"info": {}, "type": "token_count"}, "timestamp": "2026-08-31T14:34:58.379Z", "type": "event_msg"}
 
 ### event_msg
 
