@@ -16,6 +16,6 @@ The project uses synthetic data and simulated actions. Production use requires q
 
 GitHub: https://github.com/degencodebeast/edge-queue
 
-Video URL: **Required before submission. Add the uploaded video URL here.**
+Video URL: supplied in the submitted portal entry.
 
 Evidence: `docs/evidence/ticket-20/claims.json`, `docs/evidence/ticket-21/artifacts/proof-bundle/claims.json`, and `docs/trajectories/trace-manifest.json`.

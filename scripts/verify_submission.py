@@ -35,6 +35,18 @@ HOME_PATH_PATTERN = re.compile(r"/Users/[A-Za-z0-9._-]+(?:/|$)")
 PRIVATE_PATH_PATTERN = re.compile(r"/private/(?:var|tmp)/[^\\\"'`\s,;|]+")
 PRIVATE_ASSIGNMENT = re.compile(r"(?i)^(?:api[_-]?key|token|password|secret)\s*=\s*\S+")
 MARKDOWN_LINK = re.compile(r"\[[^]]+\]\(([^)#]+)(?:#[^)]+)?\)")
+VIDEO_DURATION = re.compile(
+    r"(?im)^\s*(?:target\s+)?duration:\s*\**(\d+)\s+minutes?\s+(\d+)\s+seconds?\**\.?\s*$"
+)
+
+
+def duration_at_or_below_five_minutes(video_text: str) -> bool:
+    """Accept one declared video duration that does not exceed five minutes."""
+    match = VIDEO_DURATION.search(video_text)
+    if match is None:
+        return False
+    minutes, seconds = (int(value) for value in match.groups())
+    return seconds < 60 and minutes * 60 + seconds <= 5 * 60
 
 
 def load_json(path: Path) -> object:
@@ -153,7 +165,7 @@ def validate_package(project_root: Path) -> list[str]:
     video_text = (project_root / "docs/submission/video-production.md").read_text(encoding="utf-8")
     if not isinstance(video_data, dict) or str(video_data.get("fixture_path")) not in video_text:
         errors.append("video_binding: video plan must name the Ticket 21 fixture path")
-    if "4 minutes 20 seconds" not in video_text:
+    if not duration_at_or_below_five_minutes(video_text):
         errors.append("video_duration: plan must state a duration at or below five minutes")
     return errors
 
