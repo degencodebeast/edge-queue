@@ -17,25 +17,23 @@
 
 ## Draft archive measurement
 
-The Controller ran the approved draft snapshot twice outside Git.
+The Gate ran the approved draft snapshot twice outside Git.
 
-- Draft snapshot SHA A3: `d642353f4223c3966ef9266eeb3326156e77639f`.
-- Draft archive run 1: `edgequeue-d642353f4223-source.zip`, `2,215,215` bytes.
-- Draft archive run 2: `edgequeue-d642353f4223-source.zip`, `2,215,215` bytes.
-- Draft archive SHA-256, both runs: `2e68ab04f3dbba88e9f64d90c3a34010f12c7c4a88202b0c06bb4bfb5ef75813`.
-- Sidecar: `edgequeue-d642353f4223-source.zip.sha256`; its content matches the archive checksum.
-- Source tree: `cc6a59579cdbf022662ef33c1563d33fdab9173e`.
-- Archive entries: `1,252`, including `RELEASE_MANIFEST.json`; `1,251` are tracked package files.
-- Controller release set: `.scratch/edgequeue/release/ticket-22-draft-d642353/`.
-- Controller checks passed: determinism, exclusions, required proof inclusion, home-path and credential scans, no-Git extraction, offline judge, and submission validation.
+- Draft snapshot SHA A4: `a5ff413585ef1687f66b21aaa4b7a63c7cc66781`.
+- Draft archive: `edgequeue-a5ff413585ef-source.zip`, `2,216,245` bytes.
+- Draft archive SHA-256, both runs: `9d8880db4a03f6d9eae311e075bcb7c83b303d54c2c794076d5fc5d4e23e6e4e`.
+- Source tree: `8b3e746062753a04176732e4923a8644a39f9ecb`.
+- Source identity binding: `d6b2385ffffa6b23b3998c82b6d14583416f61657c16f2005068be401054f353`.
+- Gate release set: `.scratch/edgequeue/release/ticket-22-draft-a5ff413/`.
+- Gate checks passed: determinism, exclusions, required proof inclusion, redaction scan, trajectory coverage, no-Git extraction, offline judge, proof verification, and submission validation.
 
 The archive command was:
 
 ```sh
-uv run python scripts/build_release.py --sha d642353f4223c3966ef9266eeb3326156e77639f --output-dir /tmp/edgequeue-ticket-22-draft-a3-1
+uv run python scripts/build_release.py --sha a5ff413585ef1687f66b21aaa4b7a63c7cc66781 --output-dir /tmp/edgequeue-ticket-22-draft-a4-1
 ```
 
-The release manifest stores the source SHA, source tree, and per-file digests. The external sidecar stores the archive checksum, avoiding a self-checksum cycle.
+The release manifest stores the source SHA, source tree, source identity binding, and per-file digests. The external sidecar stores the archive checksum, avoiding a self-checksum cycle.
 
 ## Legacy-record archive exclusion
 
