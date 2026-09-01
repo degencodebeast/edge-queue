@@ -19,7 +19,7 @@
   },
   "eligibility": {
     "private_details_stored": false,
-    "status": "not_confirmed"
+    "status": "confirmed"
   },
   "proof": {
     "checked_in_bundle_digest": "3eca0104f3393533806ef0f71aff167c3a4adeef4b3c76853fbb48e23c24f70d",

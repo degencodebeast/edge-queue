@@ -1,6 +1,6 @@
 # Ticket 23 pre-release qualification
 
-Status: clean-room qualification and the Controller archive checkpoint passed. External human inputs remain unresolved.
+Status: clean-room qualification and the Controller archive checkpoint passed. The public Video URL is the only unresolved external input.
 
 ## Candidate boundary
 
@@ -71,7 +71,7 @@ The submission validator passed. The final full suite passed: `172 passed in 31.
 
 The synthetic corpus contains no private production trajectory. Only an authorized human Adjudication can change a canonical Verdict.
 
-Participant eligibility status: not confirmed. No identity, location, contact, or payment data is stored.
+Participant eligibility status: confirmed. Only the confirmation status is stored. No identity, location, contact, or payment data is stored.
 
 ## Video qualification
 
@@ -85,7 +85,7 @@ The user must record and upload the final video. The user must then add its publ
 
 The missing public Video URL is an external qualification blocker.
 
-The user must also confirm participant eligibility. This status-only confirmation is unresolved.
+Participant eligibility is confirmed. Only the confirmation status is stored.
 
 ## Verification commands
 
@@ -116,7 +116,7 @@ The Worker also aligned the privacy evidence. The final export preserves reviewe
 
 The Specification review found the same privacy mismatch. It also identified the exact-SHA and archive fields completed by this report update.
 
-Both reviews identified the unresolved Video URL and eligibility confirmation. Those inputs require the user.
+Both reviews identified the Video URL and eligibility confirmation as external inputs. The user later confirmed eligibility. The Video URL remains unresolved.
 
 After the Controller added both reviewer JSONL sources, the Standards and Specification reviews passed. No in-scope Critical or Major finding remained before SHA A.
 
