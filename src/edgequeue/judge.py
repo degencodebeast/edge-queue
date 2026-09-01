@@ -9,7 +9,7 @@ import subprocess
 import time
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 from edgequeue.adjudication import (
@@ -551,6 +551,9 @@ def _source_digest(name: str) -> str:
 
 
 def _tested_source_state(repository_root: Path) -> tuple[str, str, bool, dict[str, Any]]:
+    if not (repository_root / ".git").exists():
+        return _release_manifest_source_state(repository_root)
+
     def git(*arguments: str) -> str:
         result = subprocess.run(("git", *arguments), cwd=repository_root, capture_output=True, text=True, check=False)
         if result.returncode != 0:
@@ -565,6 +568,87 @@ def _tested_source_state(repository_root: Path) -> tuple[str, str, bool, dict[st
         for path in sorted((repository_root / "src/edgequeue").glob("*.py"))
     }
     return code_commit, git_tree, bool(status), {"head": code_commit, "git_tree": git_tree, "status": status, "source_files": source_files}
+
+
+def _release_manifest_source_state(repository_root: Path) -> tuple[str, str, bool, dict[str, Any]]:
+    """Bind an extracted archive to every manifest-listed source digest."""
+    manifest_path = repository_root / "RELEASE_MANIFEST.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise JudgeFixtureError(f"Release manifest is invalid: {error}") from error
+    if not isinstance(manifest, dict) or manifest.get("archive_format") != "edgequeue-source-v1":
+        raise JudgeFixtureError("Release manifest has an unsupported format")
+    source_sha = manifest.get("source_sha")
+    source_tree = manifest.get("source_tree")
+    source_identity = manifest.get("source_identity_binding")
+    files = manifest.get("files")
+    if (
+        not _is_git_object_id(source_sha)
+        or not _is_git_object_id(source_tree)
+        or not _is_digest(source_identity)
+        or not isinstance(files, list)
+    ):
+        raise JudgeFixtureError("Release manifest requires source_sha, source_tree, identity binding, and files")
+
+    source_files: dict[str, str] = {}
+    seen_paths: set[str] = set()
+    file_entries: list[dict[str, str]] = []
+    for entry in files:
+        if not isinstance(entry, dict):
+            raise JudgeFixtureError("Release manifest file entry is invalid")
+        path_text = entry.get("path")
+        digest = entry.get("sha256")
+        if not isinstance(path_text, str) or not _is_digest(digest):
+            raise JudgeFixtureError("Release manifest file entry requires path and sha256")
+        relative_path = PurePosixPath(path_text)
+        if (
+            relative_path.is_absolute()
+            or ".." in relative_path.parts
+            or str(relative_path) != path_text
+            or path_text in seen_paths
+        ):
+            raise JudgeFixtureError("Release manifest has an unsafe file path")
+        seen_paths.add(path_text)
+        path = repository_root.joinpath(*relative_path.parts)
+        try:
+            actual_digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        except OSError as error:
+            raise JudgeFixtureError(f"Release manifest file is missing: {path_text}") from error
+        if actual_digest != digest:
+            raise JudgeFixtureError(f"Release manifest digest mismatch: {path_text}")
+        file_entries.append({"path": path_text, "sha256": digest})
+        if relative_path.parts[:2] == ("src", "edgequeue") and relative_path.suffix == ".py":
+            source_files[path_text] = actual_digest
+
+    if source_identity != _release_identity_binding(source_sha, source_tree, file_entries):
+        raise JudgeFixtureError("Release manifest identity binding mismatch")
+
+    expected_source_files = {
+        path.relative_to(repository_root).as_posix()
+        for path in (repository_root / "src/edgequeue").glob("*.py")
+    }
+    if set(source_files) != expected_source_files:
+        raise JudgeFixtureError("Release manifest does not bind the complete EdgeQueue source tree")
+    return source_sha, source_tree, False, {
+        "head": source_sha,
+        "git_tree": source_tree,
+        "status": "release-manifest",
+        "source_files": source_files,
+    }
+
+
+def _is_git_object_id(value: object) -> bool:
+    return isinstance(value, str) and len(value) == 40 and all(character in "0123456789abcdef" for character in value)
+
+
+def _is_digest(value: object) -> bool:
+    return isinstance(value, str) and len(value) == 64 and all(character in "0123456789abcdef" for character in value)
+
+
+def _release_identity_binding(source_sha: str, source_tree: str, files: Sequence[Mapping[str, str]]) -> str:
+    payload = {"files": list(files), "source_sha": source_sha, "source_tree": source_tree}
+    return hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
 def _claims_for_metrics(evaluation_run: Mapping[str, Any], metrics: Mapping[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:

@@ -1,77 +1,57 @@
 # Improvement Changelog
 
-This file records material changes to EdgeQueue. Each entry names the evidence that guided the next decision.
+This record preserves successful, failed, and removed experiments. Every public result has an evidence link.
 
-## 2026-08-31 — Shared contract spine
+## Baseline — fair fixed-budget queues
 
-**Change.** Added versioned, fail-closed contracts for corpus records, Case Assessments, EvaluationRuns, Allocation Receipts, Adjudications, Calibration records, Proof Bundles, Claims, and Verification results. Added canonical UTF-8 JSON serialization, declared timestamp exclusion, named verification failures, and frozen `judge`, `adjudicate`, and `verify` command help interfaces.
+**Tried.** Lowest confidence, evaluator disagreement, deterministic risk, seeded random, and an oracle ceiling.
 
-**Why.** Parallel EdgeQueue slices need one authority for fields, versions, serialization, and failure names.
+**Why.** The advanced solution needed fair same-case, same-budget comparators.
 
-**Evidence.** `docs/evidence/ticket-14/contract-validation.md` records RED-GREEN commands, the independent digest vector, 25 versioned schema files, packaged-schema wheel verification, CLI help checks, and the full `94 passed` suite.
+**Evidence.** [`tests/test_baselines.py`](tests/test_baselines.py) and [`tests/test_experiment.py`](tests/test_experiment.py).
 
-**Decision.** Later slices must use schema version `1.0` and must not add fields without a schema-version change.
+**Decision.** Keep the non-oracle baselines. Use Recall@K as the primary ranking metric.
 
-## 2026-08-31 — Baseline contract
+## Evidence-linked semantic ranking
 
-**Change.** Defined three fair baseline allocators. They select lowest confidence, evaluator disagreement, and deterministic risk. The prototype also includes an oracle ceiling and seeded random allocation.
+**Tried.** One Case Assessment per RankerCase, with an agent risk finding or abstention.
 
-**Why.** The challenge requires a meaningful comparison against a reasonable basic solution on the same cases and budget.
+**Why.** Simple signals cannot explain evidence contradictions.
 
-**Evidence.** `tests/test_baselines.py` and `tests/test_experiment.py` run each allocator against the same case identifiers and review budget.
+**Evidence.** [`docs/evidence/ticket-16/fixed-batch-allocation.md`](docs/evidence/ticket-16/fixed-batch-allocation.md).
 
-**Decision.** Keep all non-oracle baselines. Do not use the oracle as a comparison baseline.
+**Decision.** Keep semantic judgment. Keep validation, order, and budget enforcement deterministic.
 
-## 2026-08-31 — Canonical scoring
+## Scorer isolation and human authority
 
-**Change.** Added a canonical scorer for label-error `Recall@K`, `Precision@K`, false negatives, and oracle regret.
+**Tried.** Separate RankerCase and ScorerCase records, scorer sentinels, append-only Adjudications, and an offline Proof Bundle.
 
-**Why.** Allocator explanations cannot prove ranking quality. The scorer must calculate metrics from frozen current and Reference Verdicts.
+**Why.** Hidden Reference Verdicts must not steer allocation. Agents must not correct people automatically.
 
-**Evidence.** `tests/test_scoring.py` rejects duplicate, unknown, and wrong-cardinality Review Queues.
+**Evidence.** [`docs/evidence/ticket-17/`](docs/evidence/ticket-17/) and the frozen Proof Bundle verification reports.
 
-**Decision.** All public metrics must come from an EvaluationRun. No README or video claim may use a hand-calculated value.
+**Decision.** Reject scorer leakage. Require an authorized human Adjudication for every canonical correction.
 
-## 2026-08-31 — Corpus integrity and scorer isolation
+## Removed experiment — the previous 0.80 holdout result
 
-**Change.** Added canonical SHA-256 content digests. Split allocator-visible RankerCase data from scorer-only ScorerCase data.
+**Tried.** Earlier traces reported Allocation Holdout Recall@8 `0.80`.
 
-**Why.** The Allocation Holdout needs a trustworthy boundary. A scorer-only Reference Verdict must not enter allocator context.
+**Failure.** Authoritative frozen reruns disproved it. The earlier trace inputs did not bind to the final frozen RankerCases.
 
-**Evidence.** `tests/test_digests.py` uses an independent SHA-256 vector. `tests/test_experiment.py` requires separate ranker and scorer records. `tests/test_integrity.py` detects forbidden scorer content.
+**Evidence.** [`docs/evidence/ticket-20/README.md`](docs/evidence/ticket-20/README.md) records fresh frozen runs at `0.30`, `0.40`, and `0.30`. The authoritative public claim is [`docs/evidence/ticket-20/claims.json`](docs/evidence/ticket-20/claims.json): Recall@8 `0.30`.
 
-**Decision.** Use per-case sentinels and reject an EvaluationRun when they appear in allocator artifacts.
+**Decision.** Remove every stale broad `0.80` public claim. Preserve the failure. Do not tune against revealed holdout labels.
 
-## 2026-08-31 — Structured allocator smoke test
+## Judge Fixture — end-to-end proof
 
-**Change.** Tested the Case Assessment prompt against one realistic missing-verification case.
+**Tried.** A four-case Development Judge Fixture with one confident Label Error and one misleading hard control.
 
-**Why.** The agent must return structured evidence that relates to the current Verdict.
+**Evidence.** [`docs/evidence/ticket-21/artifacts/summary.json`](docs/evidence/ticket-21/artifacts/summary.json) and [`video-data.json`](docs/evidence/ticket-21/artifacts/video-data.json) record EdgeQueue Recall@1 `1.00` versus deterministic baseline `0.00`.
 
-**Evidence.** `prototype/smoke/case-assessment-output-luna-low.json` records a valid Risk Finding. `schemas/case-assessment.schema.json` defines the required response.
+**Decision.** Use this fixture only as an illustration. Keep it separate from the broad holdout result.
 
-**Decision.** Preserve the prompt, output schema, model configuration, JSONL events, and final response for every submitted agent run.
+## Calibration limit and next action
 
-## 2026-08-31 — First isolated corpus case
+The candidate gate accepted the Calibration Candidate. It was not promoted. PCH was not run. Do not claim calibration improvement.
 
-**Change.** Added `EQ-F01-DEV-01` as a RankerCase and a separate ScorerCase.
-
-**Why.** The case tests whether an evaluator can distinguish missing verification from evidence of failure.
-
-**Evidence.** `tests/test_corpus.py` verifies the frozen verdict transition and checks that the RankerCase excludes scorer-only fields.
-
-**Decision.** Expand the Development Split only after this boundary passes.
-
-## 2026-08-31 — Fixed-budget ranking falsification
-
-**Change.** Ran the Development Split once and the 40-case Allocation Holdout three times. Each run used the same Review Budget and the same canonical scorer.
-
-**Why.** The project must prove that its semantic allocator recovers more hidden Label Errors than simple signal-based queues.
-
-**Evidence.** `runs/development/evaluation.json` reports Development Recall@4 of `0.80`. `runs/allocation-holdout/evaluation.json` reports Holdout Recall@8 of `0.80` in all three runs. The strongest simple baseline scored `0.00`. Random p95 scored `0.40`. `scripts/check_holdout_leakage.py` scanned 600 Holdout trace files and found no scorer-only field or sentinel.
-
-**Decision.** Proceed with the scoped claim: on the frozen synthetic corpus, EdgeQueue recovered more Label Errors than the defined simple baselines under the same fixed budget. Do not claim that this result generalizes to all production evaluation workflows.
-
-## Current limitation
-
-The Post-Calibration Holdout and the final clean-room verification are not complete. The project must not claim a calibration improvement until those checks pass.
+Ticket 23 must verify the draft archive from a clean environment. The final uploader must add the uploaded video URL without changing evidence claims.
