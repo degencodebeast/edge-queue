@@ -10,15 +10,19 @@
 
 The deterministic baseline spends that slot on the wrong case. EdgeQueue sends the known Label Error to the reviewer.
 
-EdgeQueue helps an Evaluation Operations Lead allocate a fixed Review Budget across agent verdicts. It combines evidence-linked Case Assessments with deterministic validation, scoring, ordering, and budget enforcement. An authorized human owns every correction.
+EdgeQueue is a review tool for teams evaluating AI agents. When experts cannot inspect every verdict, EdgeQueue ranks which cases to check first. It shows why each case was selected, records human corrections, and verifies the final result.
 
 [Run the Judge](#judge-it-in-90-seconds) · [Open the Review Packet](docs/evidence/ticket-21/artifacts/review-packet.html) · [See the results](#measured-results) · [Reproduce the evidence](REPRODUCTION.md) · [Read the changelog](IMPROVEMENT_CHANGELOG.md)
 
 Repository: <https://github.com/degencodebeast/edge-queue>
 
-## Why EdgeQueue exists
+## The problem
 
-Evaluation teams can receive more Trajectory Evaluations than qualified reviewers can inspect. Reviewing every case is too slow. Reviewing only low-confidence cases can miss confident Label Errors.
+Teams evaluating AI agents often produce more verdicts than their expert reviewers can inspect. With limited review slots, they must decide which cases deserve attention first.
+
+Random review wastes scarce review time. Confidence-only review can miss agents that are confidently wrong. Teams need to prioritize cases without exposing hidden answers or letting an AI control the queue or official Verdict.
+
+## What EdgeQueue does
 
 EdgeQueue turns that bottleneck into a fixed-budget allocation problem:
 
