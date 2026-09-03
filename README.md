@@ -2,15 +2,15 @@
 
 **Find wrong agent verdicts before expert review time runs out.**
 
+EdgeQueue helps evaluation teams decide which AI-agent verdicts to review when expert time is limited.
+
 ```text
 4 agent verdicts
-1 known Label Error
+1 hidden Label Error
 1 review slot
 ```
 
-The deterministic baseline spends that slot on the wrong case. EdgeQueue sends the known Label Error to the reviewer.
-
-EdgeQueue is a review tool for teams evaluating AI agents. When experts cannot inspect every verdict, EdgeQueue ranks which cases to check first. It shows why each case was selected, records human corrections, and verifies the final result.
+In this demo, both methods rank the same four cases without seeing the correct answers. The baseline spends its review slot on the wrong case. EdgeQueue sends the hidden Label Error to the reviewer.
 
 [Run the Judge](#judge-it-in-90-seconds) · [Open the Review Packet](docs/evidence/ticket-21/artifacts/review-packet.html) · [See the results](#measured-results) · [Reproduce the evidence](REPRODUCTION.md) · [Read the changelog](IMPROVEMENT_CHANGELOG.md)
 
@@ -18,22 +18,22 @@ Repository: <https://github.com/degencodebeast/edge-queue>
 
 ## The problem
 
-Teams evaluating AI agents often produce more verdicts than their expert reviewers can inspect. With limited review slots, they must decide which cases deserve attention first.
+Reviewing every agent verdict is often too slow. Random selection can waste a review slot. Confidence-only selection can miss a verdict that is confidently wrong.
 
-Random review wastes scarce review time. Confidence-only review can miss agents that are confidently wrong. Teams need to prioritize cases without exposing hidden answers or letting an AI control the queue or official Verdict.
+The ranking system must work without seeing hidden reference answers. It must obey the Review Budget, and it must leave every official Verdict change to a human reviewer.
 
 ## What EdgeQueue does
 
-EdgeQueue turns that bottleneck into a fixed-budget allocation problem:
+EdgeQueue follows one review path:
 
-1. Freeze the same cases for every method.
-2. Hide scorer-only labels from the allocator.
-3. Ask the ranker for evidence-linked findings or an abstention.
-4. Let deterministic code validate records and select exactly `K` cases.
-5. Give an authorized reviewer a clear Review Packet.
-6. Bind the result, correction, metrics, and claims into a verifiable Proof Bundle.
+1. Give every ranking method the same frozen cases and Review Budget.
+2. Show the ranking agent the case evidence, but never the correct answers.
+3. Check every finding with deterministic code and fill only the available review slots.
+4. Show the reviewer why each case was selected and which case fell just outside the queue.
+5. Record the human correction without rewriting the original record.
+6. Package the cases, decisions, and metrics so anyone can verify them later.
 
-The ranker advises. Deterministic code controls the queue. A human controls the Verdict.
+The ranking agent can flag a risk. Deterministic code builds the queue. Only an authorized human can change the official Verdict.
 
 ## Judge it in 90 seconds
 
@@ -61,22 +61,26 @@ Offline Replay: about 0.057s, requests=0, tokens=0, model_cost=$0.00
 
 This path uses a committed synthetic fixture. It makes no network or model call. Its full evidence is in [`docs/evidence/ticket-21/artifacts/`](docs/evidence/ticket-21/artifacts/).
 
+The baseline misses the hidden error while EdgeQueue sends it to review. The generated Proof Bundle passes verification. The command also checks an altered copy and rejects it because the saved score no longer matches the cases.
+
+The calibration line records a candidate that passed its initial checks. EdgeQueue did not promote that candidate or claim that it improved the wider results. `No PCH claim` means that EdgeQueue did not run a Post-Calibration Holdout.
+
 ## What the reviewer sees
 
 The generated [Review Packet](docs/evidence/ticket-21/artifacts/review-packet.html) shows:
 
-- the fixed Review Budget;
+- how many cases the reviewer can inspect;
 - the selected case and its evidence;
-- the deterministic risk score;
-- why the case crossed the selection boundary;
-- the first excluded case;
-- the authorized human correction.
+- its score under the fixed rules;
+- why it was selected;
+- which case fell just outside the queue;
+- the human correction.
 
-In the Judge Fixture, EdgeQueue selects `EQ-F01-DEV-01`. The reviewer changes its canonical Verdict from `FAIL` to `UNDETERMINED`. The correction is append-only and evidence-bound.
+In the Judge Fixture, EdgeQueue selects `EQ-F01-DEV-01`. The reviewer changes its official Verdict from `FAIL` to `UNDETERMINED`. EdgeQueue appends the correction and links it to the evidence instead of rewriting the earlier record.
 
 ## Measured results
 
-EdgeQueue reports the illustrative demo and the broad evaluation separately.
+The four-case demo proves that the complete review and verification path works. It does not prove that EdgeQueue ranks better in general. The larger evaluation did not show a reliable improvement over the strongest baseline.
 
 | Evaluation | Cases | Budget | Baseline | EdgeQueue | Decision |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -84,11 +88,9 @@ EdgeQueue reports the illustrative demo and the broad evaluation separately.
 | Fresh Development | 20 | `K=4` | Strongest baseline Recall@4 `0.60` | Recall@4 `0.20` | No improvement claim |
 | Allocation Holdout, three frozen attempts | 40 | `K=8` | Strongest baseline Recall@8 `0.30` | `0.30`, `0.40`, `0.30` | Broad gate rejected |
 
-The Judge Fixture proves the end-to-end behavior on one difficult case. It does not establish broad performance.
-
 The public Allocation Holdout claim is Recall@8 `0.30`, the worst result across three frozen attempts. The mean is `0.333`. The strongest deterministic baseline is `0.30`, and seeded random Recall@8 p95 is `0.40`. The broad gate therefore rejects a general improvement claim.
 
-Authoritative sources:
+Evidence behind these results:
 
 - [Judge Fixture summary](docs/evidence/ticket-21/artifacts/summary.json)
 - [Allocation Holdout claim](docs/evidence/ticket-20/claims.json)
@@ -110,7 +112,7 @@ flowchart LR
     I --> G
 ```
 
-`RankerCase` records contain only allocator-visible evidence. `ScorerCase` records contain hidden Reference Verdicts and scorer sentinels. Leakage checks keep those surfaces separate.
+`RankerCase` records contain only evidence that the allocator can see. `ScorerCase` records contain hidden Reference Verdicts and scorer sentinels. Validation prevents hidden labels from reaching the allocator.
 
 Case Assessments are non-authoritative. Deterministic code validates their schema, binds them to frozen content, applies the scoring policy, enforces exactly `K` unique known cases, and creates the Allocation Receipt.
 
@@ -127,9 +129,7 @@ The Proof Bundle does not trust saved metrics. Offline verification recomputes b
 | Proof verification | Added content bindings and metric recomputation | Rejected repaired-digest tampering |
 | Frozen rerun | Replaced an invalid broad `0.80` result | Published `0.30` and rejected the broad gate |
 
-The most important change was the authority boundary. The agent can explain risk, but deterministic code owns validation and ordering. A human owns the correction.
-
-The removed `0.80` experiment remains documented in [IMPROVEMENT_CHANGELOG.md](IMPROVEMENT_CHANGELOG.md). Authoritative frozen reruns disproved it because its trace inputs did not bind to the final RankerCases.
+The frozen rerun removed a reported `0.80` result because its trace inputs did not bind to the final RankerCases. The correction remains documented in [IMPROVEMENT_CHANGELOG.md](IMPROVEMENT_CHANGELOG.md).
 
 ## Reproduce the evaluation
 
@@ -196,3 +196,5 @@ Production use requires qualified reviewers, approved data, and a separately val
 - [Redacted agent trajectory manifest](docs/trajectories/trace-manifest.json)
 - [Submission-readiness report](docs/evidence/ticket-22/submission-readiness.md)
 - [Pre-release qualification report](docs/evidence/ticket-23/pre-release-qualification.md)
+
+To inspect EdgeQueue, run the 90-second Judge Fixture, open its Review Packet, and verify the generated Proof Bundle.
